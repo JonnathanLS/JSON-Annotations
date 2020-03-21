@@ -1,0 +1,172 @@
+{
+    "Intrudoção":[
+        "Um aplicativo Angular compreende uma árvore de componentes, na qual cada componente Angular tem uma finalidade e responsabilidade específicas."
+    ],
+    "Diretivas": [
+        "As diretivas estruturais moldam ou remodelam a estrutura do DOM, geralmente adicionando, removendo e manipulando os elementos aos quais estão anexados. Diretivas com um asterisco *, são diretivas estruturais."
+    ],
+    "Indefinidos":[
+        "A interpolação {{ }}permite renderizar o valor da propriedade como texto.",
+        "A ligação de propriedade [ ] permite usar o valor da propriedade em uma expressão de modelo.",
+        "A associação de eventos usa um conjunto de parênteses ( ) ao redor do evento.",
+        "O HttpClientModule da Angular registra os provedores que seu aplicativo precisa para usar uma única instância do serviço HttpClient em todo o aplicativo."
+    ],
+    "Componentes":{
+        "Conceito": "Definem áreas de responsabilidade na interface do usuário, ou na UI, que permitem reutilizar conjuntos de funcionalidades da UI.",
+        "Estrutura de um Componente": {
+            "Class": "Uma classe de componente que lida com dados e funcionalidade. Na seção anterior",
+            "Template": "Um modelo HTML que determina a interface do usuário.",
+            "Style": "Estilos específicos de componentes que definem a aparência."
+        }
+    },
+    "Routeamento":[
+        "O ActivatedRoute é específico para cada componente roteado que o roteador angular carrega. Ele contém informações sobre a rota, seus parâmetros e dados adicionais associados à rota.",
+        "Ao injetar o ActivatedRoute, você está configurando o componente para usar um serviço."
+    ],
+    "Pipes":[
+        "O async pipe retorna o valor mais recente de um fluxo de dados e continua a fazê-lo pela vida útil de um determinado componente. Quando o Angular destrói esse componente, o canal assíncrono para automaticamente."
+    ],
+    "Fundamentos": {
+        "Conceitos":{
+            "Conceitos Básicos":{
+                "O que é": "Angular é uma plataforma e estrutura para criar aplicativos cliente de página única usando HTML e TypeScript. Angular é escrito em TypeScript.",
+                "Arquitetura":{
+                    "Contexto": "A arquitetura de um aplicativo Angular depende de certos conceitos fundamentais.",
+                    "Conceitos":[
+                        "Os blocos de construção básicos estão em NgModules, que fornecem um contexto de compilação para componentes.",
+                        "Os NgModules coletam código relacionado em conjuntos funcionais;",
+                        "Um aplicativo Angular é definido por um conjunto de NgModules.",
+                        "Um aplicativo sempre possui pelo menos um módulo raiz que habilita a inicialização e, normalmente, possui muito mais módulos de recursos."        
+                    ]
+                },
+                "Componentes":[
+                    "Os componentes definem visualizações, que são conjuntos de elementos de tela que o Angular pode escolher e modificar de acordo com a lógica e os dados do programa.",
+                    "Os componentes usam serviços, que fornecem funcionalidades específicas não diretamente relacionadas às visualizações.",
+                    "Os fornecedores de serviços podem ser injetados nos componentes como dependências, tornando seu código modular, reutilizável e eficiente.",
+                    "Tanto os componentes quanto os serviços são simplesmente classes, com decoradores que marcam seu tipo e fornecem metadados que informam ao Angular como usá-los.",
+                    "Todo aplicativo Angular possui pelo menos um componente, o componente raiz que conecta uma hierarquia de componentes ao modelo de objeto de documento de página (DOM).",
+                    "Cada componente define uma classe que contém dados e lógica do aplicativo e está associada a um modelo HTML que define uma exibição a ser exibida em um ambiente de destino.",
+                    "O decorador @Component () identifica a classe imediatamente abaixo dela como um componente e fornece o modelo e os metadados específicos do componente relacionados."
+                ],
+                "Metadados":[
+                    "Os metadados para uma classe de componente o associam a um modelo que define uma exibição.",
+                    "Um modelo combina HTML comum com diretivas Angular e marcação de ligação que permitem que o Angular modifique o HTML antes de renderizá-lo para exibição.",
+                    "Os metadados para uma classe de serviço fornecem as informações que o Angular precisa para disponibilizá-lo aos componentes por meio de injeção de dependência (DI)."
+                ],
+                "Roteador":[
+                    "Os componentes de um aplicativo geralmente definem muitas visualizações, organizadas hierarquicamente.",
+                    "Angular fornece o serviço Roteador para ajudá-lo a definir os caminhos de navegação entre as visualizações.",
+                    "O roteador fornece recursos sofisticados de navegação no navegador."
+                ],
+                "Módulos": [
+                    "Os NgModules do Angular diferem e complementam os módulos JavaScript (ES2015).",
+                    "Um NgModule declara um contexto de compilação para um conjunto de componentes dedicado a um domínio de aplicativo, um fluxo de trabalho ou um conjunto de recursos intimamente relacionado.",
+                    "Um NgModule pode associar seus componentes a códigos relacionados, como serviços, para formar unidades funcionais",
+                    "Todo aplicativo Angular possui um módulo raiz, chamado AppModule, que fornece o mecanismo de inicialização que inicia o aplicativo.",
+                    "Como os módulos JavaScript, o NgModules pode importar funcionalidades de outros NgModules e permitir que suas próprias funcionalidades sejam exportadas e usadas por outros NgModules.",
+                    "Organizar seu código em módulos funcionais distintos ajuda no gerenciamento do desenvolvimento de aplicativos complexos e no design para reutilização.",
+                    "A modularização  permite aproveitar o carregamento lento, ou seja, carregar módulos sob demanda, para minimizar a quantidade de código que precisa ser carregado na inicialização."
+                ],
+                "Decoradores": [
+                    "Decoradores são funções que modificam as classes JavaScript.",
+                    "Angular define vários decoradores que anexam tipos específicos de metadados às classes, para que o sistema saiba o que essas classes significam e como devem funcionar."
+                ],
+                "Modelos":[
+                    "Conceitos pertinentes a Templates, directives, and data binding",
+                    "Um modelo combina HTML com marcação angular que pode modificar elementos HTML antes de serem exibidos.",
+                    "As diretivas de modelo fornecem lógica de programa e a marcação de ligação conecta os dados do aplicativo e o DOM.",
+                    "A associação de eventos permite que seu aplicativo responda à entrada do usuário no ambiente de destino, atualizando os dados do aplicativo.",
+                    "A associação de propriedades permite interpolar valores calculados a partir dos dados do aplicativo para o HTML.",
+                    "Antes de uma 'view'' ser exibida, o Angular avalia as diretivas e resolve a sintaxe de ligação no modelo para modificar os elementos HTML e o DOM, de acordo com os dados e a lógica do programa.",
+                    "O Angular suporta ligação de dados bidirecional, o que significa que alterações no DOM, como opções do usuário, também são refletidas nos dados do programa.",
+                    "Seus modelos podem usar 'pipes' para melhorar a experiência do usuário, transformando valores para exibição.",
+                    "O Angular fornece 'pipes' predefinidos para transformações comuns, e você também pode definir seus próprios 'pipes'."
+                ],
+                "Injeção de Dependência":[
+                    "Para dados ou lógica que não estão associados a uma exibição específica e que você deseja compartilhar entre componentes, você cria uma classe de serviço.",
+                    "Uma definição de classe de serviço é imediatamente precedida pelo decorador @Injectable ().",
+                    "O decorador fornece os metadados que permitem que outros provedores sejam injetados como dependências em sua classe.",
+                    "A injeção de dependência (DI) permite manter suas classes de componentes magras e eficientes, eles não buscam dados do servidor, validam a entrada do usuário ou fazem logon diretamente no console; eles delegam essas tarefas nos serviços."
+                ],
+                "Roteamento":[
+                    "O NgModule do roteador angular fornece um serviço que permite definir um caminho de navegação entre os diferentes estados do aplicativo e exibir hierarquias no seu aplicativo, e ele é modelado nas convenções familiares de navegação do navegador.",
+                    "O roteador mapeia caminhos semelhantes a URL para visualizações em vez de páginas, quando um usuário executa uma ação, como clicar em um link, que carregaria uma nova página no navegador, o roteador intercepta o comportamento do navegador e mostra ou oculta as hierarquias de exibição.",
+                    "Se o roteador determinar que o estado atual do aplicativo requer funcionalidade específica e o módulo que o define não foi carregado, o roteador poderá carregar preguiçosamente o módulo sob demanda.",
+                    "Você pode definir regras de navegação, associando os caminhos de navegação aos seus componentes."
+                ],
+                "Resumo": "https://angular.io/generated/images/guide/architecture/overview2.png"
+            },
+            "Módulos":{
+                "Informações Relevantes":[
+                    "Os aplicativos Angular são modulares, sendo que o Angular possui seu próprio sistema de modularidade chamado NgModules.",
+                    "NgModules são contêineres para um bloco de código coeso dedicado a um domínio de aplicativo, um fluxo de trabalho ou um conjunto de recursos intimamente relacionados.",
+                    "Os NgModules podem conter componentes, provedores de serviços e outros arquivos de código cujo escopo é definido pelo NgModule que contém.",
+                    "Os NgModules podem importar a funcionalidade exportada de outros NgModules e exportar a funcionalidade selecionada para uso por outros NgModules.",
+                    "Todo aplicativo Angular tem pelo menos uma classe NgModule, o módulo raiz, que é convencionalmente chamado AppModule e reside em um arquivo chamado app.module.ts. Você inicia seu aplicativo inicializando o NgModule raiz.",
+                    "Um NgModule é definido por uma classe decorada com @NgModule (). O decorador @NgModule () é uma função que aceita um único objeto de metadados, cujas propriedades descrevem o módulo.",
+                    "O sistema NgModule é diferente e não está relacionado ao sistema do módulo JavaScript (ES2015) para gerenciar coleções de objetos JavaScript. Estes são sistemas de módulos complementares que você pode usar juntos para escrever seus aplicativos."
+                ],
+                "Propriedades Importantes":{
+                    "declarations": "Os componentes, diretivas e canais que pertencem a este NgModule.",
+                    "exports": "O subconjunto de declarações que devem ser visíveis e utilizáveis ​​nos modelos de componentes de outros NgModules.",
+                    "imports": "Outros módulos cujas classes exportadas são necessárias pelos modelos de componentes declarados neste NgModule.",
+                    "providers": "Criadores de serviços com os quais este NgModule contribui para a coleção global de serviços; eles se tornam acessíveis em todas as partes do aplicativo. (Você também pode especificar provedores no nível do componente, o que geralmente é preferido.)",
+                    "bootstrap": "A visualização principal do aplicativo, chamada componente raiz, que hospeda todas as outras visualizações do aplicativo. Somente o NgModule raiz deve definir a propriedade bootstrap."
+                }
+            },
+            "Componentes":{
+                "Informações Relevantes":[
+                    "Um componente controla um pedaço de tela chamado 'view'.",
+                    "Você define a lógica do aplicativo de um componente - o que ele faz para suportar a exibição - dentro de uma classe. A classe interage com a exibição por meio de uma API de propriedades e métodos.",
+                    "Os metadados de um componente informam ao Angular onde obter os principais componentes necessários para criar e apresentar o componente e sua visualização. Em particular, associa um modelo ao componente, diretamente com o código embutido ou por referência."
+                ],
+                "Template Syntax":[
+                    "Um sintaxe de modelo se parece com HTML comum, exceto que também contém a sintaxe do modelo angular, que altera o HTML com base na lógica do aplicativo e no estado dos dados do aplicativo e do DOM.",
+                    "Um modelo pode usar a ligação de dados para coordenar o aplicativo e os dados do DOM, canalizar para transformar os dados antes que eles sejam exibidos e diretrizes para aplicar a lógica do aplicativo ao que é exibido."
+                ],
+                "Data Biding":[
+                    "Angular suporta ligação de dados bidirecional, um mecanismo para coordenar as partes de um modelo com as partes de um componente. Adicione marcação de ligação ao HTML do modelo para informar ao Angular como conectar os dois lados.",
+                    "Na ligação bidirecional, um valor de propriedade de dados flui para a caixa de entrada do componente, como na ligação de propriedade. As alterações do usuário também retornam ao componente, redefinindo a propriedade para o valor mais recente, como na ligação de eventos.",
+                    "A ligação de dados desempenha um papel importante na comunicação entre um modelo e seu componente e também é importante na comunicação entre os componentes pai e filho.",
+                    "Angular processa todas as ligações de dados uma vez para cada ciclo de eventos JavaScript, desde a raiz da árvore de componentes do aplicativo até todos os componentes filhos."
+                ],
+                "Pipes": [
+                    "Pipes permitem declarar transformações de valor de exibição no HTML do seu modelo.",
+                    "Uma classe com o decorador @Pipe define uma função que transforma valores de entrada em valores de saída para exibição em uma 'view'.",
+                    "Você pode encadear tubos, enviando a saída de uma função de tubo para ser transformada por outra função de tubo. Um canal também pode receber argumentos que controlam como ele realiza sua transformação. Por exemplo, você pode passar o formato desejado para o canal de datas."
+                ],
+                "Diretivas":[
+                    "Angular templates are dynamic. When Angular renders them, it transforms the DOM according to the instructions given by directives. A directive is a class with a @Directive() decorator.",
+                    "Um componente é tecnicamente uma diretiva. No entanto, os componentes são tão distintos e centrais para aplicativos Angular que Angular define o decorador @Component (), que estende o decorador @Directive () com recursos orientados a modelo.",
+                    "Além dos componentes, existem outros dois tipos de diretivas: estrutural e atributo. Angular define várias diretivas de ambos os tipos e você pode definir suas próprias usando o decorador @Directive ().",
+                    "Os metadados de uma diretiva associam a classe decorada a um elemento seletor usado para inseri-lo no HTML. Nos modelos, as diretivas geralmente aparecem em uma tag de elemento como atributos, por nome ou como destino de uma atribuição ou ligação.",
+                    "As diretivas estruturais alteram o layout adicionando, removendo e substituindo elementos no DOM.",
+                    "As diretivas de atributo alteram a aparência ou o comportamento de um elemento existente. Nos modelos, eles se parecem com atributos HTML regulares, daí o nome."
+
+                ],
+                "Configurações Úteis":{
+                    "selector": "Um seletor de CSS que informa ao Angular para criar e inserir uma instância desse componente sempre que encontrar a tag correspondente no HTML. Ex.: se no HTML conter a tag <app-test> </app-test>, o Angular inserirá uma instância da exibição TestComponent entre essas tags.",
+                    "templateUrl": "O endereço relativo ao modelo HTML deste componente. Como alternativa, você pode fornecer o modelo HTML embutido, como o valor da propriedade do modelo. Este modelo define a visualização do host do componente.",
+                    "providers": "Uma matriz de provedores de serviços que o componente requer."
+                },
+                "4 Formas de Data Binding": "https://angular.io/generated/images/guide/architecture/databinding.png"
+            },
+            "Serviço Injetável":{
+                "Informações Relevantes":[
+                    "Serviço é uma categoria ampla que abrange qualquer valor, função ou recurso que um aplicativo precise. Um serviço geralmente é uma classe com um objetivo estreito e bem definido. Deve fazer algo específico e fazê-lo bem.",
+                    "Angular distingue componentes de serviços para aumentar a modularidade e a reutilização. Ao separar a funcionalidade relacionada à exibição de um componente de outros tipos de processamento, você pode tornar suas classes de componentes mais enxutas e eficientes.",
+                    "Idealmente, o trabalho de um componente é permitir a experiência do usuário e nada mais. Um componente deve apresentar propriedades e métodos para ligação de dados, para mediar entre a visualização (renderizada pelo modelo) e a lógica do aplicativo (que geralmente inclui alguma noção de modelo).",
+                    "Um componente pode delegar determinadas tarefas aos serviços, como buscar dados do servidor, validar a entrada do usuário ou efetuar logon diretamente no console. Ao definir essas tarefas de processamento em uma classe de serviço injetável, você disponibiliza essas tarefas para qualquer componente.",
+                    "Angular não aplica esses princípios, mas sim ajuda a seguir tais princípios, facilitando a fatoração da lógica do aplicativo em serviços e disponibilizando esses serviços aos componentes por meio da injeção de dependência.",
+                    "Para definir uma classe como um serviço no Angular, use o decorador @Injectable () para fornecer os metadados que permitem ao Angular injetá-lo em um componente como uma dependência.",
+                    "O injetor é o mecanismo principal. Angular cria um injetor para todo o aplicativo durante o processo de inicialização e injetores adicionais, conforme necessário. Você não precisa criar injetores.",
+                    "Um injetor cria dependências e mantém um contêiner de instâncias de dependência que reutiliza, se possível. Um provedor é um objeto que informa ao injetor como obter ou criar uma dependência.",
+                    "Quando o Angular descobre que um componente depende de um serviço, ele primeiro verifica se o injetor possui alguma instância existente desse serviço. Se uma instância de serviço solicitada ainda não existir, o injetor fará uma usando o provedor registrado e a adicionará ao injetor antes de retornar o serviço à Angular.",
+                    "Quando você fornece o serviço no nível raiz, o Angular cria uma instância única e compartilhada do HeroService e o injeta em qualquer classe que solicitar. O registro do provedor nos metadados @Injectable () também permite que o Angular otimize um aplicativo removendo o serviço do aplicativo compilado, se ele não for usado.",
+                    "Quando você registra um provedor com um NgModule específico, a mesma instância de um serviço está disponível para todos os componentes nesse NgModule. Para se registrar nesse nível, use a propriedade provider do decorador @NgModule ().",
+                    "Ao registrar um provedor no nível do componente, você obtém uma nova instância do serviço com cada nova instância desse componente."
+                ]
+            }
+        }
+    }
+}
