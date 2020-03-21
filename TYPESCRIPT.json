@@ -1,0 +1,38 @@
+{
+    "Introdução": [
+        "No paradigma da orientação a objetos criamos a representação de algo do mundo real em nosso programa através de modelos e esses modelos são definidos através de classes.",
+        "Para que possamos utilizar o TypeScript precisamos da plataforma Node.js instalada.",
+        "É através do gerenciador de pacotes do Node.js que instalamos o TypeScript, mas primeiro, precisamos criar o arquivo package.json que nada mais é do que uma 'caderneta' na qual temos registrados todos os módulos da aplicação baixados pelo npm.",
+        "O arquivo tsconfig.json guarda as configurações do compilador.",
+        "O uso do Node.js NÃO É opcional, pois o compilador depende desta plataforma para funcionar, inclusive é baixado pelo seu gerenciador de pacotes npm. Além disso, o código TypeScript precisa ser traduzido/convertido para um código em ECMASCRIPT para que seja entendido pelo navegador.",
+        "No npm, existe uma série de TypeScript definitons files para as mais diversas bibliotecas e frameworks do mercado. Ex.: se quisermos instalar o tsd do jQuery, acessamos  https://www.npmjs.com/package/@types/jquery ... dessa forma, antes de sair buscando pela internet os arquivos tsd que precisamos, podemos tentar a sorte executando o comando: npm install @types/nomeDaLibOuFramework --save-dev",
+        "A sintaxe de módulos do ES2015 considera cada script um módulo e através das instruções import e export importamos e exportamos artefatos respectivamente.",
+        "TypeScript oferece o conceito de namespace. Podemos agrupar classes dentro de um mesmo namepace e acessá-las através dele.",
+        "O parâmetro escapar é opcional, adicionando ? ao final de sua declaração. Parâmetros opcionais devem ser sempre os últimos parâmetros.",
+        "TypeScript possui o modo strickNullChecks. Neste modo, null e undefined não fazem parte do domínio dos tipos e só podem ser atribuídos a eles mesmos. Com a exceção de undefined, que pode ser atribuído a void. Isso pode ser interessante para evitarmos valores nulos e indefinidos em nosso projeto.",
+    ],
+    "Tipo Any": [
+        "Por padrão, é assumido automaticamente pelo TypeScript quando não definimos o tipo das nossas variáveis.",
+        "É possível desativar o tipo implícito any passando uma configuração especial para o compilador no arquivo tsconfig.json. Isso fará com que o compilador emita um erro em todos os locais que o tipo any foi adotado implicitamente.",  
+        "Quando estamos começando um projeto do zero, a boa prática é desabilitarmos o tipo implícito any e usarmos os tipos corretos em nosso projeto. Contudo, se estamos em um projeto legado que estamos migrando de JavaScript para TypeScript, adotar o tipo implícito any nos ajudará no processo de migração, pois não precisaremos sair tipando todas as variáveis de uma só vez."
+    ],
+    "Tipo Never":[
+        "TypeScript possui um tipo curioso, o tipo never. Este tipo é aplicável à métodos ou funções que por algum motivo, planejado ou não, podem não terminar sua execução de seu bloco.",
+        "Exemplos clássicos são os de métodos que caem em um loop infinito ou de métodos que sempre retornam exceções. Exceções fazem com que o método não execute até o fim.",
+        "Não confundir o tipo never com o tipo void. O segundo, apesar de indicar que a função ou método nada retorna, indica que a função ou método executará até o fim, mesmo que não retorne nada.",
+        "Geralmente não usamos esse tipo em nosso código, mas ele pode aparecer como aviso do compilador. Quando aparecer, você já saberá que a execução do seu método nunca chegará até o fim, sendo um forte indicativo de um bug em seu código."
+    ],
+    "Loader": "É o responsável pelo carregamento do módulo principal da aplicação. A partir desse módulos todas as suas dependências são resolvidas dinamicamente, sem a necessidade de termos que importar cada script individualmente seguindo uma ordem de importação definida.",
+    "Barrel": [
+        "Podemos simplificar bastante a importação dos módulos através da estratégia Barrel (barril). Nela, um módulo importa e exporta todos os artefatos de uma pasta permitindo assim que apenas o barril seja importado na cláusula from.",
+        "Um barril, ou barrel no inglês é uma maneira de centralizarmos em um único módulo a importação de outros módulos. Ele evita a explosão da instrução import diversas vezes em um mesmo arquivo quando esse depende de uma série de outros artefatos."
+    ],
+    "Decorators":[
+        "Em um decorator, um dos parâmetros mais importantes é o descriptor: nos dá acesso a implementação do método decorado através de descritor.value.",
+        "Em TypeScript também podemos criar decoradores de classes. Um decorador de classe nos dá acesso ao constructor da class que estamos decorando.",
+        "Usamos decorator através de um @, seguido do nome do decorator, abrindo e fechando parênteses no final, justo, porque um decorator nada mais é do que uma função."
+    ],
+    "Interface":[
+        "Não podemos usar os modificadores private, protected e public nas propriedades de uma interface. No caso, recebemos a mensagem de erro: 'private' modifier cannot appear on a type member."
+    ]
+}

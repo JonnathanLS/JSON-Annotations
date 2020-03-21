@@ -1,0 +1,10 @@
+"Introdução": [
+	"O Sass é um pré-processador CSS, um CSS com superpoderes, como ele mesmo se denomina. Um desses superpoderes é exatamente o uso de variáveis. Para chamarmos o Sass no CSS utilizamos o cifrão: $cor-padrao: #c24e4b;",
+	"precisamos transformar o arquivo em SCSS, uma das linguagens que o Sass utiliza, a mais parecida com o CSS padrão. Então renomeamos o arquivo com a extensão '.scss'."
+	"O Sass é um pré-processador CSS, então a primeira coisa que devemos fazer é pedir para que ele compile o arquivo "estilos.scss", e faremos isso por meio do terminal. O primeiro passo é entrar na pasta do projeto (em que está o arquivo a ser compilado), depois compilamos o arquivo .scss para criar um .css. O comando da compilação é: sass estilos.scss:estilos.css",
+	"O mixin é um trecho de código transformado em variável. A inserção do conteudo do mixin ocorre através do @include",
+	"No HTML, nós indicamos que um elemento é "filho" de outro quando ele está dentro deste. No Sass, nós temos um recurso interessante para indicar isso, que é o aninhamento (ou nesting, em inglês).",
+	"O uso do "&" é interessante para não repetirmos código Sass. E o recurso de aninhamento (nesting) como um todo é bacana para evitar ficar repetindo parte dos seletores toda vez que precisamos buscar elementos diferentes dentro de uma mesma hierarquia, por exemplo."
+]
+
+Parei na Aula 3

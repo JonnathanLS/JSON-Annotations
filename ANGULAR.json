@@ -1,0 +1,137 @@
+{
+    "Introdução": [
+        "Angular foca em evergreen browsers, isto é, suportará sempre as duas últimas versões vigentes dos navegadores do mercado. Por exemplo, se a última versão do Chrome é 65, ele suportará esta versão e a anterior, apenas.",
+        "O Angular é um conjunto de diversos frameworks, libs, bibliotecas.",
+        "Uma aplicação em Angular é estática, ou seja, roda no navegador, sendo assim alguém precisa fornecer os dados para ela.",
+        "O Decorator é uma sintaxe especial do Angular, do TypeScript, em que é possível incluir uma metainformação sobre uma determinada classe, no caso.",
+        "Internamente, o Angular utiliza um web pack, um module bundle, isto é, um empacotador de módulos famoso, utilizado por Create React App, Vue CLI, e outros frameworks Single Page Application. O interessante é que em nenhum momento estas configurações do web pack são exibidas, pois elas ficam encapsuladas pelo Angular CLI.",
+        "Em um fluxo natural de uma Single Page Application, a aplicação em Angular fica em um servidor A, e a API com os dados e regras de negócio ficam em um servidor B, totalmente independentes.",
+        "Web API é como chamamos o servidor que tem a responsabilidade de fornecer os dados para a aplicação Angular em uma Single Page Application.",
+        "Injeção de dependências (ou Dependency Injection – DI) é um tipo de inversão de controle (ou Inversion of Control – IoC) que dá nome ao processo de prover instâncias de classes que um objeto precisa para funcionar. Trata-se é um padrão de desenvolvimento de programas de computadores utilizado quando é necessário manter baixo o nível de acoplamento entre diferentes módulos de um sistema.",
+        "No conceito de Inversão de Controle (IoC) a classe não mais se preocupa em como conseguir suas dependências, mas sim em apenas trabalhar com elas. O principal jeito de conseguir isso é através da Injeção de Dependências (DI). Essa técnica, presente em diversos frameworks MVC, ajuda muito no desacoplamento e nos testes do nosso sistema.",
+        "Não podemos, em hipótese alguma, importar um BrowserModule em outro local que não seja o módulo principal da aplicação. Porque além das diretivas padrão do Angular, o BrowserModule traz uma série de outros recursos para a aplicação funcionar.",
+        "O CommonModule possui todas as diretivas básicas como NgIf, NgFor, NgForOf etc ",
+        "O BrowserModule possui funcionalidades essenciais para rodar e iniciar a aplicação e só deve ser importado no modulo principal da aplicação.",
+        "Com o Angular, a ideia é que tenhamos o mínimo possível de HTML para trabalhar.",
+        "O Render é um módulo que nos permite manipular o DOM sem termos que digitar o que queremos fazer. Quando fazemos uma renderização do lado do servidor, não há DOM. Portanto, se formos utilizar o Render para manipulação do DOM, garantimos que o código não dará problemas durante a renderização de back end, e assim por diante."
+    ],
+    "Data Biding": [
+        "O Angular se tornou famoso na época em que foi lançado por causa de um recurso chamado Data binding, ou 'associação de dados'",
+        "A ideia do Angular com Data binding é justamente evitar perda de tempo manipulando DOM, e que possamos fazer algo que realmente vá agregar ao nosso cliente.",
+        "O Data binding implica em uma associação de dados com uma fonte de dados que, no nosso caso, está no componente, com seu template (nomenclatura do Angular), ou view. Nele, quando encontramos esta sintaxe chamada de Angular expression (AE), e quando o Angular for renderizar este template do componente, ele se deparará com uma lacuna, que neste caso está apontando para a propriedade desejada.",
+        "One way data binding ('data binding unidirecional'), isto porque os dados saem do componente, da fonte de dados, e vão para o template, no entanto não fazem o caminho contrário, e é importante frisarmos isto.",
+        "Quando formos realizar Data binding com atributos HTML do nosso component, usaremos os colchetes. E quando formos exibir um valor em uma tag, ou isoladamente, usaremos uma Angular Expression."
+    ],
+    "Component": [
+        "Em Angular, tudo é um componente, capaz de guardar um comportamento, o CSS, e a marcação HTML, a estrutura, em um único local.",
+        "Um componente obrigatoriamente precisa pertencer a um módulo.",
+        "Todo componente Angular possui um ciclo de vida",
+        "O nome do arquivo .ts no qual iremos programar o nosso componente é todo em lower case, ou seja, em caixa baixa, e seguido por .component. Trata-se de uma convenção que não podemos deixar de seguir.",
+        "Se quiséssemos criar um menubar.component.ts e, no nome do menu utilizarmos Pascal Case, ficaria MenubarComponent, mesma definição que ocorre em Java, C# e afins. Outro exemplo é que caso o nome do componente seja calopsita, usaremos calopsita.component.ts, e o nome da classe será CalopsitaComponent.",
+        "Inbound properties Permite que o componente receba valores externos quando usado na forma declarativa no template de outros componentes.",
+        "Componentes declarados no array declarations de um módulo são visíveis para os componentes também declarados no array.",
+        "Quando um componente tem escopo de página, não precisando de um selector e não sendo preciso usá-lo em outro componente, para o sistema de módulos, basta que ele seja carregado por meio de um deles.",
+        "Quando abraçamos a ideia de componentização, a ideia é vermos menos tags HTML em nossos templates e mais componentes. Esses componentes encapsulam HTML, CSS e JavaScript.",
+        "Componentes que declaram variáveis de template guardam nessas variáveis uma referência para eles. Essas referências podem ser acessadas em qualquer lugar do template, inclusive serem passadas como parâmetros de métodos chamados por eventos.",
+        "Comunicação de componentes entre elemento filho e pai pode ser realizada por meio de output properties. As propriedades são criadas através de propriedades decoradas com o decorator Output cujo o valor é um instância de EventEmitter.",
+        "Comunicação de componentes entre um elemento pai e um filho pode ser realizada través de inbound properties. Essas propriedades são decoradas com o decorator Input."
+    ],
+    "Diretivas":[
+        "Todo componente é uma diretiva que possui template. No entanto, uma diretiva em seu estado bruto não possui templates.",
+        "Podemos usar uma diretiva como atributo envolvendo o valor do seu seletor entre colchetes",
+        "Podemos injetar no constructor da diretiva uma referência para o elemento no qual ela foi associada. Angular nos dá acesso ao elemento através do wrapper ",
+        "A diretiva router-outlet atua como uma grande lacuna para exibição de outros componentes."
+    ],
+    "Módulo": [
+        "Módulo de um programa é um artefato de programação que pode ser desenvolvido e compilado separadamente de outras partes do programa. São ficheiros com código que permitem aumentar as capacidades das linguagens de programação.",
+        "Em se tratando de componentes, para o Angular um módulo é uma maneira de agruparmos componentes afins. Vamos supor que iremos criar um Data table, formada por vários componentes — cabeçalho da tabela, rodapé, coluna, e por aí vai. Isso tudo se relaciona a um único Data table, sendo assim, poderemos ter um módulo na aplicação, no qual agregaremos todos estes componentes.",
+        "O módulo, então, é uma forma de organizarmos a nossa aplicação."
+    ],
+    "Indefinidos" :[
+        "Com a configuração providedIn (um objeto JavaScript cujo valor é root), sinalizamos que quando o Angular for criá-lo, será no escopo raiz, isto é, qualquer componente da nossa aplicação que precisar de PhotoService o terá disponível.",
+        "Para o Angular identificar o que será a index.html, ela não carregará <app-root>, e sim funcionará como uma grande lacuna, a qual, de acordo com os endereços digitados, fará um 'de/para', verificando origem da rota e tomando uma ação adequada com o componente correspondente. Chamamos esta rota de path, um caminho.",
+        "A associação de eventos se difere ao uso de colchetes, como em um Data binding regular, cujo dado vem da fonte de dados (componente) para o template, nunca o caminho inverso. Já quando utilizamos os parênteses, fazemos exatamente o oposto, isto é, o evento é disparado, indo da view do template para o componente. É importante entendermos que estes bindings são unidirecionais, cada qual percorrendo um caminho diferente.",
+        "É importante entendermos que os bindings são unidirecionais, cada qual percorrendo um caminho diferente. ",
+        "O root module, ou 'módulo raiz', e que, ao ser carregado, carrega todos os módulos necessários.",
+        "Model Driven Forms, utiliza a regra de validação no componente, e não no template. Isto é, programando as regras de validação, e por consequência é possivel ter o type checking, autocomplete, tudo que o TypeScript tem a nos oferecer.",
+        "No angular.json, existe uma série de configurações que dizem respeito ao build do projeto, tanto que nele há chaves referentes a styles e scripts. Estas propriedades servem inicialmente para carregarmos em styles todos os CSSs globais da aplicação, ou seja, os que serão aplicados em todos os componentes, bem como os scripts globais, os quais não pertencem a nenhum componente específico.",
+        "No roteamento: o Angular sim interpreta a URL e verifica se há um roteamento associado. Se não tiver nenhum roteamento que serve, é mostrado um erro no console.",
+        "O ElementRef é o que chamamos de wrapper, uma 'embalagem' que o Angular usa nos elementos do DOM a serem trabalhados.",
+        "O ideal é evitarmos manipulação do DOM diretamente, pois caso a aplicação — que está renderizando do lado do back end — acessar elementos do DOM, isso pode causar problemas no Angular Universal, ou qualquer tecnologia de renderização do back end, o tal do Server Side Rendering.",
+        "Às vezes o Angular não leva em consideração a rota que incluímos, resultando em erros na aplicação. Para garantir que isso não ocorra, toda vez que usarmos o AuthGuard, a dica é reiniciar o Angular CLI.",
+        "Variaveis de Template -> Quando adicionada em um elemento do DOM, ela nos dará acesso ao elemento -> Quando adicionada em um componente, nos dará acesso ao componente permitindo invocar métodos e acessar suas propriedades.",
+        "O operador switchMap cancela o Observable anterior passando o fluxo para um novo Observable, garantindo assim que a emissão tenha apenas o valor emitido pelo Observable retornado por switchMap.",
+        "Em uma requisição do tipo get com o serviço HttpClient, podemos estipular o tipo retornado pelo método, caso contrário seu retorno padrão será Observable",
+        "A respeito da tipagem do retorno de API´s acessadas através do serviço HttpClient: Ajuda na refatoração do sistema toda vez que a API no servidor mudar;  Permite lançar mão da checagem estática, inclusive o autocomplete.",
+        "O serviço Renderer é muito útil quando estamos renderizando a aplicação no lado do server, por exemplo, através do Angular Universal, trata-se de uma abstração para modificarmos propriedades do DOM.",
+        "Através do operador catchError do Rxjs 6.X podemos tratar erros, evitando assim que se propague para quem realizou a inscrição no Observable.",
+        "Angular possui um serviço dedicado para alterar o title das páginas. O nome do serviço e o nome do método utilizado para realizar a alteração do título são: Title, setTitle ... respectivamente. ",
+        "O sistema de rotas do Angular permite que o desenvolvedor pendure informações nas configurações de rota para que mais tarde sejam obtidas através dos componentes carregadas por ela.",
+        "Sobre rotas: uma instância de Router possui a propriedade events, um Observable que nos permite saber a fase atual da rota acessada pela aplicação ... e um evento do tipo NavigationEnd é aquele disparado quando a rota termina com sucesso.",
+        "Os interceptadores ... São classes que implementam a interface HttpInterceptor. Não basta criarmos um interceptador, ele precisa ser registrado na aplicação para que esteja ativo.",
+        "A biblioteca Stacktrace.js permite que o desenvolvedor padronize facilmente a exibição da stack do jeito que achar melhor ... e o método StackTrace.fromError transforma a stacktrace de um Error em um array no qual cada item do array é uma stackframe. Sendo um array, podemos aplicar os métodos de transformação presentes em um Array para chegarmos na exibição que desejamos.",
+        "Através de Injector.get(NomeDaDependencia) temos acesso a uma instância criada pelo injector do Angular. Caso a instâncias tenha dependências, elas serão resolvidas pelo contêiner de injeção do Angular.",
+        "Podemos consultar se o formulário já foi submetido ou não através com auxílio de uma variável de template que guarda como valor uma referência para: ngForm ... supondo que a variável de template se chame xyz, através de xyz.submitted sabemos se o formulário foi submetido ou não, inclusive podemos utilizar essa condição para exibição das mensagens de validação.",
+        "Um validador crossfield nada mais é do que uma função. Ela recebe como parâmetro um objeto do tipo: FormGroup."
+        ],
+    "Rotas":[
+        "O guarda de rotas serve para darmos consistência para nossa aplicação, liberando acesso apenas para as rotas que fazem sentido para nosso usuário.",
+        "Para fazer rotas da aplicação, o Angular utiliza o que chamamos de HTML5 mode, o histórico da API do navegador, para que seja possível trabalhar com URLs sem a necessidade do #.",
+        "Em Angular ... a separação de código do sistema, chamamos de Code splitting. Com isso, definiremos os módulos que queremos separar e carregar sob demanda. Ex: Em um sistema existe a parte de admin, cujo acesso normalmente é restrito, e todos os seus elementos e componentes não precisam ser carregados na inicialização da página, e sim apenas quando o usuário quiser, e então o Angular baixará e fará funcionar apenas uma parte (chunk) do módulo.",
+        "No Lazy loading, em tradução livre, 'carregamento preguiçoso', o Angular não carregará parte do código da aplicação até que o usuário queira, acessando uma rota, e assim em diante.",
+        "Na definição das rotas, cria-se o módulo a ser carregado preguiçosamente e, no momento em que formos compilar as rotas para dentro do módulo, não devemos utilizar forRoot(), pois quem fará isto é o módulo principal de rotas da aplicação.",
+        "Se queremos carregar um módulo preguiçosamente, ele não pode ser importado no módulo principal da aplicação."
+    ],
+    "Observable":[
+        "O Angular é um framework que utiliza TypeScript, linguagem criada pela Microsoft, que usa o RxJS — e o observable vem dele —, tecnologia muito poderosa para lidar com operações assíncronas. Por ser mais rico, no Angular 2 preferiram utilizar o Observable em vez de Promise, por padrão.",
+        "Um observable é lazy (preguiçoso), pois só vai buscar os dados se tiver alguém inscrito nele (observable.subscribe()). Mas para não termos que ficar declarando esta variável, podemos encadear uma chamada diretamente, solicitando o get() e então um subscribe().",
+        "O subscribe() recebe dois parâmetros, sendo o primeiro deles o callback a ser chamado caso haja sucesso, e o segundo a ser chamado passando o erro que vem do back end.",
+        "Com o Async pipe conseguimos capturar a emissão do Observable diretamente do nosso template.",
+        "O async pipe realize a inscrição (subscribe) em um Observable. Ex.: (variavel | async) as interface",
+        "Observables associados ao pipe async são liberados quando o componente cujo o template faz parte é destruído, livrando o desenvolvedor desta responsabilidade.",
+        "O pipe async permite que o template de um componente realize a inscrição de um observable fornecendo o valor emitido diretamente no template."
+    ],
+    "OnInit":[
+        "A fase OnInit ocorre depois da instanciação de AppComponent, e depois do componente receber as inbound properties."
+    ],
+    "OnChanges":[
+        "Obriga a classe a implementar o método ngOnChanges. Métodos de uma interface deve ser implementados, caso contrário haverá um erro de compilação.",
+        "Um objeto do tipo SimpleChanges possui uma propriedade de mesmo nome da inbound property que sofreu mudança. Basta haver a presença da propriedade para sabermos que houve alguma mudança.",
+        "O método ngOnChanges, quando chamado pelo próprio framework, recebe como parâmetro uma instância de SimpleChanges. É através da instância de SimpleChanges conseguimos saber sobre as mudanças ocorridas nas inbound properties do component."
+    
+    ],
+    "Pipes":[
+        "Pipes ('tubos', em português) podem gerar transformações nos dados, e que podemos criar os nossos. Para que seja um Pipe, sua classe deve ser anotada com o decorator @Pipe, além de implementar o método transform(), que possui determinada assinatura (parâmetros).",
+        "Quando implementarmos a interface PipeTransform somos obrigados a implementar o método transform(), passando todos os seus parâmetros necessários, caso contrário nosso arquivo .ts jamais compilará. Implementamos uma interface em TypeScript da seguinte maneira: export class FiltroPorTitulo implements PipeTransform { ... }"
+    ],
+    "Resolver":[
+        "Por meio do Resolver, conseguimos lidar com dados durante a navegação de uma rota para disponibilizá-los a um componente antes deste ser carregado.",
+        "A motivação por trás do Resolver — esta na resolução de dados assíncronos dos quais o componente depende antes de ser ativado, no momento em que ativamos a rota, antes mesmo dela avaliar tal componente."
+    ],
+    "Output Property":[
+        "O nome da output property é o mesmo nome do evento utilizado por aqueles que desejam interagir com o componente.",
+        "São propriedades decoradas com o decorator Output.",
+        "Não basta aplicar um decorator específico, é necessário que a propriedade seja uma instância de EventEmitter."
+    ],
+    "Model Driven Forms": [
+        "A regra de validação fica no componente, e não no template. Isto é, programaremos as regras de validação, e por consequência teremos type checking, autocomplete, tudo que o TypeScript tem a nos oferecer.",
+        "Ao usarmos um formulário no Angular, obrigatoriamente o FormsModule precisa estar importado. Por padrão, o Angular tenta colocar um controlador de formulários para nós, e isto só é possível após a importação de FormsModule",
+        "Importando o módulo ReactiveFormsModule podemos ter acesso ao FormBuilder, a instância utilizada para criar validações diretamente no componente.",
+        "Para realizarmos uma validação baseada em um modelo — Model Driven Forms —, é necessário criar um propriedade de tipo FormGroup. E que para criar o formulário, precisa-se de um formBuilder para a injeção de dependências. Além disto, é preciso implementar o OnInit, e para cada input do formulário teremos no objeto uma propriedade JavaScript, sendo obrigatório aplicar uma validação para cada uma delas, com Validators.required.",
+        "Todo Validator recebe como parâmetro um AbstractControl, tendo que Control seria a parte do input do formulário, com a qual o usuário interage. A ideia é que, caso não haja erros de validação, o retorno seja nulo. Caso contrário, o retorno será de um objeto JavaScript com alguma propriedade, que receberá um valor true e será acessada no template.",
+        "No Angular, o responsável pela criação da validação required precisará retornar um objeto com esta propriedade de valor true, e é assim que sabemos se o componente possui algum problema. Isso justifica o uso do Safe navigation operator, ?. Não importa o grau de complexidade do validador que criemos, trata-se sempre de uma função ou classe que pode ter um método que recebe um AbstractControl"
+    ],
+    "Token e Seegurança":[
+        "Um token para comunicação entre serviços, entre cliente e back end: pode ser no padrão JWT (J*son *Web Token). Um dos algoritmos de criptografia usado em sua assinatura é o HMAC SHA256 (HS256). O token pode ser decodificado",
+        "É comum pensarmos que todo token enviado pode ser descriptografado, o que não deixa de ser verdade, mas é importante nos indagarmos se as informações que colocamos são sensíveis, como dados bancários ou senhas.",
+        "É possível descriptografar um token, mas para torná-lo um JWT novamente e enviá-lo ao back end de forma válida, será preciso conhecer este passphrase, a frase utilizada pelo back end para gerar o token. Ou seja, qualquer alteração, por mínima que seja, obrigatoriamente alterará a assinatura do token."
+    ],
+    "Documentação":[
+        "*ngForé uma 'diretiva estrutural'. As diretivas estruturais moldam ou remodelam a estrutura do DOM, geralmente adicionando, removendo e manipulando os elementos aos quais estão anexados. Qualquer diretiva com um asterisco,, *é uma diretiva estrutural.",
+        "Os componentes definem áreas de responsabilidade na interface do usuário, ou na interface do usuário, que permitem reutilizar conjuntos de funcionalidades da interface do usuário.",
+        "Um componente consiste em três coisas: Uma classe de componente que lida com dados e funcionalidade. Um modelo HTML que determina a interface do usuário. Estilos específicos de componentes que definem a aparência.",
+        "O decorator @Component() indica que a classe é um componente e em seus metadados é possivel qualificar o nome de seu seletor, modelos e estilos. O selector identifica o componente e é o nome atribuido ao componente Angular quando é renderizado como um elemento HTML na página. Por convenção, os seletores de componentes angulares começam com o prefixo app-, seguido pelo nome do componente. Os nomes de arquivo de modelo e estilo fazem referência aos arquivos HTML e CSS.",
+        "O roteador Angular permite mostrar diferentes componentes e dados ao usuário com base em onde o usuário está no aplicativo. O roteador permite a navegação de uma visualização para a seguinte, conforme os usuários executam tarefas do aplicativo. Uma rota associa um ou mais caminhos de URL a um componente.",
+        "O ActivatedRoute é específico para cada componente roteado carregado pelo roteador angular. Ele contém informações sobre a rota, seus parâmetros e dados adicionais associados à rota."
+    ]
+}

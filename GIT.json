@@ -1,0 +1,92 @@
+{
+    "Commit": [
+        "Um commit em um repositório git registra uma fotografia (snapshot) de todos os arquivos no seu diretório. É como um grande copy&paste, mas ainda melhor!",
+        "O Git tem por objetivo manter os commits tão leves quanto possível, de forma que ele não copia cegamente o diretório completo toda vez que você commita. Ele pode (quando possível) comprimir um commit como um conjunto de mudanças (ou um 'delta') entre uma versão do seu repositório e a seguinte.",
+        "O Git também mantém um histórico de quando ocorreu cada commit. É por isso que a maioria dos commits tem ancestrais acima de si -- que indicamos usando setas na nossa visualização. Manter a história é ótimo para todos que trabalham no projeto!",
+        ],
+    "Anotações": [
+        "Anotação: 'git push origin master' ... pode ser traduzido para o seguinte em Português: Vá ao ramo chamado 'master' no meu repositório local, pegue todos os commits, então vá ao ramo 'master' no repositório remoto chamado 'origin'. Coloque quaisquer commits que estiverem faltando nesse ramo, e então me diga quando estiver pronto.",
+        "Para especificar tanto a origem como o destino do <lugar>, simplesmente juntamos os dois usando dois-pontos: 'git push origin <origem>:<destino>' ... Isso é geralmente chamado de 'colon refspec' (especificação de referência com dois-pontos). Refspec é só um nome extravagante para um local que o Git consiga entender (como o ramo foo ou mesmo HEAD~1)",
+        "Se você passar um lugar ao git fetch, como no seguinte comando: 'git fetch origin foo' ... o git vai ao ramo remoto foo e pega todos os commits que não estão presentes localmente, jogando-os no ramo local o/foo. Você só não pode baixar commits em um ramo que esteja atualmente em checkout, mas se não estiver, o Git permitirá o fetch.",
+        "O básico do Git consiste em -- commitar, criar ramos, e mover-se pela árvore. Apenas esses conceitos já são suficientes para utilizar 90% do poder dos repositórios Git, e cobrem as principais necessidades dos desenvolvedores. Os 10% restantes, entretanto, podem ser extremamente úteis em fluxos de trabalho complexos (ou quando você estiver em uma enrascada)."    
+    ],
+    "Estados dos Arquivos": {
+        "Artigo": "https://pt.stackoverflow.com/questions/326086/quais-as-diferen%C3%A7as-entre-os-estados-dos-arquivos-do-git-untracked-unmodified",
+        "Resumo": [
+            "Untracked é o estado onde o arquivo ainda não foi 'rastreado'.",
+            "Unmodified é o estado onde o arquivo não sofreu alterações em relação a sua referência.",
+            "Modified é o estado onde o arquivo sofreu alterações em relação a sua referência.",
+            "Staged é o estado onde o arquivo já foi endereçado e aguarda ser transferido ao repositório."
+        ]
+    },
+    "Ramificação":[
+        "Ramos no Git também são incrivelmente leves. Eles são simplesmente referências a um commit específico -- e nada mais. É por isso que muitos entusiastas do Git entoam o mantra: ramifique cedo, ramifique sempre",
+        "Devido a não existir sobrecarga de armazenamento / memória associada à criação de ramos, é mais fácil dividir logicamente o seu trabalho do que ter ramos grandes e gordos."
+    ],
+    "União":[
+        "O merge do Git cria um commit especial que possui dois pais únicos.",
+        "Um commit com dois pais essencialmente significa 'Quero incluir todo o trabalho deste pai aqui com o daquele outro pai ali, e com o do conjunto de todos os seus ancestrais.'",
+        "O rebase essencialmente pega um conjunto de commits, 'copia' os mesmos, e os despeja em outro lugar.",
+        "A vantagem do rebase é que ele pode ser usado para construir uma sequência mais bonita e linear de commits. O registro de commits (história do repositório) ficará muito mais limpa se for utilizado apenas rebase em vez de merge."
+    ],
+    "Cabeçalho ( Head )": [
+        "HEAD é um nome simbólico para o commit atualmente ativo (que sofreu checkout por último) -- é essencialmente o commit sobre o qual você está trabalhando no momento.",
+        "O HEAD sempre aponta para o commit mais recentemente copiado sobre a árvore de trabalho (arquivos do projeto). A maioria dos comandos do git que realizam mudanças sobre a árvore de trabalho começarão mudando o HEAD.",
+        "Normalmente o HEAD aponta para o nome de um ramo (por exemplo, bugFix). Quando você commita, o status do bugFix é alterado e essa mudança ocorre também sobre o HEAD."
+    ],
+    "Referências Relativas":[
+        "Especificar commits pelo hash não é a sempre o mais conveniente, e é por isso que o Git suporta referências relativas. Com referências relativas, você pode começar a partir de um ponto fácil de lembrar (como o ramo bugFix ou o HEAD) e referenciar a partir dali.",
+        "Commits relativos são poderosos, mas vamos introduzir apenas dois tipos simples aqui: Mover para cima um commit por vez com ^ ... Mover para cima um número de vezes com ~<num>",
+        "Uma das situações mais comuns na qual eu uso referências relativas é quando quero trocar ramos de lugar. Você pode redefinir diretamente o commit para o qual um ramo aponta com a opção -f. Desta forma, o seguinte comando: git branch -f master HEAD~3 ... Move (à força) o ramo master 3 ancestrais acima do HEAD."
+    ],
+    "Cherry-Pick": "O cherry-pick trata-se de uma forma bastante direta de dizer que você gostaria de copiar uma série de commits abaixo do seu local atual (HEAD).",
+    "Rebase": "Na janela do REBASE interativo, você pode fazer 3 coisas diferentes: Você pode reordenar os commits simplesmente mudando sua ordem na interface. Você pode escolher simplesmente omitir alguns commits. Para isso, clique no botão pick -- deixar o pick desligado significa que você quer descartar o commit. Por fim, você pode 'esmagar' (fazer squash) nos commits (combina-los)",
+    "Tags":[
+        "As tags do Git foram criadas exatamente para esse caso de uso -- elas marcam de forma (relativamente) permanente certos commits como se fossem 'pedras de kilometragem' ('milestones') em uma estrada, e você pode referenciá-las exatamente como faz com ramos.",
+        "Tags nunca se movem sozinhas quando novos commits são criados. Você pode fazer 'checkout' em uma tag e então completar trabalho nessa tag -- tags existem como âncoras na árvore de commits que estão atreladas a certos pontos.",
+        "Devido ao fato de as tags servirem como 'âncoras' tão boas no código, o Git tem um comando para descrever onde você está com relação à 'âncora' (tag) mais próxima. Esse comando é chamado git describe!"
+    ],
+    "Describe":[
+        "O git describe pode ajudar a recuperar a sua orientação depois de você ter se movido muitos commits para trás ou para frente no histórico; isso pode acontecer depois de você completar um git bisect (uma busca para debug) ou quando se sentar no computador de um colega que acabou de voltar de férias.",
+        "O git describe é chamado da seguinte forma: git describe <ref> Onde <ref> é qualquer coisa que o git possa resolver como uma referência a um commit. Se você não especificar o ref, o Git usa simplesmente o commit atual (HEAD). A saída do comando é mais ou menos assim: <tag>_<numCommits>_g<hash> onde tag é a tag ancestral mais próxima no histórico, numCommits é o número de commits de distância da tag, e <hash> é o hash do commit sendo descrito."
+    ],
+    "Modificadores": "Assim como o modificador ~, o modificador ^ também aceita um número opcional depois dele. Em vez de especificar o número de gerações a voltar (que é o que o ~ faz), o modificador no ^ especifica qual referência de pai a ser seguida a partir de um commit de merge. Lembre-se que commits de merge possuem múltiplos pais, então o caminho a seguir é ambíguo. O Git normalmente subirá o 'primeiro' pai de um commit de merge, mas especificar um número após o ^ muda esse comportamento padrão.",
+    "Reversão":[
+        "Existem várias maneiras de reverter mudanças no Git. E assim como o ato de commitar, reverter mudanças no Git também tem um componente de baixo nível (a preparação, ou staging, de arquivos ou trechos de arquivos individuais) e um componente de alto nível (como as mudanças são, de fato, revertidas).",
+        "Há duas maneiras principais de desfazer mudanças no Git -- uma delas é usando git reset, e a outra é usando git revert.",
+        "O comando git reset reverte mudanças movendo para trás no tempo (para um commit mais antigo) a referência do ramo. Desta forma, você pode pensar nessa operação como uma 'reescrita do histórico'; o git reset vai mover o ramo para trás como se o commit nunca tivesse existido.",
+        "Embora o reset funcione muito bem em ramos locais no seu próprio computador, o método utilizado de 'reescrever o histórico' não funciona com ramos remotos que outras pessoas estejam usando. Para reverter mudanças e conseguir compartilhar essas mudanças com os outros, precisamos usar o git revert."
+    ],
+    "Repositórios Remotos":[
+        "Ramos remotos possuem uma convenção obrigatória de nomes -- eles são mostrados no seguinte formato: <nome do repositório remoto>/<nome do ramo>",
+        "Não são algo muito complicado. Nos dias atuais de computação em nuvem, seria fácil pensar que existiria muita mágica por trás dos remotos do Git, mas não é o caso -- eles são na verdade apenas cópias do seu repositório em outro computador. Você pode geralmente comunicar-se com esse outro computador por meio da Internet, o que permite que você transfira commits de um lado para o outro.",
+        "Servem como um ótimo backup! Repositórios Git locais possuem a habilidade de restaurar um arquivo para um estado anterior (como você sabe), mas toda a informação está guardada localmente. Tendo cópias do seu repositório Git em outros computadores, mesmo se você perder todos os seus dados locais, ainda terá como recomeçar do mesmo ponto de onde você tinha parado.",
+        "Tornam o desenvolvimento uma atividade social! Agora que uma cópia do seu projeto está hospedada em outro lugar, outros colaboradores podem contribuir para o projeto (ou obter as suas últimas alterações) de uma forma bastante simples.",
+        "O git clone do mundo real é um comando que se usa para criar cópias locais de repositório remotos (do GitHub para o seu computador, por exemplo)",
+        "Ramos remotos refletem o estado de repositórios remotos (desde a última vez na qual você falou com eles). Eles ajudam a entender as diferenças entre o trabalho local e o trabalho atualmente público -- um passo crítico a ser dado antes de compartilhar seu trabalho com os outros.",
+        "Ramos remotos possuem a propriedade especial de, ao sofrerem um checkout, colocarem o repositório em modo 'Detached HEA'. O Git faz isso de propósito, porque você não pode trabalhar nesses ramos diretamente; você é obrigado a trabalhar em outro lugar e só então compartilhar seu trabalho com o remoto (depois disso, os ramos remotos serão atualizados).",
+        "O git fetch realiza dois passos principais, e somente estes dois passos principais. Ele: baixa os commits que o repositório remoto possui mas que estão faltando no repositório local, e ... atualiza a referência para a qual os ramos remotos (por exemplo, origin/master) estão apontando",
+        "O git fetch essencialmente faz com que nossa representação local do repositório remoto fique sincronizada com a forma com que o repositório remoto de fato se parece (naquele momento).",
+        "O git fetch, no entanto, não muda nada do estado local do repositório. Ele não atualiza o seu ramo master nem muda nada na forma como o seu sistema de arquivos está no momento. É importante entender isso, pois muitos desenvolvedores pensam que executar git fetch fará com que o trabalho local reflita o estado do repositório remoto. Ele pode até baixar todos os dados necessários para fazê-lo, mas ele não muda de fato nenhum dos arquivos locais.",
+        "O fluxo de trabalho de executar fetch para baixar as mudanças remotas e depois fazer um merge delas é tão comum que o Git na verdade fornece um comando que faz ambas as coisas de uma vez só! Esse comando é o git pull.",
+        "Pull é essencialmente um caminho mais curto para executar um git fetch seguido de um merge de seja já qual ramo tiver sido baixado.",
+        "O git push é responsável por subir as suas mudanças para um repositório remoto especificado, e atualizar esse remoto para incorporar seus novos commits. Uma vez que o git push se completa, todos os colaboradores podem baixar o seu trabalho do repositório remoto.",
+        "O comportamento de git push sem argumentos varia dependendo da configuração push.default do Git. O valor padrão para essa configuração depende da versão do Git que você estiver usando. Isso não é um grande problema, mas vale a pena verificar suas configurações antes de fazer push nos seus próprios projetos.",
+        "O git pull e ele é simplesmente um atalho para um fetch e um merge. Convenientemente, entretanto, o comando git pull --rebase é uma abreviação para um fetch e um rebase!",
+        "Durante uma operação de pull, os commits são baixados em origin/master e então são mergidos no ramo master. O alvo do merge é determinado a partir dessa conexão.",
+        "Durante uma operação de push, o trabalho do ramo master local é enviado para o ramo master remoto (que é representado localmente por origin/master). O destino do push é determinado da conexão entre master e origin/master.",
+        "A conexão entre master e origin/master é explicada pela propriedade de 'remote tracking' dos ramos. O ramo master é configurado para seguir o ramo origin/master -- isso significa que existe um alvo implícito de merge e um destino implícito de push para o ramo master.",
+        "Durante a clonagem, o Git cria um ramo remoto para cada ramo que existe no repositório remoto (ou seja, ramos como o origin/master). Ele cria então um ramo local que segue o ramo atualmente ativo no repositório remoto, que geralmente é o master.",
+        "O git pull no final das contas é realmente apenas um atalho para um fetch seguido de um merge em seja lá o que acabou de ser baixado. Você pode pensar nele como rodar o git fetch recebendo os mesmos argumentos, seguido de um merge no lugar onde esses commits foram parar."
+    ],
+    "Merge": [
+        "Imagine que você clonou um repositório na segunda-feira e começou a trabalhar em uma funcionalidade nova. Na sexta-feira você está pronto para publicar a funcionalidade -- mas, ah não! Seus colegas escreveram um bocado de código durante a semana, tornando a sua funcionalidade obsoleta. Eles também publicaram esses commits no repositório remoto que vocês compartilham, então agora o seu trabalho é baseado em uma versão antiga do projeto, que não é mais relevante.",
+        "Neste caso, o comando git push é ambíguo. Se você executar git push, será que o Git deveria tratar o repositório remoto como se ele ainda estivesse no estado da segunda-feira? Será que ele deveria tentar adicionar seu código dentro do repositório sem tentar remover o código novo? Ou será que ele deveria simplesmente ignorar suas mudanças totalmente, já que elas estão obsoletas?",
+        "Devido à grande ambiguidade que surge neste tipo de situação (quando a história divergiu), o Git não permite que você faça push das suas mudanças. Ele, de fato, força você a incorporar o último estado do repositório remoto antes de conseguir compartilhar o seu trabalho."
+    ],
+    "Rebase vs Merge":[
+        "O rebase faz a sua árvore de commits parecer bastante limpa, já que tudo fica em uma linha reta.",
+        "O rebase modifica o histórico aparente da sua árvore de commits.",
+        "Alguns desenvolvedores adoram preservar o histórico e, portanto, preferem o merge. Outros preferem ter uma árvore de commits limpa, obtida usando rebase. Tudo se resume ao gosto pessoal."
+    ]
+}

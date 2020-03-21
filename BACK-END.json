@@ -1,0 +1,587 @@
+{
+    ".JAR & WAR" : [
+        "JAR significa nada mais do que Java ARchive.",
+        "É o formato padrão do mundo Java para distribuir código compilado.",
+        "Nada mais do que um arquivo ZIP, mas como a extensão .jar",
+        "WAR é o ZIP de projetos Java Web, que você roda de dentro de um servidor como o Tomcat. JAR é o ZIP para projetos comuns, que não são Web.",
+        "JAR e WAR são nada mais do que arquivos ZIP, no entanto um WAR possui os arquivos do mundo web como imagens, CSS, JS, JSP e HTML."
+    ],
+    "Variáveis e Primitivos":[
+        "Uma variável é um objeto normalmente localizado na memória utilizado para representar valores, quando declaramos uma variável estamos associando seu nome (identificador) ao local da memória onde está armazenado sua informação, as variáveis em Java podem ser do tipo primitivo ou objeto.",
+        "Variáveis primitivas: podem ser do tipo byte, short, int, long, float, double, char ou boolean.",
+        "Variáveis de referência: usada para referenciar um objeto. Quando usamos uma variável de referência definimos qual o tipo do objeto ou um subtipo do tipo do objeto (veremos isso mais para frente).",
+        "Quando declaramos uma variável primitiva, estamos associando está a um espaço na memória que vai guardar o seu valor. No caso da variável de referência, podemos tê-la apontando para algum lugar vazio (null) ou para algum espaço da memória que guarda os dados de um objeto.",
+        "As variáveis primitivas e de referência são guardadas em locais diferentes da memória. Variáveis primitivas ficam em um local chamado stack e as variáveis de referência ficam em um local chamado heap.",
+        "A linguagem Java não é totalmente Orientada a Objetos, e isto se deve principalmente aos atributos do tipo primitivo, pois são tipos de dados que não representam classes, mas sim valores básicos.",
+        "Os tipos primitivos, assim como em várias outras linguagens tais como o C, existem para representar os tipos mais simples de dados, sendo eles dados numérico, booleano e caractere.",
+        "O char é quase um tipo numérico. Ele tem dois bytes, igual o tipo short mas não usa o primeiro bit para guardar o sinal. Em outras palavras, o char só guarda números positivos. Isso significa que o char consegue guardar valores entre 0 e 65536 (2^16)."
+    ],
+    "Construtores": [
+        "Construtores são utilizados para inicialização dos atributos",
+        "O construtor padrão (default) é aquele que não recebe nenhum parâmetro.",
+        "O construtor é chamado na inicialização do objeto.",
+        "O construtor default do java deixa de existir a partir do momento que algum é declarado na classe.",
+        "Na heranção, os construtores não são herdados."
+    ],
+    "Membro Estático": [
+        "A palavra Static serve para dizer que aquele atributo ou método é de propriedade da Classe e não mais do Objeto (instância)", 
+        "Não existe a plavra this dentro de métodos estáticos e só é possivel acessar membros estáticos"
+    ],
+    "Encapsulamento": [
+        "Encapsulamento vem de encapsular, que em programação orientada a objetos significa separar o programa em partes, o mais isolado possível.",
+        "A idéia é tornar o software mais flexível, fácil de modificar e de criar novas implementações.",
+        "O Encapsulamento serve para controlar o acesso aos atributos e métodos de uma classe.",
+        "É uma forma eficiente de proteger os dados manipulados dentro da classe, além de determinar onde esta classe poderá ser manipulada.",
+        "Uma ótima maneira para saber se o comportamento está encapsulado é olhar para o código que faz uso dele! Se conseguirmos dizer o que o método faz, mas sem dizer como ele faz, então podemos afirmar que o comportamento está encapsulado!"
+    ],
+    "Polimorfismo": [
+        "O polimorfismo permite que ... Referências de tipos de classes mais genéricas referenciam objetos mais específicos.",
+        "Objetos não mudam de tipo",
+        "É a capacidade de um objeto ser referenciado por vários tipos.",
+        "Temos polimorfismo quando uma classe extende de outra ou também quando uma classe implementa uma interface.",
+        "A referência pode mudar, e aí entra o polimorfismo",
+        "O polimorfismo permite usar referências mais genéricas para a comunicação com um objeto",
+        "O uso de referências mais genéricas permite desacoplar sistemas.",
+        "Utilizando interfaces temos uma outra forma de conseguir polimorfismo sem herança."
+    ],
+    "Modificadores": [
+        "Temos quatro modificadores: private, protected, default e public. Onde a ordem do MAIS restritivo para o MENOS restritivo é: private, default, protected e public." ,
+        "Existem 3 palavras chaves relacionado com a visibilidade: private, protected, public",
+        "Private (visível apenas na classe),  <package private>> (visível na classe E em qualquer outro membro do mesmo pacote, podendo ser chamado de default), Protected (visível na classe E em qualquer outro membro do mesmo pacote E para qualquer filho), Public (visível em qualquer pacote)",
+        "Os modificadores podem ser usados na definição da classe, atributo, construtor e método",
+        "Os modificadores de acesso são padrões de visibilidade de acessos às classes, atributos e métodos.",
+        "Esses modificadores são palavras-chaves reservadas pelo Java, ou seja, palavras reservadas não podem ser usadas como nome de métodos, classes ou atributos.",
+        "O modificador protected funciona igual ao *<<package private>> mas adiciona a visibilidade para os filhos (chamado de: publico para os filhos).",
+        "A ausência do modificador, também chamado de package private ou default, o membro fica visível na classe e no package, mas é invisível fora do pacote (nem para filhos)."
+    ],
+    "Herança": [
+        "Como usar herança no Java através de palavra chave extends",
+        "Ao herdar a classe filha ganha todas as características (atributos) e todas as funcionalidades (métodos) da classe mãe",
+        "Conhecemos o primeiro benefício da herança: Reutilização do código",
+        "A herança captura o que é comum e isola aquilo que é diferente entre classes."
+    ],
+    "Abstrata": [
+        "Uma classe abstrata representa um conceito, algo abstrato, e o compilador não permite instanciar um objeto dessa classe. Para instanciar é preciso criar primeiro uma classe filha não abstrata.",
+        "Um método abstrato define apenas a assinatura (visibilidade, retorno, nome do método e parâmetros)."
+    ],
+    "Interface": [
+        "Ela é um contrato onde quem assina se responsabiliza por implementar esses métodos (cumprir o contrato).",
+        "Existe apenas herança simples em Java, mas podemos implementar quantas interfaces que quisermos.",
+        "Todos os métodos na interface são sempre abstratos e sempre públicos. Em uma classe abstratos podemos ter métodos concretos e abstrat",
+        "Garante que todos os métodos de classes que implementam uma interface possam ser chamados com segurança.",
+        "Com composições e interfaces teremos mais flexibilidade com nosso código, já que não nos prenderemos ao acoplamento que a herança propõe."
+    ],
+    "Pilha" : [
+        "Uma pilha Java faz parte da JVM e armazena os métodos que estão sendo executados.", 
+        "Além do bloco de código a pilha guarda os variáveis e as referências desse bloco.",
+        "A JVM organiza a execução e sabe exatamente qual método está sendo executado que é sempre o método no topo da pilha."
+    ],
+    "Exceções" : {
+        "Conceitos": [
+            "As exceções são problemas que acontecem na hora de compilar o código, elas possuem nomes explicativos e, às vezes, mostram claramente o motivo de seu surgimento, facilitando a identificação delas.",
+            "Toda exceção em Java possui um nome que a identifica. Essa abordagem torna seu entendimento mais fácil do que o uso de números mágicos (códigos de erros) como 15, 7012 ou 16."
+        ],
+        "Tratamento" : [
+            "Exceções não tratadas caem na pilha de execução procurando por alguém que saiba lidar com ela.",
+            "Para tratarmos uma exceção, que pode ocorrer enquanto nosso programa esta sendo executado, precisamos tratá-la antecipadamente com um bloco de código específico. Exato, justamente o bloco try-catch.",
+            "Através de um | (pipe) na cláusula catch, podemos capturar mais de uma exceção. Com isso, podemos ter um único bloco para tratar um ou mais exceções.",
+            "Para lançar uma exceção, além de instanciá-la, é necessário lançá-la através do throw. Quando a exceção é lançada, o código para de executar abruptamentee e podemos atribuir uma mensagem à exceção",
+            "Que existe um bloco finally, útil para o fechamento de recursos (como conexão) e quando há um bloco finally o bloco catch é opcional, ou que o bloco finally é sempre executado, sem ou com exceção."
+        ],
+        "Hierarquia": [
+            "Existe uma hierarquia grande de classes que representam exceções. Por exemplo, ArithmeticException é filha de RuntimeException, que herda de Exception, que por sua vez é filha da classe mais ancestral das exceções, Throwable. Conhecer bem essa hierarquia significa saber utilizar exceções em sua aplicação.",
+            "Throwable é a classe que precisa ser extendida para que seja possível jogar um objeto na pilha (através da palavra reservada throw)",
+            "A hierarquia iniciada com a classe Throwable é dividida em exceções e erros. Exceções são usadas em códigos de aplicação. Erros são usados exclusivamente pela máquina virtual. Classes que herdam de Error são usadas para comunicar erros na máquina virtual. Desenvolvedores de aplicação não devem criar erros que herdam de Error",
+            "StackOverflowError é um erro da máquina virtual para informar que a pilha de execução não tem mais memória.",
+            "Exceções são separadas em duas grandes categorias: aquelas que são obrigatoriamente verificadas pelo compilador e as que não são verificadas. As primeiras são denominadas checked e são criadas através do pertencimento a uma hieraquia que não passe por RuntimeException. As segundas são as unchecked, e são criadas como descendentes de RuntimeException."
+        ],
+        "Utilidades" : [
+            "Exceções tem um nome e, caso esse nome seja expressivo, documenta o problema que está ocorrendo.",
+            "Exceções podem ter uma mensagem, ou seja, o problema e o estado das variáveis podem ser descritos na mensagem.",
+            "Exceções mudam o fluxo de execução, ou seja, evitam que o problema siga o fluxo 'normal' quando algo excepcional acontece.",
+            "Exceções podem ser tratadas, ou seja, podemos voltar para a execução 'normal' caso o 'problema' esteja resolvido."
+        ]
+    },
+    "Java DOC":{
+        "Afirmações":[
+            "Importante é que as tags do javadoc existem apenas para padronizar alguns dados fundamentais do seu código fonte como o autor e a versão.",
+            "Para declarar um java Doc no código fonte o importante é usar o char / seguidos por 2 chars **",
+            "É preciso ter instalado o JDK para poder gerar a documentação javadoc.",
+            "O javadoc é uma documentação escrita pelo desenvolvedor para desenvolvedores.",
+            "Existem tags especias para marcar o autor ou a versão da classe.",
+            "apenas os membros 'públicos' são contemplados no javadoc. Outros membros (não públicos) são considerados detalhes da implementação e não podemos ser utilizados por outras classes."
+        ]
+    },
+    "Anotações": {
+        "Afirmações" : [
+            "Só entraram na plataforma Java a partir da versão 1.5. O interessante é que as anotações foram inspirados pelas tags do javadoc."
+        ],
+        "Tags": [
+            "@Override: É usada para sobrescrever o método da classe mãe, indicando que o método original foi alterado.",
+            "@author: (usado na classe ou interface)",
+            "@version: (usado na classe ou interface)",
+            "@param: (usado no método e construtor)",
+            "@return: (usado apenas no método)",
+            "@exception ou @throws: (no método ou construtor)",
+            "@Entity: Associamos uma classe a uma tabela utilizando a anotação ",
+            "@Id: Indicamos qual atributo será a chave primária no mundo relacional através da anotação",
+            "@GeneratedValue: através desta anotação podemos indicar que o atributo anotado com @Id será gerado pelo banco de dados."
+        ]
+    },
+    "Pacotes":{
+        "Afirmações":[
+            "Por organização e pela convenção adotada, precisamos seguir o domínio da empresa. Ou seja, se a empresa tem como domínio alura.com.br, os pacotes devem ser subpacotes de br.com.alura.",
+            "Quando um projeto utiliza pacotes, podemos usar o import de outras classes para sua utilização.",
+            "O modificador default do Java restringe acesso a nível de pacote. Logo, se não for definido algum modificador, seja na classe, método, ou atributo, apenas classes do mesmo pacote podem acessar essas informações.",  
+            "FQN (Full Qualified Name) é nome completo da classe, composto pelo nome do pacote e o nome da classe: PACKAGE.NOME_SIMPLES_CLASSE",
+            "Packages são diretórios com significado especial dentro do código fonte Java",
+            "A palavra chave package deve ser a primeira declaração no código fonte Java.",
+            "Packages servem para organização e agrupar as classes e interfaces.",
+            "O package possui apenas os nomes dos diretórios separado pelo caracter . (ponto) e sem o nome da classe",
+            "Só pode ter uma declaração package no código fonte",
+            "A declaração do import é opcional",
+            "É possível repetir a declaração import para importações de packages diferentes",
+            "A definição da classe sempre deve vir por último (após package e import)"
+        ],
+        "java.lang": {
+            "Afirmações": [ 
+                "Possui classes essenciais para qualquer programa .",
+                "Não precisa do import, é automaticamente importado.",
+                "Tem classes fundamentais que qualquer aplicação precisa, como a classe String e System"
+            ]
+        },
+        "Classe String": {
+            "Afirmações":[
+                "Objetos da classe String são imutáveis. Isso significa que, uma vez criado, não podem ser alterado, por isso qualquer alteração cria um novo objeto String.",
+                "A classe String realmente é do pacote java.lang. O FQN é java.lang.String, não há necessidade de importa-la",
+                "qualquer método de alteração da classe String devolve uma nova String que representa a alteração",
+                "A classe String é uma CharSequence [ Interface implementada na classe String ]",
+                "A classe String já possui um método para gerar um hashCode a partir do seu conteúdo. Este método é bem eficiente e confiável."
+            ]
+        },
+        "Classe Object":{
+            "Afirmações": [
+                "Qualquer objeto pode ser referenciado pelo tipo Object, já que ela é a principal.",
+                "Não é preciso deixar explícito na declaração de uma classe que ela deve herdar de Object, porque isso é automático.",
+                "Devemos sobrescrever o método equals para definir a igualdade do objeto. Em geral, os métodos equals, toString e hashCode existem para sobrescrita.",
+                "A implementação do método equals da classe Object, por padrão, compara apenas as referências.",
+                "Não somos obrigados a colocar explicitamente o atributo serialVersionUID, mas é boa prática.",
+                "Qualquer objeto serializado possui a versão da classe. Se não colocarmos o atributo serialVersionUID explicitamente, a versão será gerada na hora de rodar."
+            ]
+        },
+        "java.io":{
+            "Afirmações": [
+                "Fornece classes abstratas genéricas tanto para leitura (InputStream e Reader) quanto para escrita (OutputStream e Writer). Com as classes abstratas não precisamos saber qual a implementação usada na execução do código.",
+                "Temos a divisão entre streams, e readers e writers. InputStream e OutputStream lidam com dados binários, por exemplo imagens e PDFs, já se estivermos lidando com caracteres, utilizamos o Reader ou Writer.",
+                "De forma geral, temos os mundos da entrada Input, e da saída, Output. Estes mundos se subdividem em InputStream e Reader no primeiro caso, e OutputStream e Writer no segundo.",
+                "Há classes que fazem a transição de um mundo para outro, como é o caso da InputStreamReader, que recebe um InputStream de bytes e o transforma em um Reader. Da mesma forma, temos o OutputStreamWriter, que faz o mesmo, só que para a escrita. Estas classes possuem padrões de projetos, próprios do java.io.",
+                "É necessário adicionar throws FileNotFoundException ao método main() ou tratar a criação do FileInputStream com um bloco try-catch. Isso é necessário uma vez que a exceção checked FileNotFoundException pode ser lançada pelo construtor da classe FileInputStream caso o arquivo cujo nome é informado não exista.",
+                "O método ready(), por outro lado, indica se o arquivo está pronto para ser lido!",
+                "FileOutputStream (classe concreta), análoga ao FileInputStream, serve para escrita de dados binários.",
+                "FileWriter é um Writer e não um OutputStream. Para ser mais específico, a classe FileWriter estende a classe OutputStreamWriter, que por sua vez estende a classe Writer. Então o FileWriter é um OutputStreamWriter e é um Writer.",
+                "O PrintWriter é parecido com o PrintStream e já possui vários métodos para imprimir qualquer tipo de dados",
+                "Ao usar System.lineSeparator(), garantimos que a nova linha no arquivo de texto é criada baseada nos caracteres do sistema operacional.",
+                "A classe PrintWriter tem métodos de mais alto nível que já cuidam da nova linha, independente do sistema operacional.",
+                "As classes Scanner e InputStreamReader possuem sobrecargas de construtores que recebem como argumento qual charset será utilizado para fazer a transformação dos bytes em strings. De modo análogo para escrita, a classe PrintWriter também permite informar qual charset será utilizado para transformar a string nos bytes específicos."
+            ]
+        },
+        "java.util": {
+            "Afirmações": [
+                "Um array é uma estrutura de dados e serve para guardar elementos (valores primitivos ou referências)",
+                "Arrays usam colchetes ([]) sintaticamente",
+                "Arrays têm um tamanho fixo! e são zero-based (o primeiro elemento se encontra na posição 0)",
+                "Um array também é um objeto! Repare que usamos new para criar um array.",
+                "Ao acessar uma posição inválida recebemos a exceção ArrayIndexOutOfBoundException",
+                "Arrays possuem um atributo length para saber o tamanho",
+                "Podemos usar as chaves {} para indicar que se trata de um array e os valores já ficam declarados dentro das chaves.",
+                "Cada posição do array é inicializada com o valor padrão. Ex.: no tipo int o valor padrão é 0, no double o valor padrão é 0.0.",
+                "Literal, nesse contexto, significa usar valores diretamente, menos burocrático, mais direito. Veja a diferença: int[] refs = {1,2,3,4,5};"
+            ],
+            "Desvantagens": [
+                "Array não sabe quantas posições estão ocupadas (apenas tamanho total)",
+                "Array tem um tamanho fixo (não pode crescer dinamicamente)",
+                "Sintaxe fora do padrão 'OO Java'"
+            ],
+            "ArrayList":[
+                "A classe java.util.ArrayList encapsula o uso do array e oferece vários métodos de mais alto nível",
+                "O java.util.ArrayList é realmente um guardador de referências e usa um array internamente.",
+                "Ao adicionar o elemento sempre fica no fim da lista.",
+                "Quantos elementos um objeto do tipo java.util.ArrayList pode guardar? O único limite é a memória da JVM.",
+                "Em vez de declararmos a referência a uma ArrayList<Aula> (ou LinkedList<Aula>), o ideal é deixarmos mais genérico, utilizando a interface List."
+            ],
+            "Generics": [
+                "Os símbolos '<>' se chamam generics e eles parametrizam classes.",
+                "Temos uma classe, ela é genérica, mas ao utilizá-la, podemos tipificar o que ela conterá, por exemplo, String: ArrayList<String> nomes = new ArrayList<String>();",
+                "Os generics entraram na versão 1.5 na plataforma Java e foram levemente melhorados no Java 1.7.",
+                "Deixa o código mais legível, já que fica explícito o tipo dos elementos.",
+                "Evita casts excessivos e antecipa problemas de casts no momento de compilação."
+            ],
+            "List":[
+                "List é uma interface, a ArrayList e a LinkedList são implementações.",
+                "O java.util.Vector que é uma ArrayList threadsafe",
+                "A interface java.util.Collection que é a interface mãe de todas as coleções",
+                "Os conjuntos (java.util.Set) também são coleções, mas não aceitam duplicados nem são listas",
+                "As listas garantem a ordem de inserção. Isso significa que ao iterar recebemos os elementos na mesma ordem que eles foram inseridos.",
+                "As listas sempre possuem um índice (podemos acessar o elemento através da posição). Além disso, existe mais uma característica: lista aceitam elementos duplicados",
+                "LinkedList e ArrayList são duas implementações diferentes da interface List. A LinkedList é uma lista duplamente 'linkada' e a ArrayList representa um array com redimensionamento dinâmico.",
+                "Qualquer lista também é uma coleção (java.util.Collection), garantem a ordem de inserção e são sequências (têm índice)."
+            ],
+            "Classe Wrappers": [
+                "São classes que contém funcionalidades e encapsulam a variável de tipo primitivo! Ccriamos objetos dessas classes para envolver ou embrulhar uma valor primitivo.",
+                "Para cada primitivo existe uma classe chamada Wrapper e para guardar um primitivo numa coleção é preciso criar um objeto que embrulha o valor",
+                "A criação do objeto Wrapper é chamada de autoboxing e a retirada do valor primitivo do objeto Wrapper é chamada de unboxing",
+                "Autoboxing e unboxing acontecem automaticamente! As classes wrapper possuem vários métodos auxiliares, por exemplo para o parsing",
+                "Todas as classes wrappers que representam um valor numérico possuem a classe java.lang.Number como mãe",
+                "O código { Integer ref = Integer.valueOf('3'); ref++; System.out.println(ref); } compila e roda? Qual seria resultado? ... Compila, roda e imprime 4, pois na linha 'ref++' O valor é desembrulhado, depois incrementado e depois embrulhado de novo!"
+            ],
+            "Ordenação":[
+                "Para ordenar uma lista é preciso definir um critério de ordenação",
+                "No mundo Java existem duas interfaces para definir o critério de ordenação dos elementos de uma lista: java.util.Comparator e java.lang.Comparable",
+                "Sempre tem que ter algum criterio de ordenação. Ou é utilizado um a interface java.lang.Comparable (ordem natural) ou java.util.Comparator."
+            ],
+            "Classes Anônimas e Lambda": [
+                "Casse anônima é uma classe que não é declarada explicitamente no código.",
+                "Uma classe anônima é um tipo especial de classe interna, que não precisa trazer a declaração. Podemos escreve-la como a extensão de uma classe ou interface ja na instanciação do objeto.",
+                "Function Object: um objeto que criamos para encapsular uma função ou método. As classes anônimas facilitam um pouco a criação desses objetos.",
+                "Nas primeiras versões realmente era burocrático iterar as listas. Com as lambdas, o laço (for) se tornou uma simples chamada de um método, exemplo: nomes.forEach((nome) -> System.out.println(nome));"
+            ],
+            "Collections": [
+                "O melhor jeito de ordenar uma unmodifiable list seguindo algum critério é nos aproveitarmos da possibilidade de poder *passar a unmodifiable list no construtor de uma ArrayList tradicional* , podendo assim utilizar o método .sort() de Collections.",
+                "Collections.reverse() : O método reverse() serve para inverter a ordem de uma lista. As vezes precisamos imprimir uma lista de nomes do último para o primeiro, ou uma lista de ids do maior para o menor e é nestas horas que utilizamos o reverse para inverter a ordem natural da lista para nós.",
+                "Collections.shuffle() : O método shuffle() serve para embaralhar a ordem de uma lista. Por exemplo em um caso de um sistema de sorteio, em que precisamos de uma ordem aleatória na nossa lista, utilizamos o método shuffle para embaralhá-la.",
+                "Collections.singletonList() : O método singletonList() nos devolve uma lista imutável que contêm um único elemento especificado. Ele é útil quando precisamos passar um único elemento para uma API que só aceita uma Collections daquele elemento.",
+                "Collections.nCopies() : O método nCopies() nos retorna uma lista imutável com a quantidade escolhida de um determinado elemento. Se temos uma lista específica e precisamos obter uma outra lista imutável, contendo diversas cópias de um destes objetos, utilizamos o método nCopies().",
+                "Muitas vezes coisas que pensamos em codificar na mão já existem prontas, e implementadas de jeitos muito otimizados. Então é sempre bom utilizar o velho atalho CTRL + ESPAÇO para verificar se o que queremos já não existe e ficar sempre de olho na documentação para entender o funcionamento de cada um destes métodos.",
+                "Caso a modelagem do sistema ainda não esteja bem definida, o desenvolvedor deve utilizar a interface Collection<E>. Dessa maneira, terá acesso aos métodos básicos de todas as implementações, como size(), add(), remove() e contains(). Conforme for sentindo necessidade em algo específico, o desenvolvedor fará poucas mudanças em seu código.",
+                "A implementação TreeSet já ordena os seus elementos na hora da inserção. Qual é o critério da ordenação depende e pode ser definido através de um Comparator."
+            ],
+            "Set (Conjunto)":[
+                "Um Set garante que nenhum elemento se repete. Por isso o método add(..) devolve um booleano que indica o sucesso da inserção.",
+                "Há métodos que fazem busca por um objeto, como contains(..) ou remove(..), que são muito mais rápidos se comparado com uma lista. Isso é uma grande vantagem. Devido a implementação do Set (aquela tabela de espalhamento), o acesso aos elementos é muito rápido",
+                "Diferentemente de uma lista, um conjunto não define uma ordem. Isso significa que não recebemos os elementos na mesma ordem da inserção.",
+                "O LinkedHashSet nos dá a performance de um HashSet mas com acesso previsível e ordenado."
+            ],
+            "Map":[
+                "Mapeia valores para chaves, e através da chave conseguimos acessar o valor correspondente. Por isso ela não pode ser repetida, ao contrário do valor, que podem existir iguais.",
+                "Se uma chave for repetida, a antiga permanece, porém, o valor é sobrescrito pelo novo valor contido na chave passada, sendo o antigo valor esquecido' pelo Map.",
+                "O método utilizado para adicionar um elemento em um Map é o método put. Ele recebe dois parâmetros, a chave e o valor. Os tipos desses parâmetros dependem do que definimos na hora da instância do objeto",
+                "O LinkedHashMap continua nos dando a performance de um HashMap, mas com acesso previsível e ordenado, seguindo a inserção dos seus elementos."
+                                
+            ]
+        },
+        "Encoding e Charsets":[
+            "Uma codificação de caracteres (charset) é um padrão de relacionamento entre um conjunto de caracteres (representações de grafemas ou unidades similares a grafemas como as que compõem um alfabeto ou silabário utilizados na comunicação através de uma linguagem natural) com um conjunto de outra coisa.",
+            "Os encodings são tabelas que transformam cada codepoint em seu caractere específico, dependendo de determinada região",
+            "Unicode foi criada por um consórcio internacional para representar todos os caracteres do mundo.",
+            "O número utilizado para representar um caracter no Unicode é chamado codepoint.",
+            "Além do Unicode, é preciso definir qual encoding será usado para gravar as informações em um arquivo."
+        ],
+        "Serialização de Objetos":{
+            "Anotações" : [
+            "A transformação do objeto em um fluxo binário é chamada de serialização.",
+            "A transformação de um fluxo binário em um objeto é chamada de desserialização.",
+            "O serialVersionUID define a versão atual da classe e esse valor fica gravado na representação binária do objeto, pois o serialVersionUID é da classe (por isso estático) e define a versão ou identificação numérica da classe. Cada vez que alteramos algo incompatível na classe, devemos alterar o seu valor. Sempre quando serializamos o objeto, também será serializado o valor do serialVersionUID.",
+            "Caso alguma das classes não implemente a interface Serializable, uma exceção do tipo NotSerializableException será lançada!",
+            "A serialização sempre funciona em cascata, mas há a possibilidade de usar a palavra chave transient para 'fugir' da serialização de um determinado atributo.",
+            "Para o objeto se tornar serializável, é preciso implementar a interface java.io.Serializable na classe e nas classes dos atributos. Por exemplo, a classe String já implementa essa interface e por isso podemos serializar strings."
+            ],
+            "Resumo":[
+                "A criação do fluxo binário a partir de um objeto é chamado de serialização;",
+                "A criação de um objeto a partir de um um fluxo binário é chamado de desserialização;",
+                "A classe deve implementar a interface java.io.Serializable;",
+                "A serialização/desserialização funciona em cascata e também com herança;",
+                "Existe a palavra-chave transient para indicar que o atributo não deve ser serializado;",
+                "É boa prática colocar o atributo estático serialVersionUID para versionar a classe;",
+                "A versão sempre fica guardada no fluxo binário;",
+                "Se não colocarmos explicitamente o serialVersionUID, a versão será gerada dinamicamente;",
+                "É raro usar a serialização na 'unha', mas é um conhecimento importante, pois será utilizado por outras bibliotecas."
+            ]
+        }
+    },
+    "Maven":{
+        "Informações": [
+            "Uma das coisas interessantes de se utilizar o Maven, é que existe integração com as IDEs mais conhecidas no mercado. Podemos facilmente abrir o nosso projeto Maven no Eclipse, Netbeans, Intellij IDEA, e continuar executando os comandos pelo terminal.",
+            "Para encontrar as informações sobre uma biblioteca que gostaríamos de declarar como dependência, normalmente acessamos o site http://mvnrepository.com/.",
+            "O Ivy é uma alternativa para o gerenciamento de dependências, já o Ant gerencia o build, mas não especificamente as dependências. O java em si não gerencia as dependências, somente executa programas java.",
+            "Além do repositório remoto, temos um diretório compartilhado entre todos os nossos projetos, isto é, um repositório local preenchido gradativamente.",
+            "A vantagem de se manter um repositório local é que é possível realizar um cache entre vários projetos que utilizam o Maven. Dessa forma, tudo que já estiver salvo no repositório local é utilizado e compartilhado, não sendo necessário realizar novos downloads.",
+            "Na documentação do Maven { https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html } encontraremos as fases que um ciclo de vida build apresenta:",
+            "O ciclo de vida do build de um projeto é composto por fases, e que quando utilizamos Maven, executar uma determinada fase requer a execução de fases anteriores.",
+            "O escopo provided indica que precisamos da dependência para compilar e testar, mas não se faz necessário incluir a dependência no artefato final, pois o JDK ou o container irão disponibilizar a dependência.",
+            "O escopo compile indica que a dependência estará disponível em todos os classpaths: de compilação de teste e execução. Esse é o escopo padrão utilizado quando não declaramos um escopo na dependência.",
+            "O escopo de runtime indica que não necessitamos da dependência para compilar. A dependência estará disponível no classpath de runtime, o que significa que utilizaremos a dependência na execução do projeto. A dependência também estará disponível no classpath de testes."
+        ]
+
+    },
+    "Java 8":{
+        "Default Method" : [
+            "Um método de interface que você não precisa implementar na sua classe se não quiser, pois você terá já essa implementação default.",
+            "Default methods foi uma forma que o Java encontrou para evoluir interfaces antigas, sem gerar incompatibilidades. Não é uma novidade da linguagem: Scala, C# e outras possuem recursos similares e até mais poderosos. E repare que é diferente de uma classe abstrata: em uma interface você não pode ter atributos de instância, apenas esses métodos que delegam chamadas ou trabalham com os próprios métodos da interface.",
+            "Default methods é o primeiro recurso que conhecemos. Sim, é bastante simples e parece não trazer grandes melhorias. O segredo é utilizá-los junto com lambdas, pois trará um impacto significativo para o seu código."
+        ],
+        "Lambda":[
+            "Considerando as dificuldade e verbosidade da sintaxe das classes anônimas, o Java 8 traz uma nova forma de implementar as interfaces ainda mais sucinta. É a sintaxe do lambda. Em vez de escrever a classe anônima, deixamos de escrever alguns itens que podem ser inferidos.",
+            "Considerando que a interface só tenha um método, não precisamos escrever o nome do método. Também não daremos new. Apenas declararemos os argumentos e o bloco a ser executado, separados por ->",
+            "A sintaxe funciona para qualquer interface que tenha apenas um método abstrato, e é por esse motivo que nem precisamos falar que estamos implementando o método 'Metodo A' (default), já que não há outra possibilidade.",
+            "Podemos ir além e remover a declaração do tipo do parâmetro, que o compilador também infere.",
+            "Quando há apenas um parâmetro, nem mesmo os parenteses são necessários.",
+            "Podemos remover as chaves de declaração do bloco, assim como o ponto e vírgula, pois só existe uma única instrução",
+            "Em vez de usarmos classes anônimas, utilizamos o lambda para escrever códigos simples e sucintos nesses casos. Uma interface que possui apenas um método abstrato é agora conhecida como interface funcional e pode ser utilizada dessa forma.",
+            "O lambda se encaixa melhor quando a expressão dentro do bloco é mais curta. Normalmente com apenas um statement.",
+            "Vale lembrar que não é porque digitamos menos linhas que o código é necessariamente mais simples. Às vezes, pouco código pode tornar difícil de entender uma ideia, um algoritmo."
+        ],
+        "Method Reference":[
+            "É muito comum escrevermos lambdas curtos, que simplesmente invocam um único método. É o exemplo de s -> s.length(). Dada uma String, invoque e retorne o método length. Por esse motivo, há uma forma de escrever esse tipo de lambda de uma forma ainda mais reduzida. Em vez de fazer: palavras.sort(Comparator.comparing(s -> s.length())); Fazemos uma referência ao método (method reference): palavras.sort(Comparator.comparing(String::length));",
+            "É estranho ver String::length e dizer que é equivalente a um lambda, pois não há nem a -> e nem os parênteses de invocação ao método. Por isso é chamado de method reference. Ela pode ficar ainda mais curta com o import static: import static java.util.Comparator.*; palavras.sort(comparing(String::length));",
+            "Vamos ver melhor a semelhança entre um lambda e seu method reference equivalente. Veja as duas declarações a seguir: Function<String, Integer> funcao1 = s -> s.length(); Function<String, Integer> funcao2 = String::length; Elas ambas geram a mesma função: dada um String, invoca o método length e devolve este Integer. As duas serão avaliadas/resolvidas (evaluated) para Functions equivalentes.",
+            "Em um outro exemplo - vejamos o nosso forEach, que recebe um Consumer: palavras.forEach(s -> System.out.println(s)); Dada uma String, invoque o System.out.println passando-a como argumento. É possível usar method reference aqui também! Queremos invocar o println de System.out: palavras.forEach(System.out::println);",
+            "Quando usar lambda e quando usar method reference? Algumas vezes não é possível usar method references. Se você tiver, por exemplo, um lambda que dada uma String, pega os 5 primeiros caracteres, faríamos s -> s.substring(0, 5). Esse lambda não pode ser escrito como method reference! Pois não é uma simples invocação de métodos onde os parâmetros são os mesmos que os do lambda."
+        ],
+        "Stream": [
+            "Os Streams possibilitam trabalhar com dados de uma maneira funcional. Normalmente, são dados e objetos que vêm de uma collection do Java. Por que não adicionaram esses métodos diretamente nas Collections? Justo para não ser dependente delas, não ter efeitos colaterais e não entupir de métodos as interfaces.",
+            "No Java 8, podemos fazer de uma forma muito mais interessante. Por exemplo: há como invocar um filter. Para nossa surpresa, esse método não se encontra em List, nem em Collection, nem em nenhuma das interfaces já conhecidas. Ela está dentro de uma nova interface, a Stream. Você pode pegar um Stream de uma coleção simplesmente invocando cursos.stream()", 
+            "Vamos ver um exemplo: Stream<Curso> streamDeCurso = cursos.stream(); O que fazemos com ele? O Stream devolvido por esse método tem uma dezena de métodos bastante úteis. O primeiro é o filter, que recebe um predicado (um critério), que deve devolver verdadeiro ou falso, dependendo se você deseja filtrá-lo ou não. Utilizaremos um lambda para isso: Stream<Curso> streamDeCurso = cursos.stream().filter(c -> c.getAlunos() > 100);",
+            "Modificações em um stream não modificam a coleção/objeto que o gerou. Tudo que é feito no fluxo de objetos, no Stream, não impacta e não tem efeitos colaterais na coleção original. A coleção original irá ser mantida!",
+            "Vamos ver um exemplo - para imprimir os cursos filtrados, podemos usar o forEach que existe em Stream: Stream<Curso> streamDeCurso = cursos.stream().filter(c -> c.getAlunos() > 100); streamDeCurso.forEach(c -> System.out.println(c.getNome())); Ou melhor ainda, podemos eliminar essa variável temporária, fazendo tudo em uma mesma linha: cursos.stream().filter(c -> c.getAlunos() > 100).forEach(c -> System.out.println(c.getNome()));",
+            "Vale a pena saber: por que criaram uma nova interface e não colocar o método de filtrar dentro de List? Há vários motivos. Mas repare já em um primeiro: numa coleção tradicional, o que o filter faria? Alteraria a coleção em questão, ou manteria intacta, devolvendo uma nova coleção? Coleções no java podem ser mutáveis e imutáveis, o que complicaria ler esses métodos. No Stream, sabemos que esses métodos nunca alterarão a coleção original."
+        ],
+        "Optional": [
+            "Optional é uma importante nova classe do Java 8. É com ele que poderemos trabalhar de uma maneira mais organizada com possíveis valores null. Em vez de ficar comparando if(algumaCoisa == null), o Optional já fornece uma série de métodos para nos ajudar nessas situações.",
+            "não precisamos escrever aqueles diversos ifs garantindo que o objeto não é nulo, temos uma forma muito mais interessante de representar nossas intenções. A classe Optional nos oferece uma variedade imensa de novos métodos que nos permite trabalhar de forma funcional com nossos valores, tirando maior proveito dos novos recursos de default methods, lambdas e method reference",
+            "Dado um Optional, podemos pegar seu conteúdo invocando o get. Ele vai devolver o Curso que queremos. Mas e se não houver nenhum? Uma exception será lançada. Curso curso = optional.get();",
+            "Há métodos mais interessantes. O orElse diz que ele deve devolver o curso que existe dentro desse optional, ou então o que foi passado como argumento: Curso curso = optional.orElse(null);",
+            "Com o optional.orElse(null): ou ele devolve o curso encontrado, ou null, caso nenhum seja encontrado. Mesmo assim, ainda não está tão interessante. Há como evitar tanto o null, quanto as exceptions, quanto os ifs. O método ifPresent executa um lambda (um Consumer) no caso de existir um curso dentro daquele optional: optional.ifPresent(c -> System.out.println(c.getNome()));",
+            "Outros métodos devolvem Optional nos Streams. Um deles é o average em IntStream. Por que? Pois pode não existir nenhum element, e aí a média poderia realizar uma divisão por zero."
+        ]
+    },
+    "Servlets":{
+        "Introdução":[
+            "Servlet é uma forma de 'chamar' um objeto Java a partir de uma requisição .",
+            "É mapeado para uma URL, para tal existe a anotação @WebServlet",
+            "É um objeto, por isso criamos uma classe. No entanto não criamos esse objeto, pois isso é a tarefa do Tomcat.",
+            "Pode ser chamado através do protocolo HTTP, isso é a essência da servlet, ser um objeto que pode ser chamado pelo protocolo HTTP.",
+            "Não basta estender a classe HttpServlet, também devemos configurar a URL através da anotação @WebServlet."
+        ],
+        "TomCat":[
+            "O Tomcat ... sabe gerar HTML ... entende o protocolo HTTP ... é um servidor web.",
+            "O Tomcat faz parte da Apache Foundation que é uma organização que desenvolve vários projetos Open Source. Agora a Apache Foundation possui um outro servidor ainda mais famoso, o Apache HTTP (também é chamado apenas Apache). Ambos, Apache HTTP e Apache Tomcat são servidores web.",
+            "O Tomcat é puramente Java enquanto Apache HTTP é escrito em C. Além disso, o Apache HTTP é uma servidor estático (por padrão pelo menos) e precisa de alguma integração com outra linguagem para se gerar HTML dinamicamente. O Tomcat já é dinâmico de cara, usando Java e JSP, claro!",
+            "Inversão de controle significa que não é meu método main que instancia objetos, quem se preocupa com a criação das instâncias é o Tomcat.",
+            "O Tomcat só irá instanciar as servlets de acordo com a necessidade! Além disso, ele instanciará apenas uma servlet de cada (singleton).",
+            "O Tomcat 'esconde' a pasta WEB-INF e não permite que alguma requisição tenha acesso, pois há arquivos como o web.xml e os nossos JARs dentro desse diretório."
+        ],
+        "Request & Response":[
+            "O método req.getParameter(..) sempre retorna uma string e recebe como parâmetro o nome do parâmetro recebido na requisição.",
+            "Algumas observações sobre GET e POST: A) GET foi pensado para acessar algum recurso. B) POST foi pensado para alterar ou criar algum recurso. C) GET gera problemas quando precisamos enviar muitas informações.",
+            "Os métodos service e doPost tem a mesma assinatura (mesmo retorno, mesmos parâmetros, mesmas exceções). Contudo, doPost trata apenas requisições POST e service trata tanto GET quanto POST"
+        ],
+        "JSP":[
+            "JSP (Java Server Pages) é uma tecnologia que renderiza as páginas no servidor antes de enviá-la. Todo o código (scriptlet) é executado no servidor antes de enviar a resposta para o navegador.",
+            "Para exibição de dados através do scriplet é sempre abrindo <% e fechando %>. A sintaxe <%= nome %> é um atalho para não usar out.println(nome);",
+            "RequestDispatcher: Permite, a partir de uma servlet, chamar um JSP. É obtido de um HttpServletRequest através do método getRequestDispatcher().",
+            "O RequestDispatcher delega o fluxo da requisição para qualquer recurso disponível.",
+            "Expression Language (EL): é utilizada para definir expressões, uma linguagem bastante simples - mais precisamente de uma sintaxe, marcada por ${ }."
+            
+        ],  
+        "JSTL":[
+            "JSTL significa Java Standard Tag Library. É a biblioteca padrão de tags do Java, mas existem outras bibliotecas. Por exemplo, o Spring MVC possui a sua própria.",
+            "JSTL e Expression Language sempre são utilizados em conjunto.",
+            "JSTL não vem embutido com o Tomcat. Precisamos adicionar uma lib específica para que possamos utilizá-la." ,
+            "Para usarmos o JSTL em nossos JSP's precisamos importá-la adicionando a tag."
+        ],
+        "MVC":[
+            "A função do controlador é receber as requisições e delegar as chamadas para as ações correspondentes.",
+            "Sempre devemos 'passar' pela ação antes de chamar o JSP, pois o JSP depende da ação. Esconder os JSPs na pasta WEB-INF reforça esse fluxo.",
+            "Vantagem de usar MVC: Cada camada com a sua responsabilidade vai simplificar a manutenção, além disso podemos aproveitar o modelo e view em outras ações.",
+            "A autenticação é sobre verificar a identidade. Isso pode acontecer através de um login, token, impressão digital, RG, entre várias outras formas e combinações.",
+            "A autorização, é verificada a permissão de acesso. No nosso contexto, queremos que apenas usuários autenticados tenham acesso, mas poderíamos criar permissões e papeis específicos que detalhem o acesso."
+        ],   
+        "HttpSession":[
+            "Por padrão, o navegador não envia nenhuma identificação sobre o usuário",
+            "Quando o Tomcat recebe uma nova requisição (sem identificação), gerará um ID",
+            "O ID fica salvo no cookie de nome JSessionID. O ID é um hash (número aleatório)",
+            "O cookie é anexado à resposta HTTP",
+            "O navegador reenvia o cookie automaticamente nas próximas requisições",
+            "O Tomcat gera, além do ID, um objeto chamado HttpSession",
+            "A vida do objeto HttpSession fica atrelado ao ID",
+            "Para ter acesso à HttpSession, basta chamar request.getSession()",
+            "Usamos a HttpSession para guardar dados sobre o usuário (login, permissões, carrinho de compra)",
+            "A HttpSession tem um ciclo de vida e será automaticamente invalidada"
+        ],
+        "Filtro":[
+            "O filtro consegue parar a execução, já que ele vem como uma camada à frente da aplicação.",
+            "Anotações não nos permitem definir a ordem dos filtros, para isso precisamos utilizar o web.xml. Ou seja, quando precisamos definir uma ordem de aplicação dos filtros, devemos optar pelo uso do web.xml.",
+            "Um Filter e Servlet são bem parecidos. Comparado com Servlet, o Filter tem o poder de parar o fluxo",
+            "Para escrever um filtro, devemos implementar a interface javax.servlet.Filter",
+            "Para mapear o filtro, usamos a anotação @WebFilter ou o web.xml",
+            "Vários filtros podem funcionar numa cadeia (um chama o próximo, mas todos são independentes)",
+            "Para definir a ordem de execução, devemos mapear os filtros no web.xml",
+            "Um filtro recebe como parâmetro, do método doFilter, um ServletRequest e um ServletResponse",
+            "Ambos, ServletRequest e ServletResponse, são interfaces mais genéricas do que HttpServletRequeest e HttpServletResponse",
+            "Para chamar o próximo filtro na cadeia, usamos o objeto FilterChain"
+        ],
+        "WebServices":[
+            "Quando falamos de web services, temos que dar suporte aos vários tipos de clientes, não apenas navegadores. Como o HTML possui toda estrutura da página, vêm muitas informações que talvez não sejam necessários para o cliente.",
+            "No contexto de Web Service, a API define a interface das funcionalidades que o serviço oferece,",
+            "Gson - Utilizada para retornarmos um JSON para o cliente.",
+            "XStream - Utilizada para retornarmos um XML para o cliente.",
+            "HttpClient - Utilizada para simular uma requisição no sistema"
+        ],
+        "Deploy no Jetty":[
+            "Os Application Servers, além de mapear requisições, são muito mais robustos e oferecem um número maior de recursos, diferentemente dos Servlet Containers, que apenas mapeiam as requisições do cliente.",
+            "O papel do Servlet Container é implementar as interfaces que fazem parte da especificação de uma Servlet, lembrando que ele também mapeia as requisições!",
+            ""
+        ],
+        "Resumo":[
+            "Apache Tomcat ou apenas Tomcat é um servidor web em Java",
+            "Tomcat entende o protocolo HTTP e roda por padrão no http://localhost:8080",
+            "O projeto Java faz parte da URL, no nosso caso: http://localhost:8080/gerenciador",
+            "Uma aplicação web Java pode ter páginas HTML",
+            "Uma servlet é um objeto Java que podemos chamar a partir de uma requisição HTTP",
+            "Para mapear a URL para uma servlet usamos a anotação @WebServlet",
+            "Uma servlet deve estender a classe HttpServlet e sobrescrever um determinado método (por exemplo service)",
+            "JSP significa Java Server Pages",
+            "JSP é uma página automaticamente processada pelo Tomcat",
+            "Para gerar HTML dinamicamente no JSP usamos Scriplets",
+            "Um scriptlet <% %> é um código Java dentro do HTML",
+            "Um scriptlet só funciona em uma página JSP",
+            "Usamos o RequestDispatcher para chamar um JSP a partir da servlet",
+            "Obtemos o RequestDispatcher a partir do HttpServletRequest",
+            "Usamos a requisição para colocar ou pegar um atributo (setAttribute(.., ..) ou getAttribute(..))",
+            "Expression Language (EL) é uma linguagem simples e limitada para imprimir o resultado de uma expressão. EL usa a sintaxe de ${ .. }",
+            "JSTL é a biblioteca padrão de tags e deve ser usados em conjunto com EL",
+            "JSTL não vem com Tomcat e precisamos copiar um JAR. Os JARs ficam na pasta WEB-INF/lib do projeto",
+            "JSTL define 4 taglibs, as mais importanes são core e fmt",
+            "A taglib core serve para controle de fluxo, fmt para formatação",
+            "É preciso importar as taglib, core e fmt separadamente: <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %> ... <%@ taglib uri='http://java.sun.com/jsp/jstl/fmt' prefix='fmt' %>",
+            "vimos várias tags do core como c:if, c:forEach e c:url ... e da fmt vimos a tag fmt:formatDate",
+            "MVC significa Model-View-Controller",
+            "MVC divide a aplicação em 3 camadas lógicas",
+            "Cada camada tem a sua responsabilidade",
+            "O controlador central e as ações fazem parte da camada Controller, que define o fluxo da aplicação",
+            "Os JSPs fazem parte da camada View, que define a interface",
+            "As classes do modelo fazem parte da camada Model, que encapsula as regras de negócio",
+            "MVC facilita a manutenção e evolução da aplicação",
+            "Os JSPs devem ficar 'escondidos' na pasta WEB-INF, pois dependem da ação",
+            "Um web service usa HTML, JSON ou XML como retorno",
+            "Um web service oferece alguma funcionalidade para seu cliente",
+            "Um web service é útil quando precisa oferecer uma funcionalidade para cliente diferentes",
+            "Para o web service não importa se o cliente foi escrito em Java, C# ou outra linguagem, pois usamos um protocolo e formatos independentes da plataforma"
+        ]
+    },
+    "JPA e Hibernate":{
+        "Introdução":[
+            "Java Persistence API (ou simplesmente JPA) é uma API padrão da linguagem Java que descreve uma interface comum para frameworks de persistência de dados.",
+            "A JPA define um meio de mapeamento objeto-relacional para objetos Java simples e comuns (POJOs), denominados beans de entidade.",
+            "Com o JDBC há necessidade de conhecimento de todo o esquema do banco. Além disso, nossos DAO's ficam inchados com código responsável por traduzir objetos em SQL e vice-versa.",
+            "Ao trabalharmos com JDBC precisamos traduzir os campos para colunas das tabelas. Para isso, existe a necessidade de se conhecer o modelo relacional.",
+            "Quando trabalhamos com JPA, há um arquivo que usamos para fazer as configurações. O persistence.xml: é usado para configurar detalhes sobre como acessar o banco de dados, como gerar automaticamente as tabelas, qual provider da JPA estamos usando, entre outras coisas.",
+            "O arquivo src/META-INF/persistence.xml é importantíssimo para manter configurações de acesso ao banco e de recursos da JPA.",
+            "Para operações que alteram o estado do banco, precisamos colocá-las dentro de transações. Ao fazer operações de escrita precisamos necessariamente definir os limites de uma transação (begin, commit, rollback).",
+            {
+                "Resumo":[
+                    "Vimos os problemas de termos códigos SQL em nossas classes e o desencontro entre o mundo orientado a objetos e o mundo relacional.",
+                    "Vimos também como solucionar este problema através de um framework ORM, que realiza o mapeamento objeto-relacional de nossas classes.",
+                    "Tudo isso através do Hibernate, uma biblioteca de mapeamento objeto-relacional que ficou tão famosa ao ponto de inspirar a criação da especificação JPA dentro do JavaEE, que por sua vez, utiliza o próprio Hibernate entre outros como implementação.",
+                    "JPA é uma especificação presente no JavaEE responsável em minimizar a distância entre o mundo OO e relacional. O Hibernate é uma das implementações que seguem a especificação JPA. Existem outras implementações como o OpenJPA e o EclipseLink."
+                ]
+            }
+        ],
+        "Configuração e Inicialização":[
+            "Apesar de SQL ser um padrão, alguns fabricantes podem ter algumas variações de sintaxe.",
+            "O dialeto permite que o provider consiga enviar as queries corretamente ao banco. O Dialeto também serve como forma de escolhermos recursos do banco que serão usados como por exemplo no MySQL onde podemos utilizar o MyISAM (storage strategy) que não possuem transações e integridade referencial (foreign key constraint).",
+            "Um item muito importante da JPA é a interface EntityManager, onde por meio dela conseguimos abstrair o mundo relacional e focar apenas em objetos. Para conseguir uma instância de EntityManager precisamos configurar propriedades no arquivo persistence.xml e obter a instância através da classe Persistence",
+            "O método createEntityManagerFactory irá gerar um EntityManagerFactory baseado nas configurações do persistence.xml. Baseado nisso, é fundamental que este método receba como argumento o nome de alguma unidade de persistência existente no arquivo.",
+            "Um persistence.xml pode ter uma ou mais unidades de persistência. Cada uma dessas unidades possui a finalidade de guardar configurações específicas para um banco de dados como, usuário, senha, string de conexão e dialeto através de propriedades."
+        ],
+        "EntityManager":[
+            "A característica do estado Managed é a sincronização automática.",
+            "Manter o código de criação do EntityManager isolado em uma classe especialista. Dessa forma podemos, na nossa aplicação, focar apenas em regras de negócio em vez de nos preocupar com a criação de um EntityManager toda vez que houver a necessidade de trabalhar com o banco.",
+            "Quando trabalhamos com JPA cada método é responsável por trocar o estado da entidade onde as queries são consequências dessas trocas. Ao chamarmos o merge o hibernate também faz um select para verificar se a alteração é realmente necessária.",
+            "Para que a JPA consiga remover, é necessário que a entidade esteja Managed.",
+            "Para persistir uma entidade, todos seus relacionamentos devem ser Managed, ou no mínimo Detached.",
+            "Detached ou 'desatachado', significa que a entidade já foi Managed uma vez. Assim sendo, ela já possui uma representação com a referida chave primária no banco de dados.",
+            "O estado Managed (ou Gerenciado) garante que todas as alterações feitas no objeto (Entity) serão propagadas para o banco de dados, mantendo sempre a entidade consistente tanto em memória, quanto no banco.",
+            "O método find() e o getReference() da interface EntityManager permitem que recuperemos uma instância pela id. Após isso eles a retornam como Managed. A diferença entre find() e getReference() é que o getReference() é Lazy.",
+            "Por padrão, ao usarmos Spring ou Java EE o EntityManager dura o tempo de uma transação o que gera problemas ao tentar carregar os relacionamentos lazy na renderização da view.",
+            "Podemos antecipadamente carregar um relacionamento lazy usando join fetch como vimos no exercício de queries planejadas. Portanto, se o relacionamento já está carregado não há motivos para se usar OpenEntityManagerInView.",
+            "Se carregamos o relacionamento antecipadamente através de um join explícito na query (com FetchType.EAGER ainda ocorre N + 1) ou com EntityGraphs evitamos o problema do N + 1.",
+            {
+                "Resumo":[
+                    "Vimos os estados que uma entidade pode assumir no JPA, começando sempre pelo Transient, que é quando se faz new objeto (informações acerca da entidade), a ser transformado em Managed. Para isto, chamamos o método persist(), cuja finalidade é justamente realizar esta transformação.",
+                    "Isto possibilita a sincronização automática com o banco de dados, que por sua vez torna possível o insert. Até quando dura este estado (Managed)? Enquanto não chamarmos em.close(), fechando-se o EntityManager. A partir daí, a entidade se torna Detached, com representação no banco de dados, porém não mais gerenciada pelo JPA.",
+                    "Para transformar uma entidade Detached em Managed novamente, utilizamos o método merge(), a partir do qual o Hibernate faz o update caso haja alguma mudança na entidade, passando a ser Managed e tendo sincronização automática.",
+                    "Por último, o estado Removed significa que não há mais representação ou registro no banco, mas a entidade continua em memória.",
+                    "Por padrão, um novo EntityManager é criado a cada chamada de método e é fechado quando o método acaba (mas, quando usamos transações o escopo é transacional)",
+                    "Quando tentamos carregar relacionamentos lazy sem que haja um EntityManager aberto, recebemos uma LazyInitializationException;",
+                    "O OpenEntityManagerInViewInterceptor permite abrir o EntityManager apenas ao chamar algum método do Controller. Evitando o problema do EntityManager desnecessário."
+                ]
+            }
+        ],
+        "Pool de Conexão":[
+            "Uma aplicação com apenas uma conexão para ser compartilhada entre todos os usuários não é uma boa solução quando temos vários clientes, pois um cliente sempre deve esperar o outro acabar de usá-la para prosseguir com o seu processamento, o que prejudica a escalabilidade da aplicação.",
+            "Pool de connections nos permite usar uma solução intermediária, entre criar uma conexão por cliente e apenas uma para todos os clientes, dessa forma conseguimos manter a aplicação escalável",
+            "Quando configuramos o JPA para deixar um EntityManager aberto até o fim de cada requisição, significa que vamos abrir uma conexão a cada requisição feita, o que é prejudicial para a escalabilidade da aplicação.",
+            "Abrir o tempo todo conexões com o banco de dados envolve abrir vários sockets para trafegar dados entre aplicação e o banco de dados, o que é um problema quando falamos de escalabilidade"
+        ],
+        "Cache":[
+            "O cache serve para melhorar a performance da nossa aplicação. O sistema primeiro consulta o cache e verifica se ele já contêm a informação que buscamos, depois, se necessário, acessa o banco de dados. O acesso ao banco é uma operação computacionalmente custosa.",
+            "O cache de primeiro nível é o cache que vem por padrão nos EntityManagers. Ele nos impede de carregar duas vezes a mesma entidade do banco e, dessa forma, evita um acesso desnecessário.",
+            "O problema de utilizarmos o cache de primeiro nível da nossa aplicação é que nós já configuramos que seja criado um novo EntityManager a cada requisição. Ou seja, como cada requisição possuí o seu próprio EntityManager e cada um destes o seu próprio cache, os dados do cache acabam se perdendo quando a requisição termina, além de, não serem reaproveitados entre requisições.",
+            "O cache invalida seus dados quando ocorre alguma operação de escrita em uma entidade, pois suas informações ficam desatualizados em relação ao banco de dados.",
+            {
+                "Estratégias":[
+                    "A estratégia READ_ONLY deve ser utilizada quando uma entidade não deve ser modificada.",
+                    "A estratégia READ_WRITE deve ser utilizada quando uma entidade pode ser modificada e há grandes chances que modificações em seu estado ocorram simultaneamente. Essa estratégia é a que mais consome recursos.",
+                    "A estratégia NONSTRICT_READ_WRITE deve ser utilizada quando uma entidade pode ser modificada, mas é incomum que as alterações ocorram ao mesmo tempo. Ela consome menos recursos que a estratégia READ_WRITE e é ideal quando não há problemas de dados inconsistentes serem lidos quando ocorrem alterações simultâneas.",
+                    "A estratégia TRANSACTIONAL deve ser utilizada em ambientes JTA, como por exemplo em servidores de aplicação. Como utilizamos Tomcat com Spring (sem JTA) essa opção não funcionará."
+                ],
+                "Resumo":[
+                    "Por padrão o Hibernate já utiliza um cache de entidades por EntityManager chamado de cache de primeiro nível;",
+                    "Usar cache melhora a performance já que reduz a comunicação remota;",
+                    "Em aplicações Web, o cache de primeiro nível não resolve nosso problema já que usamos vários EntityManagers;",
+                    "O cache de segundo nível resolve esse problema sendo compartilhado por diversos EntityManagers;",
+                    "Configurar o EhCache como provedor de cache de segundo nível;",
+                    "Cache de collections e de queries retornam apenas os ids dos relacionamentos."
+                ]
+            }
+        ]
+    },
+    "JPQL":{
+        "Introdução":[
+            "O Java Persistence Query Language é uma linguagem de consulta orientada a objetos independente de plataforma, definida como parte da especificação Java Persistence API.",
+            "O JPQL é usado para fazer consultas em entidades armazenadas em um banco de dados relacional.",
+            "JPQL é orientado a objetos, enquanto SQL não. De fato, JPQL é feita para abstrair o mundo relacional permitindo com que os desenvolvedores se preocupem apenas com objetos.",
+            "No JPQL não usamos chave estrangeira, enquanto SQL sim. Não precisamos referenciar à uma chave estrangeira já que é algo que faz parte do modelo relacional.",
+            "A notação Named Parameter Notation que é mais expressiva. Usando ela ganhamos como vantagem: Facilidade de identificar os parâmetros, diminuindo a probabilidade de erros.",
+            "Com mappedBy='escritores' conseguimos manter o @OneToMany apenas como um espelho (bidirecional) evitando que ele crie duas vezes o relacionamento no banco(chave estrangeira e tabela de relacionamento).",
+            "Por padrão o join fetch fará um inner join que trará somente as contas que possuem movimentação. Portanto, precisamos fazer um left join fetch em vez de join fetch.",
+            "O método getSingleResult() devolve um objeto cujo tipo varia baseado no JPQL que é executado. ",
+            "Através do JPQL podemos antecipar o carregamento de um relacionamento LAZY (join fetch). Qualquer relacionamento para-muitos (*ToMany) é LAZY por padrão. Isso significa que só será inicializado ao acessar o atributo (sob demanda), mas precisa de um EntityManager aberto.",
+            "@ManyToMany fará com que a JPA crie uma tabela, com um nome padrão, para guardar os id's das tabelas envolvidas no relacionamento. É possível alterar o nome dessa tabela usando a anotação @JoinTable",
+            "Ao tentar usar um relacionamento Lazy sem que haja um contexto de persistência ativo, recebemos essa exceção."
+        ],
+        "Criteria API":[
+            "Usamos a CriteriaBuilder para criar a CriteriaQuery.",
+            "Ao montar uma query possuímos várias funções como sum() e avg()que nos fornecem informações importantes. Na Criteria API criar expressões (ou Predicates) com essas funções é responsabilidade da CriteriaBuilder.",
+            "Para conseguirmos navegar até os atributos de uma entidade, precisamos de uma raiz (Root). O Root é quem define qual entidade estamos buscando, então, ela seria seria análoga - na SQL - a cláusula from. Portanto, usamos a classe CriteriaQuery, que é a responsável em montar a query.",
+            "CriteriaQuery monta a query e CriteriaBuilder cria a CriteriaQuery (Factory Method) e tem métodos auxiliares para criar Predicates, Expressions e outras coisas;"
+        ],
+        "Resumo":{
+            "Relacionamentos bidirecionais":[
+                "No mundo orientado a objetos, precisamos explicitamente criar atributos de relacionamentos para que as duas pontas se reconheçam;",
+                "Neste relacionamento, escolhemos uma parte para ser a 'dona' e a outra para ser o 'espelho' (mappedBy)."
+            ],
+            "Lazy Loading":[
+                "Por padrão todos os relacionamentos [...]ToMany são Lazy;",
+                "Torna mais fácil o problema do N + 1 (Atenção: também é possível ter N + 1 com Eager!);",
+                "Usamos o join fetch para carregar o relacionamento de forma Eager (em uma mesma query) ao usarmos JPQL."
+            ],
+            "Join e produto cartesiano":[
+                "Ao usarmos join fetch, os resultados aparecem duplicados devido ao produto cartesiano. Para evitá-los, utilizamos a palavra-chave distinct;",
+                "O join fetch dispara um inner join no banco, o que acaba trazendo apenas as contas com movimentação. Por isso usamos left join fetch, que trará todos os dados da entidade que se encontram ao lado esquerdo do join (no caso, Conta)."
+            ]
+            
+        }
+    }    
+}

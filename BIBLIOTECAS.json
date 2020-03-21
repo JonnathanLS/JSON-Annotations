@@ -1,0 +1,9 @@
+{
+    "JavaScript": {
+        "AlaSQL": {
+            "Description": "AlaSQL - é um banco de dados SQL in-memory leve do lado do cliente projetado para funcionar no navegador e no Node.js.",
+            "Export & Import": "sql, nosql, graph, alasql, javascript, parser, database, DBMS, data, query, localStorage, IndexedDB, DOM-storage, SQLite, JSON, Excel, XLSX, XLS, CSV, webworker",
+            "CDN": "https://cdnjs.cloudflare.com/ajax/libs/alasql/0.4.11/alasql.min.js"
+        }
+    }
+}

@@ -1,0 +1,293 @@
+{
+    "HTTP": [
+        "A arquitetura Cliente-Servidor",
+        "Um protocolo é um conjunto de regras",
+        "O HTTP foi feito para estabelecer regras de comunicação entre o modelo Cliente-Servidor que funciona na Web.",
+        "Client-Server é um modelo de comunicação",
+        "HTTP é um protocolo que define as regras de comunicação entre cliente e servidor na internet.",
+        "O HTTP pode trafegar dados binários como imagens e dados textuais como HTML ou CSS!",
+        "O HTTP não depende do navegador. Aliás, o tempo todo o nosso celular usa o HTTP para enviar requisições através de aplicativos!"
+    ],
+    "HTTPS": [
+        "Por padrão, os dados são trafegados como texto puro na web. Apenas com HTTPS a Web é segura",
+        "O protocolo HTTPS nada mais é do que o protocolo HTTP mais uma camada adicional de segurança, a TLS/SSL",
+        "HTTP (Sem o S) => nossos dados são enviados em texto puro, ficando visível para qualquer um que consiga interceptar nossa conexão!",
+        "A chave privada é utilizada para descriptografar os dados que foram criptografados com a chave pública, por isso ela é importante e deve ficar apenas em posse do servidor.",
+        "O tipo de criptografia de chave pública/chave privada",
+        "As chaves públicas estão no certificado, a chave privada fica apenas no servidor",
+    ],
+    "Certificado Digital": [ 
+        "Um certificado digital prova uma identidade para um site, onde temos informações sobre o seu domínio e a data de expiração desse certificado.",
+        "Além disso, o certificado ainda guarda a chave pública que é utilizada para criptografar (cifrar) os dados que são trafegados entre cliente e servidor.",
+        "Todo certificado tem uma data validade e serve para provar a identidade entre o cliente e o servidor.",
+        "É no certificado digital que encontramos a chave pública utilizada para criptografar os nossos dados."
+    ],
+    "Endereços":{
+        "Dominio" : "o domínio é o nome do site na web e serve para facilitar a navegação do usuário, que acaba não precisando lembrar o IP de cada site.",
+        "DNS" : "O DNS realiza a tradução do nome de um domínio para o endereço de IP. Existem vários servidores DNS no mundo e é fundamental para a nossa web o funcionamento deles.",
+        "Recurso" : "recurso é aquilo que vem depois do domínio/",
+        "Resumo" : [
+            "URL são os endereços da Web",
+            "Uma URL começa com o protocolo (por exemplo https://) seguido pelo domínio (www.alura.com.br)",
+            "Depois do domínio pode vir a porta, se não for definida é utilizada a porta padrão desse protocolo",
+            "Após o domínio:porta, é especificado o caminho para um recurso (/course/introducao-html-css)",
+            "Um recurso é algo concreto na aplicação que queremos acessar"
+        ]
+    },
+    "Requisições": [
+        "Uma requisição sempre deve ser enviada com todas as informações necessárias, o que faz uma requisição ser sempre independente das demais.",
+        "É importante lembrarmos que a comunicação sempre começa com o cliente: é ele quem pede as informações. O servidor responde apenas o que foi requisitado e nunca inicia a comunicação.",
+        "HTTP é stateless, não mantém informações entre requisições",
+        "As plataformas de desenvolvimento usam sessões para guardar informações entre requisições"
+    ],
+    "Sessão HTTP" : "É o tempo que o cliente utiliza um web app.",
+    "Cookie Web": "Um cookie é um pequeno arquivo de texto, normalmente criado pela aplicação web, para guardar algumas informações sobre usuário no navegador.",
+    "Status Code do HTTP" : {
+        "1xx": "Informações",
+        "2xx": "Sucesso",
+        "3xx": "Redirecionamento",
+        "4xx": "Erro de Cliente",
+        "5xx": "Erro do Servidor"
+    },
+    "Metodos HTTP" : {
+        "GET" :"Quando passamos os parâmetros da requisição na URL, estamos fazendo uso do método GET. O que é super útil quando precisamos repetir a requisição com os mesmos parâmetros",
+        "POST" : "O método POST é utilizado quando queremos criar um recurso. Quando usamos POST, os dados vão no corpo da requisição e não na URI.",
+        "PUT" : "Requisita que um recurso seja 'guardado' na URI fornecida. Se o recurso já existir, ele deve ser atualizado. Se não existir, pode ser criado.",
+        "DELETE" : "Exclui o recurso especificado.",
+        "TRACE" : "Devolve a mesma requisição que for enviada veja se houve mudança e/ou adições feitas por servidores intermediários.",
+        "OPTIONS" : "Retorna os métodos HTTP suportados pelo servidor para a URL especificada.",
+        "PATCH" : "Serve para atualizar partes de um recurso, e não o recurso todo.",
+        "CONNECT" : "Converte a requisição de conexão para um túnel TCP/IP transparente, geralmente para facilitar a comunicação criptografada com SSL (HTTPS) através de um proxy HTTP não criptografado.",
+        "HEAD" : "Retorna somente os cabeçalhos de uma resposta."
+    },
+    "Web Services": [
+        "Um Web Service disponibiliza uma funcionalidade na web, através do protocolo HTTP.",
+        "As funcionalidades variam muito e dependem muito da empresa e do negócio dela, mas por exemplo, na Alura temos um Web Service que traz todas as informações de um curso (nome, capítulos, exercícios, etc)",
+        "O importante é que sempre usamos o protocolo HTTP. A grande diferença de um Web Service é que os dados não vem no formato HTML, e sim em algum formato independente da visualização, como XML ou JSON.",
+        "Uma requisição web tem 3 tipos de componentes importantes: recursos (URI), operações (GET, POST, DELETE, ...) e representação de dados(XML, JSON, ...). Esses 3 componentes em conjuntos seguindo algumas práticas são a base para o modelo arquitetural REST(Representational State Transfer)"
+    ],
+    "Serviços Web REST" : [
+        "REST é um padrão arquitetural para comunicações entre aplicações",
+        "Ele aproveita a estrutura do HTTP",
+        "Recursos são definidos via URI",
+        "Operações com métodos HTTP(GET/POST/PUT/DELETE)",
+        "Cabeçalhos(Accept/Content-Type) são usados para especificar as representações(JSON,XML,...)"
+    ],
+    "HTTP/2" : {
+        "Motivo da Atualiação" : [
+            "O protocolo que estamos trabalhando até agora foi especificado na década de 90 e de lá até hoje muitas alterações foram feitas até na forma como usamos a internet.",
+            "Com a chegada do mundo mobile novas preocupações apareceram e otimizações são cada vez mais necessárias para uma boa performance.",
+            "A nova versão é batizada de HTTP/2 e tem como página principal de documentação e referência essa: https://http2.github.io/."
+        ],
+        "Melhorias com a nova versão" : [
+            "No HTTP 1.1, para melhorar a performance, habilitamos o GZIP no servidor para comprimir os dados das respostas. É uma excelente prática, mas que precisa ser habilitada explicitamente. No HTTP/2, o GZIP é padrão e obrigatório.",
+            "Os cabeçalhos no HTTP 1.1 não são comprimidos e ainda viajam em texto puro. Já na nova versão, os headers passam a ser binários. Além de binários eles são comprimidos usando um algoritmo chamado HPACK. Isso diminui bastante o volume de dados trafegados nos headers.",
+            "Além de todas essas otimizações para melhorar a performance ainda houve uma preocupação com segurança exigindo TLS por padrão também.",
+            "Com o HTTP/2 o uso de HTTPS acaba sendo obrigatório, e esta é uma das grandes vantagens do uso desta nova atualização do protocolo.",
+            "O HTTP/2 possui diversas tecnologias de compactação de sua requisição. Isto acaba sendo muito útil para clientes móveis, visto que a maioria das redes mobile ainda não são de grande qualidade.",
+            "A tecnologia HPACK é especialista em comprimir os Headers da requisições/respostas HTTP, deixando as mais leves."    
+        ],
+        "Cabeçalhos Diferentes" : [
+            "O HTTP é stateless, ou seja, ele não guarda informações das requisições passadas. E isso continua valendo, mas no caso dos cabeçalhos, existe um ambiente que guarda estado. Isso é conhecido como Headers Stateful.",
+            "Os Headers Stateful permitem que apenas os cabeçalhos que mudem sejam enviados a cada requisição, economizando muita banda que seriam cabeçalhos repetidos."
+        ],
+        "Server-Push" :  "O servidor pode empurrar para o clientes certos recursos antes mesmo de serem solicitados, pois ele consegue analisar o HTML e ver o que mais é preciso para carregar a página fazendo com que não seja necessário gastar tempo pedindo todos os outros recursos.",
+        "Multiplexação" : [
+            "Requisições e respostas vão chegando a todo tempo. É totalmente paralelo. A mesma coisa acontece com o servidor, não precisamos esperar uma resposta para enviar outra. Se já está pronta para ser enviada, ele já envia diretamente.",
+            "Esse conceito que surgiu no HTTP2 é chamado de Multiplexing e traz uma performance bastante relevante para o nosso HTTP."
+        ],
+        "Resumo": [
+            "O HTTP2 atua sobre o que já conhecemos do HTTP. Ou seja, ele não muda nada em relação ao que já conhecemos de HTTP. E que todo o seu conteúdo é usado no HTTP2 de forma bastante simples.",
+            "Hoje, o que o HTTP2 especifica é mais a nível de servidor. E acaba que nós desenvolvedores não atuamos tanto nesse nível. Fica mais na outra ponta, que é quem vai produzir servidores e tudo mais, seguir esse novo protocolo.",
+            "O HTTP2 é nada mais que o HTTP com algumas melhorias, até porque o HTTP1 estava bastante desatualizado em relação ao que o mercado já vinha sofrendo.",
+            "Os headers são binários e eles são comprimidos com algoritmos chamados de HPACK.",
+            "O HTTP2 habilita o GZIP como padrão na resposta, logo, esses dados vêm zipado. Coisa que tínhamos que configurar manualmente na versão anterior, ou seja, HTTP1.1.",
+            "No HTTP2, as requisições e respostas podem ser paralelas. Não precisamos ficar esperando que uma requisição termine pra fazer a próxima. Temos uma otimização maior.",
+            "Os cabeçalhos guardam status. Quando enviamos uma requisição, a próxima, para o mesmo domínio, não precisa enviar os mesmo dados que já foram trafegados na última. Conclui-se que no HTTP2 isso é evitado, ou seja, menos informação enviada, menos dados que enviamos, menos banda que usamos do usuário, mais feliz ele fica.",
+            "O HTTP2 especifica o famoso Server-push, que é o ato do servidor enviar dados sem que o browser tenha pedido, que foi o que aconteceu lá no index.html. O HTTP2 pode enviar dados diretamente para o browser sem ficar esperando uma requisição. Assim, ele dá um passo além."
+        ]
+    },
+    "HTML" : {
+        "Conceitos" : [
+            "A linguagem HTML serve para marcar conteúdo, ou seja, especificar o que cada letra, palavra e frase significa. ",
+            "Usamos ela para criar páginas pois, assim, o navegador e outras ferramentas que trabalham na Internet conseguem analisar e processar nosso conteúdo, apresentando-o de forma adequada para os usuários.",
+            "A codificação UTF-8 abrange praticamente todos os sistemas de escritas usadas pelo mundo todo. Além disso, todos os computadores vêm com suporte a essa codificação. Assim, se queremos que nossas páginas sejam acessíveis por todos, a codificação UTF-8 é a melhor opção."
+        ],
+        "<!DOCTYPE>" : [
+            "A instrução DOCTYPE serve para indicar qual linguagem estamos usando no nosso documento e em qual versão. Por isso é essencial para que o computador processe corretamente nosso arquivo.",
+            "Atualmente, usamos a instrução <!DOCTYPE html> para indicar que usamos a última versão do HTML.",
+            "Antigamente, era necessário usar <!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01//EN' 'http://www.w3.org/TR/html4/strict.dtd'>, por exemplo, para indicar que estávamos usando a versão 4 do HTML na sua variante estrita."
+        ],
+        "Tags" : {
+            "<title>" : "Serve para passar para o navegador qual o título da aba/janela em que a página será exibida.",
+            "<h1>" : "Serve para mostrar para o usuário qual o título principal do conteúdo da página.",
+            "<meta>" : "Serve para indicar a codificação de texto que está sendo utilizado e para o navegador ler e interpretar examente da forma que queremos.",
+            "<head>" : "Serve para conter as informações da páginas, para o navegador entender como será a página, ou seja, trata-se de Metadainformações",
+            "<nav>" : "Indicar que uma determinada região da página contém links para navegar para outras partes do site"
+        },
+        "Atributos": {
+            "alt": [ 
+                "Para usuários com deficiência visual e ferramentas de busca saberem do que se trata a imagem",
+                "Apesar de alguns navegadores poderem mostrar o texto do atributo alt quando se coloca o mouse em cima da imagem, a principal função desse atributo é tornar a página mais acessível para usuários com deficiência visual e ferramentas de busca.",
+                "Deficientes visuais muitas vezes utilizam programas que leem o conteúdo da tela para eles. Esses programas, quando encontram uma tag <img>, podem ler o conteúdo do atributo alt para seus usuários.",
+                "Ferramentas de busca utilizam o texto do atributo alt para descobrir do que se trata uma determinada imagem e, assim, mostrá-la em buscas com termos relacionados ao tema da imagem."
+            ]
+        },
+        "Dicas":{
+            "Seleção": [
+                "Apesar de podermos usar apenas as tags e a estrutura que elas formam na página para selecionar elementos, essa forma de seleção é frágil, uma alteração em um elemento pode impactar em outro. A seleção por tags e estrutura é muito genérica.",
+                "Para garantirmos que estamos selecionando apenas os elementos desejados, o ideal é usar classes sempre que possível."            
+            ],
+            "Nome das Classes": [
+                "Nomes próprios remetem ao conteúdo desses elementos. Assim, esses nomes só perderão o sentido se mudarmos o conteúdo da página, o que dificilmente acontece.",
+                "Se usarmos os nomes direita e esquerda, acabaremos com nomes de classes muito genéricos que possivelmente perderão o sentido quando resolvermos alterar algum detalhe no visual da página.",
+                "A única vantagem de usar nomes genéricos é de serem bem reaproveitáveis. Podemos usá-los em quaisquer elementos que queiramos fazer flutuar à direita ou à esquerda. Porém, nosso HTML começará a ter código relativo à visualização, ou seja, começaremos a misturar conteúdo e visualização."
+            ]
+        }
+    },
+    "CSS":{
+        "Definição": [
+            "Enquanto o HTML é usado para estruturar conteúdos da página, o CSS para formatar conteúdos estruturados.",
+            "CSS é uma linguagem para estilos que define o layout de documentos HTML. Por exemplo, CSS controla fontes, cores, margens, linhas, alturas, larguras, imagens de fundo, posicionamentos e muito mais.",
+        ],
+        "Fontes":[
+            "A medida 'px' é uma unidade de medida absoluta. Para termos um CSS mais flexível, é interessante usar medidas relativas, como em e a medida de porcentagem.",
+            "A medida 'em' toma como base o tamanho de fonte do elemento no qual for usada.",
+            "A medida 'rem' toma como base o tamanho de fonte do elemento html ou, se não houver tamanho de fonte definido neste elemento, o tamanho de fonte padrão do navegador.",
+            "O tamanho 'rem' possui um valor único para a página inteira, já a medida em varia de acordo com o elemento em que é utilizada. É interessante usarmos 'em' quando queremos que a mudança de tamanho se propague pela página",
+            "A medida 'ch' toma como base A largura do caractere '0' (zero).",
+            "A medida '%' porcentagem dependendo do contexto utilizado, pode ser à largura, à altura ou ao tamanho de fonte do pai do elemento."
+        ],
+        "Propriedades":{
+            "Box-Sizing":[
+                "Quando aplicamos o valor border-box para a propriedade box-sizing nos elementos <blockquote>, vemos que o tamanho deles aparentemente diminui. Isso acontece porque estamos mudando a forma como o navegador mede a largura dos elementos.",
+                "Por padrão, o navegador mede a largura ignorando padding e bordas. No momento em que colocamos border-box, dizemos ao navegador que ele deve considerar padding e bordas nesse cálculo. Então o elemento diminui pois agora os 250 pixels que definimos de largura incluem os paddings e bordas do elemento."
+            ],
+            "Display" : [
+                "Display é a propriedade mais importante do CSS para controlar o layout. Cada elemento tem um valor padrão para o display dependendo de seu tipo. ",
+                "O valor padrão na maioria dos elementos é normalmente block ou inline. Um elemento com valor block é chamado de elemento de nível de bloco ou apenas elemento de bloco. Um elemento com valor inline é sempre chamado de elemento de linha.",
+                "O valor inline-block para a propriedade display surgiu para podermos definir altura e largura em elementos inline. Fora isso, ambos os elementos podem ter um padding definido, ambos ficam em linha e ambos são suportados por todos os navegadores modernos."
+            ],
+            "Transform-Style" : "A declaração transform-style: preserve-3d faz com que o navegador preserve as transformações 3D dos filhos de um elemento na hora de calcular a perspectiva."
+        },        
+        "Reset CSS" : [
+            "Devemos usar um reset nos nossos projetos para eliminar diferenças de layout entre navegadores e bugs específicos de alguns navegadores. Com isso, ganhamos uma base sólida para desenvolvermos nosso site. Ou seja, todas as alternativas listam benefícios de se usar um reset.",
+            "Alguns efeitos visíveis da importação do reset.css são: Todos os elementos ficam com a letra do mesmo tamanho - Alguns espaçamentos desaparecem - Negritos e itálicos desaparecem - As marcações de lista (bolinhas) no menu de navegação desaparecem"
+        ]
+    },
+    "JavaScript": {
+        "Introdução":[
+            "Por que estudar Javascript? É uma linguagem que, além de ser a padrão nos navegadores atuais, vem expandindo para outras áreas como servidores, banco de dados e até plataformas de Internet of Things.",
+            "Tudo que declaramos dentro da tag <script> é interpretado como Javascript quando o navegador passar por ali.",
+            "O console do desenvolvedor é uma ferramenta muito poderosa com ele conseguimos rapidamente ser notificados de possíveis erros em nosso código, podemos executar funções, observar a saída de algumas funções e executar pequenos testes das funcionalidades do Javascript de modo rápido.",
+            "O document é uma variável muito importante do Javascript. Ela contém o DOM ou Document Object Model, que é como o navegador enxerga o HTML utilizado por ele para renderizar a página.",
+            "O navegador, ao ler o seu arquivo HTML, cria uma cópia em memória daquele HTML, que é o que nós chamamos de DOM, e a partir dessa cópia ele vai desenhando a sua página, colocando as tags e aplicando os estilos.",
+            "O DOM é uma representação em memória do HTML do seu arquivo, que o navegador usa para desenhar a página, e a variável document é quem contêm o DOM."
+        ],
+        "Funcões":[
+            "As funções anônimas, são funções que não tem nome e só são chamadas no contexto aonde foram declaradas. Elas são muito usadas em conjunto com a função addEventListener(), onde normalmente a ação que desejamos chamar só deve ser chamada naquele local.",
+            "Quando desejamos pegar apenas parte do HTML, devemos utilizar a função querySelector(). A função querySelector faz a busca através de seletores CSS para trazer o HTML que você está interessado.",
+            "O Javascript possuí dois tipos de funções, as funções anônimas e as funções nomeadas.",
+            "As funções nomeadas, como o próprio nome diz, são as funções que levam um nome em sua criação e que podem ser invocadas posteriormente.",
+            "A função responsável por criar elementos no Javascript é a createElement().Com ela passamos o nome da tag que queremos criar e ela nos retorna um objeto HTML que pode ser alterado com as propriedades do Javascript, como a .textContent e a .classList.",
+            "A função querySelector na própria <tr> *, afinal a função querySelector() é especialista *em buscar, seja na página inteira quando utilizamos-a buscando no document (document.querySelector) ou quando queremos fazer uma busca em elemento específico que foi pré selecionado",
+            "Podemos controlar o número de casas decimais exibidas através da função .toFixed().",
+            "Quando selecionamos um elemento com as funções de querySelector, elas nos devolvem um objeto que tem algumas propriedades especiais, que falam sobre as características do HTML selecionado. Uma dessas propriedades é a .classList, que como o nome indica nos mostras classes que aquele HTML tem.",
+            
+            "Todo array possui a função forEach. Passamos para ela uma função por parâmetro, e nessa função fazemos o que quisermos para cada item do array. O item do array é recebido por parâmetro na função interna."
+        ],
+        "Propriedades":{
+            "innerHTML": [
+                "Podemos obter o conteúdo HTML (HTML interno) de um elemento, basta acessalo através da notação ponto ou setarmos através de atribuição com o sinal de igual.",
+                "Quando utilizada para obter o HTML interno de um elemento, seu retorno é uma String, que representa todo o conteúdo HTML do próprio elemento.",
+                "Com a propriedade innerHTML, podemos editar o conteúdo HTML (HTML interno) de um elemento."
+            ],
+            "style":[
+                "Para alterar o estilo de um elemento devemos acessar a propriedade style, seguido do estilo que será modificado.",
+                "Quando o nome do estilo possui duas palavras no CSS - como é o caso de background-color - devemos representá-lo com o estilo camelCase."
+            ],
+            "classList":[
+                "Quando queremos manipular as classes de um elemento, devemos acessar sua propriedade .classList, e se queremos adicionar uma classe, iremos utilizar a função .add()"
+            ]
+        },
+        "Eventos":[
+            "Os eventos são basicamente um conjunto de ações que são realizadas em um determinado elemento da página web, seja ele um texto, uma imagem, ou uma div, por exemplo. Muitas das interações do usuário que está visitando sua página com o conteúdo do seu site podem ser consideradas eventos.",            
+            "Todo evento disparado em JavaScript possui um contexto que é acessível através da função executada quando o evento for disparado.",
+            "O comportamento padrão de um form, quando clicamos em um button ou em um input submit, que está dentro dele, é enviar os dados e recarregar a página. Para evitarmos este comportamento, devemos chamar a função do Javascript que previne o comportamento padrão de certos elementos: event.preventDefault.",
+            "Para cada evento existente no JavaScript, há a propriedade on + nomeDoEvent. A função que desejamos executar é atribuída direto na propriedade. No entanto, essa forma tem uma limitação, como estamos guardando a função em uma propriedade, se adicionarmos outra função, essa sobrescreverá a anterior.",
+            "Fonte para os diversos tipos de eventos: https://developer.mozilla.org/en-US/docs/Web/Events"
+        ],
+        "Objeto":[
+            "Utilizamos objetos no Javascript como na maioria das linguagens de programação orientadas , aonde os objetos podemos compará-los com objetos da vida real. Um objeto é uma entidade independente, com propriedades e tipos.",
+            "Para declaramos um objeto, utilizamos a sintaxe com {}. Só que de nada nos serve um objeto vazio, então podemos dar características a este objeto através de suas propriedades, que são separadas por um : do seu valor e utilizamos uma vírgula ao final de cada propriedade para separá-la da próxima.",
+            "O objeto implícito this é uma referência para o elemento do DOM que esta recebendo o evento, logo, sua natureza é dinâmica, ou seja, se clicarmos no primeiro elemento da lista o this será o primeiro elemento, se clicarmos no último ele será o último. É a natureza dinâmica do this que nos permite utilizar a mesma função em diferentes contextos."
+        ],
+        "Requisições": [
+            "O objeto XMLHttpRequest é quem é responsável por fazer requisições HTTP assíncronas com Javascript. Apesar de ter o XML no nome hoje em dia este objeto pode trafegar diversos outros tipos de dados além do XML, este nome só se manteve devido a um legado histórico.",
+            "Dado que temos um XMLHttpRequest, precisamos configurar nossa requisição para dizer para qual servidor queremos enviá-la e também qual método HTTP devemos usar. Fazemos isto através do método .open() , passando o método e a url.",
+            "O XMLHtttpRequest deve ser configurado anteriormente com a função .open(), que ele pode trafegar diversos tipos de dados e não somente o XML ( ele tem esse nome graças a um vestígio histórico), e a requisição só é enviada mesmo após chamarmos o método .send()."
+        ],
+        "Boas Práticas":{
+            "Eventos no mesmo Elemento" :  "È uma boa prática é trabalhar com addEventListener() mesmo que você só queira adicionar um único evento. Porque mais tarde, se outro desenvolvedor quiser adicionar outro evento para o mesmo elemento, não corremos o risco de substituir a função já associada por outra.",
+            "Quebrar uma grande função complexa": [
+                "Dar manutenção ao código fica muito mais fácil, visto que agora podemos examinar vários pequenos blocos , que são muito mais fáceis de compreender do que um grande bloco de texto",
+                "Ao quebrar uma grande função, também estamos deixando ela com menos responsabilidades, com a meta de atingir o ideal de que cada função tenha apenas uma única responsabilidade.",
+                "O código também fica muito mais fácil de testar, pois se temos diversas funções pequenas conseguimos ir testando uma a uma em busca de erros ou bugs do código.",
+                "E por último, a legibilidade do código aumenta muito, pois dando nomes semânticos a cada uma das funções menores conseguimos deixar bem claro o que aquela parte do código deve fazer e facilita o entendimento do todo como um geral."
+            ]
+
+        }
+        ,
+        "Agulha no Palheiro":{
+            "Muitas funções em um único arquivo JavaScript":[
+                "A vantagem de declararmos todas as funções em um único arquivo é favorecer sua importação em nossas páginas, pois se fossem vários arquivos precisaríamos importar um a um.",
+                "Uma desvantagem dessa abordagem é que fica mais complicado de um desenvolvedor trabalhar com o mesmo arquivo ao mesmo tempo.",
+                "Se o desenvolvedor A precisa alterar a função X e o desenvolvedor B a função Y o risco do trabalho ser perdido quando o arquivo for atualizado é grande. Mesmo com ferramentas de versionamento de código o desenvolvedor terá que resolver conflitos que são bastantes comuns nessa abordagem.",
+                "Se das 100 funções declaradas no arquivo apenas um necessitar manutenção, caso o desenvolvedor cometa algum erro de sintaxe, isso comprometerá todas as funções, pois nada será mais carregado. Sendo assim, as chances de introduzir problemas quando for resolver um são bem maiores.",
+                "Quando temos arquivos separados, cada arquivo possui uma responsabilidade e uma ou mais funções que fazem sentido naquela responsabilidade. Por exemplo, podemos ter um arquivo chamado conversao.js e nele termos funções que convertem valores monetários com R$ para números, e números para o formato com R$.",
+                "Se separamos outras funcionalidades por arquivo, quando alterarmos esses arquivos, se cometermos algum erro, apenas uma ou mais funções do arquivo serão comprometidas e o restante dos outros arquivos poderão ser carregados sem problema (a não ser que um arquivo dependa do outro).",
+                "Assim como na vida real geralmente guardamos peças de roupas por categorizações que julgamos satisfazerem nossa organização, separar arquivos por grupos comuns também nos ajuda a encontrar e dar manutenção em nosso código."
+            ]
+        }
+    },
+    "Ajax":[
+        "Permite carregar apenas uma parte do conteúdo da página, fazendo com que o site do usuário fique mais leve , e por consequência mais rápido na hora de carregar.",
+        "Conseguimos enviar dados para o servidor sem depender de um form do HTML.",
+        "Cnseguimos trazer novos dados para o usuário sem que ele precise trocar de página.",
+        "Conseguimos realizar requisições HTTP paralelamente ao nosso Javascript, sem interromper seu funcionamento, visto que estas requisições são assíncronas.",
+        "Permite criar aplicações como Chat's e notificações, pois não precisamos recarregar a página para trocar dados.",
+        "Conseguimos atualizar os dados da página com novas informações mesmo após o usuário já ter carregado a página.",
+        "Para conseguirmos enviar dados via AJAX, com jQuery, sabemos que precisamos passar os dados como uma String ou um Objeto Javascript simples, como o segundo parâmetro da função $.get().",
+        "O CORS significa CROSS ORIGIN RESOURCE SHARING ( compartilhamento de recurso entre diferentes origens) e é caracterizado por uma informação especial no header de resposta do servidor."
+    ],
+    "jQuery": {
+        "Introdução": [
+            "O jQuery é uma biblioteca, feita em JavaScript, que tem como objetivo facilitar a vida do desenvolvedor Web. O grande propósito dela é facilitar o uso do JavaScript nos websites, abstraindo da cabeça do desenvolvedor os problemas de compatibilidade entre os navegadores.",
+            "Possui funções enxutas, que reduzem drasticamente a quantidade de código que o desenvolvedor tem que escrever, possuindo módulos que facilitam coisas como o AJAX , que é algo nativamente complexo de se fazer com JavaScript puro.",
+            "O jQuery segue a máxima de seu lema, que é Write less, do more, focando em otimizar a experiência de desenvolver JavaScript para a Web. Este framework se tornou uma das mais famosas bibliotecas do desenvolvimento Web, com mais de 50% dos desenvolvedores utilizando-a em seu dia a dia.",
+            "A primeira vantagem do jQuery é a compatibilidade que suas funções tem com os navegadores. Quando escrevemos código Javascript , temos de tomar cuidado com as diferentes implementações internas de cada navegador, o que pode fazer com que um código que é completamente funcional em um determinado navegador não seja em outro.",
+            "A segunda grande vantagem do jQuery é a produtividade que ele trás para o desenvolvedor. Com suas funções conseguimos escrever um código muito mais sucinto , trazendo maior agilidade no desenvolvimento.",
+            "A grande diferença da versão slim do jQuery é que esta não possuí nem as funções de animação nem as de AJAX do jQuery tradicional, deixando a framework mais leve.",
+            "A versão de produção é minificada, já a de desenvolvimento vem em sua forma normal. Minificar é o processo de reduzir o tamanho de um arquivo fazendo certos processos como remover comentários, trocar nome de váriaveis por nomes menores, remover espaços, etc... A versão de produção, tem um tamanho reduzido, sendo incrívelmente 30% do peso da versão de desenvolvimento. ",
+            "Para criarmos elementos do DOM com jQuery, devemos utilizar a própria função jQuery ($) , mas em vez de passarmos um id, classe, ou nome de um elemento para ela buscar, devemos passar uma tag HTML completa( com os sinais < e >)"
+        ],
+        "Funções":[
+            "Para selecionarmos um elemento HTML com jQuery, utilizamos sua função seletora que tem o mesmo nome da framework, a função jQuery! Ela pode ser invocada de dois modos, o primeiro que é utilizando seu nome completo: jQuery(). Ou a mais comum que é utilizando o atalho conhecido para a função jQuery, o cifrão: $();",
+            "Se queremos ter acesso ao contéudo textual de um elemento selecionado pelo jQuery, devemos utilizar a função .text(). Agora quando queremos alterar o texto de um elemento, também utilizamos a função .text(), porém passando o valor do novo texto como parâmetro para ela.",
+            "A função on() do jQuery, recebe como parâmetro dois argumentos: O primeiro sendo uma string com o nome do evento que ela vai passar a escutar e o segundo uma função, com a ação que ela deve executar quando o evento acontecer.",
+            "As funções .val() e .text() podem manipular os valores de texto dos elementos, mas a .val() funciona em elementos de <input> que são campos aonde o usuário do site insere dados , como os campos de <input>(todos os tipos), <textarea> e <select>. Já a função .text() pega o conteúdo de texto de tags HTML que tem texto dentro, como as <h1>, <span> e <p>",
+            "A função .one() funciona de modo semelhante a função .on(), ambas podem ser utilizadas em qualquer elemento, recebem qualquer evento e uma função anônima ou uma função nomeada ... a diferença entre elas é na hora de escutar os eventos, a função .one() escuta o evento apenas uma única vez, diferentemente da função on(), que fica escutando o evento em um elemento do HTML por tempo ilimitado.",
+            "Os eventos mais comuns do jQuery possuem funções de atalho ( shorthand functions ), por exemplo as funções .focus, .change, .dblclick ... etc. Todos eles equivalem a chamada da função on() passando-os como parâmetro. As funções de atalho, assim como a função on devem receber uma função como parâmetro, que indica qual ação elas devem executar ao ouvirem o evento.",
+            "A função css recebe o nome da propriedade e devolve o valor: var cor = $('div').css('background-color');. Também é possivel recuperar mais de um valor passando um array de propriedades, por exemplo: var valores = $('div').css(['background-color','width']);. O resultado é um objeto que possui todos os valores. Por exemplo para acessar o width podemos escrever: valores.width",
+            "A função .css() também pode ser usada para adicionar novas propriedades. No entanto isso não é considerado boa prática e deve ser evitado, pois para facilitar a manutenção devemos declarar as propriedades dentro de um arquivo CSS.",
+            "A função que adiciona um novo elemento como último filho é a append. Ela recebe um elemento HTML ou uma string e adiciona-o como um filho, depois dos filhos que ele já possuía. Já o comando que adiciona um novo elemento como primeiro filho é o prepend(). Ele recebe um elemento HTML ou uma string e adiciona-o como um filho, antes dos filhos que ele já possuía.",
+            "A função .parent() tem como objetivo navegar pela árvore de elementos do HTML. Ela por padrão retorna o pai do elemento em que foi chamada. Como curiosidade , a função .parent() também pode receber um seletor como argumento. Deste modo, ela irá procurar nos pais do elemento por alguém com o seletor especificado.",
+            "A função .remove() , serve pare remover um elemento do HTML, como o próprio nome indica. Tome cuidado ao usá-la , pois o elemento é realmente removido e não apenas escondido, que é o caso quando usamos a função .hide().",
+            "A função toggle é um atalho para as funções hide e show. Quando ela é chamada para um elemento visível, o elemento fica invisível. Quando é chamada para um elemento invisível, ela torna o elemento visível.",
+            "A função is que permite consultar uma pseudo class. Toda vez que um elemento esta com display diferente de none ele ganha a pseudo classe :visible . A função is retorna true caso o elemento esteja visível. Se ele estiver visível, precisamos escondê-lo e isso é feito através da função hide. Para exibir o elemento, é usada a função show.",
+            "A função slideDown aceita recebe como parâmetro um tempo em milissegundos. Neste exemplo, a transição demorará dois segundos para ser concluída.",
+            "A função .stop() serve para interromper uma animação antes de começar a próxima.",
+            ""
+        ]
+    }
+}
