@@ -9,7 +9,7 @@
         "A sintaxe de módulos do ES2015 considera cada script um módulo e através das instruções import e export importamos e exportamos artefatos respectivamente.",
         "TypeScript oferece o conceito de namespace. Podemos agrupar classes dentro de um mesmo namepace e acessá-las através dele.",
         "O parâmetro escapar é opcional, adicionando ? ao final de sua declaração. Parâmetros opcionais devem ser sempre os últimos parâmetros.",
-        "TypeScript possui o modo strickNullChecks. Neste modo, null e undefined não fazem parte do domínio dos tipos e só podem ser atribuídos a eles mesmos. Com a exceção de undefined, que pode ser atribuído a void. Isso pode ser interessante para evitarmos valores nulos e indefinidos em nosso projeto.",
+        "TypeScript possui o modo strickNullChecks. Neste modo, null e undefined não fazem parte do domínio dos tipos e só podem ser atribuídos a eles mesmos. Com a exceção de undefined, que pode ser atribuído a void. Isso pode ser interessante para evitarmos valores nulos e indefinidos em nosso projeto."
     ],
     "Tipo Any": [
         "Por padrão, é assumido automaticamente pelo TypeScript quando não definimos o tipo das nossas variáveis.",
