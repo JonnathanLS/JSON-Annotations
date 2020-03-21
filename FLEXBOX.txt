@@ -1,3 +1,0 @@
-O valor da propriedade display referente ao flexbox é flex.
-A propriedade align-items faz com que os elementos dentro do pai que está com flex se alinhem verticalmente, portanto, pra eles ficarem alinhados no centro podemos usar align-items: center, colocando essa propriedade no pai dos elementos que queremos alinhar.
-Podemos colocar flex-direction: column no pai, dessa forma ele muda o fluxo o qual o flexbox renderiza os elementos. Assim eles ficam um em baixo do outro.
