@@ -296,6 +296,64 @@
                 "Os formulários controlados por modelo são semelhantes aos padrões no AngularJS, mas têm limitações, devido aos critérios de muitos aplicativos Angular modernos em grande escala.",
                 "As formas reativas integram-se aos padrões reativos já presentes em outras áreas da arquitetura Angular e complementam bem esses requisitos."
             ]
+        },
+        "HttpClient":{
+            "Informações Relevantes":[
+                "A maioria dos aplicativos front-end se comunica com serviços de back-end pelo protocolo HTTP. Navegadores modernos suportam duas APIs diferentes para fazer solicitações HTTP: a interface XMLHttpRequest e a API fetch ().",
+                "O HttpClient em @ angular / common / http oferece uma API HTTP do cliente simplificada para aplicativos Angular que repousa na interface XMLHttpRequest exposta pelos navegadores.",
+                "Os benefícios adicionais do HttpClient incluem recursos de testabilidade, objetos de solicitação e resposta digitados, interceptação de solicitação e resposta, APIs observáveis ​​e tratamento de erros simplificado.",
+                "É uma prática recomendada separar a apresentação dos dados do acesso a dados, encapsulando o acesso a dados em um serviço separado e delegando esse serviço no componente, mesmo em casos simples."
+            ],
+            "Observáveis ​​e Operadores":[
+                "O RxJS é uma biblioteca para compor código assíncrono e baseado em retorno de chamada em um estilo funcional e reativo. Muitas APIs Angular, incluindo HttpClient, produzem e consomem Observáveis ​​RxJS.",
+                "Embora você possa se familiarizar com o mínimo de conhecimento em RxJS, convém aumentar suas habilidades em RxJS ao longo do tempo para usar o HttpClient com eficiência.",
+                "Um método HttpClient não inicia sua solicitação HTTP até você chamar subscribe () no observável retornado por esse método. Isso vale para todos os métodos HttpClient",
+                "Todos os observáveis ​​retornados dos métodos HttpClient são congelados por padrão, a execução da solicitação HTTP é adiada, permitindo que você estenda o observável com operações adicionais, como tap e catchError antes que algo realmente aconteça.",
+                "De fato, cada subscrever () inicia uma execução separada e independente do observável. A inscrição duas vezes resulta em duas solicitações HTTP."
+            ],
+            "Interceptadores":{
+                "Informações Relevantes":[
+                    "Com a interceptação, você declara interceptores que inspecionam e transformam solicitações HTTP do seu aplicativo no servidor. Os mesmos interceptadores também podem inspecionar e transformar as respostas do servidor no caminho de volta ao aplicativo. Vários interceptadores formam uma cadeia de manipuladores de solicitações / respostas para frente e para trás.",
+                    "Os interceptadores podem executar uma variedade de tarefas implícitas, da autenticação ao log, de maneira rotineira e padrão, para cada solicitação / resposta HTTP.",
+                    "Sem interceptação, os desenvolvedores teriam que implementar essas tarefas explicitamente para cada chamada de método HttpClient.",
+                    "A maioria dos interceptadores inspeciona a solicitação no caminho e encaminha a solicitação (talvez alterada) para o método handle () do próximo objeto que implementa a interface HttpHandler.",
+                    "Como intercept (), o método handle () transforma uma solicitação HTTP em um Observable of HttpEvents, que inclui a resposta do servidor. O método intercept () pode inspecionar esse observável e alterá-lo antes de devolvê-lo ao chamador.",
+                    "O 'next' objeto representa o próximo interceptador na cadeia de interceptores. O 'next' final da cadeia é o manipulador de back-end HttpClient que envia a solicitação ao servidor e recebe a resposta do servidor.",
+                    "A maioria dos interceptores chama next.handle () para que a solicitação flua para o próximo interceptador e, eventualmente, para o manipulador de back-end. Um interceptador pode pular a chamada next.handle (), causar um curto-circuito na cadeia e retornar seu próprio Observable com uma resposta artificial do servidor.",
+                    "Como os interceptores são dependências (opcionais) do serviço HttpClient, você deve fornecê-los no mesmo injetor (ou pai do injetor) que fornece o HttpClient. Os interceptores fornecidos após o DI criar o HttpClient são ignorados."
+                ],
+                "Ordem dos Interceptadores":[
+                    "Angular aplica interceptores na ordem em que você os fornece. Se você fornecer interceptores A, então B e C, as solicitações fluirão em A-> B-> C e as respostas fluirão C-> B-> A.",
+                    "Você não pode alterar a ordem ou remover os interceptores posteriormente. Se você precisar habilitar e desabilitar um interceptor dinamicamente, precisará criar esse recurso no próprio interceptador.",
+                    "Embora os interceptores sejam capazes de alterar solicitações e respostas, as propriedades da instância HttpRequest e HttpResponse são somente leitura, tornando-as imutáveis."
+                ],
+                "Imutabilidade":[
+                    "Eles são imutáveis ​​por um bom motivo: o aplicativo pode repetir uma solicitação várias vezes antes de ser bem-sucedido, o que significa que a cadeia de interceptadores pode reprocessar a mesma solicitação várias vezes.",
+                    "Se um interceptador pudesse modificar o objeto de solicitação original, a operação tentada novamente seria iniciada a partir da solicitação modificada, e não do original. A imutabilidade garante que os interceptadores vejam a mesma solicitação para cada tentativa.",
+                    "O protetor de atribuição somente leitura não pode impedir atualizações profundas e, em particular, não pode impedir que você modifique uma propriedade de um objeto do corpo da solicitação. Se você deve alterar o corpo da solicitação, copie-o primeiro, altere a cópia, clone () a solicitação e defina o corpo do clone com o novo corpo",
+                    "Às vezes, você precisa limpar o corpo da solicitação em vez de substituí-lo. Se você definir o corpo da solicitação clonada como indefinido, o Angular assumirá que pretende deixar o corpo como está. Não é isso que você quer. Se você definir o corpo da solicitação clonada como nulo, o Angular saberá que você deseja limpar o corpo da solicitação."
+                ],
+                "Registro": "Como os interceptores podem processar a solicitação e a resposta juntos, eles podem fazer coisas como tempo e registrar uma operação HTTP inteira.",
+                "Cache":[
+                    "Os interceptadores podem lidar com solicitações por si mesmos, sem encaminhar para next.handle ().",
+                    "Você pode decidir armazenar em cache determinadas solicitações e respostas para melhorar o desempenho.",
+                    "Você pode delegar o armazenamento em cache a um interceptador sem perturbar os serviços de dados existentes."
+                ],
+                "Progresso de Eventos":[
+                    "Às vezes, os aplicativos transferem grandes quantidades de dados e essas transferências podem levar muito tempo, e os uploads de arquivos são um exemplo típico. Fornecer ao usuário feedback sobre o andamento dessas transferências, é uma ótima prática.",
+                    "Para fazer uma solicitação com os eventos de progresso ativados, é possível criar uma instância do HttpRequest com a opção reportProgress configurada como true para ativar o rastreamento de eventos de progresso.",
+                    "Todo evento de progresso aciona a detecção de alterações, portanto, somente ative-as se você realmente pretender relatar o progresso na interface do usuário. Ao usar HttpClient # request () com um método HTTP, configure com observe: 'events' para ver todos os eventos, incluindo o andamento das transferências."
+                ],
+                "Segurança: Proteção XSR": [
+                    "A falsificação de solicitação entre sites (XSRF ou CSRF) é uma técnica de ataque pela qual o invasor pode induzir um usuário autenticado a executar ações inconscientemente no seu site.",
+                    "O HttpClient suporta um mecanismo comum usado para impedir ataques XSRF.",
+                    "Ao executar solicitações HTTP, um interceptador lê um token de um cookie, por padrão, XSRF-TOKEN, e o define como um cabeçalho HTTP, X-XSRF-TOKEN. Como apenas o código executado em seu domínio pode ler o cookie, o back-end pode ter certeza de que a solicitação HTTP veio do aplicativo cliente e não de um invasor.",
+                    "Por padrão, um interceptador envia esse cabeçalho em todas as solicitações mutantes (como POST) para URLs relativos, mas não em solicitações GET / HEAD ou em solicitações com uma URL absoluta.",
+                    "Seu servidor precisa definir um token em um cookie de sessão legível por JavaScript chamado XSRF-TOKEN no carregamento da página ou na primeira solicitação GET, de modo que, em solicitações subsequentes, o servidor pode verificar se o cookie corresponde ao cabeçalho HTTP X-XSRF-TOKEN e, portanto, verificar se apenas o código em execução no seu domínio pode ter enviado a solicitação.",
+                    "O token deve ser exclusivo para cada usuário e deve ser verificável pelo servidor; isso impede que o cliente crie seus próprios tokens.",
+                    "Definir o token como um resumo do cookie de autenticação do seu site como um extra, para aumentar a segurança."
+                ]
+            }   
         }
     }
 }
