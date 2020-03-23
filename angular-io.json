@@ -167,6 +167,84 @@
                     "Ao registrar um provedor no nível do componente, você obtém uma nova instância do serviço com cada nova instância desse componente."
                 ]
             }
+        },
+        "Componentes e Modelos":{
+            "Exibindo Dados": {
+                "Informações Relevantes":[
+                    "Componentes angulares formam a estrutura de dados do seu aplicativo. O modelo HTML associado a um componente fornece os meios para exibir esses dados no contexto de uma página da web. Juntos, a classe e o modelo de um componente formam uma visualização dos dados do aplicativo.",
+                    "O processo de combinar valores de dados com sua representação na página é chamado de ligação de dados. Você exibe seus dados para um usuário (e coleta dados do usuário) vinculando controles no modelo HTML às propriedades de dados da classe de componente.",
+                    "Você pode adicionar lógica ao modelo incluindo diretivas, que informam ao Angular como modificar a página conforme ela é renderizada.",
+                    "Angular define uma linguagem de modelo que expande a notação HTML com sintaxe que permite definir vários tipos de ligação de dados e diretivas lógicas. Quando a página é renderizada, Angular interpreta a sintaxe do modelo para atualizar o HTML de acordo com sua lógica e estado atual dos dados."
+                ]
+            },
+            "Sintaxe do Modelo":{
+                "Introdução": [
+                    "O aplicativo Angular gerencia o que o usuário vê e pode fazer, conseguindo isso através da interação de uma instância de classe de componente (o componente) e seu modelo voltado para o usuário.",
+                    "Em Angular, o componente desempenha o papel do controlador, e o modelo (template) representa a visualização."
+                ],
+                "HTML como Modelo": "HTML é a linguagem do modelo Angular. Quase toda a sintaxe HTML é uma sintaxe de modelo válida. O elemento <script> é uma exceção notável; é proibido, eliminando o risco de ataques de injeção de script. Na prática, <script> é ignorado e um aviso aparece no console do navegador.",
+                "Interpolação":[
+                    "A interpolação permite incorporar seqüências de caracteres calculadas no texto entre as tags de elemento HTML e nas atribuições de atributo. Expressões de modelo são o que você usa para calcular essas strings.",
+                    "Angular avalia todas as expressões entre chaves duplas, converte os resultados da expressão em seqüências de caracteres e as vincula a seqüências literais vizinhas. Por fim, atribui esse resultado interpolado composto a uma propriedade de elemento ou diretiva.",
+                    "A interpolação é uma sintaxe especial que o Angular converte em uma ligação de propriedade."    
+                ],
+                "Expressão de Modelo": "Uma expressão de modelo produz um valor e aparece dentro das chaves duplas, {{}}. Angular executa a expressão e a atribui a uma propriedade de um destino de ligação; o destino pode ser um elemento HTML, um componente ou uma diretiva.",
+                "Contexto de Exmpressão":[
+                    "O contexto da expressão é geralmente a instância do componente.",
+                    "Uma expressão também pode se referir a propriedades do contexto do modelo, como uma variável de entrada do modelo.",
+                    "O contexto para termos em uma expressão é uma mistura das variáveis ​​do modelo, do objeto de contexto da diretiva (se houver) e dos membros do componente. Se você referenciar um nome que pertence a mais de um desses espaços para nome, o nome da variável do modelo terá precedência, seguido por um nome no contexto da diretiva e, por último, os nomes dos membros do componente."
+                ],
+                "Diretrizes de Expressão":{
+                    "Simplicidade": "Embora seja possível escrever expressões de modelo complexas, é uma melhor prática evitá-las. Um nome de propriedade ou chamada de método deve ser a norma, mas uma negação booleana ocasional,!, Está OK. Caso contrário, restrinja a lógica de aplicativo e de negócios ao componente, onde é mais fácil desenvolver e testar.",
+                    "Rápidas Execuções": [
+                        "Angular executa expressões de modelo após cada ciclo de detecção de alterações. Os ciclos de detecção de alterações são acionados por muitas atividades assíncronas, como resoluções de promessas, resultados HTTP, eventos de timer, pressionamentos de teclas e movimentos do mouse.",
+                        "As expressões devem terminar rapidamente ou a experiência do usuário pode se arrastar, especialmente em dispositivos mais lentos. Considere armazenar valores em cache quando o cálculo for caro."
+                    ],
+                    "Sem Efeitos Colaterais Visíveis": [
+                        "Uma expressão de modelo não deve alterar nenhum estado de aplicativo que não seja o valor da propriedade de destino. Essa regra é essencial para a política de 'fluxo de dados unidirecional' do Angular.",
+                        "Você nunca deve se preocupar que a leitura de um valor de componente possa alterar algum outro valor exibido.",
+                        "A visualização deve ser estável ao longo de uma única passagem de renderização.",
+                        "Uma expressão idempotente é ideal porque é livre de efeitos colaterais e melhora o desempenho da detecção de alterações do Angular.",
+                        "Em termos do Angular, uma expressão idempotente sempre retorna exatamente a mesma coisa até que um de seus valores dependentes seja alterado.",
+                        "Os valores dependentes não devem mudar durante uma única volta do loop de eventos.",
+                        "Se uma expressão idempotente retornar uma sequência ou um número, ela retornará a mesma sequência ou número quando chamada duas vezes seguidas.",
+                        "Se a expressão retornar um objeto, incluindo uma matriz, retornará a mesma referência de objeto quando chamada duas vezes seguidas."
+                    ],
+                    "Instruções de Modelo":[
+                        "Uma instrução de modelo responde a um evento gerado por um destino de ligação, como um elemento, componente ou diretiva.",
+                        "Uma declaração de modelo tem um efeito colateral. Esse é o objetivo de um evento. É assim que você atualiza o estado do aplicativo a partir da ação do usuário.",
+                        "Responder a eventos é o outro lado do 'fluxo de dados unidirecional' da Angular. Você é livre para alterar qualquer coisa, em qualquer lugar, durante essa reviravolta do evento.",
+                        "Como expressões de modelo, as instruções de modelo usam uma linguagem que se parece com JavaScript. O analisador de instrução de modelo difere do analisador de expressão de modelo e suporta especificamente a atribuição básica (=) e as expressões de encadeamento com ';'."
+                    ],
+                    "Contexto da Declaração":[
+                        "Assim como nas expressões, as instruções podem se referir apenas ao conteúdo do contexto da instrução, como um método de manipulação de eventos da instância do componente.",
+                        "O contexto da instrução geralmente é a instância do componente, ou seja, metodo() em (click)='metodo()'' é um método do componente vinculado a dados.",
+                        "O contexto da instrução também pode se referir às propriedades do próprio contexto do modelo.",
+                        "Os nomes de contexto do modelo têm precedência sobre os nomes de contexto do componente."
+                    ],
+                    "Diretrizes de Declaração":[
+                        "As instruções do modelo não podem se referir a nada no espaço para nome global.",
+                        "Eles não podem se referir a janela ou documento.",
+                        "Eles não podem chamar console.log ou Math.max.",
+                        "Como nas expressões, evite escrever instruções de modelo complexas.",
+                        "Uma chamada de método ou atribuição simples de propriedade deve ser a norma."
+                    ],
+                    "Sintaxe de Ligação":[
+                        "A ligação de dados é um mecanismo para coordenar o que os usuários veem, especificamente com os valores dos dados do aplicativo.",
+                        "Embora você possa enviar valores e extrair valores do HTML, o aplicativo é mais fácil de escrever, ler e manter se você entregar essas tarefas para uma estrutura de ligação. Você simplesmente declara ligações entre fontes de ligação, direciona elementos HTML e deixa a estrutura fazer o resto.",
+                        "Os tipos de ligação que não sejam interpolação têm um nome de destino à esquerda do sinal de igual, cercado por pontuação, [] ou () ou precedido por um prefixo: bind-, on-, bindon-."
+                    ],
+                    "Atributo HTML vs. Propriedade DOM":[
+                        "A distinção entre um atributo HTML e uma propriedade DOM é fundamental para entender como funciona a ligação Angular. ",
+                        "Os atributos são definidos por HTML e as propriedades são acessadas a partir dos nós DOM (Document Object Model).",
+                        "É importante lembrar que o atributo HTML e a propriedade DOM são coisas diferentes, mesmo quando eles têm o mesmo nome.", 
+                        "No Angular, a única função dos atributos HTML é inicializar o elemento e o estado da diretiva.", 
+                        "A ligação de modelo funciona com propriedades e eventos, não atributos.", 
+                        "Quando você escreve uma ligação de dados, está lidando exclusivamente com as propriedades e eventos do DOM do objeto de destino.",
+                        "Esta regra geral pode ajudá-lo a construir um modelo mental de atributos e propriedades DOM: Os atributos inicializam as propriedades DOM e, então, elas são concluídas. Os valores da propriedade podem mudar; valores de atributo não podem. Há uma exceção a esta regra. Os atributos podem ser alterados por setAttribute (), que reinicializa a propriedade DOM correspondente"
+                    ]
+                }             
+            }
         }
     }
 }
