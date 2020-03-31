@@ -297,6 +297,98 @@
                 "As formas reativas integram-se aos padrões reativos já presentes em outras áreas da arquitetura Angular e complementam bem esses requisitos."
             ]
         },
+        "Observables & RxJS":{
+            "Observables":{
+                "Informações Relevantes":[
+                    "Observáveis ​​fornecem suporte para a passagem de mensagens entre partes do seu aplicativo. Eles são usados ​​com freqüência no Angular e são a técnica recomendada para manipulação de eventos, programação assíncrona e manipulação de vários valores.",
+                    "O 'observer pattern' é um padrão de design de software no qual um objeto, chamado de sujeito, mantém uma lista de seus dependentes, chamados observadores, e os notifica automaticamente sobre alterações de estado. Esse padrão é semelhante (mas não idêntico) ao padrão de design de 'publish/subscribe'.",
+                    "Observáveis ​​são declarativos - ou seja, você define uma função para publicar valores, mas ela não é executada até que um consumidor assine. O consumidor inscrito recebe notificações até que a função seja concluída ou até que eles cancelem a inscrição."
+                ],
+                "Uso Básico": "Como publicado, você cria uma instância Observable que define uma função de assinante. Essa é a função que é executada quando um consumidor chama o método subscribe (). A função de assinante define como obter ou gerar valores ou mensagens a serem publicadas.",
+                "Subscrever": [
+                    "Uma instância Observable começa a publicar valores somente quando alguém se inscreve nela. Você se inscreve chamando o método subscribe () da instância, passando um objeto observador para receber as notificações.",
+                    "Como um termo geral, nos referimos aos dados publicados por um observável como um fluxo. Qualquer tipo de valor pode ser representado com um observável, e os valores são publicados como um fluxo."
+                ],
+                "Multicasting":[
+                    "Um observável típico cria uma nova execução independente para cada observador inscrito - quando um observador se inscreve, o observável liga um manipulador de eventos e entrega valores a esse observador - quando outra observador se inscreve, o observável liga um novo manipulador de eventos e entrega valores para esse segundo observador em uma execução separada.",
+                    "Às vezes, em vez de iniciar uma execução independente para cada assinante, se deseja que cada assinatura obtenha os mesmos valores - mesmo que os valores já tenham começado a ser emitidos.",
+                    "O Multicasting é a prática de transmitir para uma lista de vários assinantes em uma única execução.",
+                    "Com um multicast observável, você reutilza o primeiro ouvinte e envia valores para cada assinante."
+                ],
+                "Error":[
+                    "Como os observáveis ​​produzem valores de forma assíncrona, o try / catch não captura efetivamente os erros.",
+                    "Você lida com erros especificando um retorno de chamada de erro no observador.",
+                    "Produzir um erro também faz com que o observável limpe as assinaturas e pare de produzir valores. Um observável pode produzir valores (chamando o próximo retorno de chamada) ou pode ser concluído chamando o retorno de chamada completo ou de erro."
+                ]
+            },
+            "Biblioteca RxJS":{
+                "Informações Relevantes":[
+                    "A programação reativa é um paradigma de programação assíncrona relacionado aos fluxos de dados e à propagação da mudança (Wikipedia)",
+                    "O RxJS (Extensões Reativas para JavaScript) é uma biblioteca para programação reativa usando observáveis ​​que facilita a composição de código assíncrono ou baseado em retorno de chamada.",
+                    "O RxJS fornece uma implementação do tipo Observable, necessária até que o tipo se torne parte do idioma e até que os navegadores o suportem. A biblioteca também fornece funções utilitárias para criar e trabalhar com observáveis.",
+                    "Funções utilitárias podem ser usadas para: Convertendo código existente para operações assíncronas em observáveis; Iterando Através dos Valores em um Fluxo; Mapeando valores para diferentes tipos; Filtrando fluxos Compondo vários fluxos;"
+                ],
+                "Operadores":[
+                    "Operadores são funções que se baseiam na base observável para permitir manipulação sofisticada de coleções. Por exemplo, o RxJS define operadores como map (), filter (), concat () e flatMap (). Os operadores aceitam opções de configuração e retornam uma função que leva uma fonte observável. Ao executar esta função retornada, o operador observa os valores emitidos do observável de origem, os transforma e retorna um novo observável desses valores transformados.",
+                    "Você pode usar tubos para vincular operadores. Os tubos permitem combinar várias funções em uma única função. A função pipe () usa como argumento as funções que você deseja combinar e retorna uma nova função que, quando executada, executa as funções compostas em sequência.",
+                    "Um conjunto de operadores aplicados a um observável é uma receita, ou seja, um conjunto de instruções para produzir os valores nos quais você está interessado. Por si só, a receita não faz nada. Você precisa chamar subscribe () para produzir um resultado através da receita.",
+                    "Para aplicativos Angular, preferimos combinar operadores com tubos, em vez de encadear, embora o encadeamento é usado em muitos exemplos de RxJS."
+                ],
+                "Erros":[
+                    "Além do manipulador error () que você fornece na assinatura, o RxJS fornece o operador catchError que permite manipular erros conhecidos na receita observável.",
+                    "Suponha que você tenha um observável que faça uma solicitação de API e mapeie a resposta do servidor. Se o servidor retornar um erro ou o valor não existir, será produzido um erro. Se você capturar esse erro e fornecer um valor padrão, seu fluxo continuará processando valores em vez de gerar erros."
+                ],
+                "Retry":[
+                    "Enquanto o operador catchError fornece um caminho simples de recuperação, o operador de nova tentativa permite tentar novamente uma solicitação com falha. Use o operador de nova tentativa antes do operador catchError. Ele reinscreve a fonte original observável, que pode executar novamente a sequência completa de ações que resultaram no erro. Se isso incluir uma solicitação HTTP, ela tentará novamente.",
+                    "Não tente novamente as solicitações de autenticação, pois elas devem ser iniciadas apenas pela ação do usuário. Não queremos bloquear contas de usuário com solicitações de login repetidas que o usuário não iniciou."
+                ],
+                "Nomenclaturas":[
+                    "Como os aplicativos angulares são geralmente escritos em TypeScript, você normalmente sabe quando uma variável é observável. Embora a estrutura Angular não imponha uma convenção de nomenclatura para observáveis, você verá frequentemente observáveis ​​nomeados com um sinal '$'' à direita.",
+                    "Definir '$' como convenção pode ser útil ao varrer o código e procurar valores observáveis.",
+                    "Se você deseja que uma propriedade armazene o valor mais recente de um observável, pode ser conveniente simplesmente usar o mesmo nome com ou sem o '$'"
+                ]
+            },
+            "Observables no Angular":{
+                "Informações Relevantes":[
+                    "Angular usa observáveis ​​como uma interface para lidar com uma variedade de operações assíncronas comuns.",
+                    "Você pode definir eventos personalizados que enviam dados de saída observáveis ​​de um filho para um componente pai.",
+                    "O módulo HTTP usa observáveis ​​para lidar com solicitações e respostas AJAX.",
+                    "Os módulos Router e Forms usam observáveis ​​para ouvir e responder a eventos de entrada do usuário."
+                ],
+                "Transmissão de Dados":[
+                    "Angular fornece uma classe EventEmitter que é usada ao publicar valores de um componente por meio do decorador @Output().",
+                    "O EventEmitter estende de Subject RxJS, adicionando um método emit() para que ele possa enviar valores arbitrários.",
+                    "Quando emit() é chamado, o EventEmitter passa o valor emitido para o próximo método ) de qualquer observador inscrito."
+                ],
+                "HTTP":[
+                    "O HttpClient da Angular retorna observáveis ​​de chamadas de método HTTP.",
+                    "Observáveis ​​não alteram a resposta do servidor (como pode ocorrer através de chamadas encadeadas .then() sob promessas), em vez disso, você pode usar uma série de operadores para transformar valores conforme necessário.",
+                    "Solicitações HTTP são canceláveis ​​através do método unsubscribe ().",
+                    "As solicitações podem ser configuradas para obter atualizações de eventos em andamento.",
+                    "Solicitações com falha podem ser repetidas facilmente."
+                ],
+                "Async Pipe": "O AsyncPipe assina um cumprimento ou promessa e retorna o valor mais recente que ele emitiu. Quando um novo valor é emitido, o tubo marca o componente a ser verificado quanto a alterações.",
+                "Roteamento":[
+                    "Router.events fornece eventos como observáveis, use o operador filter () do RxJS para procurar eventos de interesse e se inscrever nele para tomar decisões com base na sequência de eventos no processo de navegação.",
+                    "O ActivatedRoute é um serviço de roteador injetado que utiliza observáveis ​​para obter informações sobre um caminho e parâmetros de rota."
+                ],
+                "Formulários Reativos": [
+                    "Os formulários reativos têm propriedades que usam observáveis ​​para monitorar os valores de controle do formulário. As propriedades FormControl valueChanges e statusChanges contêm observáveis ​​que geram eventos de alteração.",
+                    "A inscrição em uma propriedade observável de controle de formulário é uma maneira de acionar a lógica do aplicativo dentro da classe de componentes."
+                ]
+            },
+            "Observables vs Promisses":[
+                "Observáveis ​​são declarativos; o cálculo não inicia até a assinatura. As promessas são executadas imediatamente na criação. Isso torna os observáveis ​​úteis para definir receitas que podem ser executadas sempre que você precisar do resultado.",
+                "Observáveis ​​fornecem muitos valores. Promessas fornecem um. Isso torna os observáveis ​​úteis para obter vários valores ao longo do tempo.",
+                "Observáveis ​​diferenciam entre encadeamento e assinatura. Promessas possuem apenas cláusulas .then (). Isso torna os observáveis ​​úteis para criar receitas de transformação complexas a serem usadas por outras partes do sistema, sem causar a execução do trabalho.",
+                "Observáveis subscribe() é responsável por manipular erros. Promessas empurram erros para seus filhos. Isso torna os observáveis ​​úteis para o tratamento centralizado e previsível de erros.",
+                "Observáveis ​​não são executados até que um consumidor assine. O subscribe () executa o comportamento definido uma vez e pode ser chamado novamente. Cada assinatura tem seu próprio cálculo. A nova assinatura causa recomputação de valores.",
+                "As promessas são executadas imediatamente e apenas uma vez. O cálculo do resultado é iniciado quando a promessa é criada. Não há como reiniciar o trabalho. Todas as cláusulas (assinaturas) compartilham o mesmo cálculo.",
+                "Observáveis ​​diferenciam entre funções de transformação, como um mapa e uma assinatura. Somente a assinatura ativa a função de assinante para começar a calcular os valores. As promessas não diferenciam entre as últimas cláusulas .then (equivalentes à assinatura) e as intermediárias .then cláusulas (equivalentes ao map).",
+                "Assinaturas observáveis ​​são canceláveis. O cancelamento da inscrição remove o ouvinte de receber mais valores e notifica a função de assinante para cancelar o trabalho. Promessas não são canceláveis.",
+                "Erros de execução observáveis ​​são entregues ao manipulador de erros do assinante e o assinante cancela automaticamente a assinatura do observável. Promisses empurram os erros para seus filhos."
+            ]
+        },
         "HttpClient":{
             "Informações Relevantes":[
                 "A maioria dos aplicativos front-end se comunica com serviços de back-end pelo protocolo HTTP. Navegadores modernos suportam duas APIs diferentes para fazer solicitações HTTP: a interface XMLHttpRequest e a API fetch ().",
