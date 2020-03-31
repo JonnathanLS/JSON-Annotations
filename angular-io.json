@@ -245,6 +245,57 @@
                     ]
                 }             
             }
+        },
+        "Formulários": {
+            "Informações Relevantes":[
+                "Angular fornece duas abordagens diferentes para lidar com a entrada do usuário por meio de formulários: reativo e orientado a modelo. Ambos capturam eventos de entrada do usuário a partir da visualização, validam a entrada do usuário, criam um modelo de formulário e um modelo de dados para atualizar e fornecem uma maneira de rastrear alterações",
+                "Formulários reativos e controlados por modelo processam e gerenciam dados de formulário de maneira diferente. Cada um oferece vantagens diferentes.",
+                "As formas reativas são mais robustas: são mais escaláveis, reutilizáveis ​​e testáveis. Se os formulários são uma parte essencial do seu aplicativo, ou você já está usando padrões reativos para criar seu aplicativo, use formulários reativos.",
+                "Formulários controlados por modelo são úteis para adicionar um formulário simples a um aplicativo, como um formulário de inscrição na lista de e-mails. Eles são fáceis de adicionar a um aplicativo, mas não são dimensionados tão bem quanto em formas reativas. Se você possui requisitos e lógica de formulário muito básicos que podem ser gerenciados apenas no modelo, use formulários controlados por modelo"
+
+            ],
+            "Fluxo de Dados":[
+                "Os formulários reativos e controlados por modelo seguem duas estratégias diferentes ao manipular a entrada de formulário.",
+                "nas formas reativas, cada elemento do formulário na exibição é diretamente vinculado a um modelo de formulário (instância do FormControl). As atualizações da visualização para o modelo e do modelo para a visualização são síncronas e não dependem da interface do usuário renderizada.",
+                "Nos formulários controlados por modelo, cada elemento do formulário está vinculado a uma diretiva que gerencia o modelo de formulário internamente."
+            ],
+            "Validação":[
+                "O Angular fornece um conjunto de validadores internos, além da capacidade de criar validadores personalizados.",
+                "Os formulários reativos definem validadores personalizados como funções que recebem um controle para validar.",
+                "Os formulários controlados por modelo estão vinculados às diretivas de modelo e devem fornecer diretivas de validador personalizadas que agrupam as funções de validação."
+            ],
+            "Testes":[
+                "O teste desempenha um papel importante em aplicativos complexos e uma estratégia de teste mais simples é útil ao validar se seus formulários funcionam corretamente.",
+                "Formulários reativos e formulários controlados por modelo têm diferentes níveis de confiança na renderização da interface do usuário para executar asserções com base no controle de formulário e alterações no campo de formulário.",
+                "Os formulários reativos fornecem uma estratégia de teste relativamente fácil, porque fornecem acesso síncrono ao formulário e aos modelos de dados e podem ser testados sem renderizar a interface do usuário. Nesses testes, status e dados são consultados e manipulados através do controle sem interagir com o ciclo de detecção de alterações.",
+                "A gravação de testes com formulários orientados a modelos requer um conhecimento detalhado do processo de detecção de alterações e um entendimento de como as diretivas são executadas em cada ciclo para garantir que os elementos sejam consultados, testados ou alterados no momento correto."
+            ],
+            "Mutabilidade":{
+                "Reativo":[
+                    "Os formulários reativos mantêm o modelo de dados puro, fornecendo-o como uma estrutura de dados imutável.",
+                    "Sempre que uma alteração é acionada no modelo de dados, a instância FormControl retorna um novo modelo de dados em vez de atualizar o modelo de dados existente.",
+                    "Permite rastrear alterações exclusivas no modelo de dados através da observação do controle.",
+                    "Fornece uma maneira de a detecção de alterações ser mais eficiente, porque ela só precisa atualizar as alterações exclusivas.",
+                    "Segue padrões reativos que se integram aos operadores observáveis ​​para transformar dados.",
+                    "Com formulários reativos, a instância FormControl sempre retorna um novo valor quando o valor do controle é atualizado."
+                    ],
+                "Orientado a Modelos":[
+                    "Os formulários controlados por modelo dependem da mutabilidade com ligação de dados bidirecional para atualizar o modelo de dados no componente conforme as alterações são feitas no modelo.",
+                    "Como não há alterações exclusivas a serem rastreadas no modelo de dados ao usar a ligação de dados bidirecional, a detecção de alterações é menos eficiente na determinação de quando são necessárias atualizações.",
+                    "Com formulários controlados por modelo, a propriedade de cor favorita é sempre modificada para seu novo valor."
+                ]
+            },
+            "Escalabilidade":[
+                "Os formulários reativos fornecem acesso a APIs de baixo nível e acesso síncrono ao modelo de formulário, facilitando a criação de formulários em grande escala.",
+                "Os formulários orientados a modelos concentram-se em cenários simples, não são tão reutilizáveis, abstraem as APIs de baixo nível e fornecem acesso assíncrono ao modelo de formulário.",
+                "A abstração com formulários controlados por modelo também aparece no teste, onde o teste de formulários reativos requer menos configuração e nenhuma dependência do ciclo de detecção de alterações ao atualizar e validar o formulário e os modelos de dados durante o teste."
+            ],
+            "Considerações Relevantes":[
+                "A escolha de uma estratégia começa com a compreensão dos pontos fortes e fracos das opções apresentadas.",
+                "Acesso de API de baixo nível e modelo de formulário, previsibilidade, mutabilidade, estratégias diretas de validação e teste e escalabilidade são considerações importantes na escolha da infraestrutura que você usa para criar seus formulários no Angular.",
+                "Os formulários controlados por modelo são semelhantes aos padrões no AngularJS, mas têm limitações, devido aos critérios de muitos aplicativos Angular modernos em grande escala.",
+                "As formas reativas integram-se aos padrões reativos já presentes em outras áreas da arquitetura Angular e complementam bem esses requisitos."
+            ]
         }
     }
 }
