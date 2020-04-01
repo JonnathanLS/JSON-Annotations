@@ -446,6 +446,66 @@
                     "Definir o token como um resumo do cookie de autenticação do seu site como um extra, para aumentar a segurança."
                 ]
             }   
+        },
+        "Injeção de Dependência":{
+            "DI no Angular":{
+                "Informações Relevantes": [
+                    "A injeção de dependência (DI) é um importante padrão de design de aplicativo. O Angular possui sua própria estrutura DI, que normalmente é usada no design de aplicativos Angular para aumentar sua eficiência e modularidade.",
+                    "Dependências são serviços ou objetos que uma classe precisa para desempenhar sua função. O DI é um padrão de codificação no qual uma classe solicita dependências de fontes externas, em vez de criá-las.",
+                    "No Angular, a estrutura DI fornece dependências declaradas para uma classe quando essa classe é instanciada.",
+                    "Os módulos filhos e os injetores de componentes são independentes entre si e criam suas próprias instâncias separadas dos serviços fornecidos.",
+                    "Quando o Angular destrói uma instância NgModule ou componente, também destrói as instâncias de serviço desse injetor e do injetor.",
+                    "Quando um componente ou serviço declara uma dependência, o construtor da classe assume essa dependência como parâmetro. Você pode dizer ao Angular que a dependência é opcional, anotando o parâmetro do construtor com @Optional()."
+                ],
+                "Injetores":[
+                    "Os injetores são herdados, o que significa que, se um determinado injetor não puder resolver uma dependência, ele solicitará ao injetor pai que a resolva. Um componente pode obter serviços de seu próprio injetor, dos injetores de seus ancestrais, do injetor do NgModule pai ou do injetor raiz.",
+                    "Você pode dizer ao Angular para injetar uma dependência no construtor de um componente, especificando um parâmetro do construtor com o tipo de dependência.",
+                    "Existe apenas um injetor de raiz para um aplicativo. Fornecer 'YourService' no nível raiz ou AppModule significa que ele é registrado com o injetor raiz.",
+                    "Graças à herança do injetor, você ainda pode injetar serviços de todo o aplicativo nesses componentes. O injetor de um componente é filho do injetor de seu componente pai e herda de todos os injetores ancestrais desde o injetor raiz do aplicativo. A Angular pode injetar um serviço prestado por qualquer injetor nessa linhagem.",
+                    "Ao configurar um injetor com um provedor, você o associa a um token DI. O injetor mantém um mapa de provedor de token interno que ele faz referência quando solicitado por uma dependência. O token é a chave do mapa."
+                ],
+                "Serviços":[
+                    "Os serviços são singletons no escopo de um injetor. Ou seja, existe no máximo uma instância de serviço em um determinado injetor.",
+                    "Há apenas uma instância de 'YourService' no aplicativo inteiro e todas as classes que injetam UserService obtêm essa instância de serviço, a menos que você configure outro provedor com um injetor filho."
+                ]
+            },
+            "Injetores Hierárquicos":{
+                "Informações Relevantes":[
+                    "Os injetores no Angular têm regras que você pode aproveitar para alcançar a visibilidade desejada dos injetáveis ​​em seus aplicativos. Ao entender essas regras, você pode determinar em qual NgModule, Componente ou Diretiva deve declarar um provedor.",
+                    "Existem duas hierarquias de injetores em Angular: Hierarquia ModuleInjector - é configurada usando uma anotação @NgModule() ou @Injectable(). Hierarquia ElementInjector - criada implicitamente em cada elemento DOM. Um ElementInjector está vazio por padrão, a menos que você o configure na propriedade provider em @Directive() ou @Component()."
+                ],
+                "ModuleInjector":[
+                    "O decorador @Injectable() identifica uma classe de serviço, e a propriedade 'providedIn' configura um ModuleInjector específico no 'root', que disponibiliza o serviço no ModuleInjector raiz.",
+                    "Existem mais dois injetores acima da raiz, um ModuleInjector adicional e NullInjecto.",
+                    "O método bootstrapModule() cria um injetor filho do injetor de plataforma que é configurado pelo AppModule. Este é o ModuleInjector raiz.",
+                    "O método platformBrowserDynamic() cria um injetor configurado por um PlatformModule, que contém dependências específicas da plataforma. Isso permite que vários aplicativos compartilhem uma configuração de plataforma.",
+                    "O próximo injetor pai na hierarquia é o NullInjector(), que é o topo da árvore. Se você foi tão longe na árvore que procura um serviço no NullInjector (), você receberá um erro, a menos que tenha usado @Optional() porque, no final das contas, tudo termina no NullInjector() e ele retorna um erro ou, no caso de @Optional(), nulo.",
+                    "O diagrama a seguir representa o relacionamento entre o ModuleInjector raiz e seus injetores-pai: https://angular.io/generated/images/guide/dependency-injection/injectors.svg",
+                    "Enquanto o nome root é um alias especial, outros ModuleInjectors não têm alias. Você tem a opção de criar ModuleInjectors sempre que um componente carregado dinamicamente é criado, como no roteador, que criará ModuleInjectors filho."
+                ],
+                "ElementInjector": [
+                    "Angular cria ElementInjectors implicitamente para cada elemento DOM.",
+                    "Fornecer um serviço no decorador @Component() usando seus provedores ou a propriedade viewProviders configura um ElementInjector.",
+                    "Quando você fornece serviços em um componente, esse serviço está disponível por meio do ElementInjector nessa instância do componente.",
+                    "Quando a instância do componente é destruída, o mesmo ocorre com a instância do serviço.",
+                    "Um componente é um tipo especial de diretiva, o que significa que, assim como @Directive() possui uma propriedade de provedores, @Component() também possui.",
+                    "Diretivas e Componentes podem configurar provedores usando a propriedade de provedores. Quando você configura um provedor para um componente ou diretiva usando a propriedade provider, esse provedor pertence ao ElementInjector desse componente ou diretiva. Componentes e diretivas no mesmo elemento compartilham um injetor.",
+                    "Ao resolver um token para um componente / diretiva, o Angular o resolve em duas fases: Contra a hierarquia do ElementInjector (seus pais) Contra a hierarquia do ModuleInjector (seus pais)",
+                    "Quando um componente declara uma dependência, o Angular tenta satisfazer essa dependência com seu próprio ElementInjector. Se o injetor do componente não tiver o provedor, ele passará a solicitação para o ElementInjector do componente pai, de modo que, as solicitações continuam sendo encaminhadas até que o Angular encontre um injetor que possa manipular a solicitação ou ficar sem os ElementInjectors ancestrais",
+                    "Se o Angular não encontrar o provedor em nenhum ElementInjectors, ele retornará ao elemento em que a solicitação se originou e procurará na hierarquia ModuleInjector. Se o Angular ainda não encontrar o provedor, ele gera um erro.",
+                    "Quando você fornece serviços na classe de componente, os serviços são visíveis na árvore ElementInjector em relação a onde e como você fornece esses serviços.",
+                    "Compreender a estrutura lógica subjacente do modelo Angular fornecerá uma base para configurar serviços e, por sua vez, controlar sua visibilidade."
+                ],
+                "Modificadores":[
+                    "O comportamento da resolução da Angular pode ser modificado com @Optional(), @Self(), @SkipSelf() e @Host(). Importe cada um deles de @ angular / core e use cada um no construtor da classe de componentes ao injetar seu serviço.",
+                    "Os modificadores de resolução se enquadram em três categorias: O que fazer se o Angular não encontrar o que você está procurando, que é @Optional() - Por onde começar a procurar, é @SkipSelf() - Onde parar de procurar, @Host() e @Self().",
+                    "Por padrão, o Angular sempre inicia no Injetor atual e continua pesquisando até o fim. Os modificadores permitem alterar o local inicial (final) ou final.",
+                    "Opcional() permite que a Angular considere um serviço que você injeta como opcional. Dessa forma, se não puder ser resolvido em tempo de execução, o Angular simplesmente resolverá o serviço como nulo, em vez de gerar um erro.",
+                    "Use @Self() para que o Angular procure apenas no ElementInjector o componente ou a diretiva atual. Um bom caso de uso para @Self () é injetar um serviço, mas apenas se estiver disponível no elemento host atual. Para evitar erros nessa situação, combine @Self() com @Optional().",
+                    "@SkipSelf() é o oposto de @Self(). Com o @SkipSelf(), o Angular inicia a busca por um serviço no ElementInjector pai, em vez do atual.",
+                    "@Host () permite designar um componente como a última parada na árvore do injetor ao procurar fornecedores. Mesmo se houver uma instância de serviço mais adiante, o Angular não continuará procurando."
+                ]
+            }
         }
     }
 }
