@@ -505,7 +505,16 @@
                     "@SkipSelf() é o oposto de @Self(). Com o @SkipSelf(), o Angular inicia a busca por um serviço no ElementInjector pai, em vez do atual.",
                     "@Host () permite designar um componente como a última parada na árvore do injetor ao procurar fornecedores. Mesmo se houver uma instância de serviço mais adiante, o Angular não continuará procurando."
                 ]
-            }
+            },
+            "Informações Extras": [
+                "Um provedor de dependência configura um injetor com um token DI, que esse injetor usa para fornecer a versão concreta e em tempo de execução de um valor de dependência.",
+                "O injetor depende da configuração do provedor para criar instâncias das dependências injetadas em componentes, diretivas, tubulações e outros serviços.",
+                "Você deve configurar um injetor com um provedor ou ele não saberá como criar a dependência. A maneira mais óbvia de um injetor criar uma instância de uma classe de serviço é com a própria classe. Se você especificar a própria classe de serviço como o token do provedor, o comportamento padrão é o injetor instanciar essa classe com 'new'.",
+                "Você pode configurar um injetor com um provedor alternativo, a fim de fornecer outro objeto que forneça a funcionalidade de registro necessária. Por exemplo: Você pode fornecer uma classe substituta. Você pode fornecer um objeto do tipo logger. Seu provedor pode chamar uma função de fábrica de registrador.",
+                "A configuração do provedor expandido é um objeto literal com duas propriedades - a propriedade 'provider' tem o token que serve como a chave para localizar um valor de dependência e configurar o injetor - a segunda propriedade é um objeto de definição de provedor, que informa ao injetor como criar o valor da dependência. A chave de definição de provedor pode ser useClass, como no exemplo. Também pode ser useExisting, useValue ou useFactory. Cada uma dessas chaves fornece um tipo diferente de dependência.",
+                "Um aplicativo Angular possui vários injetores, organizados em uma hierarquia de árvore que é paralela à árvore de componentes. Cada injetor cria uma instância singleton de uma dependência. Essa mesma instância é injetada onde quer que esse injetor forneça esse serviço. Um serviço específico pode ser fornecido e criado em qualquer nível da hierarquia do injetor, o que significa que pode haver várias instâncias de um serviço se ele for fornecido por vários injetores.",
+                "Dependências fornecidas pelo injetor raiz podem ser injetadas em qualquer componente em qualquer lugar do aplicativo. Em alguns casos, convém restringir a disponibilidade do serviço a uma região específica do aplicativo. Por exemplo, convém permitir que os usuários optem explicitamente pelo uso de um serviço, em vez de permitir que o injetor raiz o forneça automaticamente.",
+            ]
         }
     }
 }
