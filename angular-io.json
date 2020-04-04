@@ -537,6 +537,41 @@
                "Um aplicativo Angular possui vários injetores, organizados em uma hierarquia de árvore que é paralela à árvore de componentes. Cada injetor cria uma instância singleton de uma dependência. Essa mesma instância é injetada onde quer que esse injetor forneça esse serviço. Um serviço específico pode ser fornecido e criado em qualquer nível da hierarquia do injetor, o que significa que pode haver várias instâncias de um serviço se ele for fornecido por vários injetores.",
                "Dependências fornecidas pelo injetor raiz podem ser injetadas em qualquer componente em qualquer lugar  da aplicação . Em alguns casos, convém restringir a disponibilidade do serviço a uma região específica  da aplicação . Por exemplo, convém permitir que os usuários optem explicitamente pelo uso de um serviço, em vez de permitir que o injetor raiz o forneça automaticamente."
             ]
+      },
+      "NgZone": {
+         "Informações Relevantes": [
+            "Uma zona é um contexto de execução que persiste em tarefas assíncronas, você pode pensar nele como armazenamento local de thread para VMs JavaScript - o NgZone do Angular serve para detectar automaticamente alterações no componente para atualizar o HTML.",
+            "A angular executa a detecção de alterações sempre que detecta que os dados podem ter sido alterados, e o resultado da detecção de alterações é que o DOM é atualizado com novos dados.",
+            "Angular detecta as alterações de diferentes maneiras - para a inicialização do componente, as chamadas angulares alteram a detecção explicitamente - para operações assíncronas, o Angular usa uma zona para detectar alterações nos locais onde os dados poderiam ter sofrido uma mutação e executa a detecção de alterações automaticamente."
+         ],
+         "Base de Fundamentos": [
+            "Você pode exibir dados vinculando controles em um modelo HTML às propriedades de um componente Angular.",
+            "Você pode vincular eventos DOM a um método de um componente Angular. Nesses métodos, você também pode atualizar uma propriedade do componente Angular, que atualiza os dados correspondentes exibidos no modelo.",
+            "Você também pode obter dados de um servidor através de uma solicitação HTTP.",
+            "Você também pode atualizar os dados na função de retorno de chamada de uma macroTask, como setTimeout()",
+            "Outras APIs assíncronas retornam um objeto Promise (como busca), para que a função de retorno de chamada then() também possa atualizar os dados.",
+            "Além de addEventListener (), setTimeout () e Promise.then (), há outras operações que podem atualizar os dados de forma assíncrona. Alguns exemplos incluem WebSocket.onmessage() e Canvas.toBlob()."
+         ],
+         "Contexto de Execução": [
+            "O contexto de zona persiste em operações assíncronas.",
+            "Contexto de execução é um conceito abstrato que contém informações sobre o ambiente no código atual que está sendo executado.",
+            "Uma região fornece um novo contexto de zona diferente do javascript:  por exemplo ... o 'this' de um callback não estar contido em outro método."
+         ],
+         "Zona":[
+            "Uma zona fornece um contexto de execução que persiste em tarefas assíncronas.",
+            "O Zone.js pode criar contextos que persistem em operações assíncronas, bem como fornecer ganchos de ciclo de vida para operações assíncronas.",
+            "Todas as funções do Zone são fornecidas por uma biblioteca chamada Zone.js - essa biblioteca implementa esses recursos interceptando APIs assíncronas por meio de aplicação de patches monkey. O patch monkeys é uma técnica para adicionar ou modificar o comportamento padrão de uma função em tempo de execução sem alterar o código-fonte."
+         ],
+         "NgZone": [
+            "Embora o Zone.js possa monitorar todos os estados das operações síncronas e assíncronas, a Angular também fornece um serviço chamado NgZone. Este serviço cria uma zona denominada angular para acionar automaticamente a detecção de alterações",
+            "Ainda existem algumas APIs de terceiros que o Zone não manipula. Nesses casos, o serviço NgZone fornece um método run () que permite executar uma função dentro da zona angular - essa função e todas as operações assíncronas nessa função acionam a detecção de alterações automaticamente no momento correto.",
+            "Por padrão, todas as operações assíncronas estão dentro da zona angular, o que aciona a detecção de alterações automaticamente.",
+            "Quando você não deseja acionar a detecção de alterações, você pode usar outro método NgZone: runOutsideAngular().",
+            "Para disponibilizar o Zone.js no Angular, você precisa importar o pacote zone.js - se você estiver usando a CLI Angular, esta etapa será realizada automaticamente e você verá a seguinte linha no src/polyfills.ts:",
+            "Antes de importar o pacote zone.js, você pode definir configurações desejáveis e para fazer essas alterações, você precisa criar um arquivo zone-flags.ts, import zone-flags before you import zone.js in the polyfills.ts, importando-o antes de importar o zone.js no arquivo polyfills.ts.",
+            "O Zone ajuda o Angular a saber quando acionar a detecção de alterações e permite que os desenvolvedores se concentrem no desenvolvimento de aplicativos.",
+            "Por padrão, o Zone é carregado e funciona sem configuração adicional. No entanto, você não precisa necessariamente usar o Zone para fazer o Angular funcionar - em vez disso, você pode optar por ativar a detecção de alterações por conta própria."
+         ]
       }
    },
    "Configurações":{
