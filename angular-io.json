@@ -2,6 +2,28 @@
    "Intrudoção":[
       "Um aplicativo Angular compreende uma árvore de componentes, na qual cada componente Angular tem uma finalidade e responsabilidade específicas."
    ],
+   "Características e Benefícios":{
+      "Plataforma Transversal": {
+         "Apps Web Progressivos": "Use os recursos modernos da plataforma da Web para oferecer experiências semelhantes a aplicativos. Instalação de alto desempenho, offline e com zero etapas.",
+         "Nativo": "Crie aplicativos móveis nativos com estratégias de Cordova, Ionic ou NativeScript.",
+         "Desktop": "Crie aplicativos instalados na área de trabalho em Mac, Windows e Linux usando os mesmos métodos Angular que você aprendeu para a Web, além da capacidade de acessar APIs de SO nativas."
+      },
+      "Velocidade e Performance":{
+         "Geração de Código": "O Angular transforma seus modelos em código altamente otimizado para as máquinas virtuais JavaScript atuais, oferecendo todos os benefícios do código escrito à mão com a produtividade de uma estrutura.",
+         "Universal": "Sirva a primeira visualização do seu aplicativo em Node.js.®, .NET, PHP e outros servidores para renderização quase instantânea em apenas HTML e CSS. Também abre caminho para sites que otimizam para SEO.",
+         "Divisão de Código": "Os aplicativos angulares são carregados rapidamente com o novo Roteador de componentes, que fornece divisão automática de código, para que os usuários carreguem apenas o código necessário para renderizar a exibição solicitada."
+      },
+      "Produtividade":{
+         "Templates": "Os aplicativos Angular são carregados rapidamente com o novo Roteador de componentes, que fornece divisão automática de código, para que os usuários carreguem apenas o código necessário para renderizar a exibição solicitada.",
+         "Angular CLI": "Ferramentas de linha de comando: comece a criar rapidamente, adicione componentes e testes e implante instantaneamente.",
+         "IDEs": "Obtenha conclusão inteligente de código, erros instantâneos e outros comentários em editores e IDEs populares."
+      },
+      "Histório de Dev. Completa": {
+         "Teste": "Com o 'Karma' para testes de unidade, você pode saber se quebrou todas as vezes que salvar. E o 'Protractor' faz com que seus testes de cenário sejam executados mais rapidamente e de maneira estável.",
+         "Animação": "Crie coreografias complexas de alto desempenho e cronogramas de animação com muito pouco código através da API intuitiva da Angular.",
+         "Acessibilidade": "Crie aplicativos acessíveis com componentes habilitados para ARIA, guias do desenvolvedor e infraestrutura de teste integrada do a11y."
+      }
+   },
    "Diretivas": [
       "As diretivas estruturais moldam ou remodelam a estrutura do DOM, geralmente adicionando, removendo e manipulando os elementos aos quais estão anexados. Diretivas com um asterisco *, são diretivas estruturais."
    ],
