@@ -24,30 +24,6 @@
          "Acessibilidade": "Crie aplicativos acessíveis com componentes habilitados para ARIA, guias do desenvolvedor e infraestrutura de teste integrada do a11y."
       }
    },
-   "Diretivas": [
-      "As diretivas estruturais moldam ou remodelam a estrutura do DOM, geralmente adicionando, removendo e manipulando os elementos aos quais estão anexados. Diretivas com um asterisco *, são diretivas estruturais."
-   ],
-   "Indefinidos":[
-      "A interpolação {{ }} permite renderizar o valor da propriedade como texto.",
-      "A ligação de propriedade [ ] permite usar o valor da propriedade em uma expressão de modelo.",
-      "A associação de eventos usa um conjunto de parênteses ( ) ao redor do evento.",
-      "O HttpClientModule da Angular registra os provedores que seu aplicativo precisa para usar uma única instância do serviço HttpClient em todo o aplicativo."
-   ],
-   "Componentes":{
-      "Conceito": "Definem áreas de responsabilidade na interface do usuário, ou na UI, que permitem reutilizar conjuntos de funcionalidades da UI.",
-      "Estrutura de um Componente": {
-         "Class": "Uma classe de componente que lida com dados e funcionalidade. Na seção anterior",
-         "Template": "Um modelo HTML que determina a interface do usuário.",
-         "Style": "Estilos específicos de componentes que definem a aparência."
-      }
-   },
-   "Routeamento":[
-      "O ActivatedRoute é específico para cada componente roteado que o roteador angular carrega. Ele contém informações sobre a rota, seus parâmetros e dados adicionais associados à rota.",
-      "Ao injetar o ActivatedRoute, você está configurando o componente para usar um serviço."
-   ],
-   "Pipes":[
-      "O async pipe retorna o valor mais recente de um fluxo de dados e continua a fazê-lo pela vida útil de um determinado componente. Quando o Angular destrói esse componente, o canal assíncrono para automaticamente."
-   ],
    "Fundamentos": {
       "Conceitos":{
             "Conceitos Básicos":{
@@ -55,21 +31,29 @@
                "Arquitetura":{
                   "Contexto": "A arquitetura de um aplicativo Angular depende de certos conceitos fundamentais.",
                   "Conceitos":[
-                        "Os blocos de construção básicos estão em NgModules, que fornecem um contexto de compilação para componentes.",
-                        "Os NgModules coletam código relacionado em conjuntos funcionais;",
-                        "Um aplicativo Angular é definido por um conjunto de NgModules.",
-                        "Um aplicativo sempre possui pelo menos um módulo raiz que habilita a inicialização e, normalmente, possui muito mais módulos de recursos."        
+                     "Os blocos de construção básicos estão em NgModules, que fornecem um contexto de compilação para componentes.",
+                     "Os NgModules coletam código relacionado em conjuntos funcionais;",
+                     "Um aplicativo Angular é definido por um conjunto de NgModules.",
+                     "Um aplicativo sempre possui pelo menos um módulo raiz que habilita a inicialização e, normalmente, possui muito mais módulos de recursos."
                   ]
                },
-               "Componentes":[
-                  "Os componentes definem visualizações, que são conjuntos de elementos de tela que o Angular pode escolher e modificar de acordo com a lógica e os dados do programa.",
-                  "Os componentes usam serviços, que fornecem funcionalidades específicas não diretamente relacionadas às visualizações.",
-                  "Os fornecedores de serviços podem ser injetados nos componentes como dependências, tornando seu código modular, reutilizável e eficiente.",
-                  "Tanto os componentes quanto os serviços são simplesmente classes, com decoradores que marcam seu tipo e fornecem metadados que informam ao Angular como usá-los.",
-                  "To da aplicação  Angular possui pelo menos um componente, o componente raiz que conecta uma hierarquia de componentes ao modelo de objeto de documento de página (DOM).",
-                  "Cada componente define uma classe que contém dados e lógica da aplicação e está associada a um modelo HTML que define uma exibição a ser exibida em um ambiente de destino.",
-                  "O decorador @Component() identifica a classe imediatamente abaixo dela como um componente e fornece o modelo e os metadados específicos do componente relacionados."
-               ],
+               "Componentes":{
+                  "Conceito": "Definem áreas de responsabilidade na interface do usuário, ou na UI, que permitem reutilizar conjuntos de funcionalidades da UI.",
+                  "Estrutura de um Componente": {
+                     "Class": "Uma classe de componente que lida com dados e funcionalidade. Na seção anterior",
+                     "Template": "Um modelo HTML que determina a interface do usuário.",
+                     "Style": "Estilos específicos de componentes que definem a aparência."
+                  },
+                  "Informações Relevantes": [
+                     "Os componentes definem visualizações, que são conjuntos de elementos de tela que o Angular pode escolher e modificar de acordo com a lógica e os dados do programa.",
+                     "Os componentes usam serviços, que fornecem funcionalidades específicas não diretamente relacionadas às visualizações.",
+                     "Os fornecedores de serviços podem ser injetados nos componentes como dependências, tornando seu código modular, reutilizável e eficiente.",
+                     "Tanto os componentes quanto os serviços são simplesmente classes, com decoradores que marcam seu tipo e fornecem metadados que informam ao Angular como usá-los.",
+                     "To da aplicação  Angular possui pelo menos um componente, o componente raiz que conecta uma hierarquia de componentes ao modelo de objeto de documento de página (DOM).",
+                     "Cada componente define uma classe que contém dados e lógica da aplicação e está associada a um modelo HTML que define uma exibição a ser exibida em um ambiente de destino.",
+                     "O decorador @Component() identifica a classe imediatamente abaixo dela como um componente e fornece o modelo e os metadados específicos do componente relacionados."
+                  ]
+               },
                "Metadados":[
                   "Os metadados para uma classe de componente o associam a um modelo que define uma exibição.",
                   "Um modelo combina HTML comum com diretivas Angular e marcação de ligação que permitem que o Angular modifique o HTML antes de renderizá-lo para exibição.",
@@ -87,22 +71,28 @@
                   "To da aplicação  Angular possui um módulo raiz, chamado AppModule, que fornece o mecanismo de inicialização que inicia o aplicativo.",
                   "Como os módulos JavaScript, o NgModules pode importar funcionalidades de outros NgModules e permitir que suas próprias funcionalidades sejam exportadas e usadas por outros NgModules.",
                   "Organizar seu código em módulos funcionais distintos ajuda no gerenciamento do desenvolvimento de aplicativos complexos e no design para reutilização.",
-                  "A modularização  permite aproveitar o carregamento lento, ou seja, carregar módulos sob demanda, para minimizar a quantidade de código que precisa ser carregado na inicialização."
+                  "A modularização  permite aproveitar o carregamento lento, ou seja, carregar módulos sob demanda, para minimizar a quantidade de código que precisa ser carregado na inicialização.",
+                  "O HttpClientModule da Angular registra os provedores que seu aplicativo precisa para usar uma única instância do serviço HttpClient em todo o aplicativo."
                ],
                "Decoradores": [
                   "Decoradores são funções que modificam as classes JavaScript.",
                   "Angular define vários decoradores que anexam tipos específicos de metadados às classes, para que o sistema saiba o que essas classes significam e como devem funcionar."
                ],
                "Modelos":[
+                  "A interpolação {{ }} permite renderizar o valor da propriedade como texto.",
+                  "A ligação de propriedade [ ] permite usar o valor da propriedade em uma expressão de modelo.",
+                  "A associação de eventos usa um conjunto de parênteses ( ) ao redor do evento.",
                   "Conceitos pertinentes a Templates, directives, and data binding",
                   "Um modelo combina HTML com marcação angular que pode modificar elementos HTML antes de serem exibidos.",
                   "As diretivas de modelo fornecem lógica de programa e a marcação de ligação conecta os dados da aplicação e o DOM.",
+                  "As diretivas estruturais moldam ou remodelam a estrutura do DOM, geralmente adicionando, removendo e manipulando os elementos aos quais estão anexados - diretivas com um asterisco *, são diretivas estruturais.",
                   "A associação de eventos permite que seu aplicativo responda à entrada do usuário no ambiente de destino, atualizando os dados  da aplicação .",
                   "A associação de propriedades permite interpolar valores calculados a partir dos dados da aplicação para o HTML.",
                   "Antes de uma 'view'' ser exibida, o Angular avalia as diretivas e resolve a sintaxe de ligação no modelo para modificar os elementos HTML e o DOM, de acordo com os dados e a lógica do programa.",
                   "O Angular suporta ligação de dados bidirecional, o que significa que alterações no DOM, como opções do usuário, também são refletidas nos dados do programa.",
                   "Seus modelos podem usar 'pipes' para melhorar a experiência do usuário, transformando valores para exibição.",
-                  "O Angular fornece 'pipes' predefinidos para transformações comuns, e você também pode definir seus próprios 'pipes'."
+                  "O Angular fornece 'pipes' predefinidos para transformações comuns, e você também pode definir seus próprios 'pipes'.",
+                  "O async pipe retorna o valor mais recente de um fluxo de dados e continua a fazê-lo pela vida útil de um determinado componente - quando o Angular destrói esse componente, o canal assíncrono para automaticamente."
                ],
                "Injeção de Dependência":[
                   "Para dados ou lógica que não estão associados a uma exibição específica e que você deseja compartilhar entre componentes, você cria uma classe de serviço.",
@@ -111,6 +101,8 @@
                   "A injeção de dependência (DI) permite manter suas classes de componentes magras e eficientes, eles não buscam dados do servidor, validam a entrada do usuário ou fazem logon diretamente no console; eles delegam essas tarefas nos serviços."
                ],
                "Roteamento":[
+                  "O ActivatedRoute é específico para cada componente roteado que o roteador angular carrega. Ele contém informações sobre a rota, seus parâmetros e dados adicionais associados à rota.",
+                  "Ao injetar o ActivatedRoute, você está configurando o componente para usar um serviço.",
                   "O NgModule do roteador angular fornece um serviço que permite definir um caminho de navegação entre os diferentes estados da aplicação e exibir hierarquias no seu aplicativo, e ele é modelado nas convenções familiares de navegação do navegador.",
                   "O roteador mapeia caminhos semelhantes a URL para visualizações em vez de páginas, quando um usuário executa uma ação, como clicar em um link, que carregaria uma nova página no navegador, o roteador intercepta o comportamento do navegador e mostra ou oculta as hierarquias de exibição.",
                   "Se o roteador determinar que o estado atual da aplicação requer funcionalidade específica e o módulo que o define não foi carregado, o roteador poderá carregar preguiçosamente o módulo sob demanda.",
@@ -191,359 +183,455 @@
             }
       },
       "Componentes e Modelos":{
-            "Exibindo Dados": {
-               "Informações Relevantes":[
-                  "Componentes angulares formam a estrutura de dados do seu aplicativo. O modelo HTML associado a um componente fornece os meios para exibir esses dados no contexto de uma página da web. Juntos, a classe e o modelo de um componente formam uma visualização dos dados  da aplicação .",
-                  "O processo de combinar valores de dados com sua representação na página é chamado de ligação de dados. Você exibe seus dados para um usuário (e coleta dados do usuário) vinculando controles no modelo HTML às propriedades de dados da classe de componente.",
-                  "Você pode adicionar lógica ao modelo incluindo diretivas, que informam ao Angular como modificar a página conforme ela é renderizada.",
-                  "Angular define uma linguagem de modelo que expande a notação HTML com sintaxe que permite definir vários tipos de ligação de dados e diretivas lógicas. Quando a página é renderizada, Angular interpreta a sintaxe do modelo para atualizar o HTML de acordo com sua lógica e estado atual dos dados."
+         "Exibindo Dados": {
+            "Informações Relevantes":[
+               "Componentes angulares formam a estrutura de dados do seu aplicativo. O modelo HTML associado a um componente fornece os meios para exibir esses dados no contexto de uma página da web. Juntos, a classe e o modelo de um componente formam uma visualização dos dados  da aplicação .",
+               "O processo de combinar valores de dados com sua representação na página é chamado de ligação de dados. Você exibe seus dados para um usuário (e coleta dados do usuário) vinculando controles no modelo HTML às propriedades de dados da classe de componente.",
+               "Você pode adicionar lógica ao modelo incluindo diretivas, que informam ao Angular como modificar a página conforme ela é renderizada.",
+               "Angular define uma linguagem de modelo que expande a notação HTML com sintaxe que permite definir vários tipos de ligação de dados e diretivas lógicas. Quando a página é renderizada, Angular interpreta a sintaxe do modelo para atualizar o HTML de acordo com sua lógica e estado atual dos dados."
+            ]
+         },
+         "Sintaxe do Modelo":{
+            "Introdução": [
+               "O aplicativo Angular gerencia o que o usuário vê e pode fazer, conseguindo isso através da interação de uma instância de classe de componente (o componente) e seu modelo voltado para o usuário.",
+               "Em Angular, o componente desempenha o papel do controlador, e o modelo (template) representa a visualização."
+            ],
+            "HTML como Modelo": "HTML é a linguagem do modelo Angular. Quase toda a sintaxe HTML é uma sintaxe de modelo válida. O elemento <script> é uma exceção notável; é proibido, eliminando o risco de ataques de injeção de script. Na prática, <script> é ignorado e um aviso aparece no console do navegador.",
+            "Interpolação":[
+               "A interpolação permite incorporar seqüências de caracteres calculadas no texto entre as tags de elemento HTML e nas atribuições de atributo. Expressões de modelo são o que você usa para calcular essas strings.",
+               "Angular avalia todas as expressões entre chaves duplas, converte os resultados da expressão em seqüências de caracteres e as vincula a seqüências literais vizinhas. Por fim, atribui esse resultado interpolado composto a uma propriedade de elemento ou diretiva.",
+               "A interpolação é uma sintaxe especial que o Angular converte em uma ligação de propriedade."    
+            ],
+            "Expressão de Modelo": "Uma expressão de modelo produz um valor e aparece dentro das chaves duplas, {{}}. Angular executa a expressão e a atribui a uma propriedade de um destino de ligação; o destino pode ser um elemento HTML, um componente ou uma diretiva.",
+            "Contexto de Exmpressão":[
+               "O contexto da expressão é geralmente a instância do componente.",
+               "Uma expressão também pode se referir a propriedades do contexto do modelo, como uma variável de entrada do modelo.",
+               "O contexto para termos em uma expressão é uma mistura das variáveis ​​do modelo, do objeto de contexto da diretiva (se houver) e dos membros do componente. Se você referenciar um nome que pertence a mais de um desses espaços para nome, o nome da variável do modelo terá precedência, seguido por um nome no contexto da diretiva e, por último, os nomes dos membros do componente."
+            ],
+            "Diretrizes de Expressão":{
+               "Simplicidade": "Embora seja possível escrever expressões de modelo complexas, é uma melhor prática evitá-las. Um nome de propriedade ou chamada de método deve ser a norma, mas uma negação booleana ocasional,!, Está OK. Caso contrário, restrinja a lógica de aplicativo e de negócios ao componente, onde é mais fácil desenvolver e testar.",
+               "Rápidas Execuções": [
+                     "Angular executa expressões de modelo após cada ciclo de detecção de alterações. Os ciclos de detecção de alterações são acionados por muitas atividades assíncronas, como resoluções de promessas, resultados HTTP, eventos de timer, pressionamentos de teclas e movimentos do mouse.",
+                     "As expressões devem terminar rapidamente ou a experiência do usuário pode se arrastar, especialmente em dispositivos mais lentos. Considere armazenar valores em cache quando o cálculo for caro."
+               ],
+               "Sem Efeitos Colaterais Visíveis": [
+                     "Uma expressão de modelo não deve alterar nenhum estado de aplicativo que não seja o valor da propriedade de destino. Essa regra é essencial para a política de 'fluxo de dados unidirecional' do Angular.",
+                     "Você nunca deve se preocupar que a leitura de um valor de componente possa alterar algum outro valor exibido.",
+                     "A visualização deve ser estável ao longo de uma única passagem de renderização.",
+                     "Uma expressão idempotente é ideal porque é livre de efeitos colaterais e melhora o desempenho da detecção de alterações do Angular.",
+                     "Em termos do Angular, uma expressão idempotente sempre retorna exatamente a mesma coisa até que um de seus valores dependentes seja alterado.",
+                     "Os valores dependentes não devem mudar durante uma única volta do loop de eventos.",
+                     "Se uma expressão idempotente retornar uma sequência ou um número, ela retornará a mesma sequência ou número quando chamada duas vezes seguidas.",
+                     "Se a expressão retornar um objeto, incluindo uma matriz, retornará a mesma referência de objeto quando chamada duas vezes seguidas."
+               ],
+               "Instruções de Modelo":[
+                     "Uma instrução de modelo responde a um evento gerado por um destino de ligação, como um elemento, componente ou diretiva.",
+                     "Uma declaração de modelo tem um efeito colateral. Esse é o objetivo de um evento. É assim que você atualiza o estado da aplicação a partir da ação do usuário.",
+                     "Responder a eventos é o outro lado do 'fluxo de dados unidirecional' da Angular. Você é livre para alterar qualquer coisa, em qualquer lugar, durante essa reviravolta do evento.",
+                     "Como expressões de modelo, as instruções de modelo usam uma linguagem que se parece com JavaScript. O analisador de instrução de modelo difere do analisador de expressão de modelo e suporta especificamente a atribuição básica (=) e as expressões de encadeamento com ';'."
+               ],
+               "Contexto da Declaração":[
+                     "Assim como nas expressões, as instruções podem se referir apenas ao conteúdo do contexto da instrução, como um método de manipulação de eventos da instância do componente.",
+                     "O contexto da instrução geralmente é a instância do componente, ou seja, metodo() em (click)='metodo()'' é um método do componente vinculado a dados.",
+                     "O contexto da instrução também pode se referir às propriedades do próprio contexto do modelo.",
+                     "Os nomes de contexto do modelo têm precedência sobre os nomes de contexto do componente."
+               ],
+               "Diretrizes de Declaração":[
+                     "As instruções do modelo não podem se referir a nada no espaço para nome global.",
+                     "Eles não podem se referir a janela ou documento.",
+                     "Eles não podem chamar console.log ou Math.max.",
+                     "Como nas expressões, evite escrever instruções de modelo complexas.",
+                     "Uma chamada de método ou atribuição simples de propriedade deve ser a norma."
+               ],
+               "Sintaxe de Ligação":[
+                     "A ligação de dados é um mecanismo para coordenar o que os usuários veem, especificamente com os valores dos dados  da aplicação .",
+                     "Embora você possa enviar valores e extrair valores do HTML, o aplicativo é mais fácil de escrever, ler e manter se você entregar essas tarefas para uma estrutura de ligação. Você simplesmente declara ligações entre fontes de ligação, direciona elementos HTML e deixa a estrutura fazer o resto.",
+                     "Os tipos de ligação que não sejam interpolação têm um nome de destino à esquerda do sinal de igual, cercado por pontuação, [] ou() ou precedido por um prefixo: bind-, on-, bindon-."
+               ],
+               "Atributo HTML vs. Propriedade DOM":[
+                     "A distinção entre um atributo HTML e uma propriedade DOM é fundamental para entender como funciona a ligação Angular. ",
+                     "Os atributos são definidos por HTML e as propriedades são acessadas a partir dos nós DOM (Document Object Model).",
+                     "É importante lembrar que o atributo HTML e a propriedade DOM são coisas diferentes, mesmo quando eles têm o mesmo nome.", 
+                     "No Angular, a única função dos atributos HTML é inicializar o elemento e o estado da diretiva.", 
+                     "A ligação de modelo funciona com propriedades e eventos, não atributos.", 
+                     "Quando você escreve uma ligação de dados, está lidando exclusivamente com as propriedades e eventos do DOM do objeto de destino.",
+                     "Esta regra geral pode ajudá-lo a construir um modelo mental de atributos e propriedades DOM: Os atributos inicializam as propriedades DOM e, então, elas são concluídas. Os valores da propriedade podem mudar; valores de atributo não podem. Há uma exceção a esta regra. Os atributos podem ser alterados por setAttribute(), que reinicializa a propriedade DOM correspondente"
                ]
-            },
-            "Sintaxe do Modelo":{
-               "Introdução": [
-                  "O aplicativo Angular gerencia o que o usuário vê e pode fazer, conseguindo isso através da interação de uma instância de classe de componente (o componente) e seu modelo voltado para o usuário.",
-                  "Em Angular, o componente desempenha o papel do controlador, e o modelo (template) representa a visualização."
-               ],
-               "HTML como Modelo": "HTML é a linguagem do modelo Angular. Quase toda a sintaxe HTML é uma sintaxe de modelo válida. O elemento <script> é uma exceção notável; é proibido, eliminando o risco de ataques de injeção de script. Na prática, <script> é ignorado e um aviso aparece no console do navegador.",
-               "Interpolação":[
-                  "A interpolação permite incorporar seqüências de caracteres calculadas no texto entre as tags de elemento HTML e nas atribuições de atributo. Expressões de modelo são o que você usa para calcular essas strings.",
-                  "Angular avalia todas as expressões entre chaves duplas, converte os resultados da expressão em seqüências de caracteres e as vincula a seqüências literais vizinhas. Por fim, atribui esse resultado interpolado composto a uma propriedade de elemento ou diretiva.",
-                  "A interpolação é uma sintaxe especial que o Angular converte em uma ligação de propriedade."    
-               ],
-               "Expressão de Modelo": "Uma expressão de modelo produz um valor e aparece dentro das chaves duplas, {{}}. Angular executa a expressão e a atribui a uma propriedade de um destino de ligação; o destino pode ser um elemento HTML, um componente ou uma diretiva.",
-               "Contexto de Exmpressão":[
-                  "O contexto da expressão é geralmente a instância do componente.",
-                  "Uma expressão também pode se referir a propriedades do contexto do modelo, como uma variável de entrada do modelo.",
-                  "O contexto para termos em uma expressão é uma mistura das variáveis ​​do modelo, do objeto de contexto da diretiva (se houver) e dos membros do componente. Se você referenciar um nome que pertence a mais de um desses espaços para nome, o nome da variável do modelo terá precedência, seguido por um nome no contexto da diretiva e, por último, os nomes dos membros do componente."
-               ],
-               "Diretrizes de Expressão":{
-                  "Simplicidade": "Embora seja possível escrever expressões de modelo complexas, é uma melhor prática evitá-las. Um nome de propriedade ou chamada de método deve ser a norma, mas uma negação booleana ocasional,!, Está OK. Caso contrário, restrinja a lógica de aplicativo e de negócios ao componente, onde é mais fácil desenvolver e testar.",
-                  "Rápidas Execuções": [
-                        "Angular executa expressões de modelo após cada ciclo de detecção de alterações. Os ciclos de detecção de alterações são acionados por muitas atividades assíncronas, como resoluções de promessas, resultados HTTP, eventos de timer, pressionamentos de teclas e movimentos do mouse.",
-                        "As expressões devem terminar rapidamente ou a experiência do usuário pode se arrastar, especialmente em dispositivos mais lentos. Considere armazenar valores em cache quando o cálculo for caro."
-                  ],
-                  "Sem Efeitos Colaterais Visíveis": [
-                        "Uma expressão de modelo não deve alterar nenhum estado de aplicativo que não seja o valor da propriedade de destino. Essa regra é essencial para a política de 'fluxo de dados unidirecional' do Angular.",
-                        "Você nunca deve se preocupar que a leitura de um valor de componente possa alterar algum outro valor exibido.",
-                        "A visualização deve ser estável ao longo de uma única passagem de renderização.",
-                        "Uma expressão idempotente é ideal porque é livre de efeitos colaterais e melhora o desempenho da detecção de alterações do Angular.",
-                        "Em termos do Angular, uma expressão idempotente sempre retorna exatamente a mesma coisa até que um de seus valores dependentes seja alterado.",
-                        "Os valores dependentes não devem mudar durante uma única volta do loop de eventos.",
-                        "Se uma expressão idempotente retornar uma sequência ou um número, ela retornará a mesma sequência ou número quando chamada duas vezes seguidas.",
-                        "Se a expressão retornar um objeto, incluindo uma matriz, retornará a mesma referência de objeto quando chamada duas vezes seguidas."
-                  ],
-                  "Instruções de Modelo":[
-                        "Uma instrução de modelo responde a um evento gerado por um destino de ligação, como um elemento, componente ou diretiva.",
-                        "Uma declaração de modelo tem um efeito colateral. Esse é o objetivo de um evento. É assim que você atualiza o estado da aplicação a partir da ação do usuário.",
-                        "Responder a eventos é o outro lado do 'fluxo de dados unidirecional' da Angular. Você é livre para alterar qualquer coisa, em qualquer lugar, durante essa reviravolta do evento.",
-                        "Como expressões de modelo, as instruções de modelo usam uma linguagem que se parece com JavaScript. O analisador de instrução de modelo difere do analisador de expressão de modelo e suporta especificamente a atribuição básica (=) e as expressões de encadeamento com ';'."
-                  ],
-                  "Contexto da Declaração":[
-                        "Assim como nas expressões, as instruções podem se referir apenas ao conteúdo do contexto da instrução, como um método de manipulação de eventos da instância do componente.",
-                        "O contexto da instrução geralmente é a instância do componente, ou seja, metodo() em (click)='metodo()'' é um método do componente vinculado a dados.",
-                        "O contexto da instrução também pode se referir às propriedades do próprio contexto do modelo.",
-                        "Os nomes de contexto do modelo têm precedência sobre os nomes de contexto do componente."
-                  ],
-                  "Diretrizes de Declaração":[
-                        "As instruções do modelo não podem se referir a nada no espaço para nome global.",
-                        "Eles não podem se referir a janela ou documento.",
-                        "Eles não podem chamar console.log ou Math.max.",
-                        "Como nas expressões, evite escrever instruções de modelo complexas.",
-                        "Uma chamada de método ou atribuição simples de propriedade deve ser a norma."
-                  ],
-                  "Sintaxe de Ligação":[
-                        "A ligação de dados é um mecanismo para coordenar o que os usuários veem, especificamente com os valores dos dados  da aplicação .",
-                        "Embora você possa enviar valores e extrair valores do HTML, o aplicativo é mais fácil de escrever, ler e manter se você entregar essas tarefas para uma estrutura de ligação. Você simplesmente declara ligações entre fontes de ligação, direciona elementos HTML e deixa a estrutura fazer o resto.",
-                        "Os tipos de ligação que não sejam interpolação têm um nome de destino à esquerda do sinal de igual, cercado por pontuação, [] ou() ou precedido por um prefixo: bind-, on-, bindon-."
-                  ],
-                  "Atributo HTML vs. Propriedade DOM":[
-                        "A distinção entre um atributo HTML e uma propriedade DOM é fundamental para entender como funciona a ligação Angular. ",
-                        "Os atributos são definidos por HTML e as propriedades são acessadas a partir dos nós DOM (Document Object Model).",
-                        "É importante lembrar que o atributo HTML e a propriedade DOM são coisas diferentes, mesmo quando eles têm o mesmo nome.", 
-                        "No Angular, a única função dos atributos HTML é inicializar o elemento e o estado da diretiva.", 
-                        "A ligação de modelo funciona com propriedades e eventos, não atributos.", 
-                        "Quando você escreve uma ligação de dados, está lidando exclusivamente com as propriedades e eventos do DOM do objeto de destino.",
-                        "Esta regra geral pode ajudá-lo a construir um modelo mental de atributos e propriedades DOM: Os atributos inicializam as propriedades DOM e, então, elas são concluídas. Os valores da propriedade podem mudar; valores de atributo não podem. Há uma exceção a esta regra. Os atributos podem ser alterados por setAttribute(), que reinicializa a propriedade DOM correspondente"
-                  ]
-               }             
-            }
+            }             
+         }
       },
       "Formulários": {
-            "Informações Relevantes":[
-               "Angular fornece duas abordagens diferentes para lidar com a entrada do usuário por meio de formulários: reativo e orientado a modelo. Ambos capturam eventos de entrada do usuário a partir da visualização, validam a entrada do usuário, criam um modelo de formulário e um modelo de dados para atualizar e fornecem uma maneira de rastrear alterações",
-               "Formulários reativos e controlados por modelo processam e gerenciam dados de formulário de maneira diferente. Cada um oferece vantagens diferentes.",
-               "As formas reativas são mais robustas: são mais escaláveis, reutilizáveis ​​e testáveis. Se os formulários são uma parte essencial do seu aplicativo, ou você já está usando padrões reativos para criar seu aplicativo, use formulários reativos.",
-               "Formulários controlados por modelo são úteis para adicionar um formulário simples a um aplicativo, como um formulário de inscrição na lista de e-mails. Eles são fáceis de adicionar a um aplicativo, mas não são dimensionados tão bem quanto em formas reativas. Se você possui requisitos e lógica de formulário muito básicos que podem ser gerenciados apenas no modelo, use formulários controlados por modelo"
+         "Informações Relevantes":[
+            "Angular fornece duas abordagens diferentes para lidar com a entrada do usuário por meio de formulários: reativo e orientado a modelo. Ambos capturam eventos de entrada do usuário a partir da visualização, validam a entrada do usuário, criam um modelo de formulário e um modelo de dados para atualizar e fornecem uma maneira de rastrear alterações",
+            "Formulários reativos e controlados por modelo processam e gerenciam dados de formulário de maneira diferente. Cada um oferece vantagens diferentes.",
+            "As formas reativas são mais robustas: são mais escaláveis, reutilizáveis ​​e testáveis. Se os formulários são uma parte essencial do seu aplicativo, ou você já está usando padrões reativos para criar seu aplicativo, use formulários reativos.",
+            "Formulários controlados por modelo são úteis para adicionar um formulário simples a um aplicativo, como um formulário de inscrição na lista de e-mails. Eles são fáceis de adicionar a um aplicativo, mas não são dimensionados tão bem quanto em formas reativas. Se você possui requisitos e lógica de formulário muito básicos que podem ser gerenciados apenas no modelo, use formulários controlados por modelo"
 
-            ],
-            "Fluxo de Dados":[
-               "Os formulários reativos e controlados por modelo seguem duas estratégias diferentes ao manipular a entrada de formulário.",
-               "nas formas reativas, cada elemento do formulário na exibição é diretamente vinculado a um modelo de formulário (instância do FormControl). As atualizações da visualização para o modelo e do modelo para a visualização são síncronas e não dependem da interface do usuário renderizada.",
-               "Nos formulários controlados por modelo, cada elemento do formulário está vinculado a uma diretiva que gerencia o modelo de formulário internamente."
-            ],
-            "Validação":[
-               "O Angular fornece um conjunto de validadores internos, além da capacidade de criar validadores personalizados.",
-               "Os formulários reativos definem validadores personalizados como funções que recebem um controle para validar.",
-               "Os formulários controlados por modelo estão vinculados às diretivas de modelo e devem fornecer diretivas de validador personalizadas que agrupam as funções de validação."
-            ],
-            "Testes":[
-               "O teste desempenha um papel importante em aplicativos complexos e uma estratégia de teste mais simples é útil ao validar se seus formulários funcionam corretamente.",
-               "Formulários reativos e formulários controlados por modelo têm diferentes níveis de confiança na renderização da interface do usuário para executar asserções com base no controle de formulário e alterações no campo de formulário.",
-               "Os formulários reativos fornecem uma estratégia de teste relativamente fácil, porque fornecem acesso síncrono ao formulário e aos modelos de dados e podem ser testados sem renderizar a interface do usuário. Nesses testes, status e dados são consultados e manipulados através do controle sem interagir com o ciclo de detecção de alterações.",
-               "A gravação de testes com formulários orientados a modelos requer um conhecimento detalhado do processo de detecção de alterações e um entendimento de como as diretivas são executadas em cada ciclo para garantir que os elementos sejam consultados, testados ou alterados no momento correto."
-            ],
-            "Mutabilidade":{
-               "Reativo":[
-                  "Os formulários reativos mantêm o modelo de dados puro, fornecendo-o como uma estrutura de dados imutável.",
-                  "Sempre que uma alteração é acionada no modelo de dados, a instância FormControl retorna um novo modelo de dados em vez de atualizar o modelo de dados existente.",
-                  "Permite rastrear alterações exclusivas no modelo de dados através da observação do controle.",
-                  "Fornece uma maneira de a detecção de alterações ser mais eficiente, porque ela só precisa atualizar as alterações exclusivas.",
-                  "Segue padrões reativos que se integram aos operadores observáveis ​​para transformar dados.",
-                  "Com formulários reativos, a instância FormControl sempre retorna um novo valor quando o valor do controle é atualizado."
-                  ],
-               "Orientado a Modelos":[
-                  "Os formulários controlados por modelo dependem da mutabilidade com ligação de dados bidirecional para atualizar o modelo de dados no componente conforme as alterações são feitas no modelo.",
-                  "Como não há alterações exclusivas a serem rastreadas no modelo de dados ao usar a ligação de dados bidirecional, a detecção de alterações é menos eficiente na determinação de quando são necessárias atualizações.",
-                  "Com formulários controlados por modelo, a propriedade de cor favorita é sempre modificada para seu novo valor."
-               ]
-            },
-            "Escalabilidade":[
-               "Os formulários reativos fornecem acesso a APIs de baixo nível e acesso síncrono ao modelo de formulário, facilitando a criação de formulários em grande escala.",
-               "Os formulários orientados a modelos concentram-se em cenários simples, não são tão reutilizáveis, abstraem as APIs de baixo nível e fornecem acesso assíncrono ao modelo de formulário.",
-               "A abstração com formulários controlados por modelo também aparece no teste, onde o teste de formulários reativos requer menos configuração e nenhuma dependência do ciclo de detecção de alterações ao atualizar e validar o formulário e os modelos de dados durante o teste."
-            ],
-            "Considerações Relevantes":[
-               "A escolha de uma estratégia começa com a compreensão dos pontos fortes e fracos das opções apresentadas.",
-               "Acesso de API de baixo nível e modelo de formulário, previsibilidade, mutabilidade, estratégias diretas de validação e teste e escalabilidade são considerações importantes na escolha da infraestrutura que você usa para criar seus formulários no Angular.",
-               "Os formulários controlados por modelo são semelhantes aos padrões no AngularJS, mas têm limitações, devido aos critérios de muitos aplicativos Angular modernos em grande escala.",
-               "As formas reativas integram-se aos padrões reativos já presentes em outras áreas da arquitetura Angular e complementam bem esses requisitos."
+         ],
+         "Fluxo de Dados":[
+            "Os formulários reativos e controlados por modelo seguem duas estratégias diferentes ao manipular a entrada de formulário.",
+            "nas formas reativas, cada elemento do formulário na exibição é diretamente vinculado a um modelo de formulário (instância do FormControl). As atualizações da visualização para o modelo e do modelo para a visualização são síncronas e não dependem da interface do usuário renderizada.",
+            "Nos formulários controlados por modelo, cada elemento do formulário está vinculado a uma diretiva que gerencia o modelo de formulário internamente."
+         ],
+         "Validação":[
+            "O Angular fornece um conjunto de validadores internos, além da capacidade de criar validadores personalizados.",
+            "Os formulários reativos definem validadores personalizados como funções que recebem um controle para validar.",
+            "Os formulários controlados por modelo estão vinculados às diretivas de modelo e devem fornecer diretivas de validador personalizadas que agrupam as funções de validação."
+         ],
+         "Testes":[
+            "O teste desempenha um papel importante em aplicativos complexos e uma estratégia de teste mais simples é útil ao validar se seus formulários funcionam corretamente.",
+            "Formulários reativos e formulários controlados por modelo têm diferentes níveis de confiança na renderização da interface do usuário para executar asserções com base no controle de formulário e alterações no campo de formulário.",
+            "Os formulários reativos fornecem uma estratégia de teste relativamente fácil, porque fornecem acesso síncrono ao formulário e aos modelos de dados e podem ser testados sem renderizar a interface do usuário. Nesses testes, status e dados são consultados e manipulados através do controle sem interagir com o ciclo de detecção de alterações.",
+            "A gravação de testes com formulários orientados a modelos requer um conhecimento detalhado do processo de detecção de alterações e um entendimento de como as diretivas são executadas em cada ciclo para garantir que os elementos sejam consultados, testados ou alterados no momento correto."
+         ],
+         "Mutabilidade":{
+            "Reativo":[
+               "Os formulários reativos mantêm o modelo de dados puro, fornecendo-o como uma estrutura de dados imutável.",
+               "Sempre que uma alteração é acionada no modelo de dados, a instância FormControl retorna um novo modelo de dados em vez de atualizar o modelo de dados existente.",
+               "Permite rastrear alterações exclusivas no modelo de dados através da observação do controle.",
+               "Fornece uma maneira de a detecção de alterações ser mais eficiente, porque ela só precisa atualizar as alterações exclusivas.",
+               "Segue padrões reativos que se integram aos operadores observáveis ​​para transformar dados.",
+               "Com formulários reativos, a instância FormControl sempre retorna um novo valor quando o valor do controle é atualizado."
+               ],
+            "Orientado a Modelos":[
+               "Os formulários controlados por modelo dependem da mutabilidade com ligação de dados bidirecional para atualizar o modelo de dados no componente conforme as alterações são feitas no modelo.",
+               "Como não há alterações exclusivas a serem rastreadas no modelo de dados ao usar a ligação de dados bidirecional, a detecção de alterações é menos eficiente na determinação de quando são necessárias atualizações.",
+               "Com formulários controlados por modelo, a propriedade de cor favorita é sempre modificada para seu novo valor."
             ]
+         },
+         "Escalabilidade":[
+            "Os formulários reativos fornecem acesso a APIs de baixo nível e acesso síncrono ao modelo de formulário, facilitando a criação de formulários em grande escala.",
+            "Os formulários orientados a modelos concentram-se em cenários simples, não são tão reutilizáveis, abstraem as APIs de baixo nível e fornecem acesso assíncrono ao modelo de formulário.",
+            "A abstração com formulários controlados por modelo também aparece no teste, onde o teste de formulários reativos requer menos configuração e nenhuma dependência do ciclo de detecção de alterações ao atualizar e validar o formulário e os modelos de dados durante o teste."
+         ],
+         "Considerações Relevantes":[
+            "A escolha de uma estratégia começa com a compreensão dos pontos fortes e fracos das opções apresentadas.",
+            "Acesso de API de baixo nível e modelo de formulário, previsibilidade, mutabilidade, estratégias diretas de validação e teste e escalabilidade são considerações importantes na escolha da infraestrutura que você usa para criar seus formulários no Angular.",
+            "Os formulários controlados por modelo são semelhantes aos padrões no AngularJS, mas têm limitações, devido aos critérios de muitos aplicativos Angular modernos em grande escala.",
+            "As formas reativas integram-se aos padrões reativos já presentes em outras áreas da arquitetura Angular e complementam bem esses requisitos."
+         ]
       },
       "Observables & RxJS":{
-            "Observables":{
-               "Informações Relevantes":[
-                  "Observáveis ​​fornecem suporte para a passagem de mensagens entre partes do seu aplicativo. Eles são usados ​​com freqüência no Angular e são a técnica recomendada para manipulação de eventos, programação assíncrona e manipulação de vários valores.",
-                  "O 'observer pattern' é um padrão de design de software no qual um objeto, chamado de sujeito, mantém uma lista de seus dependentes, chamados observadores, e os notifica automaticamente sobre alterações de estado. Esse padrão é semelhante (mas não idêntico) ao padrão de design de 'publish/subscribe'.",
-                  "Observáveis ​​são declarativos - ou seja, você define uma função para publicar valores, mas ela não é executada até que um consumidor assine. O consumidor inscrito recebe notificações até que a função seja concluída ou até que eles cancelem a inscrição."
-               ],
-               "Uso Básico": "Como publicado, você cria uma instância Observable que define uma função de assinante. Essa é a função que é executada quando um consumidor chama o método subscribe(). A função de assinante define como obter ou gerar valores ou mensagens a serem publicadas.",
-               "Subscrever": [
-                  "Uma instância Observable começa a publicar valores somente quando alguém se inscreve nela. Você se inscreve chamando o método subscribe() da instância, passando um objeto observador para receber as notificações.",
-                  "Como um termo geral, nos referimos aos dados publicados por um observável como um fluxo. Qualquer tipo de valor pode ser representado com um observável, e os valores são publicados como um fluxo."
-               ],
-               "Multicasting":[
-                  "Um observável típico cria uma nova execução independente para cada observador inscrito - quando um observador se inscreve, o observável liga um manipulador de eventos e entrega valores a esse observador - quando outra observador se inscreve, o observável liga um novo manipulador de eventos e entrega valores para esse segundo observador em uma execução separada.",
-                  "Às vezes, em vez de iniciar uma execução independente para cada assinante, se deseja que cada assinatura obtenha os mesmos valores - mesmo que os valores já tenham começado a ser emitidos.",
-                  "O Multicasting é a prática de transmitir para uma lista de vários assinantes em uma única execução.",
-                  "Com um multicast observável, você reutilza o primeiro ouvinte e envia valores para cada assinante."
-               ],
-               "Error":[
-                  "Como os observáveis ​​produzem valores de forma assíncrona, o try / catch não captura efetivamente os erros.",
-                  "Você lida com erros especificando um retorno de chamada de erro no observador.",
-                  "Produzir um erro também faz com que o observável limpe as assinaturas e pare de produzir valores. Um observável pode produzir valores (chamando o próximo retorno de chamada) ou pode ser concluído chamando o retorno de chamada completo ou de erro."
-               ]
-            },
-            "Biblioteca RxJS":{
-               "Informações Relevantes":[
-                  "A programação reativa é um paradigma de programação assíncrona relacionado aos fluxos de dados e à propagação da mudança (Wikipedia)",
-                  "O RxJS (Extensões Reativas para JavaScript) é uma biblioteca para programação reativa usando observáveis ​​que facilita a composição de código assíncrono ou baseado em retorno de chamada.",
-                  "O RxJS fornece uma implementação do tipo Observable, necessária até que o tipo se torne parte do idioma e até que os navegadores o suportem. A biblioteca também fornece funções utilitárias para criar e trabalhar com observáveis.",
-                  "Funções utilitárias podem ser usadas para: Convertendo código existente para operações assíncronas em observáveis; Iterando Através dos Valores em um Fluxo; Mapeando valores para diferentes tipos; Filtrando fluxos Compondo vários fluxos;"
-               ],
-               "Operadores":[
-                  "Operadores são funções que se baseiam na base observável para permitir manipulação sofisticada de coleções. Por exemplo, o RxJS define operadores como map(), filter(), concat() e flatMap(). Os operadores aceitam opções de configuração e retornam uma função que leva uma fonte observável. Ao executar esta função retornada, o operador observa os valores emitidos do observável de origem, os transforma e retorna um novo observável desses valores transformados.",
-                  "Você pode usar tubos para vincular operadores. Os tubos permitem combinar várias funções em uma única função. A função pipe() usa como argumento as funções que você deseja combinar e retorna uma nova função que, quando executada, executa as funções compostas em sequência.",
-                  "Um conjunto de operadores aplicados a um observável é uma receita, ou seja, um conjunto de instruções para produzir os valores nos quais você está interessado. Por si só, a receita não faz nada. Você precisa chamar subscribe() para produzir um resultado através da receita.",
-                  "Para aplicativos Angular, preferimos combinar operadores com tubos, em vez de encadear, embora o encadeamento é usado em muitos exemplos de RxJS."
-               ],
-               "Erros":[
-                  "Além do manipulador error() que você fornece na assinatura, o RxJS fornece o operador catchError que permite manipular erros conhecidos na receita observável.",
-                  "Suponha que você tenha um observável que faça uma solicitação de API e mapeie a resposta do servidor. Se o servidor retornar um erro ou o valor não existir, será produzido um erro. Se você capturar esse erro e fornecer um valor padrão, seu fluxo continuará processando valores em vez de gerar erros."
-               ],
-               "Retry":[
-                  "Enquanto o operador catchError fornece um caminho simples de recuperação, o operador de nova tentativa permite tentar novamente uma solicitação com falha. Use o operador de nova tentativa antes do operador catchError. Ele reinscreve a fonte original observável, que pode executar novamente a sequência completa de ações que resultaram no erro. Se isso incluir uma solicitação HTTP, ela tentará novamente.",
-                  "Não tente novamente as solicitações de autenticação, pois elas devem ser iniciadas apenas pela ação do usuário. Não queremos bloquear contas de usuário com solicitações de login repetidas que o usuário não iniciou."
-               ],
-               "Nomenclaturas":[
-                  "Como os aplicativos angulares são geralmente escritos em TypeScript, você normalmente sabe quando uma variável é observável. Embora a estrutura Angular não imponha uma convenção de nomenclatura para observáveis, você verá frequentemente observáveis ​​nomeados com um sinal '$'' à direita.",
-                  "Definir '$' como convenção pode ser útil ao varrer o código e procurar valores observáveis.",
-                  "Se você deseja que uma propriedade armazene o valor mais recente de um observável, pode ser conveniente simplesmente usar o mesmo nome com ou sem o '$'"
-               ]
-            },
-            "Observables no Angular":{
-               "Informações Relevantes":[
-                  "Angular usa observáveis ​​como uma interface para lidar com uma variedade de operações assíncronas comuns.",
-                  "Você pode definir eventos personalizados que enviam dados de saída observáveis ​​de um filho para um componente pai.",
-                  "O módulo HTTP usa observáveis ​​para lidar com solicitações e respostas AJAX.",
-                  "Os módulos Router e Forms usam observáveis ​​para ouvir e responder a eventos de entrada do usuário."
-               ],
-               "Transmissão de Dados":[
-                  "Angular fornece uma classe EventEmitter que é usada ao publicar valores de um componente por meio do decorador @Output().",
-                  "O EventEmitter estende de Subject RxJS, adicionando um método emit() para que ele possa enviar valores arbitrários.",
-                  "Quando emit() é chamado, o EventEmitter passa o valor emitido para o próximo método ) de qualquer observador inscrito."
-               ],
-               "HTTP":[
-                  "O HttpClient da Angular retorna observáveis ​​de chamadas de método HTTP.",
-                  "Observáveis ​​não alteram a resposta do servidor (como pode ocorrer através de chamadas encadeadas .then() sob promessas), em vez disso, você pode usar uma série de operadores para transformar valores conforme necessário.",
-                  "Solicitações HTTP são canceláveis ​​através do método unsubscribe().",
-                  "As solicitações podem ser configuradas para obter atualizações de eventos em andamento.",
-                  "Solicitações com falha podem ser repetidas facilmente."
-               ],
-               "Async Pipe": "O AsyncPipe assina um cumprimento ou promessa e retorna o valor mais recente que ele emitiu. Quando um novo valor é emitido, o tubo marca o componente a ser verificado quanto a alterações.",
-               "Roteamento":[
-                  "Router.events fornece eventos como observáveis, use o operador filter() do RxJS para procurar eventos de interesse e se inscrever nele para tomar decisões com base na sequência de eventos no processo de navegação.",
-                  "O ActivatedRoute é um serviço de roteador injetado que utiliza observáveis ​​para obter informações sobre um caminho e parâmetros de rota."
-               ],
-               "Formulários Reativos": [
-                  "Os formulários reativos têm propriedades que usam observáveis ​​para monitorar os valores de controle do formulário. As propriedades FormControl valueChanges e statusChanges contêm observáveis ​​que geram eventos de alteração.",
-                  "A inscrição em uma propriedade observável de controle de formulário é uma maneira de acionar a lógica da aplicação dentro da classe de componentes."
-               ]
-            },
-            "Observables vs Promisses":[
-               "Observáveis ​​são declarativos; o cálculo não inicia até a assinatura. As promessas são executadas imediatamente na criação. Isso torna os observáveis ​​úteis para definir receitas que podem ser executadas sempre que você precisar do resultado.",
-               "Observáveis ​​fornecem muitos valores. Promessas fornecem um. Isso torna os observáveis ​​úteis para obter vários valores ao longo do tempo.",
-               "Observáveis ​​diferenciam entre encadeamento e assinatura. Promessas possuem apenas cláusulas .then(). Isso torna os observáveis ​​úteis para criar receitas de transformação complexas a serem usadas por outras partes do sistema, sem causar a execução do trabalho.",
-               "Observáveis subscribe() é responsável por manipular erros. Promessas empurram erros para seus filhos. Isso torna os observáveis ​​úteis para o tratamento centralizado e previsível de erros.",
-               "Observáveis ​​não são executados até que um consumidor assine. O subscribe() executa o comportamento definido uma vez e pode ser chamado novamente. Cada assinatura tem seu próprio cálculo. A nova assinatura causa recomputação de valores.",
-               "As promessas são executadas imediatamente e apenas uma vez. O cálculo do resultado é iniciado quando a promessa é criada. Não há como reiniciar o trabalho. Todas as cláusulas (assinaturas) compartilham o mesmo cálculo.",
-               "Observáveis ​​diferenciam entre funções de transformação, como um mapa e uma assinatura. Somente a assinatura ativa a função de assinante para começar a calcular os valores. As promessas não diferenciam entre as últimas cláusulas .then (equivalentes à assinatura) e as intermediárias .then cláusulas (equivalentes ao map).",
-               "Assinaturas observáveis ​​são canceláveis. O cancelamento da inscrição remove o ouvinte de receber mais valores e notifica a função de assinante para cancelar o trabalho. Promessas não são canceláveis.",
-               "Erros de execução observáveis ​​são entregues ao manipulador de erros do assinante e o assinante cancela automaticamente a assinatura do observável. Promisses empurram os erros para seus filhos."
+         "Observables":{
+            "Informações Relevantes":[
+               "Observáveis ​​fornecem suporte para a passagem de mensagens entre partes do seu aplicativo. Eles são usados ​​com freqüência no Angular e são a técnica recomendada para manipulação de eventos, programação assíncrona e manipulação de vários valores.",
+               "O 'observer pattern' é um padrão de design de software no qual um objeto, chamado de sujeito, mantém uma lista de seus dependentes, chamados observadores, e os notifica automaticamente sobre alterações de estado. Esse padrão é semelhante (mas não idêntico) ao padrão de design de 'publish/subscribe'.",
+               "Observáveis ​​são declarativos - ou seja, você define uma função para publicar valores, mas ela não é executada até que um consumidor assine. O consumidor inscrito recebe notificações até que a função seja concluída ou até que eles cancelem a inscrição."
+            ],
+            "Uso Básico": "Como publicado, você cria uma instância Observable que define uma função de assinante. Essa é a função que é executada quando um consumidor chama o método subscribe(). A função de assinante define como obter ou gerar valores ou mensagens a serem publicadas.",
+            "Subscrever": [
+               "Uma instância Observable começa a publicar valores somente quando alguém se inscreve nela. Você se inscreve chamando o método subscribe() da instância, passando um objeto observador para receber as notificações.",
+               "Como um termo geral, nos referimos aos dados publicados por um observável como um fluxo. Qualquer tipo de valor pode ser representado com um observável, e os valores são publicados como um fluxo."
+            ],
+            "Multicasting":[
+               "Um observável típico cria uma nova execução independente para cada observador inscrito - quando um observador se inscreve, o observável liga um manipulador de eventos e entrega valores a esse observador - quando outra observador se inscreve, o observável liga um novo manipulador de eventos e entrega valores para esse segundo observador em uma execução separada.",
+               "Às vezes, em vez de iniciar uma execução independente para cada assinante, se deseja que cada assinatura obtenha os mesmos valores - mesmo que os valores já tenham começado a ser emitidos.",
+               "O Multicasting é a prática de transmitir para uma lista de vários assinantes em uma única execução.",
+               "Com um multicast observável, você reutilza o primeiro ouvinte e envia valores para cada assinante."
+            ],
+            "Error":[
+               "Como os observáveis ​​produzem valores de forma assíncrona, o try / catch não captura efetivamente os erros.",
+               "Você lida com erros especificando um retorno de chamada de erro no observador.",
+               "Produzir um erro também faz com que o observável limpe as assinaturas e pare de produzir valores. Um observável pode produzir valores (chamando o próximo retorno de chamada) ou pode ser concluído chamando o retorno de chamada completo ou de erro."
             ]
+         },
+         "Biblioteca RxJS":{
+            "Informações Relevantes":[
+               "A programação reativa é um paradigma de programação assíncrona relacionado aos fluxos de dados e à propagação da mudança (Wikipedia)",
+               "O RxJS (Extensões Reativas para JavaScript) é uma biblioteca para programação reativa usando observáveis ​​que facilita a composição de código assíncrono ou baseado em retorno de chamada.",
+               "O RxJS fornece uma implementação do tipo Observable, necessária até que o tipo se torne parte do idioma e até que os navegadores o suportem. A biblioteca também fornece funções utilitárias para criar e trabalhar com observáveis.",
+               "Funções utilitárias podem ser usadas para: Convertendo código existente para operações assíncronas em observáveis; Iterando Através dos Valores em um Fluxo; Mapeando valores para diferentes tipos; Filtrando fluxos Compondo vários fluxos;"
+            ],
+            "Operadores":[
+               "Operadores são funções que se baseiam na base observável para permitir manipulação sofisticada de coleções. Por exemplo, o RxJS define operadores como map(), filter(), concat() e flatMap(). Os operadores aceitam opções de configuração e retornam uma função que leva uma fonte observável. Ao executar esta função retornada, o operador observa os valores emitidos do observável de origem, os transforma e retorna um novo observável desses valores transformados.",
+               "Você pode usar tubos para vincular operadores. Os tubos permitem combinar várias funções em uma única função. A função pipe() usa como argumento as funções que você deseja combinar e retorna uma nova função que, quando executada, executa as funções compostas em sequência.",
+               "Um conjunto de operadores aplicados a um observável é uma receita, ou seja, um conjunto de instruções para produzir os valores nos quais você está interessado. Por si só, a receita não faz nada. Você precisa chamar subscribe() para produzir um resultado através da receita.",
+               "Para aplicativos Angular, preferimos combinar operadores com tubos, em vez de encadear, embora o encadeamento é usado em muitos exemplos de RxJS."
+            ],
+            "Erros":[
+               "Além do manipulador error() que você fornece na assinatura, o RxJS fornece o operador catchError que permite manipular erros conhecidos na receita observável.",
+               "Suponha que você tenha um observável que faça uma solicitação de API e mapeie a resposta do servidor. Se o servidor retornar um erro ou o valor não existir, será produzido um erro. Se você capturar esse erro e fornecer um valor padrão, seu fluxo continuará processando valores em vez de gerar erros."
+            ],
+            "Retry":[
+               "Enquanto o operador catchError fornece um caminho simples de recuperação, o operador de nova tentativa permite tentar novamente uma solicitação com falha. Use o operador de nova tentativa antes do operador catchError. Ele reinscreve a fonte original observável, que pode executar novamente a sequência completa de ações que resultaram no erro. Se isso incluir uma solicitação HTTP, ela tentará novamente.",
+               "Não tente novamente as solicitações de autenticação, pois elas devem ser iniciadas apenas pela ação do usuário. Não queremos bloquear contas de usuário com solicitações de login repetidas que o usuário não iniciou."
+            ],
+            "Nomenclaturas":[
+               "Como os aplicativos angulares são geralmente escritos em TypeScript, você normalmente sabe quando uma variável é observável. Embora a estrutura Angular não imponha uma convenção de nomenclatura para observáveis, você verá frequentemente observáveis ​​nomeados com um sinal '$'' à direita.",
+               "Definir '$' como convenção pode ser útil ao varrer o código e procurar valores observáveis.",
+               "Se você deseja que uma propriedade armazene o valor mais recente de um observável, pode ser conveniente simplesmente usar o mesmo nome com ou sem o '$'"
+            ]
+         },
+         "Observables no Angular":{
+            "Informações Relevantes":[
+               "Angular usa observáveis ​​como uma interface para lidar com uma variedade de operações assíncronas comuns.",
+               "Você pode definir eventos personalizados que enviam dados de saída observáveis ​​de um filho para um componente pai.",
+               "O módulo HTTP usa observáveis ​​para lidar com solicitações e respostas AJAX.",
+               "Os módulos Router e Forms usam observáveis ​​para ouvir e responder a eventos de entrada do usuário."
+            ],
+            "Transmissão de Dados":[
+               "Angular fornece uma classe EventEmitter que é usada ao publicar valores de um componente por meio do decorador @Output().",
+               "O EventEmitter estende de Subject RxJS, adicionando um método emit() para que ele possa enviar valores arbitrários.",
+               "Quando emit() é chamado, o EventEmitter passa o valor emitido para o próximo método ) de qualquer observador inscrito."
+            ],
+            "HTTP":[
+               "O HttpClient da Angular retorna observáveis ​​de chamadas de método HTTP.",
+               "Observáveis ​​não alteram a resposta do servidor (como pode ocorrer através de chamadas encadeadas .then() sob promessas), em vez disso, você pode usar uma série de operadores para transformar valores conforme necessário.",
+               "Solicitações HTTP são canceláveis ​​através do método unsubscribe().",
+               "As solicitações podem ser configuradas para obter atualizações de eventos em andamento.",
+               "Solicitações com falha podem ser repetidas facilmente."
+            ],
+            "Async Pipe": "O AsyncPipe assina um cumprimento ou promessa e retorna o valor mais recente que ele emitiu. Quando um novo valor é emitido, o tubo marca o componente a ser verificado quanto a alterações.",
+            "Roteamento":[
+               "Router.events fornece eventos como observáveis, use o operador filter() do RxJS para procurar eventos de interesse e se inscrever nele para tomar decisões com base na sequência de eventos no processo de navegação.",
+               "O ActivatedRoute é um serviço de roteador injetado que utiliza observáveis ​​para obter informações sobre um caminho e parâmetros de rota."
+            ],
+            "Formulários Reativos": [
+               "Os formulários reativos têm propriedades que usam observáveis ​​para monitorar os valores de controle do formulário. As propriedades FormControl valueChanges e statusChanges contêm observáveis ​​que geram eventos de alteração.",
+               "A inscrição em uma propriedade observável de controle de formulário é uma maneira de acionar a lógica da aplicação dentro da classe de componentes."
+            ]
+         },
+         "Observables vs Promisses":[
+            "Observáveis ​​são declarativos; o cálculo não inicia até a assinatura. As promessas são executadas imediatamente na criação. Isso torna os observáveis ​​úteis para definir receitas que podem ser executadas sempre que você precisar do resultado.",
+            "Observáveis ​​fornecem muitos valores. Promessas fornecem um. Isso torna os observáveis ​​úteis para obter vários valores ao longo do tempo.",
+            "Observáveis ​​diferenciam entre encadeamento e assinatura. Promessas possuem apenas cláusulas .then(). Isso torna os observáveis ​​úteis para criar receitas de transformação complexas a serem usadas por outras partes do sistema, sem causar a execução do trabalho.",
+            "Observáveis subscribe() é responsável por manipular erros. Promessas empurram erros para seus filhos. Isso torna os observáveis ​​úteis para o tratamento centralizado e previsível de erros.",
+            "Observáveis ​​não são executados até que um consumidor assine. O subscribe() executa o comportamento definido uma vez e pode ser chamado novamente. Cada assinatura tem seu próprio cálculo. A nova assinatura causa recomputação de valores.",
+            "As promessas são executadas imediatamente e apenas uma vez. O cálculo do resultado é iniciado quando a promessa é criada. Não há como reiniciar o trabalho. Todas as cláusulas (assinaturas) compartilham o mesmo cálculo.",
+            "Observáveis ​​diferenciam entre funções de transformação, como um mapa e uma assinatura. Somente a assinatura ativa a função de assinante para começar a calcular os valores. As promessas não diferenciam entre as últimas cláusulas .then (equivalentes à assinatura) e as intermediárias .then cláusulas (equivalentes ao map).",
+            "Assinaturas observáveis ​​são canceláveis. O cancelamento da inscrição remove o ouvinte de receber mais valores e notifica a função de assinante para cancelar o trabalho. Promessas não são canceláveis.",
+            "Erros de execução observáveis ​​são entregues ao manipulador de erros do assinante e o assinante cancela automaticamente a assinatura do observável. Promisses empurram os erros para seus filhos."
+         ]
       },
       "HttpClient":{
+         "Informações Relevantes":[
+            "A maioria dos aplicativos front-end se comunica com serviços de back-end pelo protocolo HTTP. Navegadores modernos suportam duas APIs diferentes para fazer solicitações HTTP: a interface XMLHttpRequest e a API fetch().",
+            "O HttpClient em @angular/common / http oferece uma API HTTP do cliente simplificada para aplicativos Angular que repousa na interface XMLHttpRequest exposta pelos navegadores.",
+            "Os benefícios adicionais do HttpClient incluem recursos de testabilidade, objetos de solicitação e resposta digitados, interceptação de solicitação e resposta, APIs observáveis ​​e tratamento de erros simplificado.",
+            "É uma prática recomendada separar a apresentação dos dados do acesso a dados, encapsulando o acesso a dados em um serviço separado e delegando esse serviço no componente, mesmo em casos simples."
+         ],
+         "Observáveis ​​e Operadores":[
+            "O RxJS é uma biblioteca para compor código assíncrono e baseado em retorno de chamada em um estilo funcional e reativo. Muitas APIs Angular, incluindo HttpClient, produzem e consomem Observáveis ​​RxJS.",
+            "Embora você possa se familiarizar com o mínimo de conhecimento em RxJS, convém aumentar suas habilidades em RxJS ao longo do tempo para usar o HttpClient com eficiência.",
+            "Um método HttpClient não inicia sua solicitação HTTP até você chamar subscribe() no observável retornado por esse método. Isso vale para todos os métodos HttpClient",
+            "Todos os observáveis ​​retornados dos métodos HttpClient são congelados por padrão, a execução da solicitação HTTP é adiada, permitindo que você estenda o observável com operações adicionais, como tap e catchError antes que algo realmente aconteça.",
+            "De fato, cada subscrever() inicia uma execução separada e independente do observável. A inscrição duas vezes resulta em duas solicitações HTTP."
+         ],
+         "Interceptadores":{
             "Informações Relevantes":[
-               "A maioria dos aplicativos front-end se comunica com serviços de back-end pelo protocolo HTTP. Navegadores modernos suportam duas APIs diferentes para fazer solicitações HTTP: a interface XMLHttpRequest e a API fetch().",
-               "O HttpClient em @angular/common / http oferece uma API HTTP do cliente simplificada para aplicativos Angular que repousa na interface XMLHttpRequest exposta pelos navegadores.",
-               "Os benefícios adicionais do HttpClient incluem recursos de testabilidade, objetos de solicitação e resposta digitados, interceptação de solicitação e resposta, APIs observáveis ​​e tratamento de erros simplificado.",
-               "É uma prática recomendada separar a apresentação dos dados do acesso a dados, encapsulando o acesso a dados em um serviço separado e delegando esse serviço no componente, mesmo em casos simples."
+               "Com a interceptação, você declara interceptores que inspecionam e transformam solicitações HTTP do seu aplicativo no servidor. Os mesmos interceptadores também podem inspecionar e transformar as respostas do servidor no caminho de volta ao aplicativo. Vários interceptadores formam uma cadeia de manipuladores de solicitações / respostas para frente e para trás.",
+               "Os interceptadores podem executar uma variedade de tarefas implícitas, da autenticação ao log, de maneira rotineira e padrão, para cada solicitação / resposta HTTP.",
+               "Sem interceptação, os desenvolvedores teriam que implementar essas tarefas explicitamente para cada chamada de método HttpClient.",
+               "A maioria dos interceptadores inspeciona a solicitação no caminho e encaminha a solicitação (talvez alterada) para o método handle() do próximo objeto que implementa a interface HttpHandler.",
+               "Como intercept(), o método handle() transforma uma solicitação HTTP em um Observable of HttpEvents, que inclui a resposta do servidor. O método intercept() pode inspecionar esse observável e alterá-lo antes de devolvê-lo ao chamador.",
+               "O 'next' objeto representa o próximo interceptador na cadeia de interceptores. O 'next' final da cadeia é o manipulador de back-end HttpClient que envia a solicitação ao servidor e recebe a resposta do servidor.",
+               "A maioria dos interceptores chama next.handle() para que a solicitação flua para o próximo interceptador e, eventualmente, para o manipulador de back-end. Um interceptador pode pular a chamada next.handle(), causar um curto-circuito na cadeia e retornar seu próprio Observable com uma resposta artificial do servidor.",
+               "Como os interceptores são dependências (opcionais) do serviço HttpClient, você deve fornecê-los no mesmo injetor (ou pai do injetor) que fornece o HttpClient. Os interceptores fornecidos após o DI criar o HttpClient são ignorados."
             ],
-            "Observáveis ​​e Operadores":[
-               "O RxJS é uma biblioteca para compor código assíncrono e baseado em retorno de chamada em um estilo funcional e reativo. Muitas APIs Angular, incluindo HttpClient, produzem e consomem Observáveis ​​RxJS.",
-               "Embora você possa se familiarizar com o mínimo de conhecimento em RxJS, convém aumentar suas habilidades em RxJS ao longo do tempo para usar o HttpClient com eficiência.",
-               "Um método HttpClient não inicia sua solicitação HTTP até você chamar subscribe() no observável retornado por esse método. Isso vale para todos os métodos HttpClient",
-               "Todos os observáveis ​​retornados dos métodos HttpClient são congelados por padrão, a execução da solicitação HTTP é adiada, permitindo que você estenda o observável com operações adicionais, como tap e catchError antes que algo realmente aconteça.",
-               "De fato, cada subscrever() inicia uma execução separada e independente do observável. A inscrição duas vezes resulta em duas solicitações HTTP."
+            "Ordem dos Interceptadores":[
+               "Angular aplica interceptores na ordem em que você os fornece. Se você fornecer interceptores A, então B e C, as solicitações fluirão em A-> B-> C e as respostas fluirão C-> B-> A.",
+               "Você não pode alterar a ordem ou remover os interceptores posteriormente. Se você precisar habilitar e desabilitar um interceptor dinamicamente, precisará criar esse recurso no próprio interceptador.",
+               "Embora os interceptores sejam capazes de alterar solicitações e respostas, as propriedades da instância HttpRequest e HttpResponse são somente leitura, tornando-as imutáveis."
             ],
-            "Interceptadores":{
-               "Informações Relevantes":[
-                  "Com a interceptação, você declara interceptores que inspecionam e transformam solicitações HTTP do seu aplicativo no servidor. Os mesmos interceptadores também podem inspecionar e transformar as respostas do servidor no caminho de volta ao aplicativo. Vários interceptadores formam uma cadeia de manipuladores de solicitações / respostas para frente e para trás.",
-                  "Os interceptadores podem executar uma variedade de tarefas implícitas, da autenticação ao log, de maneira rotineira e padrão, para cada solicitação / resposta HTTP.",
-                  "Sem interceptação, os desenvolvedores teriam que implementar essas tarefas explicitamente para cada chamada de método HttpClient.",
-                  "A maioria dos interceptadores inspeciona a solicitação no caminho e encaminha a solicitação (talvez alterada) para o método handle() do próximo objeto que implementa a interface HttpHandler.",
-                  "Como intercept(), o método handle() transforma uma solicitação HTTP em um Observable of HttpEvents, que inclui a resposta do servidor. O método intercept() pode inspecionar esse observável e alterá-lo antes de devolvê-lo ao chamador.",
-                  "O 'next' objeto representa o próximo interceptador na cadeia de interceptores. O 'next' final da cadeia é o manipulador de back-end HttpClient que envia a solicitação ao servidor e recebe a resposta do servidor.",
-                  "A maioria dos interceptores chama next.handle() para que a solicitação flua para o próximo interceptador e, eventualmente, para o manipulador de back-end. Um interceptador pode pular a chamada next.handle(), causar um curto-circuito na cadeia e retornar seu próprio Observable com uma resposta artificial do servidor.",
-                  "Como os interceptores são dependências (opcionais) do serviço HttpClient, você deve fornecê-los no mesmo injetor (ou pai do injetor) que fornece o HttpClient. Os interceptores fornecidos após o DI criar o HttpClient são ignorados."
-               ],
-               "Ordem dos Interceptadores":[
-                  "Angular aplica interceptores na ordem em que você os fornece. Se você fornecer interceptores A, então B e C, as solicitações fluirão em A-> B-> C e as respostas fluirão C-> B-> A.",
-                  "Você não pode alterar a ordem ou remover os interceptores posteriormente. Se você precisar habilitar e desabilitar um interceptor dinamicamente, precisará criar esse recurso no próprio interceptador.",
-                  "Embora os interceptores sejam capazes de alterar solicitações e respostas, as propriedades da instância HttpRequest e HttpResponse são somente leitura, tornando-as imutáveis."
-               ],
-               "Imutabilidade":[
-                  "Eles são imutáveis ​​por um bom motivo: o aplicativo pode repetir uma solicitação várias vezes antes de ser bem-sucedido, o que significa que a cadeia de interceptadores pode reprocessar a mesma solicitação várias vezes.",
-                  "Se um interceptador pudesse modificar o objeto de solicitação original, a operação tentada novamente seria iniciada a partir da solicitação modificada, e não do original. A imutabilidade garante que os interceptadores vejam a mesma solicitação para cada tentativa.",
-                  "O protetor de atribuição somente leitura não pode impedir atualizações profundas e, em particular, não pode impedir que você modifique uma propriedade de um objeto do corpo da solicitação. Se você deve alterar o corpo da solicitação, copie-o primeiro, altere a cópia, clone() a solicitação e defina o corpo do clone com o novo corpo",
-                  "Às vezes, você precisa limpar o corpo da solicitação em vez de substituí-lo. Se você definir o corpo da solicitação clonada como indefinido, o Angular assumirá que pretende deixar o corpo como está. Não é isso que você quer. Se você definir o corpo da solicitação clonada como nulo, o Angular saberá que você deseja limpar o corpo da solicitação."
-               ],
-               "Registro": "Como os interceptores podem processar a solicitação e a resposta juntos, eles podem fazer coisas como tempo e registrar uma operação HTTP inteira.",
-               "Cache":[
-                  "Os interceptadores podem lidar com solicitações por si mesmos, sem encaminhar para next.handle().",
-                  "Você pode decidir armazenar em cache determinadas solicitações e respostas para melhorar o desempenho.",
-                  "Você pode delegar o armazenamento em cache a um interceptador sem perturbar os serviços de dados existentes."
-               ],
-               "Progresso de Eventos":[
-                  "Às vezes, os aplicativos transferem grandes quantidades de dados e essas transferências podem levar muito tempo, e os uploads de arquivos são um exemplo típico. Fornecer ao usuário feedback sobre o andamento dessas transferências, é uma ótima prática.",
-                  "Para fazer uma solicitação com os eventos de progresso ativados, é possível criar uma instância do HttpRequest com a opção reportProgress configurada como true para ativar o rastreamento de eventos de progresso.",
-                  "Todo evento de progresso aciona a detecção de alterações, portanto, somente ative-as se você realmente pretender relatar o progresso na interface do usuário. Ao usar HttpClient # request() com um método HTTP, configure com observe: 'events' para ver todos os eventos, incluindo o andamento das transferências."
-               ],
-               "Segurança: Proteção XSR": [
-                  "A falsificação de solicitação entre sites (XSRF ou CSRF) é uma técnica de ataque pela qual o invasor pode induzir um usuário autenticado a executar ações inconscientemente no seu site.",
-                  "O HttpClient suporta um mecanismo comum usado para impedir ataques XSRF.",
-                  "Ao executar solicitações HTTP, um interceptador lê um token de um cookie, por padrão, XSRF-TOKEN, e o define como um cabeçalho HTTP, X-XSRF-TOKEN. Como apenas o código executado em seu domínio pode ler o cookie, o back-end pode ter certeza de que a solicitação HTTP veio da aplicação cliente e não de um invasor.",
-                  "Por padrão, um interceptador envia esse cabeçalho em todas as solicitações mutantes (como POST) para URLs relativos, mas não em solicitações GET / HEAD ou em solicitações com uma URL absoluta.",
-                  "Seu servidor precisa definir um token em um cookie de sessão legível por JavaScript chamado XSRF-TOKEN no carregamento da página ou na primeira solicitação GET, de modo que, em solicitações subsequentes, o servidor pode verificar se o cookie corresponde ao cabeçalho HTTP X-XSRF-TOKEN e, portanto, verificar se apenas o código em execução no seu domínio pode ter enviado a solicitação.",
-                  "O token deve ser exclusivo para cada usuário e deve ser verificável pelo servidor; isso impede que o cliente crie seus próprios tokens.",
-                  "Definir o token como um resumo do cookie de autenticação do seu site como um extra, para aumentar a segurança."
-               ]
-            }   
+            "Imutabilidade":[
+               "Eles são imutáveis ​​por um bom motivo: o aplicativo pode repetir uma solicitação várias vezes antes de ser bem-sucedido, o que significa que a cadeia de interceptadores pode reprocessar a mesma solicitação várias vezes.",
+               "Se um interceptador pudesse modificar o objeto de solicitação original, a operação tentada novamente seria iniciada a partir da solicitação modificada, e não do original. A imutabilidade garante que os interceptadores vejam a mesma solicitação para cada tentativa.",
+               "O protetor de atribuição somente leitura não pode impedir atualizações profundas e, em particular, não pode impedir que você modifique uma propriedade de um objeto do corpo da solicitação. Se você deve alterar o corpo da solicitação, copie-o primeiro, altere a cópia, clone() a solicitação e defina o corpo do clone com o novo corpo",
+               "Às vezes, você precisa limpar o corpo da solicitação em vez de substituí-lo. Se você definir o corpo da solicitação clonada como indefinido, o Angular assumirá que pretende deixar o corpo como está. Não é isso que você quer. Se você definir o corpo da solicitação clonada como nulo, o Angular saberá que você deseja limpar o corpo da solicitação."
+            ],
+            "Registro": "Como os interceptores podem processar a solicitação e a resposta juntos, eles podem fazer coisas como tempo e registrar uma operação HTTP inteira.",
+            "Cache":[
+               "Os interceptadores podem lidar com solicitações por si mesmos, sem encaminhar para next.handle().",
+               "Você pode decidir armazenar em cache determinadas solicitações e respostas para melhorar o desempenho.",
+               "Você pode delegar o armazenamento em cache a um interceptador sem perturbar os serviços de dados existentes."
+            ],
+            "Progresso de Eventos":[
+               "Às vezes, os aplicativos transferem grandes quantidades de dados e essas transferências podem levar muito tempo, e os uploads de arquivos são um exemplo típico. Fornecer ao usuário feedback sobre o andamento dessas transferências, é uma ótima prática.",
+               "Para fazer uma solicitação com os eventos de progresso ativados, é possível criar uma instância do HttpRequest com a opção reportProgress configurada como true para ativar o rastreamento de eventos de progresso.",
+               "Todo evento de progresso aciona a detecção de alterações, portanto, somente ative-as se você realmente pretender relatar o progresso na interface do usuário. Ao usar HttpClient # request() com um método HTTP, configure com observe: 'events' para ver todos os eventos, incluindo o andamento das transferências."
+            ],
+            "Segurança: Proteção XSR": [
+               "A falsificação de solicitação entre sites (XSRF ou CSRF) é uma técnica de ataque pela qual o invasor pode induzir um usuário autenticado a executar ações inconscientemente no seu site.",
+               "O HttpClient suporta um mecanismo comum usado para impedir ataques XSRF.",
+               "Ao executar solicitações HTTP, um interceptador lê um token de um cookie, por padrão, XSRF-TOKEN, e o define como um cabeçalho HTTP, X-XSRF-TOKEN. Como apenas o código executado em seu domínio pode ler o cookie, o back-end pode ter certeza de que a solicitação HTTP veio da aplicação cliente e não de um invasor.",
+               "Por padrão, um interceptador envia esse cabeçalho em todas as solicitações mutantes (como POST) para URLs relativos, mas não em solicitações GET / HEAD ou em solicitações com uma URL absoluta.",
+               "Seu servidor precisa definir um token em um cookie de sessão legível por JavaScript chamado XSRF-TOKEN no carregamento da página ou na primeira solicitação GET, de modo que, em solicitações subsequentes, o servidor pode verificar se o cookie corresponde ao cabeçalho HTTP X-XSRF-TOKEN e, portanto, verificar se apenas o código em execução no seu domínio pode ter enviado a solicitação.",
+               "O token deve ser exclusivo para cada usuário e deve ser verificável pelo servidor; isso impede que o cliente crie seus próprios tokens.",
+               "Definir o token como um resumo do cookie de autenticação do seu site como um extra, para aumentar a segurança."
+            ]
+         }   
       },
       "Injeção de Dependência":{
-            "DI no Angular":{
-               "Informações Relevantes": [
-                  "A injeção de dependência (DI) é um importante padrão de design de aplicativo. O Angular possui sua própria estrutura DI, que normalmente é usada no design de aplicativos Angular para aumentar sua eficiência e modularidade.",
-                  "Dependências são serviços ou objetos que uma classe precisa para desempenhar sua função. O DI é um padrão de codificação no qual uma classe solicita dependências de fontes externas, em vez de criá-las.",
-                  "No Angular, a estrutura DI fornece dependências declaradas para uma classe quando essa classe é instanciada.",
-                  "Os módulos filhos e os injetores de componentes são independentes entre si e criam suas próprias instâncias separadas dos serviços fornecidos.",
-                  "Quando o Angular destrói uma instância NgModule ou componente, também destrói as instâncias de serviço desse injetor e do injetor.",
-                  "Quando um componente ou serviço declara uma dependência, o construtor da classe assume essa dependência como parâmetro. Você pode dizer ao Angular que a dependência é opcional, anotando o parâmetro do construtor com @Optional()."
-               ],
-               "Injetores":[
-                  "Os injetores são herdados, o que significa que, se um determinado injetor não puder resolver uma dependência, ele solicitará ao injetor pai que a resolva. Um componente pode obter serviços de seu próprio injetor, dos injetores de seus ancestrais, do injetor do NgModule pai ou do injetor raiz.",
-                  "Você pode dizer ao Angular para injetar uma dependência no construtor de um componente, especificando um parâmetro do construtor com o tipo de dependência.",
-                  "Existe apenas um injetor de raiz para um aplicativo. Fornecer 'YourService' no nível raiz ou AppModule significa que ele é registrado com o injetor raiz.",
-                  "Graças à herança do injetor, você ainda pode injetar serviços de todo o aplicativo nesses componentes. O injetor de um componente é filho do injetor de seu componente pai e herda de todos os injetores ancestrais desde o injetor raiz  da aplicação . A Angular pode injetar um serviço prestado por qualquer injetor nessa linhagem.",
-                  "Ao configurar um injetor com um provedor, você o associa a um token DI. O injetor mantém um mapa de provedor de token interno que ele faz referência quando solicitado por uma dependência. O token é a chave do mapa."
-               ],
-               "Serviços":[
-                  "Os serviços são singletons no escopo de um injetor. Ou seja, existe no máximo uma instância de serviço em um determinado injetor.",
-                  "Há apenas uma instância de 'YourService' no aplicativo inteiro e todas as classes que injetam UserService obtêm essa instância de serviço, a menos que você configure outro provedor com um injetor filho."
-               ]
-            },
-            "Injetores Hierárquicos":{
-               "Informações Relevantes":[
-                  "Os injetores no Angular têm regras que você pode aproveitar para alcançar a visibilidade desejada dos injetáveis ​​em seus aplicativos. Ao entender essas regras, você pode determinar em qual NgModule, Componente ou Diretiva deve declarar um provedor.",
-                  "Existem duas hierarquias de injetores em Angular: Hierarquia ModuleInjector - é configurada usando uma anotação @NgModule() ou @Injectable(). Hierarquia ElementInjector - criada implicitamente em cada elemento DOM. Um ElementInjector está vazio por padrão, a menos que você o configure na propriedade provider em @Directive() ou @Component()."
-               ],
-               "ModuleInjector":[
-                  "O decorador @Injectable() identifica uma classe de serviço, e a propriedade 'providedIn' configura um ModuleInjector específico no 'root', que disponibiliza o serviço no ModuleInjector raiz.",
-                  "Existem mais dois injetores acima da raiz, um ModuleInjector adicional e NullInjecto.",
-                  "O método bootstrapModule() cria um injetor filho do injetor de plataforma que é configurado pelo AppModule. Este é o ModuleInjector raiz.",
-                  "O método platformBrowserDynamic() cria um injetor configurado por um PlatformModule, que contém dependências específicas da plataforma. Isso permite que vários aplicativos compartilhem uma configuração de plataforma.",
-                  "O próximo injetor pai na hierarquia é o NullInjector(), que é o topo da árvore. Se você foi tão longe na árvore que procura um serviço no NullInjector(), você receberá um erro, a menos que tenha usado @Optional() porque, no final das contas, tudo termina no NullInjector() e ele retorna um erro ou, no caso de @Optional(), nulo.",
-                  "O diagrama a seguir representa o relacionamento entre o ModuleInjector raiz e seus injetores-pai: https://angular.io/generated/images/guide/dependency-injection/injectors.svg",
-                  "Enquanto o nome root é um alias especial, outros ModuleInjectors não têm alias. Você tem a opção de criar ModuleInjectors sempre que um componente carregado dinamicamente é criado, como no roteador, que criará ModuleInjectors filho."
-               ],
-               "ElementInjector": [
-                  "Angular cria ElementInjectors implicitamente para cada elemento DOM.",
-                  "Fornecer um serviço no decorador @Component() usando seus provedores ou a propriedade viewProviders configura um ElementInjector.",
-                  "Quando você fornece serviços em um componente, esse serviço está disponível por meio do ElementInjector nessa instância do componente.",
-                  "Quando a instância do componente é destruída, o mesmo ocorre com a instância do serviço.",
-                  "Um componente é um tipo especial de diretiva, o que significa que, assim como @Directive() possui uma propriedade de provedores, @Component() também possui.",
-                  "Diretivas e Componentes podem configurar provedores usando a propriedade de provedores. Quando você configura um provedor para um componente ou diretiva usando a propriedade provider, esse provedor pertence ao ElementInjector desse componente ou diretiva. Componentes e diretivas no mesmo elemento compartilham um injetor.",
-                  "Ao resolver um token para um componente / diretiva, o Angular o resolve em duas fases: Contra a hierarquia do ElementInjector (seus pais) Contra a hierarquia do ModuleInjector (seus pais)",
-                  "Quando um componente declara uma dependência, o Angular tenta satisfazer essa dependência com seu próprio ElementInjector. Se o injetor do componente não tiver o provedor, ele passará a solicitação para o ElementInjector do componente pai, de modo que, as solicitações continuam sendo encaminhadas até que o Angular encontre um injetor que possa manipular a solicitação ou ficar sem os ElementInjectors ancestrais",
-                  "Se o Angular não encontrar o provedor em nenhum ElementInjectors, ele retornará ao elemento em que a solicitação se originou e procurará na hierarquia ModuleInjector. Se o Angular ainda não encontrar o provedor, ele gera um erro.",
-                  "Quando você fornece serviços na classe de componente, os serviços são visíveis na árvore ElementInjector em relação a onde e como você fornece esses serviços.",
-                  "Compreender a estrutura lógica subjacente do modelo Angular fornecerá uma base para configurar serviços e, por sua vez, controlar sua visibilidade."
-               ],
-               "Modificadores":[
-                  "O comportamento da resolução da Angular pode ser modificado com @Optional(), @Self(), @SkipSelf() e @Host(). Importe cada um deles de @angular/core e use cada um no construtor da classe de componentes ao injetar seu serviço.",
-                  "Os modificadores de resolução se enquadram em três categorias: O que fazer se o Angular não encontrar o que você está procurando, que é @Optional() - Por onde começar a procurar, é @SkipSelf() - Onde parar de procurar, @Host() e @Self().",
-                  "Por padrão, o Angular sempre inicia no Injetor atual e continua pesquisando até o fim. Os modificadores permitem alterar o local inicial (final) ou final.",
-                  "Opcional() permite que a Angular considere um serviço que você injeta como opcional. Dessa forma, se não puder ser resolvido em tempo de execução, o Angular simplesmente resolverá o serviço como nulo, em vez de gerar um erro.",
-                  "Use @Self() para que o Angular procure apenas no ElementInjector o componente ou a diretiva atual. Um bom caso de uso para @Self() é injetar um serviço, mas apenas se estiver disponível no elemento host atual. Para evitar erros nessa situação, combine @Self() com @Optional().",
-                  "@SkipSelf() é o oposto de @Self(). Com o @SkipSelf(), o Angular inicia a busca por um serviço no ElementInjector pai, em vez do atual.",
-                  "@Host() permite designar um componente como a última parada na árvore do injetor ao procurar fornecedores. Mesmo se houver uma instância de serviço mais adiante, o Angular não continuará procurando."
-               ]
-            },
-            "Informações Extras": [
-               "Um provedor de dependência configura um injetor com um token DI, que esse injetor usa para fornecer a versão concreta e em tempo de execução de um valor de dependência.",
-               "O injetor depende da configuração do provedor para criar instâncias das dependências injetadas em componentes, diretivas, tubulações e outros serviços.",
-               "Você deve configurar um injetor com um provedor ou ele não saberá como criar a dependência. A maneira mais óbvia de um injetor criar uma instância de uma classe de serviço é com a própria classe. Se você especificar a própria classe de serviço como o token do provedor, o comportamento padrão é o injetor instanciar essa classe com 'new'.",
-               "Você pode configurar um injetor com um provedor alternativo, a fim de fornecer outro objeto que forneça a funcionalidade de registro necessária. Por exemplo: Você pode fornecer uma classe substituta. Você pode fornecer um objeto do tipo logger. Seu provedor pode chamar uma função de fábrica de registrador.",
-               "A configuração do provedor expandido é um objeto literal com duas propriedades - a propriedade 'provider' tem o token que serve como a chave para localizar um valor de dependência e configurar o injetor - a segunda propriedade é um objeto de definição de provedor, que informa ao injetor como criar o valor da dependência. A chave de definição de provedor pode ser useClass, como no exemplo. Também pode ser useExisting, useValue ou useFactory. Cada uma dessas chaves fornece um tipo diferente de dependência.",
-               "Um aplicativo Angular possui vários injetores, organizados em uma hierarquia de árvore que é paralela à árvore de componentes. Cada injetor cria uma instância singleton de uma dependência. Essa mesma instância é injetada onde quer que esse injetor forneça esse serviço. Um serviço específico pode ser fornecido e criado em qualquer nível da hierarquia do injetor, o que significa que pode haver várias instâncias de um serviço se ele for fornecido por vários injetores.",
-               "Dependências fornecidas pelo injetor raiz podem ser injetadas em qualquer componente em qualquer lugar  da aplicação . Em alguns casos, convém restringir a disponibilidade do serviço a uma região específica  da aplicação . Por exemplo, convém permitir que os usuários optem explicitamente pelo uso de um serviço, em vez de permitir que o injetor raiz o forneça automaticamente."
+         "DI no Angular":{
+            "Informações Relevantes": [
+               "A injeção de dependência (DI) é um importante padrão de design de aplicativo. O Angular possui sua própria estrutura DI, que normalmente é usada no design de aplicativos Angular para aumentar sua eficiência e modularidade.",
+               "Dependências são serviços ou objetos que uma classe precisa para desempenhar sua função. O DI é um padrão de codificação no qual uma classe solicita dependências de fontes externas, em vez de criá-las.",
+               "No Angular, a estrutura DI fornece dependências declaradas para uma classe quando essa classe é instanciada.",
+               "Os módulos filhos e os injetores de componentes são independentes entre si e criam suas próprias instâncias separadas dos serviços fornecidos.",
+               "Quando o Angular destrói uma instância NgModule ou componente, também destrói as instâncias de serviço desse injetor e do injetor.",
+               "Quando um componente ou serviço declara uma dependência, o construtor da classe assume essa dependência como parâmetro. Você pode dizer ao Angular que a dependência é opcional, anotando o parâmetro do construtor com @Optional()."
+            ],
+            "Injetores":[
+               "Os injetores são herdados, o que significa que, se um determinado injetor não puder resolver uma dependência, ele solicitará ao injetor pai que a resolva. Um componente pode obter serviços de seu próprio injetor, dos injetores de seus ancestrais, do injetor do NgModule pai ou do injetor raiz.",
+               "Você pode dizer ao Angular para injetar uma dependência no construtor de um componente, especificando um parâmetro do construtor com o tipo de dependência.",
+               "Existe apenas um injetor de raiz para um aplicativo. Fornecer 'YourService' no nível raiz ou AppModule significa que ele é registrado com o injetor raiz.",
+               "Graças à herança do injetor, você ainda pode injetar serviços de todo o aplicativo nesses componentes. O injetor de um componente é filho do injetor de seu componente pai e herda de todos os injetores ancestrais desde o injetor raiz  da aplicação . A Angular pode injetar um serviço prestado por qualquer injetor nessa linhagem.",
+               "Ao configurar um injetor com um provedor, você o associa a um token DI. O injetor mantém um mapa de provedor de token interno que ele faz referência quando solicitado por uma dependência. O token é a chave do mapa."
+            ],
+            "Serviços":[
+               "Os serviços são singletons no escopo de um injetor. Ou seja, existe no máximo uma instância de serviço em um determinado injetor.",
+               "Há apenas uma instância de 'YourService' no aplicativo inteiro e todas as classes que injetam UserService obtêm essa instância de serviço, a menos que você configure outro provedor com um injetor filho."
             ]
+         },
+         "Injetores Hierárquicos":{
+            "Informações Relevantes":[
+               "Os injetores no Angular têm regras que você pode aproveitar para alcançar a visibilidade desejada dos injetáveis ​​em seus aplicativos. Ao entender essas regras, você pode determinar em qual NgModule, Componente ou Diretiva deve declarar um provedor.",
+               "Existem duas hierarquias de injetores em Angular: Hierarquia ModuleInjector - é configurada usando uma anotação @NgModule() ou @Injectable(). Hierarquia ElementInjector - criada implicitamente em cada elemento DOM. Um ElementInjector está vazio por padrão, a menos que você o configure na propriedade provider em @Directive() ou @Component()."
+            ],
+            "ModuleInjector":[
+               "O decorador @Injectable() identifica uma classe de serviço, e a propriedade 'providedIn' configura um ModuleInjector específico no 'root', que disponibiliza o serviço no ModuleInjector raiz.",
+               "Existem mais dois injetores acima da raiz, um ModuleInjector adicional e NullInjecto.",
+               "O método bootstrapModule() cria um injetor filho do injetor de plataforma que é configurado pelo AppModule. Este é o ModuleInjector raiz.",
+               "O método platformBrowserDynamic() cria um injetor configurado por um PlatformModule, que contém dependências específicas da plataforma. Isso permite que vários aplicativos compartilhem uma configuração de plataforma.",
+               "O próximo injetor pai na hierarquia é o NullInjector(), que é o topo da árvore. Se você foi tão longe na árvore que procura um serviço no NullInjector(), você receberá um erro, a menos que tenha usado @Optional() porque, no final das contas, tudo termina no NullInjector() e ele retorna um erro ou, no caso de @Optional(), nulo.",
+               "O diagrama a seguir representa o relacionamento entre o ModuleInjector raiz e seus injetores-pai: https://angular.io/generated/images/guide/dependency-injection/injectors.svg",
+               "Enquanto o nome root é um alias especial, outros ModuleInjectors não têm alias. Você tem a opção de criar ModuleInjectors sempre que um componente carregado dinamicamente é criado, como no roteador, que criará ModuleInjectors filho."
+            ],
+            "ElementInjector": [
+               "Angular cria ElementInjectors implicitamente para cada elemento DOM.",
+               "Fornecer um serviço no decorador @Component() usando seus provedores ou a propriedade viewProviders configura um ElementInjector.",
+               "Quando você fornece serviços em um componente, esse serviço está disponível por meio do ElementInjector nessa instância do componente.",
+               "Quando a instância do componente é destruída, o mesmo ocorre com a instância do serviço.",
+               "Um componente é um tipo especial de diretiva, o que significa que, assim como @Directive() possui uma propriedade de provedores, @Component() também possui.",
+               "Diretivas e Componentes podem configurar provedores usando a propriedade de provedores. Quando você configura um provedor para um componente ou diretiva usando a propriedade provider, esse provedor pertence ao ElementInjector desse componente ou diretiva. Componentes e diretivas no mesmo elemento compartilham um injetor.",
+               "Ao resolver um token para um componente / diretiva, o Angular o resolve em duas fases: Contra a hierarquia do ElementInjector (seus pais) Contra a hierarquia do ModuleInjector (seus pais)",
+               "Quando um componente declara uma dependência, o Angular tenta satisfazer essa dependência com seu próprio ElementInjector. Se o injetor do componente não tiver o provedor, ele passará a solicitação para o ElementInjector do componente pai, de modo que, as solicitações continuam sendo encaminhadas até que o Angular encontre um injetor que possa manipular a solicitação ou ficar sem os ElementInjectors ancestrais",
+               "Se o Angular não encontrar o provedor em nenhum ElementInjectors, ele retornará ao elemento em que a solicitação se originou e procurará na hierarquia ModuleInjector. Se o Angular ainda não encontrar o provedor, ele gera um erro.",
+               "Quando você fornece serviços na classe de componente, os serviços são visíveis na árvore ElementInjector em relação a onde e como você fornece esses serviços.",
+               "Compreender a estrutura lógica subjacente do modelo Angular fornecerá uma base para configurar serviços e, por sua vez, controlar sua visibilidade."
+            ],
+            "Modificadores":[
+               "O comportamento da resolução da Angular pode ser modificado com @Optional(), @Self(), @SkipSelf() e @Host(). Importe cada um deles de @angular/core e use cada um no construtor da classe de componentes ao injetar seu serviço.",
+               "Os modificadores de resolução se enquadram em três categorias: O que fazer se o Angular não encontrar o que você está procurando, que é @Optional() - Por onde começar a procurar, é @SkipSelf() - Onde parar de procurar, @Host() e @Self().",
+               "Por padrão, o Angular sempre inicia no Injetor atual e continua pesquisando até o fim. Os modificadores permitem alterar o local inicial (final) ou final.",
+               "Opcional() permite que a Angular considere um serviço que você injeta como opcional. Dessa forma, se não puder ser resolvido em tempo de execução, o Angular simplesmente resolverá o serviço como nulo, em vez de gerar um erro.",
+               "Use @Self() para que o Angular procure apenas no ElementInjector o componente ou a diretiva atual. Um bom caso de uso para @Self() é injetar um serviço, mas apenas se estiver disponível no elemento host atual. Para evitar erros nessa situação, combine @Self() com @Optional().",
+               "@SkipSelf() é o oposto de @Self(). Com o @SkipSelf(), o Angular inicia a busca por um serviço no ElementInjector pai, em vez do atual.",
+               "@Host() permite designar um componente como a última parada na árvore do injetor ao procurar fornecedores. Mesmo se houver uma instância de serviço mais adiante, o Angular não continuará procurando."
+            ]
+         },
+         "Informações Extras": [
+            "Um provedor de dependência configura um injetor com um token DI, que esse injetor usa para fornecer a versão concreta e em tempo de execução de um valor de dependência.",
+            "O injetor depende da configuração do provedor para criar instâncias das dependências injetadas em componentes, diretivas, tubulações e outros serviços.",
+            "Você deve configurar um injetor com um provedor ou ele não saberá como criar a dependência. A maneira mais óbvia de um injetor criar uma instância de uma classe de serviço é com a própria classe. Se você especificar a própria classe de serviço como o token do provedor, o comportamento padrão é o injetor instanciar essa classe com 'new'.",
+            "Você pode configurar um injetor com um provedor alternativo, a fim de fornecer outro objeto que forneça a funcionalidade de registro necessária. Por exemplo: Você pode fornecer uma classe substituta. Você pode fornecer um objeto do tipo logger. Seu provedor pode chamar uma função de fábrica de registrador.",
+            "A configuração do provedor expandido é um objeto literal com duas propriedades - a propriedade 'provider' tem o token que serve como a chave para localizar um valor de dependência e configurar o injetor - a segunda propriedade é um objeto de definição de provedor, que informa ao injetor como criar o valor da dependência. A chave de definição de provedor pode ser useClass, como no exemplo. Também pode ser useExisting, useValue ou useFactory. Cada uma dessas chaves fornece um tipo diferente de dependência.",
+            "Um aplicativo Angular possui vários injetores, organizados em uma hierarquia de árvore que é paralela à árvore de componentes. Cada injetor cria uma instância singleton de uma dependência. Essa mesma instância é injetada onde quer que esse injetor forneça esse serviço. Um serviço específico pode ser fornecido e criado em qualquer nível da hierarquia do injetor, o que significa que pode haver várias instâncias de um serviço se ele for fornecido por vários injetores.",
+            "Dependências fornecidas pelo injetor raiz podem ser injetadas em qualquer componente em qualquer lugar  da aplicação . Em alguns casos, convém restringir a disponibilidade do serviço a uma região específica  da aplicação . Por exemplo, convém permitir que os usuários optem explicitamente pelo uso de um serviço, em vez de permitir que o injetor raiz o forneça automaticamente."
+         ]
+      },
+      "Roteamento e Navegação":{
+         "Visão Geral":{
+            "Navegador":[
+               "O navegador é um modelo familiar de navegação de aplicativos.",
+               "Digite um URL na barra de endereço e o navegador navegará para uma página correspondente.",
+               "Clique nos links da página e o navegador navegará para uma nova página.",
+               "Clique nos botões voltar e avançar do navegador e o navegador navega para trás e para frente no histórico de páginas que você viu."
+
+            ],
+            "Roteador Angular":[
+               "O roteador angular ('o roteador') empresta esse modelo (representando o navegador).",
+               "Ele pode interpretar um URL do navegador como uma instrução para navegar para uma visualização gerada pelo cliente.",
+               "Ele pode passar parâmetros opcionais para o componente de visualização de suporte que ajuda a decidir qual conteúdo específico apresentar",
+               "Você pode vincular o roteador aos links em uma página e ele navegará para a visualização apropriada do aplicativo quando o usuário clicar em um link.",
+               "Você pode navegar imperativamente quando o usuário clica em um botão, seleciona em uma caixa suspensa ou em resposta a algum outro estímulo de qualquer fonte. E o roteador registra a atividade no diário de histórico do navegador para que os botões voltar e avançar também funcionem."
+            ]
+         },
+         "Básico":{  
+            "Introdução": "A maioria dos aplicativos de roteamento deve adicionar um elemento <base href='/'> ao index.html como o primeiro filho na tag <head> para informar ao roteador como compor URLs de navegação.",
+            "Importação": "O roteador angular é um serviço opcional que apresenta uma exibição de componente específica para um determinado URL - bão faz parte do núcleo angular ... está no seu próprio pacote de biblioteca, @ angular/router ... importe o que você precisa dele como faria em qualquer outro pacote Angular.",
+            "Configuração":[
+               "Um aplicativo Angular roteado possui uma instância singleton do serviço Roteador: quando a URL do navegador muda, o roteador procura uma rota correspondente a partir da qual pode determinar o componente a ser exibido, e um roteador não tem rotas até você configurá-lo.",
+               "A matriz de rotas 'const appRoutes: Routes = []' descreve como navegar. Passe-o para o método RouterModule.forRoot () nas importações de módulos para configurar o roteador.",
+               "Cada rota mapeia um caminho de URL para um componente - não há barras principais no caminho. O roteador analisa e cria a URL final para você, permitindo o uso de caminhos relativos e absolutos ao navegar entre as visualizações do aplicativo.",
+               "Utilizar dois pontos ':' é um token para um parâmetro de rota ... em uma URL configurada como '/component/:id' ao ser buscado '/component/1' o numero 1 é o valor do parâmetro id.",
+               "A propriedade de 'data' é um local para armazenar dados arbitrários associados a essa rota específica. A propriedade data está acessível dentro de cada rota ativada. Use-o para armazenar itens como títulos de página, texto de trilha de navegação e outros dados estáticos somente leitura.",
+               "Um caminho vazio representa o caminho padrão para o aplicativo, o lugar para ir quando o caminho na URL estiver vazio, como normalmente ocorre: 'https://www.seudominio.com.br/' ... não há nenhum caminho informado após a barra '/'.",
+               "Dois asteriscos '**' é um curinga, e o roteador selecionará essa rota se o URL solicitado não corresponder a nenhum caminho para as rotas definidas anteriormente na configuração.",
+               "A ordem das rotas na configuração é importante e isso ocorre por design - o roteador usa uma estratégia de vitórias de primeira correspondência ao combinar rotas, portanto, rotas mais específicas devem ser colocadas acima de rotas menos específicas.",
+               "Em uma configuração padrão, as rotas com um caminho estático são listadas primeiro, seguidas por uma rota de caminho vazia, que corresponde à rota padrão, e a rota curinga vem por último porque corresponde a todos os URLs e deve ser selecionada apenas se nenhuma outra rota corresponder primeiro.",
+               "Se você precisar ver quais eventos estão acontecendo durante o ciclo de vida da navegação, há a opção enableTracing como parte da configuração padrão do roteador.",
+               "A proriedade enableTracing gera cada evento do roteador que ocorreu durante cada ciclo de vida da navegação no console do navegador e somente deve ser usada apenas para fins de depuração ... a definição ocorre passando true para a propriedade 'enableTracing' no objeto passado como o segundo argumento para o método RouterModule.forRoot()."
+            ],
+            "Saida de Componentes": "O RouterOutlet é uma diretiva da biblioteca de roteadores usada como um componente, ele atua como um espaço reservado que marca o ponto no modelo em que o roteador deve exibir os componentes através dessa diretiva.",
+            "Ligação de Rotas": "As diretivas RouterLink nas tags de âncora dão ao roteador controle sobre esses elementos. Os caminhos de navegação são fixos, para que você possa atribuir uma string ao routerLink (uma ligação 'única').",
+            "Links Ativos do Roteador":[
+               "A diretiva RouterLinkActive alterna classes css para ligações RouterLink ativas com base no RouterState atual.",
+               "Em cada tag de âncora, você vê uma ligação de propriedade à diretiva RouterLinkActive que se parece com routerLinkActive='...'",
+               "Você define a diretiva RouterLinkActive como uma sequência de classes como [routerLinkActive]=\"['class1', class2']\" ou vincula-a a uma propriedade de componente que retorna essa sequência.",
+               "Os links de rota ativos passam em cascata por cada nível da árvore de rotas, para que os links de roteador pai e filho possam estar ativos ao mesmo tempo.",
+               "Para substituir o comportamento padrão de lnks de rota ativos, você pode vincular à ligação de entrada [routerLinkActiveOptions] com a expressão {exact: true} ... ao usar {exact: true}, um determinado RouterLink estará ativo apenas se o URL corresponder exatamente ao URL atual."
+            ],
+            "Estado do Roteador":[
+               "Após o final de cada ciclo de vida de navegação bem-sucedido, o roteador cria uma árvore de objetos ActivatedRoute que compõem o estado atual do roteador.",
+               "Você pode acessar o RouterState atual de qualquer lugar do aplicativo usando o serviço Router e a propriedade routerState.",
+               "Cada ActivatedRoute no RouterState fornece métodos para percorrer a árvore de rotas para cima e para baixo para obter informações das rotas pai, filho e irmão."
+            ],
+            "Rota Ativada":{
+               "Serviço": "O caminho e os parâmetros da rota estão disponíveis através de um serviço de roteador injetado chamado ActivatedRoute.",
+               "Propriedades":{
+                  "url": "Um Observável do (s) caminho (s) da rota, representado como uma matriz de seqüências de caracteres para cada parte do caminho da rota.",
+                  "data": "Um Observable que contém o objeto de dados fornecido para a rota. Também contém quaisquer valores resolvidos do protetor de resolução.",
+                  "paramMap": "Um Observável que contém um mapa dos parâmetros obrigatórios e opcionais específicos da rota. O mapa suporta a recuperação de valores únicos e múltiplos do mesmo parâmetro.",
+                  "queryParamMap": "Um Observable que contém um mapa dos parâmetros de consulta disponíveis para todas as rotas. O mapa suporta a recuperação de valores únicos e múltiplos do parâmetro de consulta.",
+                  "fragment": "Um Observável do fragmento de URL disponível para todas as rotas.",
+                  "outlet": "O nome do RouterOutlet usado para renderizar a rota. Para uma tomada sem nome, o nome da tomada é primário.",
+                  "routeConfig": "A configuração de rota usada para a rota que contém o caminho de origem.",
+                  "parent": "O ActivatedRoute pai da rota quando esta rota é uma rota filho.",
+                  "firstChild": "Contém o primeiro ActivatedRoute na lista de rotas filho desta rota.",
+                  "children": "Contém todas as rotas secundárias ativadas na rota atual."
+               }
+            },
+            "Eventos do Roteador":{
+               "Propriedade": "Durante cada navegação, o roteador emite eventos de navegação através da propriedade Router.events ... esses eventos variam desde quando a navegação começa e termina em muitos pontos no meio do caminho.",
+               "Eventos":{
+                  "NavigationStart": "Um evento acionado quando a navegação é iniciada.",
+                  "RouteConfigLoadStart": "Um evento disparado antes que o roteador preguiçosamente carregue uma configuração de rota.",
+                  "RouteConfigLoadEnd": "Um evento acionado após o carregamento lento de uma rota.",
+                  "RoutesRecognized": "Um evento disparado quando o roteador analisa a URL e as rotas são reconhecidas.",
+                  "GuardsCheckStart": "Um evento disparado quando o roteador inicia a fase de roteamento dos guardas.",
+                  "ChildActivationStart": "Um evento acionado quando o roteador começa a ativar os filhos de uma rota.",
+                  "ActivationStart": "Um evento disparado quando o roteador começa a ativar uma rota.",
+                  "GuardsCheckEnd": "Um evento disparado quando o roteador termina com êxito a fase de roteamento dos guardas.",
+                  "ResolveStart": "Um evento acionado quando o roteador inicia a fase de resolução do roteamento.",
+                  "ResolveEnd": "Um evento disparado quando o roteador termina com êxito a fase de resolução do roteamento.",
+                  "ChildActivationEnd": "Um evento disparado quando o roteador termina de ativar os filhos de uma rota.",
+                  "ActivationEnd": "Um evento disparado quando o roteador termina de ativar uma rota.",
+                  "NavigationEnd": "Um evento acionado quando a navegação termina com sucesso.",
+                  "NavigationCancel": "Um evento acionado quando a navegação é cancelada. Isso pode acontecer quando um Route Guard retorna false durante a navegação ou redireciona retornando um UrlTree.",
+                  "NavigationError": "Um evento acionado quando a navegação falha devido a um erro inesperado.",
+                  "Scroll": "Um evento que representa um evento de rolagem."
+               }
+            },
+            "Sumário":{
+               "Router": "Exibe o componente do aplicativo para a URL ativa. Gerencia a navegação de um componente para o próximo.",
+               "RouterModule": "Um NgModule separado que fornece os provedores de serviços e diretrizes necessárias para navegar pelas exibições de aplicativos.",
+               "Routes": "Define uma matriz de rotas, cada uma mapeando um caminho de URL para um componente.",
+               "Route": "Define como o roteador deve navegar para um componente com base em um padrão de URL, a maioria das rotas consiste em um caminho e um tipo de componente.",
+               "RouterOutlet": "A diretiva (<router-outlet>) que marca onde o roteador exibe uma exibição.",
+               "RouterLink": "A diretiva para vincular um elemento HTML clicável a uma rota. Clicar em um elemento com uma diretiva routerLink vinculada a uma cadeia de caracteres ou a uma matriz de parâmetros de link aciona uma navegação.",
+               "RouterLinkActive": "A diretiva para adicionar/remover classes de um elemento HTML quando um routerLink associado contido no elemento ou dentro dele se torna ativo/inativo.",
+               "ActivatedRoute": "Um serviço que é fornecido a cada componente da rota que contém informações específicas da rota, como parâmetros de rota, dados estáticos, dados de resolução, parâmetros de consulta global e o fragmento global.",
+               "RouterState": "O estado atual do roteador, incluindo uma árvore das rotas ativadas no momento, juntamente com métodos de conveniência para percorrer a árvore de rotas."
+            }
+         }
       },
       "Animações": {
          "Introdução":{
-               "Informações Relevantes":[
-                  "O sistema de animação da Angular é baseado na funcionalidade CSS, o que significa que você pode animar qualquer propriedade que o navegador considere animador - isso inclui posições, tamanhos, transformações, cores, bordas e muito mais.",
-                  "Os principais módulos angulares para animações são @angular/animations e @angular/platform-browser - quando você cria um novo projeto usando a CLI, essas dependências são adicionadas automaticamente ao seu projeto."
-               ],
+            "Informações Relevantes":[
+               "O sistema de animação da Angular é baseado na funcionalidade CSS, o que significa que você pode animar qualquer propriedade que o navegador considere animador - isso inclui posições, tamanhos, transformações, cores, bordas e muito mais.",
+               "Os principais módulos angulares para animações são @angular/animations e @angular/platform-browser - quando você cria um novo projeto usando a CLI, essas dependências são adicionadas automaticamente ao seu projeto."
+            ],
             "Configuração":[
                "Para começar a adicionar animações angulares ao seu projeto, importe Importe o BrowserAnimationsModule, que apresenta os recursos de animação no seu módulo de aplicativo raiz Angular.",
                "Se você planeja usar funções específicas de animação em arquivos de componentes, importe essas funções de @angular/animations.",
@@ -684,7 +772,7 @@
             "O Zone ajuda o Angular a saber quando acionar a detecção de alterações e permite que os desenvolvedores se concentrem no desenvolvimento de aplicativos.",
             "Por padrão, o Zone é carregado e funciona sem configuração adicional. No entanto, você não precisa necessariamente usar o Zone para fazer o Angular funcionar - em vez disso, você pode optar por ativar a detecção de alterações por conta própria."
          ]
-      }
+      }  
    },
    "Configurações":{
       "Estrutura do Projeto":{
