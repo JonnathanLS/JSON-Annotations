@@ -886,6 +886,31 @@
          "O Ivy incluirá automaticamente os dados extras do código do idioma se o código do idioma foi configurado via i18nLocale."
       ],
       "Pluralização": "Idiomas diferentes têm regras diferentes de pluralização e construções gramaticais que adicionam complexidade à tarefa de tradução - você pode usar expressões regulares com as cláusulas plural e select para fornecer padrões que auxiliam na tradução nesses casos."
+    },
+    "Acessibilidade":{
+      "Introdução": [
+         "A web é usada por uma grande variedade de pessoas, incluindo aquelas que apresentam deficiências visuais ou motoras.",
+         "Está disponível uma variedade de tecnologias de assistência que facilitam muito a interação desses grupos com aplicativos de software baseados na Web.",
+         "Projetar um aplicativo para ser mais acessível geralmente melhora a experiência do usuário para todos os usuários."
+      ],
+      "Atributos de Acessbilidade":[
+         "A construção de experiência na Web acessível geralmente envolve a configuração de atributos ARIA para fornecer significado semântico onde, de outra forma, poderia estar ausente.",
+         "Use a sintaxe do modelo de ligação de atributo para controlar os valores dos atributos relacionados à acessibilidade.",
+         "Ao vincular aos atributos ARIA em Angular, você deve usar o prefixo 'attr.', pois a especificação ARIA depende especificamente dos atributos HTML, e não das propriedades dos elementos DOM."
+      ],
+      "Componentes de UI":[
+         "A biblioteca Angular Material, mantida pela equipe Angular, é um conjunto de componentes reutilizáveis ​​da interface do usuário que visa ser totalmente acessível.",
+         "O CDK (Component Development Kit) inclui o pacote a11y que fornece ferramentas para oferecer suporte a várias áreas de acessibilidade."
+      ],
+      "Gerenciamento de Foco e Roteamento":[
+         "Rastrear e controlar o foco em uma interface do usuário é uma consideração importante no design para acessibilidade.",
+         "Ao usar o roteamento angular, você deve decidir para onde o foco da página é direcionado à navegação.",
+         "Para evitar confiar apenas em pistas visuais, é necessário garantir que as atualizações do código de roteamento fiquem após a navegação na página.",
+         "Use o evento NavigationEnd do serviço Roteador para saber quando atualizar o foco.",
+         "Em um aplicativo real, o elemento que recebe o foco dependerá da estrutura e do layout específicos do aplicativo.",
+         "O elemento focado deve colocar os usuários em uma posição para migrar imediatamente para o conteúdo principal que acabou de ser roteado para exibição.",
+         "Você deve evitar situações em que o foco retorne ao elemento do corpo após uma alteração de rota."
+      ]
     }
   },
   "Configurações": {
