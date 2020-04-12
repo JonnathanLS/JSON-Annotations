@@ -328,7 +328,7 @@
           "Com um multicast observável, você reutilza o primeiro ouvinte e envia valores para cada assinante."
         ],
         "Error": [
-          "Como os observáveis ​​produzem valores de forma assíncrona, o try / catch não captura efetivamente os erros.",
+          "Como os observáveis ​​produzem valores de forma assíncrona, o try/catch não captura efetivamente os erros.",
           "Você lida com erros especificando um retorno de chamada de erro no observador.",
           "Produzir um erro também faz com que o observável limpe as assinaturas e pare de produzir valores. Um observável pode produzir valores (chamando o próximo retorno de chamada) ou pode ser concluído chamando o retorno de chamada completo ou de erro."
         ]
@@ -404,7 +404,7 @@
     "HttpClient": {
       "Informações Relevantes": [
         "A maioria dos aplicativos front-end se comunica com serviços de back-end pelo protocolo HTTP. Navegadores modernos suportam duas APIs diferentes para fazer solicitações HTTP: a interface XMLHttpRequest e a API fetch().",
-        "O HttpClient em @angular/common / http oferece uma API HTTP do cliente simplificada para aplicativos Angular que repousa na interface XMLHttpRequest exposta pelos navegadores.",
+        "O HttpClient em @angular/common/http oferece uma API HTTP do cliente simplificada para aplicativos Angular que repousa na interface XMLHttpRequest exposta pelos navegadores.",
         "Os benefícios adicionais do HttpClient incluem recursos de testabilidade, objetos de solicitação e resposta digitados, interceptação de solicitação e resposta, APIs observáveis ​​e tratamento de erros simplificado.",
         "É uma prática recomendada separar a apresentação dos dados do acesso a dados, encapsulando o acesso a dados em um serviço separado e delegando esse serviço no componente, mesmo em casos simples."
       ],
@@ -417,8 +417,8 @@
       ],
       "Interceptadores": {
         "Informações Relevantes": [
-          "Com a interceptação, você declara interceptores que inspecionam e transformam solicitações HTTP do seu aplicativo no servidor. Os mesmos interceptadores também podem inspecionar e transformar as respostas do servidor no caminho de volta ao aplicativo. Vários interceptadores formam uma cadeia de manipuladores de solicitações / respostas para frente e para trás.",
-          "Os interceptadores podem executar uma variedade de tarefas implícitas, da autenticação ao log, de maneira rotineira e padrão, para cada solicitação / resposta HTTP.",
+          "Com a interceptação, você declara interceptores que inspecionam e transformam solicitações HTTP do seu aplicativo no servidor. Os mesmos interceptadores também podem inspecionar e transformar as respostas do servidor no caminho de volta ao aplicativo. Vários interceptadores formam uma cadeia de manipuladores de solicitações/respostas para frente e para trás.",
+          "Os interceptadores podem executar uma variedade de tarefas implícitas, da autenticação ao log, de maneira rotineira e padrão, para cada solicitação/resposta HTTP.",
           "Sem interceptação, os desenvolvedores teriam que implementar essas tarefas explicitamente para cada chamada de método HttpClient.",
           "A maioria dos interceptadores inspeciona a solicitação no caminho e encaminha a solicitação (talvez alterada) para o método handle() do próximo objeto que implementa a interface HttpHandler.",
           "Como intercept(), o método handle() transforma uma solicitação HTTP em um Observable of HttpEvents, que inclui a resposta do servidor. O método intercept() pode inspecionar esse observável e alterá-lo antes de devolvê-lo ao chamador.",
@@ -452,7 +452,7 @@
           "A falsificação de solicitação entre sites (XSRF ou CSRF) é uma técnica de ataque pela qual o invasor pode induzir um usuário autenticado a executar ações inconscientemente no seu site.",
           "O HttpClient suporta um mecanismo comum usado para impedir ataques XSRF.",
           "Ao executar solicitações HTTP, um interceptador lê um token de um cookie, por padrão, XSRF-TOKEN, e o define como um cabeçalho HTTP, X-XSRF-TOKEN. Como apenas o código executado em seu domínio pode ler o cookie, o back-end pode ter certeza de que a solicitação HTTP veio da aplicação cliente e não de um invasor.",
-          "Por padrão, um interceptador envia esse cabeçalho em todas as solicitações mutantes (como POST) para URLs relativos, mas não em solicitações GET / HEAD ou em solicitações com uma URL absoluta.",
+          "Por padrão, um interceptador envia esse cabeçalho em todas as solicitações mutantes (como POST) para URLs relativos, mas não em solicitações GET/HEAD ou em solicitações com uma URL absoluta.",
           "Seu servidor precisa definir um token em um cookie de sessão legível por JavaScript chamado XSRF-TOKEN no carregamento da página ou na primeira solicitação GET, de modo que, em solicitações subsequentes, o servidor pode verificar se o cookie corresponde ao cabeçalho HTTP X-XSRF-TOKEN e, portanto, verificar se apenas o código em execução no seu domínio pode ter enviado a solicitação.",
           "O token deve ser exclusivo para cada usuário e deve ser verificável pelo servidor; isso impede que o cliente crie seus próprios tokens.",
           "Definir o token como um resumo do cookie de autenticação do seu site como um extra, para aumentar a segurança."
@@ -502,7 +502,7 @@
           "Quando a instância do componente é destruída, o mesmo ocorre com a instância do serviço.",
           "Um componente é um tipo especial de diretiva, o que significa que, assim como @Directive() possui uma propriedade de provedores, @Component() também possui.",
           "Diretivas e Componentes podem configurar provedores usando a propriedade de provedores. Quando você configura um provedor para um componente ou diretiva usando a propriedade provider, esse provedor pertence ao ElementInjector desse componente ou diretiva. Componentes e diretivas no mesmo elemento compartilham um injetor.",
-          "Ao resolver um token para um componente / diretiva, o Angular o resolve em duas fases: Contra a hierarquia do ElementInjector (seus pais) Contra a hierarquia do ModuleInjector (seus pais)",
+          "Ao resolver um token para um componente/diretiva, o Angular o resolve em duas fases: Contra a hierarquia do ElementInjector (seus pais) Contra a hierarquia do ModuleInjector (seus pais)",
           "Quando um componente declara uma dependência, o Angular tenta satisfazer essa dependência com seu próprio ElementInjector. Se o injetor do componente não tiver o provedor, ele passará a solicitação para o ElementInjector do componente pai, de modo que, as solicitações continuam sendo encaminhadas até que o Angular encontre um injetor que possa manipular a solicitação ou ficar sem os ElementInjectors ancestrais",
           "Se o Angular não encontrar o provedor em nenhum ElementInjectors, ele retornará ao elemento em que a solicitação se originou e procurará na hierarquia ModuleInjector. Se o Angular ainda não encontrar o provedor, ele gera um erro.",
           "Quando você fornece serviços na classe de componente, os serviços são visíveis na árvore ElementInjector em relação a onde e como você fornece esses serviços.",
@@ -546,7 +546,7 @@
       },
       "Básico": {
         "Introdução": "A maioria dos aplicativos de roteamento deve adicionar um elemento <base href='/'> ao index.html como o primeiro filho na tag <head> para informar ao roteador como compor URLs de navegação.",
-        "Importação": "O roteador angular é um serviço opcional que apresenta uma exibição de componente específica para um determinado URL - bão faz parte do núcleo angular ... está no seu próprio pacote de biblioteca, @ angular/router ... importe o que você precisa dele como faria em qualquer outro pacote Angular.",
+        "Importação": "O roteador angular é um serviço opcional que apresenta uma exibição de componente específica para um determinado URL - bão faz parte do núcleo angular ... está no seu próprio pacote de biblioteca, @angular/router ... importe o que você precisa dele como faria em qualquer outro pacote Angular.",
         "Configuração": [
           "Um aplicativo Angular roteado possui uma instância singleton do serviço Roteador: quando a URL do navegador muda, o roteador procura uma rota correspondente a partir da qual pode determinar o componente a ser exibido, e um roteador não tem rotas até você configurá-lo.",
           "A matriz de rotas 'const appRoutes: Routes = []' descreve como navegar. Passe-o para o método RouterModule.forRoot () nas importações de módulos para configurar o roteador.",
@@ -845,14 +845,48 @@
                "O HttpClient da Angular possui suporte interno para a metade dessa técnica no lado do cliente."
             ],
             "XSSI":[
-               "A inclusão de scripts entre sites, também conhecida como vulnerabilidade JSON, pode permitir que o site de um invasor leia dados de uma API JSON. O ataque funciona em navegadores antigos, substituindo os construtores de objetos JavaScript nativos e incluindo um URL da API usando uma tag <script>.",
-               "Este ataque será bem-sucedido apenas se o JSON retornado for executável como JavaScript. Os servidores podem impedir um ataque prefixando todas as respostas JSON para torná-las não executáveis, por convenção, usando a conhecida cadeia \")]} ',\n\".",
-               "A biblioteca HttpClient da Angular reconhece esta convenção e retira automaticamente a string \")]} ', \\n\" de todas as respostas antes de analisar novamente."
+               "A inclusão de scripts entre sites, também conhecida como vulnerabilidade JSON, pode permitir que o site de um invasor leia dados de uma API JSON.",
+               "O ataque funciona em navegadores antigos, substituindo os construtores de objetos JavaScript nativos e incluindo um URL da API usando uma tag <script>.",
+               "O ataque será bem-sucedido apenas se o JSON retornado for executável com o JavaScript.",
+               "Os servidores podem impedir um ataque prefixando todas as respostas JSON para torná-las não executáveis.",
+               "A biblioteca HttpClient da Angular reconhece esta convenção e retira automaticamente a string contendo o script executavel de todas as respostas antes de analisar novamente."
             ],
             "Auditoria": "Os aplicativos angulares devem seguir os mesmos princípios de segurança que os aplicativos da Web comuns e devem ser auditados como tal. APIs específicas para ângulos que devem ser auditadas em uma revisão de segurança, como os métodos bypassSecurityTrust, são marcadas na documentação como confidenciais."
          }
       }
-    } 
+    },
+    "Internacionalização (i18n)":{
+       "Conceito": "A internacionalização de aplicativos é uma área de desenvolvimento multifacetada, focada em tornar os aplicativos disponíveis e fáceis de usar para um público mundial.",
+       "Internacionalização": "É o processo de projetar e preparar seu aplicativo para ser usado em diferentes idiomas.",
+       "Localização": "É o processo de tradução do aplicativo internacionalizado para idiomas específicos para localidades específicas.",
+       "Simplificações do Angular":[
+         "Exibindo datas, número, porcentagens e moedas em um formato local.",
+         "Preparando texto em modelos de componentes para tradução.",
+         "Manipulação de formas plurais de palavras.",
+         "Manipulação de texto alternativo."
+       ],
+       "Configuração":{
+         "Informações Relevantes": [ 
+            "Angular segue a convenção LDML Unicode que usa identificadores estáveis ​​(identificadores de código de idioma Unicode) com base na norma BCP47",
+            "É muito importante que você siga esta convenção ao definir seu código de idioma, porque as ferramentas Angular i18n usam esse código de idioma para encontrar os dados de código de idioma correspondentes corretos."
+         ],
+         "Localização": "A primeira etapa para configurar a localização ao usar a CLI Angular é adicionar o pacote '@angular/localize' ao projeto - isso instalará o pacote no seu projeto, além de inicializar o projeto para aproveitar os recursos de localização do Angular.",
+         "Localidade": [
+            "Um código de idioma é um identificador (ID) que se refere a um conjunto de preferências do usuário que tendem a ser compartilhadas em uma região do mundo, como país - este documento refere-se a um identificador de localidade como 'locale' ou 'locale id'.",
+            "Um identificador de localidade Unicode é composto por um identificador de idioma Unicode e (opcionalmente) pelo caractere - seguido por uma extensão de localidade. (Por razões históricas, o caractere _ é suportado como uma alternativa a -.)",
+            "Por exemplo, no código de idioma fr-CA, fr refere-se ao identificador de idioma francês e o CA refere-se à extensão de código de idioma Canadá.",
+            "Por padrão, Angular usa o código de idioma en-US, que é o inglês falado nos Estados Unidos da América."
+         ]
+      },
+      "Pipes i18n": [
+         "Os pipes angulares podem ajudá-lo com a internacionalização: o DatePipe, CurrencyPipe, DecimalPipe e PercentPipe usam dados de localidade para formatar dados com base no token de injeção de dependência LOCALE_ID.",
+         "Por padrão, o Angular contém apenas dados de localidade para en-US ... a CLI inclui automaticamente os dados do código do idioma e define o valor LOCALE_ID para você quando você usa o parâmetro '--i18nLocale' ou a opção 'i18nLocale' com 'ng serve' e 'ng build'.",
+         "Você pode definir manualmente o valor de LOCALE_ID para outro código de idioma, para isso deverá importar dados de código de idioma para esse novo código de idioma.",
+         "Os arquivos em '@angular/common/locales' contêm a maioria dos dados de localidade de que você precisa, mas algumas opções avançadas de formatação podem estar disponíveis apenas no conjunto de dados extra que você pode importar de @angular/common/locales/extra ... uma mensagem de erro é exbida quando for esse o caso.",
+         "O Ivy incluirá automaticamente os dados extras do código do idioma se o código do idioma foi configurado via i18nLocale."
+      ],
+      "Pluralização": "Idiomas diferentes têm regras diferentes de pluralização e construções gramaticais que adicionam complexidade à tarefa de tradução - você pode usar expressões regulares com as cláusulas plural e select para fornecer padrões que auxiliam na tradução nesses casos."
+    }
   },
   "Configurações": {
     "Estrutura do Projeto": {
@@ -872,7 +906,7 @@
         "Arquivos no nível superior de ./src/ suportam os testes e executam sua aplicação, já as subpastas contêm o código da aplicação e configuração específica.",
         "Os arquivos de configuração específicos da aplicação para o aplicativo raiz residem no nível raiz do espaço de trabalho. Para uma área de trabalho com vários projetos, os arquivos de configuração específicos do projeto estão na raiz do projeto, em projects ./project-name/",
         "Os arquivos de configuração TypeScript específicos do projeto são herdados do tsconfig.json em todo o espaço de trabalho e os arquivos de configuração TSLint específicos do projeto são herdados do tslint.json em todo o espaço de trabalho.",
-        "A pasta ./e2e/ no nível superior contém arquivos de origem para um conjunto de testes de ponta a ponta que correspondem ao aplicativo no nível raiz, junto com arquivos de configuração específicos de test - para uma área de trabalho de vários projetos, os testes de ponta a ponta específicos do aplicativo estão na raiz do projeto, em projects / nome do projeto / e2e /."
+        "A pasta ./e2e/ no nível superior contém arquivos de origem para um conjunto de testes de ponta a ponta que correspondem ao aplicativo no nível raiz, junto com arquivos de configuração específicos de test - para uma área de trabalho de vários projetos, os testes de ponta a ponta específicos do aplicativo estão na raiz do projeto, em projects/nome do projeto/e2e /."
       ],
       "Workspace Configuration Files": {
         ".editorconfig": "Configuração para recursos pertinentes a editores de código.",
@@ -966,7 +1000,7 @@
             "build": {
               "Conceito": "Configura os padrões para as opções do comando ng build. Consulte Criar destino abaixo para obter mais informações.",
               "Propriedades": {
-                "builder": "Contém o pacote npm para a ferramenta de construção da aplicação - o construtor padrão para um aplicativo (ng build myApp) é @ angular-devkit / build-angular: browser, que usa o empacotador de pacote webpack - observe que um construtor diferente é usado para construir uma biblioteca (ng build myLib).",
+                "builder": "Contém o pacote npm para a ferramenta de construção da aplicação - o construtor padrão para um aplicativo (ng build myApp) é @angular-devkit/build-angular: browser, que usa o empacotador de pacote webpack - observe que um construtor diferente é usado para construir uma biblioteca (ng build myLib).",
                 "options": "Esta seção contém opções de destino de construção padrão, usadas quando nenhuma configuração alternativa nomeada é especificada.",
                 "configurations": "Esta seção define e nomeia configurações alternativas para diferentes destinos pretendidos - ele contém uma seção para cada configuração nomeada, que define as opções padrão para o ambiente pretendido."
               }
