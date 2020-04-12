@@ -549,7 +549,7 @@
         "Importação": "O roteador angular é um serviço opcional que apresenta uma exibição de componente específica para um determinado URL - bão faz parte do núcleo angular ... está no seu próprio pacote de biblioteca, @angular/router ... importe o que você precisa dele como faria em qualquer outro pacote Angular.",
         "Configuração": [
           "Um aplicativo Angular roteado possui uma instância singleton do serviço Roteador: quando a URL do navegador muda, o roteador procura uma rota correspondente a partir da qual pode determinar o componente a ser exibido, e um roteador não tem rotas até você configurá-lo.",
-          "A matriz de rotas 'const appRoutes: Routes = []' descreve como navegar. Passe-o para o método RouterModule.forRoot () nas importações de módulos para configurar o roteador.",
+          "A matriz de rotas 'const appRoutes: Routes = []' descreve como navegar. Passe-o para o método RouterModule.forRoot() nas importações de módulos para configurar o roteador.",
           "Cada rota mapeia um caminho de URL para um componente - não há barras principais no caminho. O roteador analisa e cria a URL final para você, permitindo o uso de caminhos relativos e absolutos ao navegar entre as visualizações do aplicativo.",
           "Utilizar dois pontos ':' é um token para um parâmetro de rota ... em uma URL configurada como '/component/:id' ao ser buscado '/component/1' o numero 1 é o valor do parâmetro id.",
           "A propriedade de 'data' é um local para armazenar dados arbitrários associados a essa rota específica. A propriedade data está acessível dentro de cada rota ativada. Use-o para armazenar itens como títulos de página, texto de trilha de navegação e outros dados estáticos somente leitura.",
@@ -911,6 +911,81 @@
          "O elemento focado deve colocar os usuários em uma posição para migrar imediatamente para o conteúdo principal que acabou de ser roteado para exibição.",
          "Você deve evitar situações em que o foco retorne ao elemento do corpo após uma alteração de rota."
       ]
+    },
+    "Renderização Serve-Side (SSR)":{
+       "(SSR) com Angular Universal":{
+         "O que é ?": "Angular Universal é uma tecnologia que renderiza aplicativos Angular no servidor.",
+         "Introdução":[
+            "Um aplicativo Angular normal é executado no navegador, renderizando páginas no DOM em resposta às ações do usuário.",
+            "O Angular Universal é executado no servidor, gerando páginas de aplicativos estáticos que posteriormente são inicializados no cliente.",
+            "Isso significa que o aplicativo geralmente é renderizado mais rapidamente, dando aos usuários a chance de visualizar o layout do aplicativo antes que ele se torne totalmente interativo.",
+            "Para uma visão mais detalhada das diferentes técnicas e conceitos que envolvem o SSR, confira este artigo: 'https://developers.google.com/web/updates/2019/02/rendering-on-the-web'.",
+            "Você pode facilmente preparar um aplicativo para renderização no servidor usando a CLI Angular.",
+            "O mecanismo esquemático da CLI '@nguniversal/express-engine' executa as etapas necessárias."
+         ],
+         "Por que usar SSR ?":{
+            "Razões":{
+               "SEO": [
+                  "Facilite os rastreadores da web por meio da otimização do mecanismo de pesquisa (SEO)",
+                  "Google, Bing, Facebook, Twitter e outros sites de mídia social contam com rastreadores da Web para indexar o conteúdo do aplicativo e torná-lo pesquisável na Web. Esses rastreadores da Web podem não conseguir navegar e indexar seu aplicativo Angular altamente interativo, como um usuário humano poderia fazer.",
+                  "O Angular Universal pode gerar uma versão estática do seu aplicativo que é facilmente pesquisável, vinculável e navegável sem JavaScript.",
+                  "A Universal também disponibiliza uma visualização do site, pois cada URL retorna uma página totalmente renderizada."
+               ],
+               "Desempenho": [
+                  "Melhore o desempenho em dispositivos móveis e de baixa potência",
+                  "Alguns dispositivos não suportam JavaScript ou executam JavaScript tão mal que a experiência do usuário é inaceitável.",
+                  "Nesses casos, você pode exigir uma versão do aplicativo sem JavaScript renderizada pelo servidor.",
+                  "Esta versão, embora limitada, pode ser a única alternativa prática para pessoas que de outra forma não poderiam usar o aplicativo."
+               ],
+               "Carregamento": [
+                  "Mostre a primeira página rapidamente com uma primeira tinta com conteúdo (FCP)",
+                  "Exibir a primeira página rapidamente pode ser crítico para o envolvimento do usuário.",
+                  "As páginas que carregam mais rapidamente apresentam melhor desempenho, mesmo com alterações tão pequenas quanto 100 ms.",
+                  "Com o Angular Universal, você pode gerar páginas de destino para o aplicativo que se parecem com o aplicativo completo.",
+                  "As páginas são HTML puro e podem ser exibidas mesmo se o JavaScript estiver desativado.",
+                  "As páginas não lidam com eventos do navegador, mas suportam a navegação pelo site usando o routerLink.",
+                  "Na prática, você exibirá uma versão estática da página de destino para prender a atenção do usuário ... ao mesmo tempo, você carregará o aplicativo Angular completo por trás dele.",
+                  "O usuário percebe um desempenho quase instantâneo na página de destino e obtém a experiência interativa completa após o carregamento completo do aplicativo."
+               ]
+            }
+         },
+         "Procedimentos":[
+            "Um servidor da Web Universal responde a solicitações de páginas de aplicativos com HTML estático processado pelo mecanismo de modelo Universal.",
+            "O servidor recebe e responde às solicitações HTTP dos clientes (geralmente navegadores) e serve ativos estáticos, como scripts, CSS e imagens.",
+            "Pode responder a solicitações de dados, diretamente ou como um proxy para um servidor de dados separado.",
+            "Os aplicativos universais usam o pacote Angular platform-server (em oposição ao navegador da plataforma), que fornece implementações de servidor do DOM, XMLHttpRequest e outros recursos de baixo nível que não dependem de um navegador.",
+            "O servidor passa solicitações de clientes para páginas de aplicativos para o ngExpressEngine do NgUniversal ... sob o capô, isso chama a função renderModule() da Universal, enquanto fornece armazenamento em cache e outros utilitários úteis.",
+            "A função renderModule() recebe como entrada uma página HTML de modelo (geralmente index.html), um módulo Angular contendo componentes e uma rota que determina quais componentes exibir ... a rota vem da solicitação do cliente para o servidor.",
+            "Cada solicitação resulta na exibição apropriada para a rota solicitada. A função renderModule() renderiza a exibição na tag <app> do modelo, criando uma página HTML finalizada para o cliente.",
+            "Finalmente, o servidor retorna a página renderizada para o cliente."
+         ],
+         "Trabalhando com as APIS do Navegador":[
+            "Como um aplicativo Universal não é executado no navegador, algumas APIs e recursos do navegador podem estar ausentes no servidor.",
+            "Aplicativos do lado do servidor não podem fazer referência a objetos globais apenas do navegador, como janela, documento, navegador ou local.",
+            "Angular fornece algumas abstrações injetáveis ​​sobre esses objetos, como Location ou DOCUMENT; pode substituir adequadamente essas APIs.",
+            "Se o Angular não fornecer, é possível escrever novas abstrações que delegam nas APIs do navegador enquanto estão no navegador e em uma implementação alternativa no servidor (também conhecido como shimming).",
+            "Sem eventos de mouse ou teclado, um aplicativo do servidor não pode confiar em um usuário clicar em um botão para mostrar um componente.",
+            "O aplicativo deve determinar o que renderizar com base unicamente na solicitação de entrada do cliente. Este é um bom argumento para tornar o aplicativo roteável."
+         ],
+         "URLS Absolutas":[
+            "Em um aplicativo Universal, os URLs HTTP devem ser absolutos (por exemplo, https://my-server.com/api/heroes).",
+            "Você precisa alterar seus serviços para fazer solicitações com URLs absolutos ao executar no servidor e com URLs relativos ao executar no navegador.",
+            "Uma solução é fornecer a URL completa para seu aplicativo no servidor e escrever um interceptador que possa recuperar esse valor e anexá-lo à URL de solicitação."
+         ],
+         "Mecanismo de modelo universal":[
+            "A função ngExpressEngine() é um invólucro da função renderModule() da Universal que transforma as solicitações de um cliente em páginas HTML renderizadas pelo servidor.",
+            "O 1º parâmetro da função ngExpressEngine() é AppServerModule, e é a ponte entre o renderizador universal do lado do servidor e o aplicativo Angular.",
+            "O 2º parâmetro da função ngExpressEngine() é extraProviders, e é opcional, mas permite especificar provedores de dependência que se aplicam apenas ao executar neste servidor.",
+            "Com extraProviders, você pode fazer isso quando o aplicativo precisar de informações que só podem ser determinadas pela instância do servidor em execução no momento. Um exemplo pode ser a origem do servidor em execução, que pode ser usada para calcular URLs HTTP absolutas se não estiver usando o token de solicitação.",
+            "A função ngExpressEngine() retorna um retorno de chamada Promise que resolve para a página renderizada, cabe ao mecanismo decidir o que fazer com essa página.",
+            "O retorno de chamada Promise desse mecanismo retorna a página renderizada para o servidor da Web, que a encaminha para o cliente na resposta HTTP."
+         ],
+         "Servindo Arquivos Estáticos Seguros":[
+            "Um único app.use() trata todos os outros URLs como solicitações de ativos estáticos, como JavaScript, imagem e arquivos de estilo.",
+            "Para garantir que os clientes possam baixar apenas os arquivos que têm permissão para ver, coloque todos os arquivos de ativos voltados para o cliente na pasta '/dist' e apenas respeite as solicitações de arquivos da pasta '/dist'.",
+            "O seguinte código do Node Express roteia todas as solicitações restantes para '/dist' e retorna um erro 404 - NÃO ENCONTRADO se o arquivo não for encontrado - código: server.get('*.*', express.static(distFolder, {maxAge: '1y'}));"
+         ]
+      }
     }
   },
   "Configurações": {
