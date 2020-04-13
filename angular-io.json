@@ -1070,6 +1070,114 @@
         "Com seus esquemas, seus usuários podem usar ng add para instalar uma versão inicial da sua biblioteca, ng generate para criar artefatos definidos em sua biblioteca e ng update para ajustar o projeto deles para uma nova versão da sua biblioteca que introduz mudanças significativas - todos os três tipos de esquemas podem fazer parte de uma coleção que você empacota com sua biblioteca."
       ],
       "Artigo Relevante ": "https://medium.com/@ricardo.mello/schematics-criando-um-gerador-de-c%C3%B3digos-com-angular-introdu%C3%A7%C3%A3o-23fcad8e4ddb"
+    },
+    "Bibliotecas Angular":{
+      "O que é ?": "Uma biblioteca Angular é um projeto Angular que difere de um aplicativo por não poder ser executado sozinho, devendo ser importada e usada em um aplicativo.",
+      "Visão Geral": [
+        "Muitos aplicativos precisam resolver os mesmos problemas gerais, como apresentar uma interface de usuário unificada, apresentar dados e permitir a entrada de dados.",
+        "Os desenvolvedores podem criar soluções gerais para domínios específicos que podem ser adaptados para reutilização em aplicativos diferentes.",
+        "Uma solução pode ser convertida em bibliotecas Angular e essas bibliotecas podem ser publicadas e compartilhadas como pacotes npm.",
+        "As bibliotecas estendem a funcionalidade básica do Angula - por exemplo, para adicionar formulários reativos a um aplicativo, adicione o pacote da biblioteca usando 'ng add @angular/forms' e importe o ReactiveFormsModule da biblioteca '@angular/forms' no código do aplicativo.",
+        "Adicionar a biblioteca de serviço a um aplicativo Angular é uma das etapas para transformar um aplicativo em um Aplicativo Web Progressivo (PWA).",
+        "O Angular Material é um exemplo de uma grande biblioteca de uso geral que fornece componentes de interface do usuário sofisticados, reutilizáveis ​​e adaptáveis."
+      ],
+      "Informações de Desenvolvimento":[
+        "Se você desenvolveu uma funcionalidade adequada para reutilização, pode criar suas próprias bibliotecas.",
+        "Essas bibliotecas podem ser usadas localmente no seu espaço de trabalho ou você pode publicá-las como pacotes npm para compartilhar com outros projetos ou outros desenvolvedores Angular.",
+        "Esses pacotes podem ser publicados no registro npm, em um registro corporativo npm privado ou em um sistema de gerenciamento de pacotes privado que suporte pacotes npm.",
+        "Se você decide empacotar a funcionalidade como uma biblioteca é uma decisão arquitetural, semelhante a decidir se uma parte da funcionalidade é um componente ou serviço, ou decidir sobre o escopo de um componente.",
+        "A funcionalidade de empacotamento como uma biblioteca força os artefatos da biblioteca a serem dissociados da lógica de negócios do aplicativo e isso pode ajudar a evitar várias práticas ruins ou erros de arquitetura que podem dificultar a dissociação e a reutilização de código no futuro.",
+        "Colocar código em uma biblioteca separada é mais complexo do que simplesmente colocar tudo em um aplicativo, exige mais investimento em tempo e em consideração para gerenciar, manter e atualizar a biblioteca, mas essa complexidade pode compensar, no entanto, quando a biblioteca está sendo usada em vários aplicativos."
+      ],
+      "Informações de Instalação":[
+        "As bibliotecas são publicadas como pacotes npm, geralmente juntamente com esquemas que os integram à CLI Angular.",
+        "Para integrar código de biblioteca reutilizável em um aplicativo, você precisa instalar o pacote e importar a funcionalidade fornecida onde o usará.",
+        "Para a maioria das bibliotecas Angular publicadas, você pode usar o comando Angular CLI ng add <lib_name>.",
+        "O comando ng add usa o gerenciador de pacotes npm ou fio para instalar o pacote da biblioteca e chama esquemas que estão incluídos no pacote para outros andaimes no código do projeto, como adicionar instruções de importação, fontes, temas e assim por diante."
+      ],
+      "Declarações de Tipos":[
+        "Artigo Relevante: https://medium.com/@oieduardorabelo/typescript-guia-para-declarac%CC%A7o%CC%83es-de-tipos-de-ambiente-7e54f070e5a6",
+        "Em TypeScript, você pode receber vários erros sobre tipos de módulos não encontrado ou os “implíticos” any, que TypeScript não consegue inferir o tipo sem maiores informações",
+        "Para resolver esse problema, você pode definir alguns tipos no seu projeto para descrever seus códigos, de modo que esses tipos geralmente são escritos em arquivos de declarações (*.d.ts), que contém apenas tipos e nenhum valor.",
+        "Os pacotes de biblioteca geralmente incluem as tipografias nos arquivos '.d.ts' ... veja exemplos em 'node_modules/@angular/material'.",
+        "Se o pacote da sua biblioteca não incluir tipografias e o seu IDE reclamar, pode ser necessário instalar o pacote @ types / <lib_name> associado à biblioteca.",
+        "Os tipos definidos em um pacote '@types/' para uma biblioteca instalada na área de trabalho são automaticamente adicionados à configuração do TypeScript para o projeto que usa essa biblioteca.",
+        "O TypeScript procura por tipos na pasta 'node_modules/@types' por padrão, para que você não precise adicionar cada pacote de tipos individualmente.",
+        "Se uma biblioteca não tiver declarações de tipos disponíveis em '@types/', você ainda poderá usá-las adicionando-os manualmente - para fazer isso: Crie um arquivo 'typings.d.ts' na sua pasta 'src/' e este arquivo será incluído automaticamente como definição de tipo global."
+      ],
+      "Atualizando Bibliotecas": [
+        "As bibliotecas podem ser atualizadas por seus editores e também possuem suas próprias dependências, que precisam ser mantidas atualizadas.",
+        "Para verificar se há atualizações nas bibliotecas instaladas, use o comando ng update.",
+        "Use 'ng update <lib_name>' para atualizar versões individuais da biblioteca.",
+        "A CLI Angular verifica a versão mais recente publicada da biblioteca e, se a versão mais recente for mais recente que a versão instalada, faça o download e atualize seu package.json para corresponder à versão mais recente.",
+        "Ao atualizar o Angular para uma nova versão, você precisa verificar se as bibliotecas que você está usando estão atualizadas, se as bibliotecas tiverem interdependências, talvez seja necessário atualizá-las em uma ordem específica."
+      ],
+      "Escopo Global em Tempo de Execução":[
+        "Bibliotecas JavaScript herdadas que não são importadas para um aplicativo podem ser adicionadas ao escopo global do tempo de execução e carregadas como se estivessem em uma tag de script.",
+        "Configure a CLI para fazer isso no momento da construção, usando as opções 'scripts' e 'styles' do destino da construção no arquivo de configuração da CLI, angular.json.",
+        "Depois de importar uma biblioteca usando a matriz 'scripts', você NÃO DEVE importá-la usando uma instrução de importação no seu código TypeScript (como import * as $ from 'jquery';).",
+        "Se você utilizar comando de importação tendo configurado sua biblioteca via matriz de 'scripts', você terá duas cópias diferentes da biblioteca: uma importada como uma biblioteca global e outra importada como um módulo.",
+        "Isso é especialmente ruim para bibliotecas com plug-ins, como o JQuery, porque cada cópia terá plug-ins diferentes.",
+        "Em vez disso, faça o download das digitações para sua biblioteca (npm install @ types / jquery) e siga as etapas de instalação da biblioteca. Isso fornece acesso às variáveis ​​globais expostas por essa biblioteca.",
+        "Se a biblioteca global que você precisa usar não possui tipografias globais, você pode declará-las manualmente como em 'src/typings.d.ts'."
+      ],
+      "Criação de Bibliotecas":{
+        "Introdução": [
+          "Você pode criar e publicar novas bibliotecas para estender a funcionalidade Angular.",
+          "Se você achar que precisa resolver o mesmo problema em mais de um aplicativo (ou deseja compartilhar sua solução com outros desenvolvedores), você tem um candidato a uma biblioteca.",
+          "Um exemplo simples pode ser um botão que envia usuários ao site da sua empresa, que seria incluído em todos os aplicativos criados por sua empresa."
+        ],
+        "Procedimentos":[
+          "Use a CLI angular para gerar um novo esqueleto da biblioteca com o seguinte comando: 'ng new my-workspace --create-application=false', 'cd my-workspace', e 'ng generate library my-lib'.",
+          "Isso cria a pasta 'projects/my-lib' no seu espaço de trabalho, que contém um componente e um serviço dentro de um NgModule. O arquivo de configuração da área de trabalho, angular.json, é atualizado com um projeto do tipo 'biblioteca'.",
+          "Você pode rodar 'buil', 'test' e 'lint' no projeto com os comandos da CLI seguido pelo nome da biblioteca"
+        ],
+        "Considerações":[
+          "O construtor ('builder') configurado para o projeto é diferente do construtor padrão para projetos de aplicativos.",
+          "Esse construtor, entre outras coisas, garante que a biblioteca seja sempre criada com o compilador AOT, sem a necessidade de especificar o sinalizador --prod.",
+          "Para tornar o código da biblioteca reutilizável, você deve definir uma API pública para ele, essa 'camada de usuário' define o que está disponível para os consumidores da sua biblioteca.",
+          "Um usuário da sua biblioteca deve poder acessar a funcionalidade pública (como NgModules, provedores de serviços e funções de utilidade geral) através de um único caminho de importação.",
+          "A API pública da sua biblioteca é mantida no arquivo public-api.ts na sua pasta da biblioteca, qualquer coisa exportada desse arquivo é tornada pública quando sua biblioteca é importada para um aplicativo - use um NgModule para expor serviços e componentes.",
+          "Sua biblioteca deve fornecer documentação (normalmente um arquivo LEIA-ME) para instalação e manutenção."
+        ],
+        "Refatorando um App em uma Biblioteca":[
+          "Para tornar sua solução reutilizável, é necessário ajustá-la para que não dependa do código específico do aplicativo.",
+          "Declarações como componentes e tubulações devem ser projetadas como apátridas, o que significa que elas não dependem ou alteram variáveis ​​externas.",
+          "Se você confiar no estado, precisará avaliar todos os casos e decidir se é o estado ou estado do aplicativo que a biblioteca gerenciaria.",
+          "Quaisquer observáveis ​​assinados internamente pelos componentes devem ser limpos e descartados durante o ciclo de vida desses componentes.",
+          "Os componentes devem expor suas interações por meio de entradas para fornecer contexto e saídas para comunicar eventos a outros componentes.",
+          "Os serviços devem declarar seus próprios provedores (em vez de declarar provedores no NgModule ou em um componente), para que possam ser tremendos em árvore. Isso permite que o compilador deixe o serviço fora do pacote, se ele nunca for injetado no aplicativo que importa a biblioteca.",
+          "Se você registrar provedores de serviços globais ou compartilhar provedores em vários NgModules, use os padrões forRoot() e forChild() fornecidos pelo RouterModule.",
+          "Dependências Internas: para classes ou interfaces personalizadas usadas em componentes ou serviços, verifique se elas dependem de classes ou interfaces adicionais que também precisam ser migradas.",
+          "Dependências Internas: se o código da sua biblioteca depender de um serviço, esse serviço precisará ser migrado.",
+          "Dependências Internas: se o código da sua biblioteca ou seus modelos dependem de outras bibliotecas (como um Material Angular, por exemplo), você deve configurar sua biblioteca com essas dependências."
+        ],
+        "Código e Esquemas Reutilizáveis":[
+          "A biblioteca geralmente inclui código reutilizável que define componentes, serviços e outros artefatos angulares (canais, diretivas etc.) que você simplesmente importa para um projeto.",
+          "Uma biblioteca é empacotada em um pacote npm para publicação e compartilhamento, e este pacote também pode incluir esquemas que fornecem instruções para gerar ou transformar código diretamente em seu projeto, da mesma maneira que a CLI cria um aplicativo esqueleto genérico com o componente ng generate.",
+          "Um esquema que é combinado com uma biblioteca pode, por exemplo, fornecer à CLI Angular as informações necessárias para gerar um componente específico definido nessa biblioteca.",
+          "O que você inclui na sua biblioteca é determinado pelo tipo de tarefa que você está tentando realizar - por exemplo, se você quiser uma lista suspensa com alguns dados enlatados para mostrar como adicioná-los ao seu aplicativo, sua biblioteca poderá definir um esquema para criá-los.",
+          "Para um componente como um menu suspenso que conteria valores passados ​​diferentes a cada vez, você poderia fornecê-lo como um componente em uma biblioteca compartilhada.",
+          "Em geral, quanto mais complexa a personalização, mais útil é a abordagem esquemática."
+        ],
+        "Integrando com a CLI":[
+          "Uma biblioteca pode incluir esquemas que permitem a integração com a CLI Angular.",
+          "Pode incluir esquema de instalação para que ng add possa adicionar sua biblioteca a um projeto.",
+          "Pode incluir esquemas de geração em sua biblioteca para que ng generate possa montar seus artefatos definidos (componentes, serviços, testes e assim por diante) em um projeto.",
+          "Pode incluir esquema de atualização para que a atualização ng possa atualizar as dependências da sua biblioteca e fornecer migrações para interromper as alterações em novos lançamentos."
+        ],
+        "Publicando a Biblioteca":[
+          "Comandos: 'ng build my-lib --prod', 'cd dist/my-lib, e 'npm publish'",
+          "Não é recomendável publicar as bibliotecas Ivy nos repositórios do NPM.",
+          "Use a CLI Angular e o gerenciador de pacotes npm para criar e publicar sua biblioteca como um pacote npm.",
+          "Antes de publicar uma biblioteca no NPM, construa-a usando o sinalizador --prod que usará o compilador e o tempo de execução mais antigos, conhecidos como View Engine, em vez de Ivy."
+        ],
+        "Usando a Biblioteca em Apps": [
+          "Você não precisa publicar sua biblioteca no gerenciador de pacotes npm para usá-la em seus próprios aplicativos, mas precisa construí-la primeiro.",
+          "Construa a biblioteca. Você não pode usar uma biblioteca antes que ela seja criada: ng build my-lib.",
+          "Em sua aplicação, importe da biblioteca pelo nome: import { myExport } from 'my-lib';"
+        ]
+      }
     }
   },
   "Configurações": {
