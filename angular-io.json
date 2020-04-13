@@ -986,6 +986,90 @@
             "O seguinte código do Node Express roteia todas as solicitações restantes para '/dist' e retorna um erro 404 - NÃO ENCONTRADO se o arquivo não for encontrado - código: server.get('*.*', express.static(distFolder, {maxAge: '1y'}));"
          ]
       }
+    },
+    "Esquemas (Schematics)":{
+      "Visão Geral":{
+        "O que é ?": [
+          "Um esquema é um gerador de código baseado em modelo que suporta lógica complexa.",
+          "Um conjunto de instruções para transformar um projeto de software gerando ou modificando código, e são empacotados em coleções e instalados com o npm."
+        ],
+        "Informações Relevantes": [
+          "A coleção esquemática pode ser uma ferramenta poderosa para criar, modificar e manter qualquer projeto de software, mas é particularmente útil para personalizar projetos Angular para atender às necessidades específicas de sua própria organização.",
+          "Você pode usar esquemas, por exemplo, para gerar padrões de interface do usuário comumente usados ​​ou componentes específicos, usando modelos ou layouts predefinidos.",
+          "Você pode usar esquemas para aplicar regras e convenções arquiteturais, tornando seus projetos consistentes e interoperacionais.",
+          "Esquemas fazem parte do ecossistema Angular ... a CLI do Angular usa esquemas para aplicar transformações a um projeto de aplicativo da web.",
+          "Você pode modificar esses esquemas e definir novos para fazer coisas como atualizar seu código para corrigir alterações recentes em uma dependência, por exemplo, ou para adicionar uma nova opção ou estrutura de configuração a um projeto existente.",
+          "Os esquemas incluídos na coleção '@schematics/angular' são executados por padrão pelos comandos ng generate e ng add.",
+          "O pacote '@schematics/angular' contém esquemas nomeados que configuram as opções disponíveis para a CLI para subcomandos ng generate, como ng generate component e ng generate service, e os subcomandos para ng generate são atalhos para o esquema correspondente."
+        ],
+        "Configuração": [
+          "Um esquema JSON associado a um esquema informa à CLI Angular quais opções estão disponíveis para comandos e subcomandos e determina os padrões.",
+          "Esses padrões podem ser substituídos, fornecendo um valor diferente para uma opção na linha de comandos.",
+          "Os esquemas JSON para os esquemas padrão usados ​​pela CLI para gerar projetos e partes de projetos são coletados no pacote '@schematics/angular.'",
+          "O esquema descreve as opções disponíveis para a CLI para cada um dos subcomandos ng generate, como mostrado na saída --help."
+        ],
+        "Desenvolvendo Esquemas para Bibliotecas":[
+          "Como desenvolvedor de bibliotecas, você pode criar suas próprias coleções de esquemas personalizados para integrar sua biblioteca à CLI Angular.",
+          "Um esquema add permite que os desenvolvedores instalem sua biblioteca em um espaço de trabalho Angular usando ng add.",
+          "Os esquemas de geração podem dizer aos subcomandos ng generate como modificar projetos, adicionar configurações e scripts e artefatos de andaime definidos em sua biblioteca.",
+          "Um esquema de atualização pode dizer ao comando ng update como atualizar as dependências da sua biblioteca e ajustar as alterações mais recentes quando você lança uma nova versão."
+        ],
+        "Adição Esquemas":[
+          "Um esquema add é normalmente fornecido com uma biblioteca, para que a biblioteca possa ser adicionada a um projeto existente com ng add.",
+          "O comando add usa seu gerenciador de pacotes para baixar novas dependências e chama um script de instalação que é implementado como um esquema.",
+          "Por exemplo, o esquema '@angular/material' informa ao comando add para instalar e configurar o Material Angular e o tema e registrar novos componentes iniciantes que podem ser criados com ng generate.",
+          "As bibliotecas parceiras e de terceiros também oferecem suporte à CLI Angular com esquemas adicionais - por exemplo, o '@ng-bootstrap/schematics' adiciona o ng-bootstrap a um aplicativo e o '@clr/angular' instala e configura o Clarity no VMWare",
+          "Um esquema de adição também pode atualizar um projeto com alterações de configuração, adicionar dependências adicionais (como polyfills) ou código de inicialização específico do pacote de andaime.",
+          "Por exemplo, o esquema '@angular/pwa' transforma seu aplicativo em um PWA adicionando um manifesto de aplicativo e trabalhador de serviço, e o esquema '@angular/elements' adiciona o polyfill document-register-element.js e as dependências para elementos angulares."
+        ],
+        "Esquemas de Geração":[
+          "Esquemas de geração são instruções para o comando ng generate.",
+          "Os subcomandos documentados usam os esquemas de geração Angular padrão, mas você pode especificar um esquema diferente (no lugar de um subcomando) para gerar um artefato definido em sua biblioteca.",
+          "O Angular Material, por exemplo, fornece esquemas de geração para os componentes da UI que ele define ... o comando 'ng generate @angular/material:table' por exemplo, usa um desses esquemas para renderizar um material angular <mat-table> pré-configurado com uma fonte de dados para classificação e paginação."
+        ],
+        "Atualização de Esquemas":[
+          "O comando ng update pode ser usado para atualizar as dependências da biblioteca da área de trabalho.",
+          "Se você não fornecer opções ou usar a opção de ajuda, o comando examinará sua área de trabalho e sugerirá a atualização de bibliotecas.",
+          "Se você passar ao comando um conjunto de bibliotecas para atualizar (ou o sinalizador --all), ele atualizará essas bibliotecas, suas dependências de mesmo nível e as dependências de mesmo nível que dependem delas.",
+          "Se houver inconsistências (por exemplo, se as dependências de pares não puderem corresponder a um intervalo simples de semver), o comando gerará um erro e não alterará nada na área de trabalho.",
+          "O recomendado é que você não force uma atualização de todas as dependências por padrão. Tente atualizar dependências específicas primeiro.",
+          "Se você criar uma nova versão da sua biblioteca que introduz possíveis alterações de interrupção, poderá fornecer um esquema de atualização para permitir que o comando ng update resolva automaticamente quaisquer alterações no projeto que está sendo atualizado."
+        ]
+      },
+      "Criação de Esquemas":{
+        "Informações Relevantes":[
+          "Você pode criar seus próprios esquemas para operar em projetos angulares.",
+          "Os desenvolvedores de bibliotecas geralmente empacotam esquemas com suas bibliotecas para integrá-los à CLI Angular.",
+          "Você também pode criar esquemas independentes para manipular os arquivos e construções nos aplicativos Angular como uma maneira de personalizá-los para o seu ambiente de desenvolvimento e torná-los conformes aos seus padrões e restrições.",
+          "Esquemas podem ser encadeados, executando outros esquemas para executar operações complexas.",
+          "Manipular o código em um aplicativo tem o potencial de ser muito poderoso e correspondentemente perigoso - por exemplo, criar um arquivo que já existe seria um erro e, se fosse aplicado imediatamente, descartaria todas as outras alterações aplicadas até o momento.",
+          "As ferramentas da Angular Schematics protegem contra efeitos colaterais e erros ao criar um sistema de arquivos virtual.",
+          "Um esquema descreve um pipeline de transformações que podem ser aplicadas ao sistema de arquivos virtual - quando um esquema é executado, as transformações são registradas na memória e aplicadas apenas no sistema de arquivos real quando confirmadas como válidas."
+        ],
+        "Conceitos":{
+          "Informações Relevantes":[
+            "A API pública para esquemas define classes que representam os conceitos básicos.",
+            "O objeto de contexto passado para uma regra fornece acesso às funções e metadados do utilitário com os quais o esquema pode precisar trabalhar, incluindo uma API de log para ajudar na depuração.",
+            "O contexto também define uma estratégia de mesclagem que determina como as alterações são mescladas da árvore preparada na árvore base.",
+            "Uma alteração pode ser aceita ou ignorada ou gerar uma exceção."
+          ],
+          "Conceitos Básicos":[
+            "O sistema de arquivos virtual é representado por uma árvore -a estrutura de dados da árvore contém uma base (um conjunto de arquivos que já existe) e uma área intermediária (uma lista de alterações a serem aplicadas à base) - ao fazer modificações, na verdade você não altera a base, mas as adiciona à área de preparação.",
+            "Um objeto de regra define uma função que pega uma árvore, aplica transformações e retorna uma nova árvore - o arquivo principal de um esquema, index.ts, define um conjunto de regras que implementam a lógica do esquema.",
+            "Uma transformação é representada por uma ação - existem quatro tipos de ação: Criar, Renomear, Substituir e Excluir.",
+            "Cada esquema é executado em um contexto, representado por um objeto SchematicContext."
+          ]
+        },
+        "CLI Schematics":[
+          "Esquemas vêm com sua própria ferramenta de linha de comando - usando o Node 6.9 ou superior, instale a ferramenta de linha de comando do Schematics globalmente: 'npm install -g @angular-devkit/schematics-cli'",
+          "Isso instala o executável do esquema, que você pode usar para criar uma nova coleção de esquemas em sua própria pasta do projeto, adicionar um novo esquema a uma coleção existente ou estender um esquema existente."
+        ]
+      },
+      "Esquemas para Bibliotecas":[
+        "Ao criar uma biblioteca Angular, você pode fornecer e empacotá-la com esquemas que a integram à CLI Angular.",
+        "Com seus esquemas, seus usuários podem usar ng add para instalar uma versão inicial da sua biblioteca, ng generate para criar artefatos definidos em sua biblioteca e ng update para ajustar o projeto deles para uma nova versão da sua biblioteca que introduz mudanças significativas - todos os três tipos de esquemas podem fazer parte de uma coleção que você empacota com sua biblioteca."
+      ],
+      "Artigo Relevante ": "https://medium.com/@ricardo.mello/schematics-criando-um-gerador-de-c%C3%B3digos-com-angular-introdu%C3%A7%C3%A3o-23fcad8e4ddb"
     }
   },
   "Configurações": {
