@@ -195,28 +195,41 @@
           "O aplicativo Angular gerencia o que o usuário vê e pode fazer, conseguindo isso através da interação de uma instância de classe de componente (o componente) e seu modelo voltado para o usuário.",
           "Em Angular, o componente desempenha o papel do controlador, e o modelo (template) representa a visualização."
         ],
-        "HTML como Modelo": "HTML é a linguagem do modelo Angular. Quase toda a sintaxe HTML é uma sintaxe de modelo válida. O elemento <script> é uma exceção notável; é proibido, eliminando o risco de ataques de injeção de script. Na prática, <script> é ignorado e um aviso aparece no console do navegador.",
+        "HTML como Modelo": [ 
+          "HTML é a linguagem do modelo Angular. Quase toda a sintaxe HTML é uma sintaxe de modelo válida. O elemento <script> é uma exceção notável; é proibido, eliminando o risco de ataques de injeção de script. Na prática, <script> é ignorado e um aviso aparece no console do navegador.",
+          "Algumas tags não fazem muito sentido em um modelo, os elementos <html>, <body> e <base> não têm função útil, mas todas as tags restantes são uteis.",
+          "Você pode estender o vocabulário HTML de seus modelos com componentes e diretivas que aparecem como novos elementos e atributos."
+        ],
         "Interpolação": [
-          "A interpolação permite incorporar seqüências de caracteres calculadas no texto entre as tags de elemento HTML e nas atribuições de atributo. Expressões de modelo são o que você usa para calcular essas strings.",
+          "A interpolação permite incorporar seqüências de caracteres calculados no texto entre as tags de elemento HTML e nas atribuições de atributo. Expressões de modelo são o que você usa para calcular essas strings.",
+          "Interpolação refere-se à incorporação de expressões no texto marcado. Por padrão, a interpolação usa como delimitador as chaves duplas, {{ ... }}.",
+          "O texto entre os colchetes geralmente é o nome de uma propriedade ou método do componente. Angular substitui esse nome pelo valor da sequência da propriedade do componente correspondente.",
           "Angular avalia todas as expressões entre chaves duplas, converte os resultados da expressão em seqüências de caracteres e as vincula a seqüências literais vizinhas. Por fim, atribui esse resultado interpolado composto a uma propriedade de elemento ou diretiva.",
           "A interpolação é uma sintaxe especial que o Angular converte em uma ligação de propriedade."
         ],
-        "Expressão de Modelo": "Uma expressão de modelo produz um valor e aparece dentro das chaves duplas, {{}}. Angular executa a expressão e a atribui a uma propriedade de um destino de ligação; o destino pode ser um elemento HTML, um componente ou uma diretiva.",
-        "Contexto de Exmpressão": [
+        "Expressão de Modelo": [
+          "Uma expressão de modelo produz um valor e aparece dentro das chaves duplas, {{}}. Angular executa a expressão e a atribui a uma propriedade de um destino de ligação; o destino pode ser um elemento HTML, um componente ou uma diretiva.",
+          "Na ligação de propriedade, uma expressão de modelo aparece entre aspas à direita do símbolo = como em [property]='expression'.",
+          "Em termos de sintaxe, as expressões de modelo são semelhantes ao JavaScript.",
+          "Muitas expressões JavaScript são expressões legais de modelo, com algumas exceções: você não pode usar expressões JavaScript que tenham ou promovam efeitos colaterais, incluindo: atribuições (=, + =, - =, etc) ... operadores como new, typeof, instanceof etc. ... encadeando expressões com ; ou , ... operadores de incremento e decremento ++ e - ..."
+        ],
+        "Contexto de Expressão": [
           "O contexto da expressão é geralmente a instância do componente.",
-          "Uma expressão também pode se referir a propriedades do contexto do modelo, como uma variável de entrada do modelo.",
+          "Uma expressão também pode se referir a propriedades do contexto do modelo, como uma variável de entrada do modelo 'let <variavel>', ou uma variável de referência de modelo '#customerInput'.",
           "O contexto para termos em uma expressão é uma mistura das variáveis ​​do modelo, do objeto de contexto da diretiva (se houver) e dos membros do componente. Se você referenciar um nome que pertence a mais de um desses espaços para nome, o nome da variável do modelo terá precedência, seguido por um nome no contexto da diretiva e, por último, os nomes dos membros do componente."
         ],
         "Diretrizes de Expressão": {
-          "Simplicidade": "Embora seja possível escrever expressões de modelo complexas, é uma melhor prática evitá-las. Um nome de propriedade ou chamada de método deve ser a norma, mas uma negação booleana ocasional,!, Está OK. Caso contrário, restrinja a lógica de aplicativo e de negócios ao componente, onde é mais fácil desenvolver e testar.",
+          "Simplicidade": [
+            "Embora seja possível escrever expressões de modelo complexas, a melhor prática é evitá-las.",
+            "Um nome de propriedade ou chamada de método deve ser a norma, mas uma negação booleana ocasional,!, Está OK. Caso contrário, restrinja a lógica de aplicativo e de negócios ao componente, onde é mais fácil desenvolver e testar."
+          ],
           "Rápidas Execuções": [
-            "Angular executa expressões de modelo após cada ciclo de detecção de alterações. Os ciclos de detecção de alterações são acionados por muitas atividades assíncronas, como resoluções de promessas, resultados HTTP, eventos de timer, pressionamentos de teclas e movimentos do mouse.",
-            "As expressões devem terminar rapidamente ou a experiência do usuário pode se arrastar, especialmente em dispositivos mais lentos. Considere armazenar valores em cache quando o cálculo for caro."
+            "Angular executa expressões de modelo após cada ciclo de detecção de alterações - os ciclos de detecção de alterações são acionados por muitas atividades assíncronas, como resoluções de promessas, resultados HTTP, eventos de timer, pressionamentos de teclas e movimentos do mouse.",
+            "As expressões devem terminar rapidamente ou a experiência do usuário pode se arrastar, especialmente em dispositivos mais lentos - considere armazenar valores em cache quando o cálculo for caro."
           ],
           "Sem Efeitos Colaterais Visíveis": [
-            "Uma expressão de modelo não deve alterar nenhum estado de aplicativo que não seja o valor da propriedade de destino. Essa regra é essencial para a política de 'fluxo de dados unidirecional' do Angular.",
-            "Você nunca deve se preocupar que a leitura de um valor de componente possa alterar algum outro valor exibido.",
-            "A visualização deve ser estável ao longo de uma única passagem de renderização.",
+            "Uma expressão de modelo não deve alterar nenhum estado de aplicativo que não seja o valor da propriedade de destino. Essa regra é essencial para a política de 'fluxo de dados unidirecional' do Angular - essa regra é essencial para a política de 'fluxo de dados unidirecional' do Angular.",
+            "Você nunca deve se preocupar que a leitura de um valor de componente possa alterar algum outro valor exibido - a visualização deve ser estável ao longo de uma única passagem de renderização.",
             "Uma expressão idempotente é ideal porque é livre de efeitos colaterais e melhora o desempenho da detecção de alterações do Angular.",
             "Em termos do Angular, uma expressão idempotente sempre retorna exatamente a mesma coisa até que um de seus valores dependentes seja alterado.",
             "Os valores dependentes não devem mudar durante uma única volta do loop de eventos.",
@@ -225,37 +238,218 @@
           ],
           "Instruções de Modelo": [
             "Uma instrução de modelo responde a um evento gerado por um destino de ligação, como um elemento, componente ou diretiva.",
-            "Uma declaração de modelo tem um efeito colateral. Esse é o objetivo de um evento. É assim que você atualiza o estado da aplicação a partir da ação do usuário.",
-            "Responder a eventos é o outro lado do 'fluxo de dados unidirecional' da Angular. Você é livre para alterar qualquer coisa, em qualquer lugar, durante essa reviravolta do evento.",
-            "Como expressões de modelo, as instruções de modelo usam uma linguagem que se parece com JavaScript. O analisador de instrução de modelo difere do analisador de expressão de modelo e suporta especificamente a atribuição básica (=) e as expressões de encadeamento com ';'."
+            "Uma declaração de modelo tem um efeito colateral, esse é o objetivo de um evento, é assim que você atualiza o estado da aplicação a partir da ação do usuário.",
+            "Responder a eventos é o outro lado do 'fluxo de dados unidirecional' da Angular, você é livre para alterar qualquer coisa, em qualquer lugar, durante essa reviravolta do evento.",
+            "Como expressões de modelo, as instruções de modelo usam uma linguagem que se parece com JavaScript, o analisador de instrução de modelo difere do analisador de expressão de modelo e suporta especificamente a atribuição básica (=) e as expressões de encadeamento com ';'."
           ],
-          "Contexto da Declaração": [
+          "Contexto da Instrução": [
             "Assim como nas expressões, as instruções podem se referir apenas ao conteúdo do contexto da instrução, como um método de manipulação de eventos da instância do componente.",
             "O contexto da instrução geralmente é a instância do componente, ou seja, metodo() em (click)='metodo()'' é um método do componente vinculado a dados.",
             "O contexto da instrução também pode se referir às propriedades do próprio contexto do modelo.",
             "Os nomes de contexto do modelo têm precedência sobre os nomes de contexto do componente."
           ],
-          "Diretrizes de Declaração": [
+          "Diretrizes de Instrução": [
             "As instruções do modelo não podem se referir a nada no espaço para nome global.",
-            "Eles não podem se referir a janela ou documento.",
-            "Eles não podem chamar console.log ou Math.max.",
+            "As instruções não podem se referir a 'window' ou 'document'.",
+            "As instruções não podem chamar console.log ou Math.max.",
             "Como nas expressões, evite escrever instruções de modelo complexas.",
             "Uma chamada de método ou atribuição simples de propriedade deve ser a norma."
           ],
           "Sintaxe de Ligação": [
             "A ligação de dados é um mecanismo para coordenar o que os usuários veem, especificamente com os valores dos dados  da aplicação .",
-            "Embora você possa enviar valores e extrair valores do HTML, o aplicativo é mais fácil de escrever, ler e manter se você entregar essas tarefas para uma estrutura de ligação. Você simplesmente declara ligações entre fontes de ligação, direciona elementos HTML e deixa a estrutura fazer o resto.",
-            "Os tipos de ligação que não sejam interpolação têm um nome de destino à esquerda do sinal de igual, cercado por pontuação, [] ou() ou precedido por um prefixo: bind-, on-, bindon-."
+            "Embora você possa enviar valores e extrair valores do HTML, o aplicativo é mais fácil de escrever, ler e manter se você entregar essas tarefas para uma estrutura de ligação, você simplesmente declara ligações entre fontes de ligação, direciona elementos HTML e deixa a estrutura fazer o resto.",
+            "Os tipos de ligação que não sejam interpolação têm um nome de destino à esquerda do sinal de igual, cercado por pontuação, [] ou() ou precedido por um prefixo: bind-, on-, bindon-.",
+            "Em um desenvolvimento normal de HTML, você cria uma estrutura visual com elementos HTML e modifica esses elementos definindo atributos de elemento com constantes de sequência - com a ligação de dados, você pode controlar coisas como o estado de um botão por exemplo.",
+            "A ligação de dados funciona com propriedades de elementos, componentes e diretivas DOM, não atributos HTML, isso se aplica à ligação de dados em geral."
+
           ],
           "Atributo HTML vs. Propriedade DOM": [
-            "A distinção entre um atributo HTML e uma propriedade DOM é fundamental para entender como funciona a ligação Angular. ",
+            "A distinção entre um atributo HTML e uma propriedade DOM é fundamental para entender como funciona a ligação Angular.",
             "Os atributos são definidos por HTML e as propriedades são acessadas a partir dos nós DOM (Document Object Model).",
             "É importante lembrar que o atributo HTML e a propriedade DOM são coisas diferentes, mesmo quando eles têm o mesmo nome.",
             "No Angular, a única função dos atributos HTML é inicializar o elemento e o estado da diretiva.",
             "A ligação de modelo funciona com propriedades e eventos, não atributos.",
             "Quando você escreve uma ligação de dados, está lidando exclusivamente com as propriedades e eventos do DOM do objeto de destino.",
-            "Esta regra geral pode ajudá-lo a construir um modelo mental de atributos e propriedades DOM: Os atributos inicializam as propriedades DOM e, então, elas são concluídas. Os valores da propriedade podem mudar; valores de atributo não podem. Há uma exceção a esta regra. Os atributos podem ser alterados por setAttribute(), que reinicializa a propriedade DOM correspondente"
-          ]
+            "Esta regra geral pode ajudá-lo a construir um modelo mental de atributos e propriedades DOM: Os atributos inicializam as propriedades DOM e, então, elas são concluídas; os valores da propriedade podem mudar; valores de atributo não podem, mas há uma exceção a esta regra: os atributos podem ser alterados por setAttribute(), que reinicializa a propriedade DOM correspondente.",
+            {
+              "Exemplo 1":[
+                "Quando o navegador renderiza <input type='text' value='Sarah'>, ele cria um nó DOM correspondente com uma propriedade de valor inicializada em 'Sarah'.",
+                "Quando o usuário digita 'Sally' na <input>, a propriedade value do elemento DOM se torna 'Sally'.",
+                "No entanto, se você observar o valor do atributo HTML usando input.getAttribute ('value'), poderá ver que o atributo permanece inalterado - ele retorna 'Sarah'.",
+                "O valor do atributo HTML especifica o valor inicial; a propriedade do valor DOM é o valor atual."
+              ],
+              "Exemplo 2":[
+                "O atributo 'disabled' desativado é outro exemplo.",
+                "A propriedade 'disabled' de um botão é falsa por padrão, portanto, o botão está ativado.",
+                "Quando você adiciona o atributo 'disabled', apenas sua presença inicializa a propriedade desativada do botão para true, para que o botão seja desativado.",
+                "Adicionar e remover o atributo 'disabled' desativa e ativa o botão, no entanto, o valor do atributo é irrelevante, e é por isso que você não pode ativar um botão escrevendo <button disabled='false'> ainda desativado </button>.",
+                "Para controlar o estado do botão, defina a propriedade desativada,"
+              ]
+            }
+          ],
+          "Tipos e Destinos de Ligação": "O alvo de uma ligação de dados é algo no DOM, e dependendo do tipo de ligação, o destino pode ser uma propriedade (elemento, componente ou diretiva), um evento (elemento, componente ou diretiva) ou, às vezes, um nome de atributo.",
+          "Ligação de Propriedade": {
+            "Descrição": "Use a associação de propriedades para definir propriedades dos elementos de destino ou os decoradores da diretiva @Input().",
+            "Unidirecional": [
+              "A ligação de propriedade flui um valor em uma direção, da propriedade de um componente para uma propriedade do elemento de destino.",
+              "Você não pode usar a associação de propriedades para ler ou extrair valores dos elementos de destino.",
+              "Você não pode usar a associação de propriedades para chamar um método no elemento de destino. Se o elemento gerar eventos, você poderá ouvi-los com uma ligação de evento.",
+              "Se você precisar ler uma propriedade do elemento de destino ou chamar um de seus métodos, consulte a referência da API para ViewChild e ContentChild."
+            ],
+            "Evite Efeitos Colaterais":[
+              "A avaliação de uma expressão de modelo não deve ter efeitos colaterais visíveis.",
+              "A própria linguagem de expressão, ou a maneira como você escreve expressões de modelo, ajuda até certo ponto; você não pode atribuir um valor a nada em uma expressão de ligação de propriedade nem usar os operadores de incremento e decremento.",
+              "Por exemplo, você pode ter uma expressão que invoque uma propriedade ou método que tenha efeitos colaterais, a expressão pode chamar algo como getFoo(), onde somente você sabe o que getFoo() faz, Se getFoo() mudar alguma coisa e você estiver vinculando a alguma coisa, Angular poderá ou não exibir o valor alterado.",
+              "Como prática recomendada, atenha-se às propriedades e aos métodos que retornam valores e evitam efeitos colaterais.",
+              "Angular pode detectar a alteração e gerar um erro de aviso."
+            ],
+            "Retornar o Tipo Adequado":[
+              "A expressão do modelo deve avaliar o tipo de valor que a propriedade de destino espera.",
+              "Retorne uma string se a propriedade alvo espera uma string, um número se espera um número, um objeto se espera um objeto e assim por diante."
+            ],
+            "Vinculação de Propriedade vs Interpolação":[
+              "Você geralmente pode escolher entre interpolação e associação de propriedades, os seguintes pares de ligação fazem o mesmo: <p><img src='{{itemImageUrl}}> is the <i>interpolated</i> image.</p> ... ou ... <p><img [src]='itemImageUrl'> is the <i>property bound</i> image.</p>",
+              "A interpolação é uma alternativa conveniente à associação de propriedades em muitos casos.",
+              "Ao renderizar valores de dados como seqüências de caracteres, não há razão técnica para preferir uma forma à outra, embora a legibilidade tenda a favorecer a interpolação.",
+              "Ao definir uma propriedade de elemento como um valor de dados não-string, você deve usar a ligação de propriedade."
+            ],
+            "Segurança do Counteúdo": [
+              "Angular não permite que o HTML com tags de script vaze no navegador, nem com interpolação nem associação de propriedades.",
+              "A interpolação lida com as tags <script> de maneira diferente da ligação à propriedade, mas ambas as abordagens tornam o conteúdo inofensivo."
+            ]
+          },
+          "Ligações de Atributo, Classe e Estilo": "https://angular.io/guide/template-syntax#attribute-class-and-style-bindings",
+          "Ligação de Evento":{
+            "Informações Relevantes":[
+              "A associação de eventos permite que você ouça certos eventos, como pressionamentos de teclas, movimentos do mouse, cliques e toques.",
+              "A sintaxe de ligação a eventos do Angular consiste em um nome de evento de destino entre parênteses à esquerda de um sinal de igual e uma declaração de modelo entre aspas à direita.",
+              "A seguinte ligação de evento escuta os eventos de clique do botão, chamando o método onSave() do componente sempre que um clique ocorre: <button (click)='onSave()'>Save</button>"
+            ],
+            "$event e Instruções de Manipulação de Evento":[
+              "Em uma ligação de evento, o Angular configura um manipulador de eventos para o evento de destino.",
+              "Quando o evento é gerado, o manipulador executa a instrução de modelo.",
+              "A instrução de modelo geralmente envolve um receptor, que executa uma ação em resposta ao evento, como armazenar um valor do controle HTML em um modelo.",
+              "A ligação transmite informações sobre o evento, essas informações podem incluir valores de dados, como um objeto de evento, sequência ou número chamado $event.",
+              "O evento de destino determina a forma do objeto $event.",
+              "Se o evento de destino for um evento de elemento DOM nativo, $event será um objeto de evento DOM, com propriedades como target e target.value."
+            ],
+            "Eventos Personalizados com EventEmitter":[
+              "As diretivas normalmente geram eventos personalizados com um Angular EventEmitter.",
+              "A diretiva cria um EventEmitter e o expõe como uma propriedade.",
+              "A diretiva chama 'EventEmitter.emit(payload)' para disparar um evento, transmitindo um payload de mensagem, que pode ser qualquer coisa.",
+              "As diretivas pai ouvem o evento vinculando a essa propriedade e acessando a carga através do objeto $event."
+            ],
+            "Associação Bidirecional":[
+              "A associação bidirecional fornece ao seu aplicativo uma maneira de compartilhar dados entre uma classe de componente e seu modelo.",
+              "Angular oferece uma sintaxe de ligação de dados bidirecional especial para esse propósito, [()]. A sintaxe [()] combina os colchetes da ligação de propriedade, [], com os parênteses da ligação de evento,().",
+              "A sintaxe de ligação bidirecional é uma grande conveniência em comparação com ligações de propriedades e eventos separadas. Seria conveniente usar a ligação bidirecional com elementos de formulário HTML como <input> e <select>. No entanto, nenhum elemento HTML nativo segue o valor x e o padrão de evento xChange."
+            ]
+          },
+          "Diretivas Internas":{
+            "Informações Relevantes":[
+              "A Angular oferece dois tipos de diretivas internas: diretivas de atributo e diretivas estruturais."
+            ],
+            "Diretivas de Propriedade":[
+              "As diretivas de atributo ouvem e modificam o comportamento de outros elementos, atributos, propriedades e componentes HTML.",
+              "Você geralmente os aplica a elementos como se fossem atributos HTML, daí o nome.",
+              "Muitos NgModules como o RouterModule e o FormsModule definem suas próprias diretivas de atributo.",
+              "As diretivas de atributo mais comuns são as seguintes: NgClass - adiciona e remove um conjunto de classes CSS ; NgStyle - adiciona e remove um conjunto de estilos HTML ; NgModel - adiciona ligação de dados bidirecional a um elemento de formulário HTML."
+            ],
+            "Diretivas Estruturais":[
+              "Diretivas estruturais são responsáveis ​​pelo layout HTML.",
+              "Eles moldam ou remodelam a estrutura do DOM, geralmente adicionando, removendo e manipulando os elementos do host aos quais estão anexados.",
+              "As diretivas de atributo mais comuns são as seguintes: NgIf - cria ou destrói condicionalmente sub-visualizações do modelo ; NgFor - repita um nó para cada item em uma lista ; NgSwitch - um conjunto de diretivas que alternam entre visualizações alternativas.",
+              {
+                "NgIf":[
+                  "Você pode adicionar ou remover um elemento do DOM aplicando uma diretiva NgIf a um elemento host.",
+                  "Quando a expressão isActive retorna um valor de verdade, NgIf adiciona o ItemDetailComponent ao DOM. Quando a expressão é falsa, NgIf remove o ItemDetailComponent do DOM, destruindo esse componente e todos os seus subcomponentes.",
+                  "Ocultar um elemento é diferente de removê-lo com NgIf",
+                  "Quando você oculta um elemento, esse elemento e todos os seus descendentes permanecem no DOM - todos os componentes para esses elementos permanecem na memória e o Angular pode continuar a verificar alterações, e você pode manter recursos consideráveis ​​de computação e prejudicar o desempenho desnecessariamente.",
+                  "NgIf funciona de maneira diferente, quando NgIf é falso, o Angular remove o elemento e seus descendentes do DOM, destrói seus componentes, liberando recursos, o que resulta em uma melhor experiência do usuário.",
+                  "Se você estiver ocultando grandes árvores de componentes, considere NgIf como uma alternativa mais eficiente para mostrar/ocultar.",
+                  "Outra vantagem do ngIf é que você pode usá-lo para se proteger contra nulos.",
+                  "Mostrar/Ocultar é mais adequado para casos de uso muito simples; portanto, quando você precisar de um protetor, opte por ngIf.",
+                  "Angular lançará um erro se uma expressão aninhada tentar acessar uma propriedade null."
+                ],
+                "NgFor":[
+                  "NgFor é uma diretiva repetidora - uma maneira de apresentar uma lista de itens.",
+                  "Você define um bloco de HTML que define como um único item deve ser exibido e instrui o Angular a usar esse bloco como um modelo para renderizar cada item da lista.",
+                  "O texto atribuído a * ngFor é a instrução que guia o processo do repetidor.",
+                  "A sequência atribuída a * ngFor não é uma expressão de modelo. Pelo contrário, é uma microssintaxe - uma linguagem própria que o Angular interpreta.",
+                  "A sequência 'let item of items' significa: pegue cada item na matriz de itens, armazene-o na variável de loop do item local e disponibilize-o no HTML de modelo para cada iteração.",
+                  "Angular converte essa instrução em um <ng-template> em torno do elemento host e, em seguida, usa esse modelo repetidamente para criar um novo conjunto de elementos e ligações para cada item da lista.",
+                  { "*ngFor with trackBy": [
+                    "Se você usar o NgFor com listas grandes, uma pequena alteração em um item, como remover ou adicionar um item, poderá disparar uma cascata de manipulações do DOM.",
+                    "Por exemplo, consultar novamente o servidor poderia redefinir uma lista com todos os novos objetos de itens, mesmo quando esses itens fossem exibidos anteriormente.",
+                    "Nesse caso, o Angular vê apenas uma lista atualizada de novas referências a objetos e não tem escolha a não ser substituir os elementos DOM antigos por todos os novos elementos DOM.",
+                    "Você pode tornar isso mais eficiente com o trackBy, adicionando um método ao componente que retorne o valor que NgFor deve rastrear.",
+                    "Como exemplo de caso, p valor é um ID, se o ID já foi renderizado, o Angular o acompanha e não consulta novamente o servidor para o mesmo ID.",
+                    "src/app/app.component.ts -> trackByItems(index: number, item: Item): number { return item.id; }",
+                    "src/app/app.component.html -> <div *ngFor='let item of items; trackBy: trackByItems'>({{item.id}}) {{item.name}}</div>"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Diretivas NgSwitch":[
+              "NgSwitch é como a declaração de opção JavaScript.",
+              "Ele exibe um elemento dentre vários elementos possíveis, com base em uma condição de chave.",
+              "O Angular coloca apenas o elemento selecionado no DOM.",
+              "NgSwitch é na verdade um conjunto de três diretivas cooperativas: NgSwitch, NgSwitchCase e NgSwitchDefault, como no exemplo a seguir.",
+              "NgSwitch é a diretiva do controlador. Ligue-o a uma expressão que retorne o valor da opção, como recurso.",
+              "Vinculu-se a [ngSwitch] - você receberá um erro se tentar definir * ngSwitch porque NgSwitch é uma diretiva de atributo, não uma diretiva estrutural. Em vez de tocar diretamente no DOM, ele altera o comportamento de suas diretrizes complementares.",
+              "Vincule-se a * ngSwitchCase e * ngSwitchDefault - as diretivas NgSwitchCase e NgSwitchDefault são diretivas estruturais porque adicionam ou removem elementos do DOM.",
+              "NgSwitchCase adiciona seu elemento ao DOM quando seu valor limite é igual ao valor do comutador e remove seu valor limite quando não é igual ao valor do comutador.",
+              "NgSwitchDefault adiciona seu elemento ao DOM quando não há NgSwitchCase selecionado."
+            ]
+          },
+          "Variáveis ​​de Referência do Modelo":[
+            "Uma variável de referência de modelo geralmente é uma referência a um elemento DOM dentro de um modelo, mas também pode se referir a uma diretiva (que contém um componente), um elemento, TemplateRef ou um componente da web.",
+            "Use o símbolo de hash (#) para declarar uma variável de referência , a seguinte variável de referência, #phone, declara uma variável de telefone em um elemento <input> ... <input #phone placeholder='phone number' />",
+            "Você pode consultar uma variável de referência de modelo em qualquer lugar no modelo do componente.",
+            "Uma variável de referência de modelo (#phone) não é a mesma que uma variável de entrada de modelo (let phone), como em um * ngFor. Veja Diretivas Estruturais para mais informações. O escopo de uma variável de referência é o modelo inteiro.",
+            "Não defina o mesmo nome de variável mais de uma vez no mesmo modelo, pois o valor do tempo de execução será imprevisível."
+          ],
+          "Propriedades de @Input() e @Output()":[
+            "Ambas permitem que o Angular compartilhe dados entre o contexto pai e as diretivas ou componentes filhos.",
+            "Uma propriedade @Input() é gravável enquanto uma propriedade @Output() é observável.",
+            "Ambas atuam como a API, ou interface de programação de aplicativos, do componente filho, na medida em que permitem que o filho se comunique com o pai.",
+            "Pense em @Input() e @Output() como portas ou portas - @ Input() é a porta de entrada do componente, permitindo que os dados fluam enquanto @Output() é a porta de saída do componente, permitindo que o componente filho envie saída de dados.",
+            "@Output() marca uma propriedade em um componente filho como uma porta através da qual os dados podem viajar do filho para o pai. O componente filho precisa gerar um evento para que o pai saiba que algo mudou.",
+            "Para gerar um evento, @Output() trabalha em conjunto com EventEmitter, que é uma classe em @ angular / core que você usa para emitir eventos personalizados."
+          ],
+          "Operadores de Expressão de Modelo":{
+            "Operadores": "A linguagem de expressão de modelo angular emprega um subconjunto de sintaxe JavaScript suplementado com alguns operadores especiais para cenários específicos: pipe, safe navigation operator, non-null assertion operator.",
+            "Pipe Operator":[
+              "O resultado de uma expressão pode exigir alguma transformação antes de você estar pronto para usá-lo em uma ligação.",
+              "Por exemplo, você pode exibir um número como moeda, alterar o texto para maiúscula ou filtrar uma lista e classificá-la.",
+              "Pipes são funções simples que aceitam um valor de entrada e retornam um valor transformado.",
+              "Eles são fáceis de aplicar em expressões de modelo, usando o operador de pipe (|).",
+              "O operador de canal passa o resultado de uma expressão à esquerda para uma função de canal à direita.",
+              "Você pode encadear expressões através de vários pipes e também pode aplicar parâmetros caso necessário.",
+              "O operador do tubo tem uma precedência mais alta que o operador ternário (? :), o que significa a? b: c | x é analisado como a? b: (c | x).",
+              "No entanto, por várias razões, o operador do tubo não pode ser usado sem parênteses no primeiro e no segundo operandos de (? :) - uma boa prática é usar parênteses no terceiro operando também."
+            ],
+            "Safe Navigation Operator":[
+              "O operador de navegação segura do Angular '?', protege contra valores nulos e indefinidos nos caminhos da propriedade.",
+              "Ele protege contra uma falha de renderização de exibição se o item for nulo.",
+              "Se o item for nulo, a exibição ainda é renderizada, mas o valor exibido estará em branco.",
+              "Às vezes, porém, valores nulos no caminho da propriedade podem estar OK em determinadas circunstâncias, especialmente quando o valor inicia nulo, mas os dados chegam eventualmente.",
+              "Com o operador de navegação segura, o Angular para de avaliar a expressão quando atinge o primeiro valor nulo e renderiza a exibição sem erros.",
+              "Funciona perfeitamente com caminhos de propriedade longos, como um  a?.b?.c?.d?."
+            ],
+            "Non-Null Assertion Operator":[
+              "A partir do Typecript 2.0, você pode aplicar uma verificação nula estrita com o sinalizador --strictNullChecks.",
+              "O TypeScript garante que nenhuma variável seja involuntariamente nula ou indefinida.",
+              "Nesse modo, as variáveis ​​digitadas não permitem nulo e indefinido por padrão.",
+              "O verificador de tipos gera um erro se você deixar uma variável não atribuída ou tentar atribuir nulo ou indefinido a uma variável cujo tipo não permite nulo e indefinido.",
+              "O verificador de tipos também gera um erro se não puder determinar se uma variável será nula ou indefinida em tempo de execução.",
+              "Você diz ao verificador de tipos para não gerar um erro aplicando o operador de asserção não nula do postfix (!).",
+              "O operador de asserção Angular não nula, serve ao mesmo objetivo em um modelo Angular, por exemplo: você pode afirmar que as propriedades do item também estão definidas.",
+              "Ao contrário do operador de navegação segura, o operador de asserção não nula não protege contra nula ou indefinida, em vez disso, ele instrui o verificador de tipo TypeScript a suspender verificações nulas estritas para uma expressão de propriedade específica.",
+              "O operador de asserção não nula, é opcional, com a exceção de que você deve usá-lo quando ativar verificações nulas estritas."
+            ]
+          }
         }
       }
     },
