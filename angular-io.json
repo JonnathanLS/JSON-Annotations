@@ -452,6 +452,49 @@
           }
         }
       },
+      "Entrada do Usuário":{
+        "Informações Relevantes":[
+          "Ações do usuário, como clicar em um link, pressionar um botão e inserir texto, aumentam os eventos DOM."
+        ],
+        "Vinculação a Eventos":[
+          "Você pode usar ligações de eventos angulares para responder a qualquer evento DOM.",
+          "Muitos eventos DOM são acionados pela entrada do usuário.",
+          "A associação a esses eventos fornece uma maneira de obter informações do usuário.",
+          "Para vincular a um evento DOM, coloque o nome do evento DOM entre parênteses e atribua uma instrução de modelo entre aspas.",
+          "Em <button (click)='onClickMe()'> Clique em mim! </button> : o (click) à esquerda do sinal de igual identifica o evento de clique do botão como o destino da ligação, e o texto entre aspas à direita do sinal de igual é a instrução do modelo, que responde ao evento click chamando o método onClickMe do componente.",
+          "Ao escrever uma ligação, esteja ciente do contexto de execução de uma instrução de modelo, os identificadores em uma instrução de modelo pertencem a um objeto de contexto específico, geralmente o componente Angular que controla o modelo.",
+        ],
+        "Objeto $event":[
+          "Eventos DOM carregam uma carga útil de informações que podem ser úteis para o componente.",
+          "O código <input (keyup)='onKey($event)'> : escuta o evento keyup e passa toda a carga útil do evento ($event) para o manipulador de eventos do componente.",
+          "As propriedades de um objeto $event variam dependendo do tipo de evento DOM, por exemplo: um evento de mouse inclui informações diferentes de um evento de edição da caixa de entrada.",
+          "Todos os objetos de evento DOM padrão têm uma propriedade de destino, uma referência ao elemento que gerou o evento - por exemplo: o destino refere-se ao elemento <input> e event.target.value retorna o conteúdo atual desse elemento.",
+          {
+            "Especificando $event":[
+              "Especificar o objeto de evento revela uma objeção significativa à passagem de todo o evento DOM para o método: o componente tem muito conhecimento dos detalhes do modelo.",
+              "Ele não pode extrair informações sem saber mais do que deveria sobre a implementação do HTML.",
+              "Isso quebra a separação de preocupações entre o modelo (o que o usuário vê) e o componente (como o aplicativo processa os dados do usuário)."
+            ]
+          }
+        ],
+        "Variáveis de Referência de Modelo":[
+          "Para declarar uma variável de referência de modelo, preceda um identificador com um caractere de hash (ou libra) (#), por exemplo: <input #box (keyup)='onKey(box.value)'>",
+          "Use variáveis ​​de referência de modelo angular, essas variáveis ​​fornecem acesso direto a um elemento de dentro do modelo.",
+          "É mais fácil chegar à caixa de entrada com a variável de referência do modelo do que passar pelo objeto $event."
+        ],
+        "Filtragem de Eventos":[
+          "O manipulador de eventos (keyup) ouve cada pressionamento de tecla.",
+          "Às vezes, apenas a tecla Enter é importante, porque indica que o usuário terminou de digitar.",
+          "Uma maneira de reduzir o ruído seria examinar todos os $ event.keyCode e executar uma ação somente quando a chave for Enter.",
+          "Existe uma maneira mais fácil: vincular-se ao pseudo-evento keyup.enter do Angular, por exemplo: <input #box (keyup.enter)='onEnter(box.value)''>",
+          "O Angular chama o manipulador de eventos apenas quando o usuário pressiona Enter."
+        ],
+        "Considerações Importantes":[
+          "Use variáveis ​​de modelo para se referir a elementos.",
+          "Passe valores, não elementos",
+          "Mantenha as instruções do modelo simples"
+        ]
+      },
       "Angular Elements": {
         "O que é ?": "São componentes angulares empacotados como elementos personalizados (também chamados de Web Components), um padrão da Web para definir novos elementos HTML de uma maneira independente da estrutura.",
         "Visão Geral":[
