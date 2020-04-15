@@ -92,7 +92,7 @@
           "O Angular suporta ligação de dados bidirecional, o que significa que alterações no DOM, como opções do usuário, também são refletidas nos dados do programa.",
           "Seus modelos podem usar 'pipes' para melhorar a experiência do usuário, transformando valores para exibição.",
           "O Angular fornece 'pipes' predefinidos para transformações comuns, e você também pode definir seus próprios 'pipes'.",
-          "O async pipe retorna o valor mais recente de um fluxo de dados e continua a fazê-lo pela vida útil de um determinado componente - quando o Angular destrói esse componente, o canal assíncrono para automaticamente."
+          "O async pipe retorna o valor mais recente de um fluxo de dados e continua a fazê-lo pela vida útil de um determinado componente - quando o Angular destrói esse componente, o pipe assíncrono para automaticamente."
         ],
         "Injeção de Dependência": [
           "Para dados ou lógica que não estão associados a uma exibição específica e que você deseja compartilhar entre componentes, você cria uma classe de serviço.",
@@ -147,7 +147,7 @@
         "Pipes": [
           "Pipes permitem declarar transformações de valor de exibição no HTML do seu modelo.",
           "Uma classe com o decorador @Pipe define uma função que transforma valores de entrada em valores de saída para exibição em uma 'view'.",
-          "Você pode encadear tubos, enviando a saída de uma função de tubo para ser transformada por outra função de tubo. Um canal também pode receber argumentos que controlam como ele realiza sua transformação. Por exemplo, você pode passar o formato desejado para o canal de datas."
+          "Você pode encadear tubos, enviando a saída de uma função de tubo para ser transformada por outra função de tubo. Um pipe também pode receber argumentos que controlam como ele realiza sua transformação. Por exemplo, você pode passar o formato desejado para o pipe de datas."
         ],
         "Diretivas": [
           "Angular templates are dynamic. When Angular renders them, it transforms the DOM according to the instructions given by directives. A directive is a class with a @Directive() decorator.",
@@ -425,7 +425,7 @@
               "Por exemplo, você pode exibir um número como moeda, alterar o texto para maiúscula ou filtrar uma lista e classificá-la.",
               "Pipes são funções simples que aceitam um valor de entrada e retornam um valor transformado.",
               "Eles são fáceis de aplicar em expressões de modelo, usando o operador de pipe (|).",
-              "O operador de canal passa o resultado de uma expressão à esquerda para uma função de canal à direita.",
+              "O operador de pipe passa o resultado de uma expressão à esquerda para uma função de pipe à direita.",
               "Você pode encadear expressões através de vários pipes e também pode aplicar parâmetros caso necessário.",
               "O operador do tubo tem uma precedência mais alta que o operador ternário (? :), o que significa a? b: c | x é analisado como a? b: (c | x).",
               "No entanto, por várias razões, o operador do tubo não pode ser usado sem parênteses no primeiro e no segundo operandos de (? :) - uma boa prática é usar parênteses no terceiro operando também."
@@ -541,6 +541,59 @@
             "Info": "Essa é uma boa maneira de obter rapidamente os recursos do TypeScript, como verificação de tipo e suporte ao preenchimento automático, para seu elemento personalizado, mas pode ficar complicado se você precisar em vários lugares, porque é necessário converter o tipo de retorno em cada ocorrência."
           }
         ]
+      },
+      "Pipes": {
+        "Informações Relevantes":[
+          "Todo aplicativo começa com o que parece ser uma tarefa simples: obter dados, transformá-los e mostrá-los aos usuários.",
+          "Obter dados pode ser tão simples quanto criar uma variável local ou tão complexo quanto transmitir dados por um WebSocket.",
+          "Depois que os dados chegam, você pode enviar os valores brutos de toString diretamente para a exibição, mas isso raramente contribui para uma boa experiência do usuário.",
+          "Na maioria dos casos de uso, os usuários preferem ver uma data em um formato simples, como 15 de abril de 1988, em vez do formato de sequência bruta Sex Abr 15 1988 00:00:00 GMT-0700 (Horário de verão do Pacífico).",
+          "Um tubo recebe os dados como entrada e os transforma na saída desejada.",
+          "Dentro da expressão de interpolação, você flui o valor da variavel do componente através do operador de pipe  '|' para a função localizada à direita.",
+          "Angular vem com um estoque de pipes, como DatePipe, UpperCasePipe, LowerCasePipe, CurrencyPipe e PercentPipe, estão todos disponíveis para uso em qualquer modelo.",
+          "Você pode encadear tubos juntos em combinações potencialmente úteis.",
+          "Você pode escrever seus próprios tubos personalizados."
+        ],
+        "Parametrizando um Pipe":[
+          "Um pipe pode aceitar qualquer número de parâmetros opcionais para ajustar sua saída.",
+          "Para adicionar parâmetros a um pipe, coloque na frente do nome dois pontos (:) e, em seguida, o valor do parâmetro (seu_pipe:parâmetro), se o pipe aceitar vários parâmetros, separe os valores com dois pontos (seu_pipe:param1:param2 ...)",
+          "O valor do parâmetro pode ser qualquer expressão de modelo válida, como uma literal de cadeia ou uma propriedade de componente."
+        ],
+        "Pipes Personalizados":[
+          "Um Pipe é uma classe decorada com metadados de canal.",
+          "A classe pipe implementa o método de transformação da interface PipeTransform que aceita um valor de entrada seguido por parâmetros opcionais e retorna o valor transformado.",
+          "Haverá um argumento adicional para o método de transformação para cada parâmetro passado para o canal.",
+          "Para informar ao Angular que a classe é um Pipe, aplique o decorador @Pipe, importado da biblioteca Angular principal.",
+          "O decorador @Pipe permite definir o nome do canal que você usará nas expressões de modelo, ele deve ser um identificador JavaScript válido.",
+          "Você usa seu pipe personalizado da mesma maneira que usa tubos internos.",
+          "Você deve incluir seu pipe na matriz de declarações do AppModule.",
+          "Se você optar por injetar seu pipe em uma classe, deverá fornecê-lo na matriz de fornecedores do seu NgModule.",
+          "Você deve registrar pipes personalizados, caso contrário, o Angular relata um erro, e o gerador da CLI Angular registra o tubo automaticamente."
+        ],
+        "Detecção de Alterações":[
+          "O Angular procura alterações nos valores vinculados aos dados por meio de um processo de detecção de alterações que é executado após cada evento do DOM: cada pressionamento de tecla, movimentação do mouse, tique do timer e resposta do servidor, e isso pode ser caro.",
+          "O Angular se esforça para reduzir o custo sempre que possível e apropriado.",
+          "O Angular escolhe um algoritmo de detecção de alterações mais simples e rápido quando você usa um pipe."
+        ],
+        "Categorias de Tupos":{
+          "Pipes Puros":[
+            "Angular executa um pipe puro somente quando detecta uma alteração pura no valor de entrada.",
+            "Uma mudança pura é uma alteração em um valor de entrada primitivo (String, Number, Boolean, Symbol) ou uma referência de objeto alterada (Data, Matriz, Função, Objeto).",
+            "Angular ignora alterações dentro de objetos (compostos), ou seja, não chamará um canal puro se você alterar um mês de entrada, adicionar a uma matriz de entrada ou atualizar uma propriedade do objeto de entrada.",
+            "Isso pode parecer restritivo, mas também rápido, pois uma verificação de referência de objeto é rápida - muito mais rápida que uma verificação profunda de diferenças - para que o Angular possa determinar rapidamente se pode pular a execução do pipe e uma atualização de exibição.",
+            "Por esse motivo, é preferível um canal puro quando você pode conviver com a estratégia de detecção de alterações - quando você não pode, pode usar o tubo impuro."
+          ],
+          "Pipes Impuros":[
+            "Angular executa um tubo impuro durante cada ciclo de detecção de alterações de componentes.",
+            "Um tubo impuro é chamado com freqüência, com a mesma frequência de cada pressionamento de tecla ou movimento do mouse.",
+            "Com essa preocupação em mente, implemente um tubo impuro com muito cuidado.",
+            "Um tubo caro e de longa execução pode destruir a experiência do usuário.",
+            "O Angular AsyncPipe é um exemplo interessante de um tubo impuro.",
+            "O AsyncPipe aceita Promise ou Observable como entrada e assina a entrada automaticamente, retornando eventualmente os valores emitidos.",
+            "O AsyncPipe também é estável, o pipe mantém uma assinatura da entrada Observable e continua entregando valores a partir desse Observable à medida que eles chegam."
+          ]
+        }
+
       }
     },
     "Formulários": {
