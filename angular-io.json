@@ -451,6 +451,96 @@
             ]
           }
         }
+      },
+      "Angular Elements": {
+        "O que é ?": "São componentes angulares empacotados como elementos personalizados (também chamados de Web Components), um padrão da Web para definir novos elementos HTML de uma maneira independente da estrutura.",
+        "Visão Geral":[
+          "Angular Elements basicamente funciona como uma ponte entre as APIs do browser e as diversas funcionalidades providas pelo Angular.",
+          "Os elementos personalizados são um recurso da plataforma da Web atualmente suportado pelo Chrome, Edge (baseado no Chromium), Firefox, Opera e Safari, e estão disponíveis em outros navegadores através de polyfills.",
+          "Um elemento personalizado estende o HTML, permitindo definir uma tag cujo conteúdo é criado e controlado pelo código JavaScript.",
+          "O navegador mantém um CustomElementRegistry de elementos personalizados definidos, que mapeia uma classe JavaScript instável para uma tag HTML.",
+          "O pacote '@angular/elements' exporta uma API createCustomElement() que fornece uma ponte da interface do componente do Angular e altera a funcionalidade de detecção para a API DOM interna.",
+          "A transformação de um componente em um elemento personalizado disponibiliza toda a infraestrutura Angular necessária para o navegador.",
+          "Criar um elemento personalizado é simples e direto e conecta automaticamente sua visualização definida por componente com detecção de alterações e ligação de dados, mapeando a funcionalidade Angular aos equivalentes HTML nativos correspondentes."
+        ],
+        "Usando Angular Elements":[
+          "Os elementos personalizados se autoinicializam - eles iniciam automaticamente quando são adicionados ao DOM e são destruídos automaticamente quando removidos do DOM.",
+          "Depois que um elemento personalizado é adicionado ao DOM para qualquer página, ele se parece e se comporta como qualquer outro elemento HTML e não requer nenhum conhecimento especial de termos angulares ou convenções de uso.",
+          {
+            "Conteúdos Dinamicos com Facilidade":[
+              "A transformação de um componente em um elemento personalizado fornece um caminho fácil para a criação de conteúdo HTML dinâmico no aplicativo Angular.",
+              "O conteúdo HTML que você adiciona diretamente ao DOM em um aplicativo Angular é normalmente exibido sem processamento Angular, a menos que você defina um componente dinâmico, adicione seu próprio código para conectar a tag HTML aos dados do aplicativo e participe da detecção de alterações - com um elemento personalizado, toda essa fiação é tratada automaticamente."
+            ],
+            "Apps Ricos em Contéudo":[
+              "Se você possui um aplicativo rico em conteúdo, os elementos personalizados permitem que você ofereça aos provedores de conteúdo uma funcionalidade Angular sofisticada sem exigir o conhecimento de Angular.",
+              "Por exemplo, um guia Angular é adicionado diretamente ao DOM pelas ferramentas de navegação Angular, mas pode incluir elementos especiais como <code-snippet> que executam operações complexas.",
+              "Tudo o que você precisa dizer ao seu provedor de conteúdo é a sintaxe do seu elemento personalizado, eles não precisam saber nada sobre o Angular ou sobre a estrutura ou implementação de dados do seu componente."
+            ]
+          }
+        ],
+        "Como Funciona ?":[
+          "Use a função createCustomElement() para converter um componente em uma classe que pode ser registrada no navegador como um elemento personalizado.",
+          "Depois de registrar sua classe configurada no registro de elementos personalizados do navegador, você pode usar o novo elemento como um elemento HTML interno no conteúdo adicionado diretamente no DOM: <my-popup message='Use Angular!'></my-popup>",
+          "Quando seu elemento personalizado é colocado em uma página, o navegador cria uma instância da classe registrada e a adiciona ao DOM.",
+          "O conteúdo é fornecido pelo modelo do componente, que usa a sintaxe do modelo angular, e é renderizado usando o componente e os dados DOM.",
+          "As propriedades de entrada no componente correspondem aos atributos de entrada para o elemento.",
+          "Fluxograma: https://angular.io/generated/images/guide/elements/customElement1.png"
+        ],
+        "Conversão":[
+          "Angular fornece a função createCustomElement() para converter um componente Angular, juntamente com suas dependências, em um elemento personalizado.",
+          "A função coleta as propriedades observáveis ​​do componente, juntamente com a funcionalidade Angular de que o navegador precisa para criar e destruir instâncias, além de detectar e responder a alterações.",
+          "O processo de conversão implementa a interface NgElementConstructor e cria uma classe de construtor configurada para produzir uma instância de autoinicialização do seu componente.",
+          "Use uma função JavaScript, customElements.define(), para registrar o construtor configurado e sua tag de elemento personalizado associada ao CustomElementRegistry do navegador.",
+          "Quando o navegador encontra a tag do elemento registrado, ele usa o construtor para criar uma instância de elemento personalizado.",
+          "Fluxograma: https://angular.io/generated/images/guide/elements/createElement.png"
+        ],
+        "Mapeamento":[
+          "Um elemento personalizado hospeda um componente Angular, fornecendo uma ponte entre os dados e a lógica definidos no componente e nas APIs DOM padrão, propriedades de componentes e mapas lógicos diretamente nos atributos HTML e no sistema de eventos do navegador.",
+          "A API de criação analisa o componente procurando propriedades de entrada e define os atributos correspondentes para o elemento customizado.",
+          "Ele transforma os nomes de propriedades para torná-los compatíveis com elementos personalizados, que não reconhecem distinções entre maiúsculas e minúsculas.",
+          "Os nomes de atributo resultantes usam letras minúsculas separadas por traço : por exemplo, para um componente contendo como propriedade  '@Input('myInputProp') inputProp', o elemento personalizado correspondente define um atributo 'my-input-prop'.",
+          "As saídas de componentes são despachadas como Eventos Customizados em HTML, com o nome do evento personalizado correspondente ao nome da saída.",
+          "Para um componente contendo como propriedaed '@Output() valueChanged = new EventEmitter()', o elemento personalizado correspondente enviará eventos com o nome 'valueChanged' e os dados emitidos serão armazenados na propriedade de detalhes do evento.",
+          "Se você fornecer um alias, esse valor será usado, por exemplo: '@Output ('myClick') clicks = new EventEmitter <string>()' resulta em eventos de despacho com o nome 'myClick'."
+        ],
+        "Suporte dos Navegadores":[
+          "Em navegadores que suportam elementos personalizados de forma nativa, a especificação exige que os desenvolvedores usem as classes ES2015 para definir os Elementos Personalizados - os desenvolvedores podem optar por isso definindo a propriedade target: 'es2015' no tsconfig.json do projeto.",
+          "Como o suporte a Elemento personalizado e ES2015 pode não estar disponível em todos os navegadores, os desenvolvedores podem optar por usar um polyfill para oferecer suporte a navegadores mais antigos e código ES5.",
+          "Use a CLI Angular para configurar automaticamente seu projeto com o polyfill correto: 'ng add @angular/elements --name=*your_project_name*'."
+        ],
+        "Exemplificação":[
+          "Anteriormente, quando você queria adicionar um componente a um aplicativo em tempo de execução, precisava definir um componente dinâmico.",
+          "O módulo do aplicativo precisaria listar seu componente dinâmico em entryComponents, para que o aplicativo não esperasse que ele estivesse presente na inicialização e, então, seria necessário carregá-lo, anexá-lo a um elemento no DOM e conectar todos os componentes nas dependências, detecção de alterações e manipulação de eventos.",
+          "O uso de um elemento personalizado Angular torna o processo muito mais simples e transparente, fornecendo toda a infraestrutura e estrutura automaticamente - tudo o que você precisa fazer é definir o tipo de manipulação de eventos que você deseja (você ainda precisa excluir o componente da compilação, se não for usá-lo no seu aplicativo).",
+          {
+            "Aplicativo de Exemplo": [
+              "O App Serviço Pop-up (https://angular.io/generated/live-examples/elements/stackblitz.html) define um componente que você pode carregar dinamicamente ou converter em um elemento personalizado.",
+              {
+                "popup.component.ts": "define um elemento pop-up simples que exibe uma mensagem de entrada, com alguma animação e estilo.",
+                "popup.service.ts": "cria um serviço injetável que fornece duas maneiras diferentes de chamar o PopupComponent; como um componente dinâmico ou como um elemento personalizado, observe quanto mais configuração é necessária para o método de carregamento dinâmico.",
+                "app.module.ts": " adiciona o PopupComponent na lista entryComponents do módulo, para excluí-lo da compilação e evitar avisos ou erros de inicialização.",
+                "app.component.ts": "define o componente raiz do aplicativo, que usa o PopupService para adicionar o pop-up ao DOM no tempo de execução, quando o aplicativo é executado, o construtor do componente raiz converte PopupComponent em um elemento personalizado."
+              }
+            ],
+            "Artigo de App como Exemplo": "https://dev.to/wilmarques/angular-elements-implementacao-basica-48lk"
+          }
+        ],
+        "Tipologias para 'Custom Elements'":[
+          "APIs DOM genéricas, como document.createElement() ou document.querySelector(), retornam um tipo de elemento apropriado para os argumentos especificados.",
+          "Por exemplo: chamar document.createElement('a') retornará um HTMLAnchorElement, que o TypeScript sabe que possui uma propriedade href, da mesma forma: chamar document.createElement('div') retornará um HTMLDivElement, que o TypeScript sabe que não possui propriedade href.",
+          "Quando chamados com elementos desconhecidos, como um nome de elemento personalizado, os métodos retornarão um tipo genérico, como HTMLElement, pois o TypeScript não pode inferir o tipo correto do elemento retornado.",
+          "Os elementos personalizados criados com Angular estendem NgElement (que por sua vez estende HTMLElement), esses elementos personalizados terão uma propriedade para cada entrada do componente correspondente.",
+          "Existem algumas opções se você deseja obter tipos corretos para seus elementos personalizados: a maneira mais direta de obter tipografias precisas é converter o valor de retorno dos métodos DOM relevantes no tipo correto, para isso, você pode usar os tipos NgElement e WithProperties (ambos exportados de '@angular/elements').",
+          {
+            "Code": {
+              "1": "const aDialog = document.createElement('my-dialog') as NgElement & WithProperties<{content: string}>;",
+              "2": "aDialog.content = 'Hello, world!';",
+              "3": "aDialog.content = 123;  // <-- ERROR: TypeScript knows this should be a string.",
+              "4": "aDialog.body = 'News';  // <-- ERROR: TypeScript knows there is no `body` property on `aDialog`."
+            },
+            "Info": "Essa é uma boa maneira de obter rapidamente os recursos do TypeScript, como verificação de tipo e suporte ao preenchimento automático, para seu elemento personalizado, mas pode ficar complicado se você precisar em vários lugares, porque é necessário converter o tipo de retorno em cada ocorrência."
+          }
+        ]
       }
     },
     "Formulários": {
