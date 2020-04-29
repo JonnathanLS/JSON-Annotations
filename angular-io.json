@@ -462,7 +462,7 @@
           "A associação a esses eventos fornece uma maneira de obter informações do usuário.",
           "Para vincular a um evento DOM, coloque o nome do evento DOM entre parênteses e atribua uma instrução de modelo entre aspas.",
           "Em <button (click)='onClickMe()'> Clique em mim! </button> : o (click) à esquerda do sinal de igual identifica o evento de clique do botão como o destino da ligação, e o texto entre aspas à direita do sinal de igual é a instrução do modelo, que responde ao evento click chamando o método onClickMe do componente.",
-          "Ao escrever uma ligação, esteja ciente do contexto de execução de uma instrução de modelo, os identificadores em uma instrução de modelo pertencem a um objeto de contexto específico, geralmente o componente Angular que controla o modelo.",
+          "Ao escrever uma ligação, esteja ciente do contexto de execução de uma instrução de modelo, os identificadores em uma instrução de modelo pertencem a um objeto de contexto específico, geralmente o componente Angular que controla o modelo."
         ],
         "Objeto $event":[
           "Eventos DOM carregam uma carga útil de informações que podem ser úteis para o componente.",
@@ -640,54 +640,200 @@
       }
     },
     "Formulários": {
-      "Informações Relevantes": [
-        "Angular fornece duas abordagens diferentes para lidar com a entrada do usuário por meio de formulários: reativo e orientado a modelo. Ambos capturam eventos de entrada do usuário a partir da visualização, validam a entrada do usuário, criam um modelo de formulário e um modelo de dados para atualizar e fornecem uma maneira de rastrear alterações",
-        "Formulários reativos e controlados por modelo processam e gerenciam dados de formulário de maneira diferente. Cada um oferece vantagens diferentes.",
-        "As formas reativas são mais robustas: são mais escaláveis, reutilizáveis ​​e testáveis. Se os formulários são uma parte essencial do seu aplicativo, ou você já está usando padrões reativos para criar seu aplicativo, use formulários reativos.",
-        "Formulários controlados por modelo são úteis para adicionar um formulário simples a um aplicativo, como um formulário de inscrição na lista de e-mails. Eles são fáceis de adicionar a um aplicativo, mas não são dimensionados tão bem quanto em formas reativas. Se você possui requisitos e lógica de formulário muito básicos que podem ser gerenciados apenas no modelo, use formulários controlados por modelo"
-      ],
-      "Fluxo de Dados": [
-        "Os formulários reativos e controlados por modelo seguem duas estratégias diferentes ao manipular a entrada de formulário.",
-        "nas formas reativas, cada elemento do formulário na exibição é diretamente vinculado a um modelo de formulário (instância do FormControl). As atualizações da visualização para o modelo e do modelo para a visualização são síncronas e não dependem da interface do usuário renderizada.",
-        "Nos formulários controlados por modelo, cada elemento do formulário está vinculado a uma diretiva que gerencia o modelo de formulário internamente."
-      ],
-      "Validação": [
-        "O Angular fornece um conjunto de validadores internos, além da capacidade de criar validadores personalizados.",
-        "Os formulários reativos definem validadores personalizados como funções que recebem um controle para validar.",
-        "Os formulários controlados por modelo estão vinculados às diretivas de modelo e devem fornecer diretivas de validador personalizadas que agrupam as funções de validação."
-      ],
-      "Testes": [
-        "O teste desempenha um papel importante em aplicativos complexos e uma estratégia de teste mais simples é útil ao validar se seus formulários funcionam corretamente.",
-        "Formulários reativos e formulários controlados por modelo têm diferentes níveis de confiança na renderização da interface do usuário para executar asserções com base no controle de formulário e alterações no campo de formulário.",
-        "Os formulários reativos fornecem uma estratégia de teste relativamente fácil, porque fornecem acesso síncrono ao formulário e aos modelos de dados e podem ser testados sem renderizar a interface do usuário. Nesses testes, status e dados são consultados e manipulados através do controle sem interagir com o ciclo de detecção de alterações.",
-        "A gravação de testes com formulários orientados a modelos requer um conhecimento detalhado do processo de detecção de alterações e um entendimento de como as diretivas são executadas em cada ciclo para garantir que os elementos sejam consultados, testados ou alterados no momento correto."
-      ],
-      "Mutabilidade": {
-        "Reativo": [
-          "Os formulários reativos mantêm o modelo de dados puro, fornecendo-o como uma estrutura de dados imutável.",
-          "Sempre que uma alteração é acionada no modelo de dados, a instância FormControl retorna um novo modelo de dados em vez de atualizar o modelo de dados existente.",
-          "Permite rastrear alterações exclusivas no modelo de dados através da observação do controle.",
-          "Fornece uma maneira de a detecção de alterações ser mais eficiente, porque ela só precisa atualizar as alterações exclusivas.",
-          "Segue padrões reativos que se integram aos operadores observáveis ​​para transformar dados.",
-          "Com formulários reativos, a instância FormControl sempre retorna um novo valor quando o valor do controle é atualizado."
+      "Introdução": {
+        "Informações Relevantes": [
+          "Angular fornece duas abordagens diferentes para lidar com a entrada do usuário por meio de formulários: reativo e orientado a modelo.",
+          "Ambos os paradigmas capturam eventos de entrada do usuário a partir da visualização, validam a entrada do usuário, criam um modelo de formulário e um modelo de dados para atualizar e fornecem uma maneira de rastrear alterações",
+          "Formulários reativos e controlados por modelo processam e gerenciam dados de formulário de maneira diferente. Cada um oferece vantagens diferentes.",
+          "As formas reativas são mais robustas: são mais escaláveis, reutilizáveis ​​e testáveis. Se os formulários são uma parte essencial do seu aplicativo, ou você já está usando padrões reativos para criar seu aplicativo, use formulários reativos.",
+          "Formulários controlados por modelo são úteis para adicionar um formulário simples a um aplicativo, como um formulário de inscrição na lista de e-mails. Eles são fáceis de adicionar a um aplicativo, mas não são dimensionados tão bem quanto em formas reativas. Se você possui requisitos e lógica de formulário muito básicos que podem ser gerenciados apenas no modelo, use formulários controlados por modelo"
         ],
-        "Orientado a Modelos": [
-          "Os formulários controlados por modelo dependem da mutabilidade com ligação de dados bidirecional para atualizar o modelo de dados no componente conforme as alterações são feitas no modelo.",
-          "Como não há alterações exclusivas a serem rastreadas no modelo de dados ao usar a ligação de dados bidirecional, a detecção de alterações é menos eficiente na determinação de quando são necessárias atualizações.",
-          "Com formulários controlados por modelo, a propriedade de cor favorita é sempre modificada para seu novo valor."
+        "Fluxo de Dados": [
+          "Os formulários reativos e controlados por modelo seguem duas estratégias diferentes ao manipular a entrada de formulário.",
+          "nas formas reativas, cada elemento do formulário na exibição é diretamente vinculado a um modelo de formulário (instância do FormControl). As atualizações da visualização para o modelo e do modelo para a visualização são síncronas e não dependem da interface do usuário renderizada.",
+          "Nos formulários controlados por modelo, cada elemento do formulário está vinculado a uma diretiva que gerencia o modelo de formulário internamente."
+        ],
+        "Validação": [
+          "O Angular fornece um conjunto de validadores internos, além da capacidade de criar validadores personalizados.",
+          "Os formulários reativos definem validadores personalizados como funções que recebem um controle para validar.",
+          "Os formulários controlados por modelo estão vinculados às diretivas de modelo e devem fornecer diretivas de validador personalizadas que agrupam as funções de validação."
+        ],
+        "Testes": [
+          "O teste desempenha um papel importante em aplicativos complexos e uma estratégia de teste mais simples é útil ao validar se seus formulários funcionam corretamente.",
+          "Formulários reativos e formulários controlados por modelo têm diferentes níveis de confiança na renderização da interface do usuário para executar asserções com base no controle de formulário e alterações no campo de formulário.",
+          "Os formulários reativos fornecem uma estratégia de teste relativamente fácil, porque fornecem acesso síncrono ao formulário e aos modelos de dados e podem ser testados sem renderizar a interface do usuário. Nesses testes, status e dados são consultados e manipulados através do controle sem interagir com o ciclo de detecção de alterações.",
+          "A gravação de testes com formulários orientados a modelos requer um conhecimento detalhado do processo de detecção de alterações e um entendimento de como as diretivas são executadas em cada ciclo para garantir que os elementos sejam consultados, testados ou alterados no momento correto."
+        ],
+        "Mutabilidade": {
+          "Reativo": [
+            "Os formulários reativos mantêm o modelo de dados puro, fornecendo-o como uma estrutura de dados imutável.",
+            "Sempre que uma alteração é acionada no modelo de dados, a instância FormControl retorna um novo modelo de dados em vez de atualizar o modelo de dados existente.",
+            "Permite rastrear alterações exclusivas no modelo de dados através da observação do controle.",
+            "Fornece uma maneira de a detecção de alterações ser mais eficiente, porque ela só precisa atualizar as alterações exclusivas.",
+            "Segue padrões reativos que se integram aos operadores observáveis ​​para transformar dados.",
+            "Com formulários reativos, a instância FormControl sempre retorna um novo valor quando o valor do controle é atualizado."
+          ],
+          "Orientado a Modelos": [
+            "Os formulários controlados por modelo dependem da mutabilidade com ligação de dados bidirecional para atualizar o modelo de dados no componente conforme as alterações são feitas no modelo.",
+            "Como não há alterações exclusivas a serem rastreadas no modelo de dados ao usar a ligação de dados bidirecional, a detecção de alterações é menos eficiente na determinação de quando são necessárias atualizações.",
+            "Com formulários controlados por modelo, a propriedade de cor favorita é sempre modificada para seu novo valor."
+          ]
+        },
+        "Escalabilidade": [
+          "Os formulários reativos fornecem acesso a APIs de baixo nível e acesso síncrono ao modelo de formulário, facilitando a criação de formulários em grande escala.",
+          "Os formulários orientados a modelos concentram-se em cenários simples, não são tão reutilizáveis, abstraem as APIs de baixo nível e fornecem acesso assíncrono ao modelo de formulário.",
+          "A abstração com formulários controlados por modelo também aparece no teste, onde o teste de formulários reativos requer menos configuração e nenhuma dependência do ciclo de detecção de alterações ao atualizar e validar o formulário e os modelos de dados durante o teste."
+        ],
+        "Considerações Relevantes": [
+          "A escolha de uma estratégia começa com a compreensão dos pontos fortes e fracos das opções apresentadas.",
+          "Acesso de API de baixo nível e modelo de formulário, previsibilidade, mutabilidade, estratégias diretas de validação e teste e escalabilidade são considerações importantes na escolha da infraestrutura que você usa para criar seus formulários no Angular.",
+          "Os formulários controlados por modelo são semelhantes aos padrões no AngularJS, mas têm limitações, devido aos critérios de muitos aplicativos Angular modernos em grande escala.",
+          "As formas reativas integram-se aos padrões reativos já presentes em outras áreas da arquitetura Angular e complementam bem esses requisitos."
         ]
       },
-      "Escalabilidade": [
-        "Os formulários reativos fornecem acesso a APIs de baixo nível e acesso síncrono ao modelo de formulário, facilitando a criação de formulários em grande escala.",
-        "Os formulários orientados a modelos concentram-se em cenários simples, não são tão reutilizáveis, abstraem as APIs de baixo nível e fornecem acesso assíncrono ao modelo de formulário.",
-        "A abstração com formulários controlados por modelo também aparece no teste, onde o teste de formulários reativos requer menos configuração e nenhuma dependência do ciclo de detecção de alterações ao atualizar e validar o formulário e os modelos de dados durante o teste."
-      ],
-      "Considerações Relevantes": [
-        "A escolha de uma estratégia começa com a compreensão dos pontos fortes e fracos das opções apresentadas.",
-        "Acesso de API de baixo nível e modelo de formulário, previsibilidade, mutabilidade, estratégias diretas de validação e teste e escalabilidade são considerações importantes na escolha da infraestrutura que você usa para criar seus formulários no Angular.",
-        "Os formulários controlados por modelo são semelhantes aos padrões no AngularJS, mas têm limitações, devido aos critérios de muitos aplicativos Angular modernos em grande escala.",
-        "As formas reativas integram-se aos padrões reativos já presentes em outras áreas da arquitetura Angular e complementam bem esses requisitos."
-      ]
+      "Formulários Reativos":{
+        "Visão Geral":[
+          "Os formulários reativos fornecem uma abordagem orientada a modelo para lidar com entradas de formulário cujos valores mudam ao longo do tempo.",
+          "Os formulários reativos usam uma abordagem explícita e imutável para gerenciar o estado de um formulário em um determinado momento.",
+          "Cada alteração no estado do formulário retorna um novo estado, que mantém a integridade do modelo entre as alterações.",
+          "Os formulários reativos são construídos em torno de fluxos observáveis, nos quais as entradas e os valores do formulário são fornecidos como fluxos de valores de entrada, que podem ser acessados ​​de forma síncrona.",
+          "Os formulários reativos também fornecem um caminho direto para o teste, porque você tem certeza de que seus dados são consistentes e previsíveis quando solicitados, qualquer consumidor dos fluxos tem acesso para manipular esses dados com segurança.",
+          "Os formulários reativos diferem dos formulários orientados a modelos de maneiras distintas.",
+          "Os formulários reativos fornecem mais previsibilidade com acesso síncrono ao modelo de dados, imutabilidade com operadores observáveis ​​e rastreamento de alterações através de fluxos observáveis.",
+          "Formulários controlados por modelo permitem acesso direto para modificar dados em seu modelo, mas são menos explícitos que formulários reativos, porque eles dependem de diretivas incorporadas no modelo, juntamente com dados mutáveis ​​para rastrear alterações de forma assíncrona",
+        ],
+        "Controle de Formulários": {
+          "Descrição": "Há três etapas para usar controles de formulário.",
+          "Etapas": {
+            "1": "Registre o módulo de formulários reativos no seu aplicativo, este módulo declara as diretivas de forma reativa que você precisa para usar formulários reativos.",
+            "2": "Gere uma nova instância do FormControl e salve-a no componente.",
+            "3": "Registre o FormControl no modelo."
+          },
+          "Procedimentos":{
+            "Registrar o Módulo": [
+              "Para usar controles de formulário reativos, importe ReactiveFormsModule do pacote '@angular/forms' e adicione-o à matriz de importações do NgModule."
+            ],
+            "Gere o FormControl":[
+              "Use o comando da CLI ng generate para gerar um componente em seu projeto para hospedar o controle.",
+              "Para registrar um único controle de formulário, importe a classe FormControl e crie uma nova instância do FormControl para salvar como uma propriedade de classe.",
+              "Use o construtor de FormControl para definir seu valor inicial, que nesse caso é uma sequência vazia.",    
+              "Ao criar esses controles em sua classe de componente, você obtém acesso imediato para escutar, atualizar e validar o estado da entrada do formulário."
+            ],
+            "Registre o FormControl no Modelo":[
+              "Depois de criar o controle na classe de componente, você deve associá-lo a um elemento de controle de formulário no modelo.",
+              "Atualize o modelo com o controle de formulário usando a ligação formControl fornecida pelo FormControlDirective, que também está incluída no ReactiveFormsModule.",
+              "Usando a sintaxe de ligação do modelo, o controle de formulário agora está registrado no elemento de entrada de nome no modelo.",
+              "O controle de formulário e o elemento DOM se comunicam entre si: a visualização reflete alterações no modelo e o modelo reflete alterações na visualização."
+            ],
+            "Exibir o Componente": [
+              "Você pode exibir o formulário adicionando o componente ao modelo.",
+              "O controle de formulário atribuído a propriedade é exibido quando o componente é adicionado a um modelo."
+            ]
+          }
+        },
+        "Exibindo Valores":{
+          "Maneiras de Exibição":{
+            "1": "Por meio do valueChanges observável, onde você pode ouvir as alterações no valor do formulário no modelo usando AsyncPipe ou na classe de componente usando o método subscribe().",
+            "2": "Com a propriedade value, que fornece uma captura instantânea do valor atual."
+          },
+          "Informações Relevantes":[
+            "O valor exibido muda conforme você atualiza o elemento de controle do formulário.",
+            "Os formulários reativos fornecem acesso a informações sobre um determinado controle por meio de propriedades e métodos fornecidos com cada instância.",
+            "Essas propriedades e métodos da classe AbstractControl subjacente são usados ​​para controlar o estado do formulário e determinar quando exibir mensagens ao manipular a validação de entrada."
+          ]
+        },
+        "Substituindo Valores":[
+          "Os formulários reativos têm métodos para alterar o valor de um controle programaticamente, o que oferece flexibilidade para atualizar o valor sem a interação do usuário.",
+          "Uma instância de controle de formulário fornece um método setValue() que atualiza o valor do controle de formulário e valida a estrutura do valor fornecido em relação à estrutura do controle.",
+          "Por exemplo, ao recuperar dados de formulário de uma API ou serviço de back-end, use o método setValue() para atualizar o controle para seu novo valor, substituindo completamente o valor antigo."
+        ],
+        "Agrupamento de Controle":{
+          "Informações Relevantes":[
+            "Os formulários geralmente contêm vários controles relacionados.",
+            "Os formulários reativos fornecem duas maneiras de agrupar vários controles relacionados em um único formulário de entrada.",
+            {
+              "Maneiras":{
+                "Por Grupo": "Um grupo de formulários define um formulário com um conjunto fixo de controles que você pode gerenciar juntos - você também pode aninhar grupos de formulários para criar formulários mais complexos.",
+                "Por Matriz": "Uma matriz de formulários define um formulário dinâmico, onde você pode adicionar e remover controles em tempo de execução - você também pode aninhar matrizes de formulários para criar formulários mais complexos."
+              }
+            },
+            "Assim como uma instância de controle de formulário fornece controle sobre um único campo de entrada, uma instância de grupo de formulários rastreia o estado do formulário de um grupo de instâncias de controle de formulários (por exemplo, um formulário).",
+            "Cada controle em uma instância de grupo de formulários é rastreado pelo nome ao criar o grupo de formulários."
+          ],
+          "Procdimentos":{
+            "Criando":[
+              "Crie uma propriedade na classe de componente e defina a propriedade para uma nova instância do grupo de formulários.",
+              "Para inicializar o grupo de formulários, forneça ao construtor um objeto de chaves nomeadas mapeadas para seu controle.",
+              "No objeto de chaves fornecida no construtor do FormGroup instancia controles de formulários ou até mesmo outro grupo de formulários (que neste caso ficarão aninhandos).",
+              "Uma instância do FormGroup fornece seu valor de modelo como um objeto reduzido dos valores de cada controle no grupo.",
+              "Uma instância do grupo de formulários possui as mesmas propriedades (como 'value' e 'untouched') e métodos (como setValue()) que uma instância de controle de formulário."
+            ],
+            "Associando":[
+              "Um grupo de formulários controla o status e as alterações para cada um de seus controles; portanto, se um dos controles for alterado, o controle pai também emitirá um novo status ou alteração de valor.",
+              "O modelo para o grupo é mantido por seus membros.",
+              "Depois de definir o modelo, você deve atualizar o modelo para refletir o modelo na visualização.",
+              "Assim como um grupo de formulários contém um grupo de controles, o formulário de perfil FormGroup é vinculado ao elemento de formulário com a diretiva FormGroup, criando uma camada de comunicação entre o modelo e o formulário que contém as entradas.",
+              "A entrada formControlName fornecida pela diretiva FormControlName vincula cada entrada individual ao controle de formulário definido no FormGroup.",
+              "Os controles do formulário se comunicam com seus respectivos elementos, eles também comunicam alterações na instância do grupo de formulários, que fornece a fonte da verdade para o valor do modelo."
+            ],
+            "Salvando":[
+              "Em um cenário real você deseja capturar o valor do formulário e disponibilizar para processamento adicional fora do componente.",
+              "A diretiva FormGroup escuta o evento de envio emitido pelo elemento de formulário e emite um evento ngSubmit que você pode vincular a uma função de retorno de chamada.",
+              "Adicione um ouvinte de evento ngSubmit à tag do formulário com o método de retorno de chamada onSubmit().",
+              "O método onSubmit() no componente captura o valor atual de profileForm.",
+              "Use EventEmitter para manter o formulário encapsulado e fornecer o valor do formulário fora do componente.",
+              "O evento de envio é emitido pela tag do formulário usando o evento DOM nativo.",
+              "Você aciona o evento clicando em um botão com o tipo de envio., isso permite que o usuário pressione a tecla Enter para enviar o formulário preenchido."
+            ],
+            "Atualizando":[
+              "Ao atualizar o valor para uma instância de grupo de formulários que contém vários controles, você pode querer atualizar apenas partes do modelo.",
+              "Há duas maneiras de atualizar o valor do modelo.",
+              { 
+                "Maneiras":{
+                  "1": "Use o método setValue() para definir um novo valor para um controle individual, ele segue estritamente a estrutura do grupo de formulários e substitui todo o valor do controle.",
+                  "2": "Use o método patchValue() para substituir quaisquer propriedades definidas no objeto que foram alteradas no modelo de formulário."
+                }
+              },
+              "As verificações rigorosas do método setValue() ajudam a detectar erros de aninhamento em formulários complexos, enquanto o patchValue() falha silenciosamente nesses erros."
+            ]
+          }
+        },
+        "Serviço para Gerar Controles":[
+          "Criar instâncias de controle de formulário manualmente pode se tornar repetitivo ao lidar com vários formulários.",
+          "O serviço FormBuilder fornece métodos convenientes para gerar controles.",
+          "O serviço FormBuilder possui três métodos: control(), group() e array() - estes são métodos de fábrica para gerar instâncias nas classes de componentes, incluindo controles, grupos e matrizes de formulários.",
+          "Você pode definir o controle apenas com o valor inicial, mas se seus controles precisarem de validação de sincronização ou assíncrona, adicione validadores de sincronização e assíncrona como o segundo e o terceiro itens da matriz."
+        ],
+        "Validação de Entrada":[
+          "A validação de formulário é usada para garantir que a entrada do usuário esteja completa e correta.",
+          "Os formulários reativos incluem um conjunto de funções validadoras para casos de uso comuns.",
+          "Essas funções recebem um controle para validar e retornar um objeto de erro ou um valor nulo com base na verificação de validação.",
+          "Use atributos de validação HTML5 em combinação com os validadores internos fornecidos pelos formulários reativos da Angular, a utilização combinada evita erros quando a expressão é alterada após a verificação do modelo."
+        ],
+        "Formulários Dinámicos":[
+          "O FormArray é uma alternativa ao FormGroup para gerenciar qualquer número de controles sem nome.",
+          "Como nas instâncias do grupo de formulários, você pode inserir e remover dinamicamente controles das instâncias da matriz de formulários, e o valor e o status de validação da instância da matriz de formulários são calculados a partir de seus controles filhos.",
+          "No entanto, você não precisa definir uma chave para cada controle por nome, portanto, essa é uma ótima opção se você não souber o número de valores filho com antecedência",
+          "Você pode inicializar uma matriz de formulário com qualquer número de controles, de zero a muitos, definindo-os em uma matriz.",
+          "Use o método FormBuilder.array() para definir a matriz e o método FormBuilder.control() para preencher a matriz com um controle inicial."
+        ],
+        "Resumo":{
+          "Classes":{
+            "AbstractControl": "A classe base abstrata para as classes de controle de formulário concretas FormControl, FormGroup e FormArray, fornece seus comportamentos e propriedades comuns.",
+            "FormControl": "Gerencia o valor e o status de validade de um controle de formulário individual, corresponde a um controle de formulário HTML, como <input> ou <select>.",
+            "FormGroup": "Gerencia o valor e o estado de validade de um grupo de instâncias AbstractControl, as propriedades do grupo incluem seus controles filho, e o formulário de nível superior no seu componente é FormGroup.",
+            "FormArray": "Gerencia o valor e o estado de validade de uma matriz numericamente indexada de instâncias AbstractControl.",
+            "FormBuilder": "Um serviço injetável que fornece métodos de fábrica para criar instâncias de controle."
+          },
+          "Diretivas":{
+            "FormControlDirective": "Sincroniza uma instância independente de FormControl com um elemento de controle de formulário.",
+            "FormControlName": "Sincroniza FormControl em uma instância existente do FormGroup para um elemento de controle de formulário por nome.",
+            "FormGroupDirective": "Sincroniza uma instância existente do FormGroup com um elemento DOM.",
+            "FormGroupName": "Sincroniza uma instância FormGroup aninhada em um elemento DOM.",
+            "FormArrayName": "Sincroniza uma instância FormArray aninhada em um elemento DOM."
+          }
+        }
+      }
     },
     "Observables & RxJS": {
       "Observables": {

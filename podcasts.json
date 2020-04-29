@@ -1,0 +1,85 @@
+{
+  "Podcast Lambda 3": {
+    "Angular 9": {
+      "O que é Ivy": 
+        "Novaas Engine de Renderização do Angular, provendo compilação mais rápida, tamanho menores de bundles, melhoras na compilação, no debug, etc ... ",
+      "Informações Relevantes":[
+        "O angular sempre foi dividido em dois módulos de compilação diferente: AOT e JIT",
+        "Agora com o Ivy, por 'default' só roda AOT, o JIT está sendo depreciado e não será mais executado, mesmo para desenvolvimento.",
+        "Com o ivy através de uma opção é possivel definir se voce quer uma checagem estática mais completa ou superficial, possibilitando identificar erros do template (especifico) no momento de compilação.",
+        {
+          "JIT vs AOT":{
+            "JIT": "Just-in-Time - compilação em tempo de execução, utilizado em tempo de desenvolvimento.",
+            "AOT": "Ahead-of-Time - compilação em tempo de BUILD antes do tempo de execcução, utilizado no build para produção."
+          },
+          "Karma vs Jest": {
+            "Karma": "Veio com o objetio de executar testes nos navegadores reais.",
+            "Jest": "Veio com o objetivo de ser um runner, mas executando no node utilizando JSDOM (simulando o DOM do navegador no NODE)."
+          }
+        }
+      ],
+      "Diferenças": {
+        "Conceito de Localidade": {
+          "Antes": "Todas as dependências, diretivas, componentes, o que quer que seja, tinham de ser registrados no módulo para que o contexto de compilação análise todas elas e conseguisse compilar o produto final do javascript",
+          "Atual": "Hoje com o conceito de localidade do ivy, não não hã necessidade de definir todas essas dependências."
+        },
+        "Compilação": {
+          "Antes": "A aplicação Angular era compilada como um todo, partindo de uma aplicação principal para entender o contexto, serviço, etc, onde tudo era compilado como um todo.",
+          "Atual": "Cada pequena peça do Angular (componente) é compilado individualmente em sua localização, apenas no que precisa, sendo possível realizar build parciais, não influenciando na compilação de suas dependências filhos ou pais."
+        },
+        "Execução": {
+          "Antes": "O angular era um grande monólito, a interpretação de todos os componentes, diretivas, etc,  passavam por apenas um bloco de execução.",
+          "Atual": "Para cada uma das peças do Angular há definições estáticas, contendo todas as partes da classe/componente, conseguindo executar/exibir o elemento, diminuindo a importância do compilador do angular e dando mais importância ao compilador do typescript"
+        },
+        "Bundles": {
+          "Antes": "Eram gerados metadados, contendo diversas condicionais espalhadas, onde o renderizador analisava em tempo de execução se existia determinada propriedade ou não.",
+          "Atual": "Em vez de gerar metadados, são gerada instruções (importações da classe, método, etc que realmente será utilizado), e com isso é possível fazer proveito de uma técnica chamada 'Tree Shaking' (eliminar código morto), manter todo código que de fato está sendo utilizado e tirar todo código inutilizado."
+        },
+        "Lazy Loading": {
+          "Antes": "O lazy loading somente era possível ser realizado pelo módulo, e eles por sua vez carregava o componente necessário a ser exibido.",
+          "Atual": "Não há mais necessidade de um módulo para carregar o componente preguiçosamente, pois todos os componentes possuem sua própria localização, contendo seu próprio modo individual, podendo ser realizado o importe dinamicamente."
+        },
+        "Testes": {
+          "Antes": "A cada caso de teste ('it'), o componente era recompilado e o teste era feito.",
+          "Atual": "Compila uma vez o componente e o teste é feito a partir deste."
+        },
+        "Web Components": {
+          "Antes": "A criação que é atráves do angular elements, tem sua desvantagem, pois carrega muita dependências relacionadas a questões de mudanças e torna o web component extremamente grande",
+          "Atual": "Através do Ivy, além de bundles menores, não há necessidade de definir todos os módulos para a detecção de mudanças, uma vez que será baseados em definições estáticas, em suma, ter os componentes com o Ivy, permite que tenhamos web components extremamente pequenos."
+        },
+        "Server Side Rendering": {
+          "Antes": "Para ser feito a configuraçãso de SSR pelos schematics padrões do angular, era bem chato, dando margem a utilização de schematics da comunidade e não do framework.",
+          "Atual": "Os Schematics para criação e configuração do SSR oficiais do Angular estão melhores, mais fácesis de serem usados, sem a necessidade de utilização de dependência de terceiros."
+        },
+        "": {
+          "Antes": "",
+          "Atual": ""
+        },
+        "": {
+          "Antes": "",
+          "Atual": ""
+        },
+        "": {
+          "Antes": "",
+          "Atual": ""
+        },
+        "": {
+          "Antes": "",
+          "Atual": ""
+        },
+        "": {
+          "Antes": "",
+          "Atual": ""
+        },
+        "": {
+          "Antes": "",
+          "Atual": ""
+        },
+        "": {
+          "Antes": "",
+          "Atual": ""
+        }
+      }
+    }
+  }
+}
