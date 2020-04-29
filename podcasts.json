@@ -2,18 +2,18 @@
   "Podcast Lambda 3": {
     "Angular 9": {
       "O que é Ivy": 
-        "Novaas Engine de Renderização do Angular, provendo compilação mais rápida, tamanho menores de bundles, melhoras na compilação, no debug, etc ... ",
+        "Nova Engine de Renderização do Angular, provendo compilação mais rápida, tamanho menores de bundles, melhoras na compilação, no debug, etc ... ",
       "Informações Relevantes":[
         "O angular sempre foi dividido em dois módulos de compilação diferente: AOT e JIT",
         "Agora com o Ivy, por 'default' só roda AOT, o JIT está sendo depreciado e não será mais executado, mesmo para desenvolvimento.",
-        "Com o ivy através de uma opção é possivel definir se voce quer uma checagem estática mais completa ou superficial, possibilitando identificar erros do template (especifico) no momento de compilação.",
+        "Com o ivy através de uma opção é possível definir se voce quer uma checagem estática mais completa ou superficial, possibilitando identificar erros do template (especifico) no momento de compilação.",
         {
           "JIT vs AOT":{
             "JIT": "Just-in-Time - compilação em tempo de execução, utilizado em tempo de desenvolvimento.",
-            "AOT": "Ahead-of-Time - compilação em tempo de BUILD antes do tempo de execcução, utilizado no build para produção."
+            "AOT": "Ahead-of-Time - compilação em tempo de BUILD antes do tempo de execução, utilizado no build para produção."
           },
           "Karma vs Jest": {
-            "Karma": "Veio com o objetio de executar testes nos navegadores reais.",
+            "Karma": "Veio com o objetivo de executar testes nos navegadores reais.",
             "Jest": "Veio com o objetivo de ser um runner, mas executando no node utilizando JSDOM (simulando o DOM do navegador no NODE)."
           }
         }
@@ -44,41 +44,18 @@
           "Atual": "Compila uma vez o componente e o teste é feito a partir deste."
         },
         "Web Components": {
-          "Antes": "A criação que é atráves do angular elements, tem sua desvantagem, pois carrega muita dependências relacionadas a questões de mudanças e torna o web component extremamente grande",
-          "Atual": "Através do Ivy, além de bundles menores, não há necessidade de definir todos os módulos para a detecção de mudanças, uma vez que será baseados em definições estáticas, em suma, ter os componentes com o Ivy, permite que tenhamos web components extremamente pequenos."
+          "Antes": "A criação que é através do angular elements, tem sua desvantagem, pois carrega muita dependências relacionadas a questões de mudanças e torna o web component extremamente grande",
+          "Atual": "Através do Ivy, além de bundles menores, não há necessidade de definir todos os módulos para a detectação de mudanças, uma vez que será baseados em definições estáticas, em suma, ter os componentes com o Ivy, permite que tenhamos web components extremamente pequenos."
         },
         "Server Side Rendering": {
-          "Antes": "Para ser feito a configuraçãso de SSR pelos schematics padrões do angular, era bem chato, dando margem a utilização de schematics da comunidade e não do framework.",
-          "Atual": "Os Schematics para criação e configuração do SSR oficiais do Angular estão melhores, mais fácesis de serem usados, sem a necessidade de utilização de dependência de terceiros."
+          "Antes": "Para ser feito a configuração de SSR pelos schematics padrões do angular, era bem chato, dando margem a utilização de schematics da comunidade e não do framework.",
+          "Atual": "Os Schematics para criação e configuração do SSR oficiais do Angular estão melhores, mais fáceis de serem usados, sem a necessidade de utilização de dependência de terceiros."
         },
-        "": {
-          "Antes": "",
-          "Atual": ""
+        "Build de Bibliotecas": {
+          "Antes": "Com o Ivy as bibliotecas são compiladas em tempo de compilação da aplicação, pela primeira vez faz o build das bibliotecas para então realizar o build da aplicação",
+          "Atual": "Antes os builds eram feitos sequencialmente, agora passa a ocorrer paralelamente."
         },
-        "": {
-          "Antes": "",
-          "Atual": ""
-        },
-        "": {
-          "Antes": "",
-          "Atual": ""
-        },
-        "": {
-          "Antes": "",
-          "Atual": ""
-        },
-        "": {
-          "Antes": "",
-          "Atual": ""
-        },
-        "": {
-          "Antes": "",
-          "Atual": ""
-        },
-        "": {
-          "Antes": "",
-          "Atual": ""
-        }
+        "Atualização": "Recomendado realizar o update para a ultima versão do angular 8 e depois executar o 'ng update' para atualização ao Angular 9."
       }
     }
   }
