@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repository serves to store records and notes relevant to courses, articles, and content studied on the internet.
+This  repository serves to store records and notes relevant of courses, articles, and content studied on the internet.
 
 ## Record Format
 
