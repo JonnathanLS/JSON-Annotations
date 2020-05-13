@@ -22,12 +22,25 @@
         "A propriedade name só pode ser 'preenchida' uma única vez, por isso que, quando eu seleciono um dos itens, ele desmarca o outro, mantendo somente um selecionado.",
         "Quando temos um estilo que pode ser repetido, uma excelente estratégia é extrair isso para uma classe e usar a classe para aplicar esses estilos nos nossos elementos.",
         "Usar os seletores dos itens separados por vírgula, é uma forma simples de fazermos a mesma configuração de CSS funcionar para os dois itens, sendo eles seletores dos elementos, de ids ou de classes.",
-        "A hierarquia de aplicação do css ocorre de inline -> id -> class -> tag, sendo que podemos consideralos como força, ao passo que tag+class tem força maior do que apenas a classe",    
+        "A hierarquia de aplicação do css ocorre de inline -> id -> class -> tag, sendo que podemos considera-los como força, ao passo que tag+class tem força maior do que apenas a classe",    
         "Quando adicionamos a propriedade required, o navegador nos ajuda a validar se aquele campo está preenchido.",
         "A tag <fieldset> é usada para criar uma divisão no nosso formulário, com um ou mais <input>, e a tag <legend> que usamos para um título de um grupo de campos em qualquer formulário.",
         "Utilizamos a propriedade transition para prover uma transição visual de um elemento.",
         "Utilizamos a propriedade transform: scale() para aumentar um elemento proporcionalmente.",
-        "As tags <thead>, <tbody> e <tfoot> ajudam a deixar o conteúdo da tabela mais bem dividido e mais semântico."
+        "As tags <thead>, <tbody> e <tfoot> ajudam a deixar o conteúdo da tabela mais bem dividido e mais semântico.",
+        "A diferença entre <div> e <section> é que no primeiro caso, trata-se apenas de uma divisão visual, já no caso da <section> teremos uma divisão por conteúdo complexo, semanticamente homogêneo, em suma, Para um bloco onde o conteúdo tenha o mesmo significado, o mesmo sentido, usamos uma <section>.",
+        "No universo HTML e CSS, ao falarmos de estilo, usamos uma classe, quando falamos de comportamento, usamos o identificador.A força da classe não é tão grande, então ela pode ser sobrescrita e seu estilo alterado, por isso é importante em CSS sempre utilizarmos classes.",
+        "Sempre que criamos uma classe do CSS é importante que ela seja específica e ao mesmo tempo o mais genérica possível, ou seja, nem tão específica, para poder repetir as classes, e nem tão genérica, para poder não precisar combinar classes.",
+        "É sempre interessante inserir um espaçamento que seja proporcional ao tamanho da fonte, o que facilita a leitura do usuário.",
+        "O alt da imagem, isto é, o texto alternativo que descreve de maneira sucinta o conteúdo visual expresso, é utilizado caso a imagem não seja carregada ou para pessoas que utilizam leitores de tela.",
+        "Tanto o float:left quanto o float: right servem para que o elemento se destaque na tela, deixe de ocupar o espaço em que estava, para que os outros elementos possam se posicionar ao redor dele.",
+        "Fontes preparadas para web: elas funcionam melhor em todos os navegadores, possuem comportamento parecido em todos os sistemas operacionais. Já uma fonte que não foi prepara para web não possui essas características, afinal seu foco é para materiais gráficos impressos.",
+        "Usar fontes externas é uma alternativa muito funcional para termos mais opções, que deixam o nosso site mais bonito e exclusivo, e também padronizado em todos os navegadores.",
+        "A tag <iframe> é específica para abrir 'janelas' em nosso site, com proporções definidas e endereço da informação. Podemos fazer o msemo com outros serviços que apresentem essa possibilidade de compartilhamento de informações, como vídeos, fotos de Instagram, páginas de Facebook e outros. Os acessos externos que complementam a página são, geralmente, feitos pela tag <iframe>.",
+        "No CSS temos algo chamado pseudo-elementos, como :hover, :active, :visited, :required .... tais recursos são utilizados para marcar melhor nossos elementos e gerar um comportamento mais interessante em um site.",
+        "O display quando configurado com inline-block, possui um detalhe que modifica o modo de exibição: ele interpreta no HTML todas as linhas do bloco de código, incluisive os espaços vazios entre a lista e a imagem. Portanto, quando utilizamos esse recurso, os elementos no HTML precisam estar colados, para que esse espaço não reflita na exibição da pagina.",
+        "Os pseudo-elementos do CSS: after e before, criam espaço para que o CSS atue antes ou depois de um determinado conteúdo ... exemplo: .classe:before { content: '['; } adicionará um colchete aberto antes do conteúdo, já .classe:after { content:']' } adicionára um colchete fechado depois do conteúdo - exibição dos elementos dessa classe ficaria da seguinte maneira: [ conteúdo ]"
+
     ],
     "HTTP": [
         "A arquitetura Cliente-Servidor",
