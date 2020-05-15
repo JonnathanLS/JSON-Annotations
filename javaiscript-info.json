@@ -1,3 +1,88 @@
 {
-    "Conceito do Site": "Um tutorial moderno sobre JavaScript, contemplando tudo que é feito atualmente, do básico ao avançado, com explicações simples, mas detalhadas."
-}
+    "Conceito do Site": "Um tutorial moderno sobre JavaScript, contemplando tudo que é feito atualmente, do básico ao avançado, com explicações simples, mas detalhadas.",
+    "Introdução":{
+        "O que é JavaScript": [
+            "O JavaScript foi criado inicialmente para 'tornar as páginas da web vivas'.",
+            "Os programas nesse idioma são chamados de scripts.",
+            "Eles podem ser escritos diretamente no HTML de uma página da web e executados automaticamente conforme a página é carregada.",
+            "Os scripts são fornecidos e executados como texto sem formatação.",
+            "Eles não precisam de preparação ou compilação especial para serem executados.",
+            "Nesse aspecto, o JavaScript é muito diferente de outra linguagem chamada Java.",
+            "Hoje, o JavaScript pode ser executado não apenas no navegador, mas também no servidor ou em qualquer dispositivo que possua um programa especial chamado 'JavaScript Engine' (Mecanismo Javascript).",
+            "O navegador possui um mecanismo incorporado às vezes chamado de 'máquina virtual JavaScript'.",
+            "Mecanismos diferentes têm nomes de códigos diferentes: V8 - no Chrome e Opera; SpiderMonkey - no Firefox; ... Existem outros codinomes como 'Trident' e 'Chakra' para diferentes versões do IE, 'ChakraCore' para Microsoft Edge, 'Nitro' e 'SquirrelFish' para Safari, etc.",
+            {
+                "Por que é chamado JavaScript?":[
+                    "Quando o JavaScript foi criado, ele inicialmente tinha outro nome: “LiveScript”.",
+                    "Mas o Java era muito popular na época, então foi decidido que o posicionamento de uma nova linguagem como um 'irmão mais novo' do Java ajudaria.",
+                    "Mas, à medida que evoluía, o JavaScript se tornou uma linguagem totalmente independente, com sua própria especificação chamada ECMAScript, e agora não tem nenhuma relação com Java."
+                ],
+                "Como funcionam os motores?":[
+                    "Motores são complicados. Mas o básico é fácil.",
+                    "O mecanismo (incorporado se for um navegador) lê ('analisa') o script.",
+                    "Em seguida, ele converte (“compila”) o script para a linguagem de máquina.",
+                    "E então o código da máquina é executado, bem rápido.",
+                    "O mecanismo aplica otimizações em cada etapa do processo.",
+                    "Ele assiste o script compilado enquanto é executado, analisa os dados que fluem por ele e otimiza ainda mais o código da máquina com base nesse conhecimento."
+                ]
+            }
+        ],
+        "O que o JS pode fazer no Browser?":[
+            "O JavaScript moderno é uma linguagem de programação 'segura'.",
+            "Ele não fornece acesso de baixo nível à memória ou à CPU, porque foi criado inicialmente para navegadores que não precisam dele.",
+            "Os recursos do JavaScript dependem muito do ambiente em que ele está sendo executado - por exemplo, o Node.js suporta funções que permitem ao JavaScript ler e/ou gravar arquivos arbitrários, executar solicitações de rede etc.",
+            "O JavaScript no navegador pode fazer tudo relacionado à manipulação de páginas da web, interação com o usuário e o servidor da web.",
+            {
+                "Exemplos de Capacidades":[
+                    "Adicione novo HTML à página, altere o conteúdo existente, modifique estilos.",
+                    "Reaja às ações do usuário, execute cliques do mouse, movimentos do ponteiro, pressionamento de teclas.",
+                    "Envie solicitações pela rede para servidores remotos, faça o download e faça upload de arquivos (as chamadas tecnologias AJAX e COMET ).",
+                    "Obtenha e defina cookies, faça perguntas ao visitante, mostre mensagens.",
+                    "Lembre-se dos dados no lado do cliente ('armazenamento local')."
+                ]
+            }
+        ],
+        "O que o JS NÃO pode fazer no Navegador?":[
+            "As habilidades do JavaScript no navegador são limitadas por questões de segurança do usuário.",
+            "O objetivo é impedir que uma página da web ruim acesse informações privadas ou prejudique os dados do usuário.",
+            {
+                "Restrições":[
+                    "O JavaScript em uma página da web não pode ler / gravar arquivos arbitrários no disco rígido, copiá-los ou executar programas.",
+                    "Não possui acesso direto às funções do SO.",
+                    "Navegadores modernos permitem que ele trabalhe com arquivos, mas o acesso é limitado e fornecido apenas se o usuário executar determinadas ações, como 'soltar' um arquivo na janela do navegador ou selecioná-lo por meio de uma tag <input>.",
+                    "Existem maneiras de interagir com a câmera / microfone e outros dispositivos, mas eles exigem permissão explícita do usuário.",
+                    "Uma página habilitada para JavaScript não pode abilitar sorrateiramente uma câmera da web, observar os arredores e enviar as informações à National Security Agency (NSA).",
+                    "Abas (janelas) diferentes geralmente não se conhecem - isso é chamado de 'mesma política de origem' (CORS) - para contornar isso, as duas páginas devem concordar com a troca de dados e conter um código JavaScript especial que lide com isso.",
+                    "Toda essa limitação é, novamente, para a segurança do usuário - uma página da http://anysite.com na qual um usuário abriu não deve ser capaz de acessar outra guia do navegador com a URL http://gmail.com e roubar informações a partir daí.",
+                    "O JavaScript pode se comunicar facilmente pela rede com o servidor de onde veio a página atual, mas sua capacidade de receber dados de outros sites / domínios está prejudicad - rmbora possível, exige um acordo explícito (expresso em cabeçalhos HTTP) do lado remoto, isso é uma limitação de segurança.",
+                    "Esses limites não existem se o JavaScript for usado fora do navegador, por exemplo, em um servidor.",
+                    "Navegadores modernos também permitem extensões / plug-ins que podem solicitar permissões estendidas."
+                ]
+            }
+        ],
+        "O que torna o JavaScript único?":[
+            "Há pelo menos três grandes coisas sobre JavaScript: integração total com HTML / CSS; coisas simples são feitas simplesmente; suportado por todos os principais navegadores e ativado por padrão.",
+            "JavaScript é a única tecnologia de navegador que combina essas três coisas.",
+            "É isso que torna o JavaScript único. É por isso que é a ferramenta mais difundida para criar interfaces de navegador.",
+            "O JavaScript também permite criar servidores, aplicativos móveis, etc."
+        ],
+        "Supersets de Javascript":[
+            "A sintaxe do JavaScript não se adequa às necessidades de todos, pessoas diferentes querem características diferentes.",
+            "Recentemente, apareceu uma infinidade de novos idiomas, que são transpilados (convertidos) para JavaScript antes de serem executados no navegador.",
+            "As ferramentas modernas tornam a transpilação muito rápida e transparente, permitindo que os desenvolvedores codifiquem em outro idioma e a convertam automaticamente 'sob o capô'.",
+            {
+                "Exemplos de Supersets":{
+                    "CoffeeScript": "É um 'açúcar sintático' para JavaScript, ele introduz uma sintaxe mais curta, permitindo escrever código mais claro e preciso.",
+                    "TypeScript": "Está concentrado na adição de 'tipificação estrita de dados' para simplificar o desenvolvimento e o suporte de sistemas complexos, é desenvolvido pela Microsoft.",
+                    "Flow ": "Também adiciona a tipificação de dados, mas de uma maneira diferente, é desenvolvido pelo Facebook.",
+                    "Dart": "É uma linguagem autônoma que possui seu próprio mecanismo que roda em ambientes que não são do navegador (como aplicativos móveis), mas também pode ser transpilada para JavaScript, desenvolvido pelo Google."
+                }
+            }
+        ],
+        "Resumo":[
+            "O JavaScript foi criado inicialmente como um idioma somente para navegador, mas agora também é usado em muitos outros ambientes.",
+            "Hoje, o JavaScript tem uma posição única como a linguagem de navegador mais amplamente adotada, com total integração com HTML / CSS.",
+            "Existem muitos idiomas que são 'transpilados' para JavaScript e fornecem certos recursos - é recomendável dar uma olhada neles, pelo menos brevemente, depois de dominar o JavaScript."
+        ]
+    }
+}   
