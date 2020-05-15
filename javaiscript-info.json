@@ -84,5 +84,41 @@
             "Hoje, o JavaScript tem uma posição única como a linguagem de navegador mais amplamente adotada, com total integração com HTML / CSS.",
             "Existem muitos idiomas que são 'transpilados' para JavaScript e fornecem certos recursos - é recomendável dar uma olhada neles, pelo menos brevemente, depois de dominar o JavaScript."
         ]
-    }
+    },
+    "Manuais e especificações":{
+        "Especificação":[
+            "A especificação ECMA-262 contém as informações mais detalhadas, detalhadas e formalizadas sobre JavaScript. Ele define o idioma.",
+            "Mas sendo formalizado, é difícil entender a princípio. Portanto, se você precisar da fonte mais confiável de informações sobre os detalhes do idioma, a especificação é o lugar certo. Mas não é para uso diário.",
+            "Uma nova versão de especificação é lançada todos os anos - entre essas versões, o rascunho de especificação mais recente está em https://tc39.es/ecma262/.",
+            "Para ler sobre os novos recursos avançados, incluindo aqueles 'quase padrão' (chamado 'estágio 3'), consulte as propostas em https://github.com/tc39/proposals."
+        ],
+        "Manuais":[
+            "A Referência JavaScript MDN (Mozilla) é um manual com exemplos e outras informações.",
+            "É ótimo obter informações detalhadas sobre funções individuais de idiomas, métodos etc.",
+            "Pode-se encontrá-lo em https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference .",
+            "Embora, geralmente, é melhor usar uma pesquisa na Internet, basta usar 'MDN [term]' na consulta, por exemplo, https://google.com/search?q=MDN+parseInt para procurar a função parseInt.",
+            "MSDN - Manual da Microsoft com muitas informações, incluindo JavaScript (geralmente conhecido como JScript) - se alguém precisar de algo específico para o Internet Explorer, é melhor ir para lá: http://msdn.microsoft.com/."
+        ],
+        "Compatibilidade":[
+            "JavaScript é uma linguagem em desenvolvimento, novos recursos são adicionados regularmente.",
+            {
+                "Suporte nas Engines":[
+                    "http://caniuse.com - tabelas de suporte por recurso.",
+                    "http://caniuse.com/#feat=cryptography - para ver quais mecanismos suportam funções modernas de criptografia.",
+                    "https://kangax.github.io/compat-table - uma tabela com recursos e mecanismos de idioma que os suportam ou não."
+                ]
+            },
+            "Todos esses recursos são úteis no desenvolvimento da vida real, pois contêm informações valiosas sobre detalhes do idioma, seu suporte etc."
+        ]
+    },
+    "Console do Desenvolvedor":[
+        "O código é propenso a erros. Você provavelmente cometerá erros ... Oh, do que estou falando? Você absolutamente cometerá erros, pelo menos se for humano, não um robô .",
+        "Mas no navegador, os usuários não veem erros por padrão - portanto, se algo der errado no script, não veremos o que está quebrado e não podemos corrigi-lo.",
+        "Para ver erros e obter muitas outras informações úteis sobre scripts, 'ferramentas de desenvolvedor' foram incorporadas nos navegadores.",
+        "A maioria dos desenvolvedores se inclina para o Chrome ou Firefox para desenvolvimento porque esses navegadores têm as melhores ferramentas de desenvolvedor.",
+        "Outros navegadores também fornecem ferramentas para desenvolvedores, às vezes com recursos especiais, mas geralmente estão reproduzindo atualizações do Chrome ou Firefox.",
+        "A maioria dos desenvolvedores tem um navegador 'favorito' e muda para outros se um problema for específico do navegador.",
+        "As ferramentas de desenvolvedor nos permitem ver erros, executar comandos, examinar variáveis ​​e muito mais.",
+        "Eles podem ser abertos com a tecla de atalho F12 para a maioria dos navegadores no Windows - necessidades do Chrome para Mac , Safari: (é necessário ativar primeiro). Cmd+Opt+JCmd+Opt+C"
+    ]
 }   
