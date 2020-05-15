@@ -252,6 +252,18 @@
         ]
     },
     "JavaScript": {
+        "JS Primeiros Passos":{
+            "Introdução":[
+                "Antigamente para começar com o javascript em tempo real necessitavamos de um navegador e através da ferramenta de desenvolvedor conseguiamos realizar operações necessárias em tempo de execução, hoje o node.js facilita esse processo, sem a necessidade de um navegador.",
+                "Podemos salvar valores dentro de variáveis, eses valores ficam salvos dentro da memória do computador e podem ser acessados em outros lugares do nosso código.",
+                "Quando colocamos algo entre aspas o interpretador do JS entende aquilo como sendo um texto literal.",
+                "JS é case sensitive, linguagem sensivel a maisculo e minusculo, diferencias letras",
+                "A falta de padronização entre os nomes das variáveis pode gerar muitos problemas no futuro da aplicação e os programadores não saberão quando usar cada tipo de nomenclatura;",
+                "Sempre que declaramos uma variável estamos reservando um espaço de memória no computador.",
+                "Listas sempre começam a contagem de elementos a partir do 0 então o index 2 mostra o terceiro elemento da lista.",
+                "ao colocarmos um break dentro do laço estamos falando para o interpretador que quando ele chegar nessa linha ele deve sair do laço independentemente de outras condições."
+            ]
+        },
         "Introdução":[
             "Por que estudar Javascript? É uma linguagem que, além de ser a padrão nos navegadores atuais, vem expandindo para outras áreas como servidores, banco de dados e até plataformas de Internet of Things.",
             "Tudo que declaramos dentro da tag <script> é interpretado como Javascript quando o navegador passar por ali.",
