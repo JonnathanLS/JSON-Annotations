@@ -1,0 +1,42 @@
+{
+    "Jasmine":{
+        "Introdução": [],
+        "Benefícios": "O que ganhamos com isso? Segurança. Se algum desenvolvedor, por descuido, fizer alguma alteração errada, o teste rapidamente pegará. O desenvolvedor está o tempo todo alterando código que já funciona; e sabemos que é difícil lembrar de todos os possíveis cenários. É para isso que o teste está lá. Para nos dar segurança em caso de mudanças!",
+        "Teste": {
+          "Cenário": "Todo teste é dividido em três partes: cenário, ação e validação.",
+          "Escopo": {
+            "Cenário": "É o que daremos de entrada para o método que queremos testar.",
+            "Ação": "É o método que queremos testar (no caso, encontra()).",
+            "Validação": "É a hora que verificamos se a saída bate com o que estávamos esperando."
+          }
+        },
+        "Test Data Builders": "São construtores de dados para testes. Esse é um padrão muito comum, usado em testes escritos em qualquer linguagem de programação, para facilitar a criação dos cenários dos testes. E veja só, se qualquer coisa mudar no processo de criação de um paciente, mudaremos em um único lugar.",
+        "Método afterEach": "Em testes de unidade, onde testamos cada pedaço do nosso código isolado do resto, ele é menos útil. Em testes de integração, podemos usá-lo para liberar algum possível recurso que alocamos para determinado teste.",
+        "Códigos de Interfaces": "Devemos separar as responsabilidades ao máximo. Regras de negócio de um lado, manipulação de interface em outro. Assim, testar a regra de negócio fica fácil!",
+        "Unitário vs Funcional": {
+          "Teste Unitário": "O teste de unidade é aquele que testa uma unidade (uma classe, por exemplo) isolado do resto. Esse tipo de teste não se preocupa com a integração daquela unidade com o resto. É rápido, mas não tão real.",
+          "Teste Funcional": "O teste de sistema é aquele que testa o sistema como uma caixa preta. Ele não conhece detalhes de implementação, e testa o sistema totalmente integrado. É um teste mais demorado, mas muito parecido com o mundo real."
+        },
+        "TDD": {
+          "Conceito": "É uma técnica de desenvolvimento de software, onde escrevemos um teste antes do código: escrevemos um teste; rodamos e o vimos falhar; em seguida, escrevemos o código mais simples para passar o teste; rodamos-o novamente, vemos passar; por fim, refatoramos nosso código para que ele fique melhor e mais claro.",
+          "VAntagens": [
+            "Se sempre escrevermos o teste antes, garantimos que todo nosso código já 'nasce' testado;",
+            "Temos segurança para refatorar nosso código, afinal sempre refatoraremos com uma bateria de testes que garante que não quebraremos o comportamento já existente;",
+            "Como o teste é a primeira classe que usa o seu código, você naturalmente tende a escrever código mais fácil de ser usado e, por consequência, mais fácil de ser mantido."
+          ]
+        },
+        "Pendentes": [
+          "O expect é o método auxiliar que nos ajuda a fazer as asserções necessárias.",
+          "É sempre uma boa prática realizar o teste objetivando sua falha.",
+          "Quando temos testes que passam juntos e quebram juntos, dizemos que ambos pertencem a mesma classe de equivalência.",
+          "Sempre que tiver testes que são de alguma forma agrupados/similares, descreva-os e junte-os.",
+          "Sempre que você tiver objetos complicados de serem criados, ou que sofrem modificações constantes, crie Builders pra eles.",
+          "Sempre que tiver código repetido em seus testes, isole-os de alguma forma. Use o beforeEach, crie métodos privados, use test data builders e etc. Escreva código de teste de qualidade.",
+          {
+            "Classes de equivalência": "É o nome que damos para quando temos testes 'parecidos', que exercitam o mesmo caminho no código de produção. Idealmente devemos ter apenas um único teste por classe de equivalência. Afinal, se dois testes exercitam o mesmo trecho de código, então ambos passarão e falharão no mesmo momento, tornando um deles desnecessário.",
+            "Quantidade de Testes?": " A pergunta que devemos sempre nos fazer é: existe alguma maneira de um daqueles cenários falhar e o outro não? Se o desenvolvedor sente que sim, então ele deve escrever testes separados. Se ele sentir que não, então apenas um teste é suficiente.",
+            "Nome dos Testes?": "O nome dos nossos testes devem deixar claro o que aquele teste faz. O desenvolvedor não deveria precisar ler a implementação do teste para entender o que está sendo testado. E, como você pode passar uma string maior para isso, abuse dessa vantagem. Escreva nomes de testes claros."
+          }
+        ]
+    }
+}
