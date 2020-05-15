@@ -39,8 +39,19 @@
         "A tag <iframe> é específica para abrir 'janelas' em nosso site, com proporções definidas e endereço da informação. Podemos fazer o msemo com outros serviços que apresentem essa possibilidade de compartilhamento de informações, como vídeos, fotos de Instagram, páginas de Facebook e outros. Os acessos externos que complementam a página são, geralmente, feitos pela tag <iframe>.",
         "No CSS temos algo chamado pseudo-elementos, como :hover, :active, :visited, :required .... tais recursos são utilizados para marcar melhor nossos elementos e gerar um comportamento mais interessante em um site.",
         "O display quando configurado com inline-block, possui um detalhe que modifica o modo de exibição: ele interpreta no HTML todas as linhas do bloco de código, incluisive os espaços vazios entre a lista e a imagem. Portanto, quando utilizamos esse recurso, os elementos no HTML precisam estar colados, para que esse espaço não reflita na exibição da pagina.",
-        "Os pseudo-elementos do CSS: after e before, criam espaço para que o CSS atue antes ou depois de um determinado conteúdo ... exemplo: .classe:before { content: '['; } adicionará um colchete aberto antes do conteúdo, já .classe:after { content:']' } adicionára um colchete fechado depois do conteúdo - exibição dos elementos dessa classe ficaria da seguinte maneira: [ conteúdo ]"
-
+        "Os pseudo-elementos do CSS: after e before, criam espaço para que o CSS atue antes ou depois de um determinado conteúdo ... exemplo: .classe:before { content: '['; } adicionará um colchete aberto antes do conteúdo, já .classe:after { content:']' } adicionára um colchete fechado depois do conteúdo - exibição dos elementos dessa classe ficaria da seguinte maneira: [ conteúdo ]",
+        "Os seletores avançados, uma forma específica de fazermos seleção de elementos de maneira mais rebuscada.",
+        "Com a propriedade calc do CSS3 é possível realizar contas (operações aritméticas), como por exemplo: deixar um elemento de 100% de largura com o equivalente a um terço do elemento pai, menos 10px => 'width: calc( 33% - 10px )'",
+        "A propriedade charset serve para que todos os usuários vejam o site com o dicionário correto",
+        "O HTML é dividido em duas partes. A primeira delas é o head, e a segunda é o body. Vamos pensar o seguinte, traduzindo os nomes: head é cabeça e body é corpo. Se pensarmos em um documento, a cabeça são as informações que estamos passando para o navegador e o corpo são as informações que queremos exibir na página.",
+        "Na estrutura correta do HTML, inserimos as informações que queremos passar para o navegador no head e as tags de conteúdo no body.",
+        "Folha de estilo em cascata: como é uma folha de estilos em cascata, a cascata vai descendo, e o que eu faço no elemento pai reflete para o elemento filho.",
+        "Só com um arquivo externo, e fazendo referência a esse arquivo, podemos usar o mesmo CSS em páginas diferentes.",
+        "Podemos representar cores no CSS, com : Hexadecimal, RGB e com os nomes das cores ... por exemplo, podemos representar a cor vermelha com o nome red, o hexadecimal #FF0000 e o RGB rgb(255,0,0).",
+        "A tag div é a tag específica para dividir o conteúdo. Ela não tem outra função além dessa.",
+        "A class serve para replicarmos a aplicação do nosso CSS, sem precisar copiar e colá-lo em vários elementos. Aplicamos a classe para isso.",
+        "A tag header é uma tag de conteúdo do HTML, e não uma tag de estrutura. Não confunda head com header.",
+        "Em relação a propriedade opacidade: todos os elementos e todas as cores podem ter uma camada de opacidade."
     ],
     "HTTP": [
         "A arquitetura Cliente-Servidor",
@@ -152,6 +163,7 @@
     },
     "HTML" : {
         "Conceitos" : [
+            "Uma página web tem o seu conteúdo com HTML (hyper text markup language), de modo que nós usamos o HTML para fazer marcação de texto.",
             "A linguagem HTML serve para marcar conteúdo, ou seja, especificar o que cada letra, palavra e frase significa. ",
             "Usamos ela para criar páginas pois, assim, o navegador e outras ferramentas que trabalham na Internet conseguem analisar e processar nosso conteúdo, apresentando-o de forma adequada para os usuários.",
             "A codificação UTF-8 abrange praticamente todos os sistemas de escritas usadas pelo mundo todo. Além disso, todos os computadores vêm com suporte a essa codificação. Assim, se queremos que nossas páginas sejam acessíveis por todos, a codificação UTF-8 é a melhor opção."
@@ -161,12 +173,17 @@
             "Atualmente, usamos a instrução <!DOCTYPE html> para indicar que usamos a última versão do HTML.",
             "Antigamente, era necessário usar <!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01//EN' 'http://www.w3.org/TR/html4/strict.dtd'>, por exemplo, para indicar que estávamos usando a versão 4 do HTML na sua variante estrita."
         ],
-        "Tags" : {
-            "<title>" : "Serve para passar para o navegador qual o título da aba/janela em que a página será exibida.",
-            "<h1>" : "Serve para mostrar para o usuário qual o título principal do conteúdo da página.",
-            "<meta>" : "Serve para indicar a codificação de texto que está sendo utilizado e para o navegador ler e interpretar examente da forma que queremos.",
-            "<head>" : "Serve para conter as informações da páginas, para o navegador entender como será a página, ou seja, trata-se de Metadainformações",
-            "<nav>" : "Indicar que uma determinada região da página contém links para navegar para outras partes do site"
+        "Tag" : {
+            "Conceito": "Para marcarmos esse texto, precisamos usar o que são chamadas de “tags”. O formato de uma tag é um sinal de < um nome qualquer e um sinal de >. Isso é o que fecha uma tag. É o conteúdo que vamos ter para uma tag.",
+            "Diferença entre tags": "As tags são semânticas e para cada uma delas temos um significado e um resultado diferente.",
+            "DOCTYPE": "A tag DOCTYPE serve para informar ao navegador qual versão do HTML estamos usando.",
+            "Tags":{
+                "<title>" : "Serve para passar para o navegador qual o título da aba/janela em que a página será exibida.",
+                "<h1>" : "Serve para mostrar para o usuário qual o título principal do conteúdo da página.",
+                "<meta>" : "Serve para indicar a codificação de texto que está sendo utilizado e para o navegador ler e interpretar examente da forma que queremos.",
+                "<head>" : "Serve para conter as informações da páginas, para o navegador entender como será a página, ou seja, trata-se de Metadainformações",
+                "<nav>" : "Indicar que uma determinada região da página contém links para navegar para outras partes do site"
+            }
         },
         "Atributos": {
             "alt": [ 
@@ -186,12 +203,22 @@
                 "Se usarmos os nomes direita e esquerda, acabaremos com nomes de classes muito genéricos que possivelmente perderão o sentido quando resolvermos alterar algum detalhe no visual da página.",
                 "A única vantagem de usar nomes genéricos é de serem bem reaproveitáveis. Podemos usá-los em quaisquer elementos que queiramos fazer flutuar à direita ou à esquerda. Porém, nosso HTML começará a ter código relativo à visualização, ou seja, começaremos a misturar conteúdo e visualização."
             ]
-        }
+        },
+        "Resumo": [
+            "Com a tag DOCTYPE, definimos qual versão do HTML estamos utilizando.",
+            "A tag <html>, que marca o conteúdo a ser renderizado no navegador e dentro desta tag, podemos definir a linguagem da página, através da propriedade lang.",
+            "Passamos as informações do encoding da nossa página para o navegador, através da tag <meta> e da propriedade charset.",
+            "Definimos o título de uma página, através da tag <title>.",
+            "Separamos as informações que estão sendo passadas para o navegador, utilizando a tag <head>."
+        ]
     },
     "CSS":{
         "Definição": [
             "Enquanto o HTML é usado para estruturar conteúdos da página, o CSS para formatar conteúdos estruturados.",
             "CSS é uma linguagem para estilos que define o layout de documentos HTML. Por exemplo, CSS controla fontes, cores, margens, linhas, alturas, larguras, imagens de fundo, posicionamentos e muito mais.",
+            "O CSS é a forma como mexemos em cada um dos elementos granularmente, em cada um dos pontos desses elementos para podermos apresentar o nosso site do modo como quisermos.",
+            "Enquanto o HTML é usado para estruturar conteúdos da página, o CSS serve para formatar os conteúdos estruturados.",
+            "CSS é uma linguagem para estilos que define o layout de documentos HTML. Por exemplo, CSS controla fontes, cores, margens, linhas, alturas, larguras, imagens de fundo, posicionamentos e muito mais."
         ],
         "Fontes":[
             "A medida 'px' é uma unidade de medida absoluta. Para termos um CSS mais flexível, é interessante usar medidas relativas, como em e a medida de porcentagem.",
@@ -201,6 +228,12 @@
             "A medida 'ch' toma como base A largura do caractere '0' (zero).",
             "A medida '%' porcentagem dependendo do contexto utilizado, pode ser à largura, à altura ou ao tamanho de fonte do pai do elemento."
         ],
+        "Seletores Avançados":{
+            "Seletor >": "Para acessar os filhos de determinado elemento. Por exemplo, para acessar todos os p dentro de main: main > p { }",
+            "Seletor +": "Para acessar o primeiro irmão de determinado elemento. Por exemplo, para acessar o primeiro p após um img: img + p { }",
+            "Seletor ~": "Para acessar todos os irmãos de determinado elemento. Por exemplo, para acessar todos os p após um img: img ~ p { }",
+            "Seletor not": "Para acessar os elementos, exceto algum. Por exemplo, para acessar todos os p dentro de main, exceto o p que tem id missao: main p:not(#missao) { }"
+        },
         "Propriedades":{
             "Box-Sizing":[
                 "Quando aplicamos o valor border-box para a propriedade box-sizing nos elementos <blockquote>, vemos que o tamanho deles aparentemente diminui. Isso acontece porque estamos mudando a forma como o navegador mede a largura dos elementos.",
