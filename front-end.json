@@ -252,16 +252,41 @@
         ]
     },
     "JavaScript": {
-        "JS Primeiros Passos":{
-            "Introdução":[
-                "Antigamente para começar com o javascript em tempo real necessitavamos de um navegador e através da ferramenta de desenvolvedor conseguiamos realizar operações necessárias em tempo de execução, hoje o node.js facilita esse processo, sem a necessidade de um navegador.",
-                "Podemos salvar valores dentro de variáveis, eses valores ficam salvos dentro da memória do computador e podem ser acessados em outros lugares do nosso código.",
-                "Quando colocamos algo entre aspas o interpretador do JS entende aquilo como sendo um texto literal.",
-                "JS é case sensitive, linguagem sensivel a maisculo e minusculo, diferencias letras",
-                "A falta de padronização entre os nomes das variáveis pode gerar muitos problemas no futuro da aplicação e os programadores não saberão quando usar cada tipo de nomenclatura;",
-                "Sempre que declaramos uma variável estamos reservando um espaço de memória no computador.",
-                "Listas sempre começam a contagem de elementos a partir do 0 então o index 2 mostra o terceiro elemento da lista.",
-                "ao colocarmos um break dentro do laço estamos falando para o interpretador que quando ele chegar nessa linha ele deve sair do laço independentemente de outras condições."
+        "JS Alura Novo Curso":{
+            "Primeiros Passos":{
+                "Introdução":[
+                    "Antigamente para começar com o javascript em tempo real necessitavamos de um navegador e através da ferramenta de desenvolvedor conseguiamos realizar operações necessárias em tempo de execução, hoje o node.js facilita esse processo, sem a necessidade de um navegador.",
+                    "Podemos salvar valores dentro de variáveis, eses valores ficam salvos dentro da memória do computador e podem ser acessados em outros lugares do nosso código.",
+                    "Quando colocamos algo entre aspas o interpretador do JS entende aquilo como sendo um texto literal.",
+                    "JS é case sensitive, linguagem sensivel a maisculo e minusculo, diferencias letras",
+                    "A falta de padronização entre os nomes das variáveis pode gerar muitos problemas no futuro da aplicação e os programadores não saberão quando usar cada tipo de nomenclatura;",
+                    "Sempre que declaramos uma variável estamos reservando um espaço de memória no computador.",
+                    "Listas sempre começam a contagem de elementos a partir do 0 então o index 2 mostra o terceiro elemento da lista.",
+                    "Ao colocarmos um break dentro do laço estamos falando para o interpretador que quando ele chegar nessa linha ele deve sair do laço independentemente de outras condições."
+                ]
+            },
+            "Orientação a Objetos":[
+                "A criação de uma classe pode ser feita através da palavra-chave class e com isso definimos quais atributos queremos que essa classe possua.",
+                "Classes definem uma forma de organizarmos uma série de informações repetidas no nosso código e por isso devemos usar elas quando temos código que se repete e que faz parte de um contexto coeso.",
+                "Função e método são termos sinônimos e que nós ajudam a criar um vocabulário mais rico dentro do nosso sistema",
+                "Um método define o comportamento ou a maneira de fazer algo, e pode receber qualquer quantidade de parâmetros.",
+                "Por padrão no JS utilizamos o '_' para indicar que um atributo é privado e não deveria ser alterado,  e apesar de ainda ser possível alterar essa propriedade isso é considerado uma má prática e estamos quebrando o encapsulamento da classe.",
+                "Atualmente no Js nenhum atributo ou método é realmente privado, é uma linguagem de escopo aberto e por isso é possível visualizar qualquer atributo ou propriedade de nossa classe.",
+                "A organização de um projeto de programação é algo muito importante para que conforme o sistema crescer encontrarmos mais facilmente as classes e lugares que queremos alterar.",
+                "Criamos módulos para compartilhar código entre os diferentes arquivos do meu sistema, ajudando na organização dele.",
+                "Ao criarmos um programa em qualquer linguagem de programação precisamos utilizar variáveis para guarda valores durante a execução de nossos programas, e cada uma dessas variáveis é armazenada em um lugar da memória do computador.",
+                "Dependendo dos valores que uma variável guarda o JS trata ela de forma diferente, passando ela como uma cópia de seu valor ou como uma referência ao espaço de memória onde ela está guardada.",
+                "Tipos primitivos são sempre passados como um valor, enquanto que tipos não primitivos sempre são passados por referência.",
+                "Tipos primitivos são os valores mais simples que a linguagem consegue trabalhar e geralmente são implementados no nível mais baixo da linguagem, isso significa que eles não são representados como um objeto e por isso não possuem métodos ou atributos.",
+                "Um tipo primitivo é simplesmente um valor em sua forma mais simples de representação, e les também são imutáveis, uma vez declarados seu valor nunca muda.",
+                "Tipos Primitivos: String (texto); Number (número); Boolean; Null; undefined; Symbol.",
+                "Qualquer outro tipo que encontramos em nossas aplicações, como Objetos, Arrays, etc... não são tipos primitivos e por isso o JS trata eles de forma diferente.",
+                "Variáveis que não são primitivas são mutáveis por natureza e podem conter uma estrutura de dados grande e complexa o que tornaria a operação de cópia desses valores ineficiente.",
+                "Quando criamos um objeto dentro do JS ele reserva um espaço de memória no local que chamamos de Heap, ao fazer isso o que ele guarda na variável que criamos não é o valor do Objeto que criamos e sim o endereço de memória onde os valores estão salvos.",
+                "Ao passarmos uma variável que 'guarda' um objeto para um método dentro do JS o que estamos passando é apenas o endereço de memória que aquela função deve usar para acessar os valores do objeto.",
+                "Como as variáveis não primitivas apenas guardam um endereço para o espaço de memória falamos que elas guardam uma referência para onde aquele objeto está guardado e por isso falamos que são um 'tipo de referência' enquanto que os primitivos são 'um tipo de valor'.",
+                "Usando assessores do tipo set podemos alterar a regra de como um atributo pode ou não ser modificado sem precisar alterar isso em diversos pontos do código, assim se qualquer regra de atribuição mudar só precisamos modificar um único lugar.",
+                "Usar assessores do tipo set é uma boa prática para garantirmos que a atribuição de propriedades está sempre segura, chamamos essa ideia de proteger atributos de nossas classes de encapsulamento e devemos sempre manter o máximo de encapsulamento possível."
             ]
         },
         "Introdução":[
