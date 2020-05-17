@@ -1,4 +1,29 @@
 {
+    "Gerais":{
+        "Artigos Interessantes":[
+            "https://rockcontent.com/blog/plataformas-de-cursos-online/"
+        ],
+        "Plataformas de Tecnologia":[
+            "https://rocketseat.com.br/",
+            "https://www.alura.com.br/",
+            "https://code.org/",
+            "https://www.codecademy.com/pt-BR",
+            "https://www.coursera.org/",
+            "https://www.cursoemvideo.com/",
+            "https://assinatura.eduk.com.br/",
+            "https://pt.khanacademy.org/",
+            "https://br.udacity.com/"
+        ],
+        "Sites Relevantes":[
+            "https://jsonplaceholder.typicode.com/",
+            "https://app.fakejson.com/member",
+            "https://becode.com.br/"
+        ]
+    },
+    "Utilitários de Desenvolvimento Frontend":[
+        "https://fonts.google.com/"
+    ],
+    "Git": "https://learngitbranching.js.org/?NODEMO=&locale=pt_BR",
     "Produtividade":[
         "https://efetividade.net/2007/09/as-vantagens-de-usar-um-caderno-para-registrar-suas-anotacoes.html",
         "https://lisandrathome.jusbrasil.com.br/artigos/298579230/6-dicas-para-organizar-uma-agenda-de-trabalho-e-conseguir-mais-produtividade"
