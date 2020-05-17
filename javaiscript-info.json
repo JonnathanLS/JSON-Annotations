@@ -190,6 +190,101 @@
                 "Estas ferramentas removem comentários, para que não apareçam nos scripts de trabalho.",
                 "Os comentários não têm efeitos negativos sobre a produção."
             ]
+        },
+        "Uso Estrito":[
+            "Durante muito tempo, o JavaScript evoluiu sem problemas de compatibilidade.",
+            "Novos recursos foram adicionados ao idioma, enquanto a funcionalidade antiga não foi alterada.",
+            "Isso teve o benefício de nunca quebrar o código existente, mas a desvantagem foi que qualquer erro ou decisão imperfeita dos criadores do JavaScript ficou para sempre na linguagem.",
+            "Esse foi o caso até 2009, quando o ECMAScript 5 (ES5) apareceu, ele adicionou novos recursos ao idioma e modificou alguns dos existentes.",
+            "Para manter o código antigo funcionando, a maioria das modificações do ES5 está desativada por padrão, você precisa ativá-los explicitamente com uma diretiva especial: 'use strict'.",
+            "A diretiva se parece com uma string: \"use strict\"ou 'use strict', e quando está localizado na parte superior de um script, o script inteiro funciona da maneira 'moderna'.",
+            "Não existe uma diretiva como 'no use strict', que reverteria o mecanismo para o comportamento antigo, quando entramos no modo estrito, não há como voltar atrás.",
+            "O JavaScript moderno suporta 'classes' e 'módulos' - estruturas de linguagem avançadas, que são ativam o uso estrito automaticamente, ou seja, não precisamos adicionar a 'use strict' diretiva, se os usarmos."
+        ],
+        "Variáveis":{
+            "Introdução":[
+                "Uma variável é um 'armazenamento nomeado' para dados.",
+                "Para criar uma variável em JavaScript, use a palavra - chave 'let' ou 'const'.",
+                "A declaração a seguir cria (em outras palavras: declara ) uma variável com o nome 'mensagem': let message - em scripts mais antigos, você também pode encontrar outra palavra-chave: 'var' em vez de 'let'.",
+                "A palavra-chave 'var' é quase a mesma que let, ele também declara uma variável, mas de uma maneira um pouco diferente da “velha escola”, tendo diferença em seu escopo, var têm escopo global, enquanto let e const possuêm escopo local."
+            ],
+            "Analogia da Vida Real":[
+                "Podemos entender facilmente o conceito de uma 'variável' se o imaginarmos como uma 'caixa' de dados, com um adesivo com um nome exclusivo.",
+                "A variável mensagem pode ser imaginada como uma caixa rotulada 'mensagem' com o valor 'Hello!' nela (conteúdo dentro da caixa).",
+                "Podemos colocar qualquer valor (conteúdo) na caixa, e também podemos alterá-lo quantas vezes quisermos.",
+                "Quando o valor é alterado, os dados antigos são removidos da variável",
+                "Também podemos declarar duas variáveis ​​e copiar dados de uma para a outra.",
+                {
+                    "Linguagens Funcionais":[
+                        "É interessante notar que existem linguagens de programação funcionais , como Scala ou Erlang, que proíbem a alteração de valores de variáveis.",
+                        "Nesses idiomas, uma vez que o valor é armazenado 'na caixa', ele fica lá para sempre.",
+                        "Se precisarmos armazenar outra coisa, o idioma nos obriga a criar uma nova caixa (declarar uma nova variável), de modo que não podemos reutilizar o antigo.",
+                        "Embora possa parecer um pouco estranho à primeira vista, essas linguagens são bastante capazes de desenvolvimento sério.",
+                        "Mais do que isso, existem áreas como cálculos paralelos em que essa limitação confere certos benefícios.",
+                        "Estudar esses idiomas (mesmo que você não pretenda usá-lo em breve) é recomendado para ampliar a mente."
+                    ]
+                }
+            ],
+            "Nomenclatura":{
+                "Limitações":[
+                    "O nome deve conter apenas letras, dígitos ou os símbolos $ e _.",
+                    "O primeiro caractere não deve ser um dígito.",
+                    "Quando o nome contém várias palavras, o camelCase é comumente usado.",
+                    "O cifrão '$' e o sublinhado '_'também podem ser usados ​​nos nomes, são símbolos regulares, assim como letras, sem nenhum significado especial."
+                ],
+                "Alertas Importantes": [
+                    "Variáveis ​​nomeadas 'apple' e 'AppLE' são duas variáveis ​​diferentes.",
+                    "Letras não latinas são permitidas, mas não recomendadas - é possível usar qualquer idioma, incluindo letras cirílicas ou mesmo hieróglifos: let имя = '...'; let 我 = '...';",
+                    "Tecnicamente, não há erro, letras latinas são permitidas, mas existe uma tradição internacional para usar o inglês em nomes de variáveis, mesmo se estivermos escrevendo um pequeno script, ele pode ter uma vida longa pela frente, pessoas de outros países podem precisar ler algum tempo.",
+                    "Há uma lista de palavras reservadas , que não podem ser usadas como nomes de variáveis ​​porque são usadas pelo próprio idioma - por exemplo: let, class, return, e function são reservados.",
+                    "Normalmente, precisamos definir uma variável antes de usá-la. Porém, antigamente, era tecnicamente possível criar uma variável mediante uma mera atribuição do valor sem o uso let. Isso ainda funciona agora se não colocarmos 'use strict' em nossos scripts para manter a compatibilidade com scripts antigos."
+                ],
+                "Constantes":[
+                    "Para declarar uma variável constante (imutável), use em 'const' vez de 'let'",
+                    "Variáveis ​​declaradas usando 'const' são chamadas de 'constantes', elas não podem ser reatribuídos, de modo que uma tentativa de fazer isso causaria um erro.",
+                    "Quando um programador tem certeza de que uma variável nunca será alterada, pode declara-la 'const' para garantir e comunicar claramente esse fato a todos.",
+                    "Existe uma prática generalizada de usar constantes como aliases para valores difíceis de lembrar que são conhecidos antes da execução - essas constantes são nomeadas usando letras maiúsculas e sublinhados.",
+                    "As constantes nomeadas em maiúsculas são usadas apenas como aliases para valores 'codificados'.",
+                    "Geralmente usamos letras maiúsculas para constantes que são 'codificadas, em outras palavras, quando o valor é conhecido antes da execução e diretamente escrito no código.",
+                    {
+                        "Exemplos de Constante em Maiúscula":[
+                            "A variável: const BIRTHDAY = '18.04.1982' ... birthday é conhecido antes da execução, podemos usar maiúsculas para isso.",
+                            "A variável: const age = someCode(BIRTHDAY) ... é avaliado em tempo de execução, hoje temos uma idade, um ano depois de outra, é constante, no sentido de que não muda através da execução do código - mas é um pouco 'menos constante' do que birthday, portanto devemos manter a letra minúscula."
+                        ]
+                    }
+                ],
+                "Nomenclaturas Corretas":[
+                    "Um nome de variável deve ter um significado claro e óbvio, descrevendo os dados que ela armazena.",
+                    "A nomeação de uma variável é uma das habilidades mais importantes e complexas da programação.",
+                    "Uma rápida olhada nos nomes das variáveis ​​pode revelar qual código foi escrito por um iniciante versus um desenvolvedor experiente.",
+                    "Em um projeto real, a maior parte do tempo é gasta modificando e estendendo uma base de código existente, em vez de escrever algo completamente separado do zero.",
+                    "Quando voltamos a algum código depois de fazer outra coisa por um tempo, é muito mais fácil encontrar informações bem rotuladas, em outras palavras, quando as variáveis ​​têm bons nomes.",
+                    "Dedique algum tempo a pensar no nome certo para uma variável antes de declará-la. Isso o recompensará generosamente.",
+                    {
+                        "Boas Práticas":[
+                            "Use nomes legíveis por humanos como userName ou shoppingCart.",
+                            "Fique longe de abreviaturas ou nomes curtos como a, b, c, a menos que você realmente saiba o que está fazendo.",
+                            "Faça nomes maximamente descritivos e concisos - exemplos de nomes ruins são data e value. Tais nomes não dizem nada, mas não há problema em usá-los se o contexto do código tornar excepcionalmente óbvio quais dados ou valores a variável está fazendo referência.",
+                            "Concorde com os termos da sua equipe e em sua própria mente - se um visitante do site é chamado de 'usuário', devemos nomear variáveis ​​relacionadas currentUser ou em newUser em vez de currentVisitor ou newManInTown."
+                        ],
+                        "Reutilização de Variáveis":[
+                            "Existem alguns programadores preguiçosos que, em vez de declarar novas variáveis, tendem a reutilizar as existentes.",
+                            "Como resultado, suas variáveis ​​são como caixas nas quais as pessoas jogam coisas diferentes sem alterar seus adesivos.",
+                            "O que há dentro da caixa agora? Quem sabe? Precisamos nos aproximar e conferir, em suma, uma variável extra é boa, não má.",
+                            "Esses programadores economizam um pouco na declaração de variáveis, mas perdem dez vezes mais na depuração.",
+                            "Navegadores e minificadores de JavaScript modernos otimizam o código suficientemente bem, para que não crie problemas de desempenho",
+                            "O uso de variáveis ​​diferentes para valores diferentes pode até ajudar o mecanismo a otimizar seu código."
+                        ]
+                    }
+                ],
+                "Resumo":[
+                    "Podemos declarar variáveis para armazenar dados usando as palavras-chave: 'var', 'let' ou 'const'.",
+                    "let - é uma declaração de variável moderna.",
+                    "var - é uma declaração variável da velha escola - normalmente, não o usamos.",
+                    "const- é como let, mas o valor da variável não pode ser alterado.",
+                    "As variáveis ​​devem ser nomeadas de uma maneira que permita entender facilmente o que há dentro delas."
+                ]
+            }
         }
     }
     
