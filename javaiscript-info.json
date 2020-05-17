@@ -120,5 +120,78 @@
         "A maioria dos desenvolvedores tem um navegador 'favorito' e muda para outros se um problema for específico do navegador.",
         "As ferramentas de desenvolvedor nos permitem ver erros, executar comandos, examinar variáveis ​​e muito mais.",
         "Eles podem ser abertos com a tecla de atalho F12 para a maioria dos navegadores no Windows - necessidades do Chrome para Mac , Safari: (é necessário ativar primeiro). Cmd+Opt+JCmd+Opt+C"
-    ]
+    ],
+    "Fundamentos":{
+        "Introdução" : {
+            "A tag script": "Os programas JavaScript podem ser inseridos em qualquer parte de um documento HTML com a ajuda da <script>tag.",
+            "Marcação Moderno":[
+                "A <script>tag possui alguns atributos que raramente são usados ​​hoje em dia, mas ainda podem ser encontrados em código antigos.",
+                {
+                    "O atributo type":[
+                        "O antigo padrão HTML, HTML4, exigia um script para ter um type. Geralmente era type='text/javascript'.",
+                        "Atualmente, não é mais necessário o tyoe, além disso, o moderno padrão HTML mudou totalmente o significado desse atributo. Agora, ele pode ser usado para módulos JavaScript."
+                    ],
+                    "O atributo language" :[
+                        "Este atributo foi criado para mostrar o idioma do script.",
+                        "Esse atributo não faz mais sentido porque o JavaScript é o idioma padrão. Não há necessidade de usá-lo."
+                    ]
+                },
+                "Em livros e guias realmente antigos, você pode encontrar comentários dentro de tags <script>.",
+                "Esse truque não é usado no JavaScript moderno. Esses comentários ocultam o código JavaScript de navegadores antigos que não sabiam processar a tag <script>.",
+                "Como os navegadores lançados nos últimos 15 anos não têm esse problema, esse tipo de comentário pode ajudá-lo a identificar códigos realmente antigos."
+            ],
+            "Scripts Externos": [
+                "Uma única tag <script> não pode conter o atributo src e o código.",
+                "Se tivermos muito código JavaScript, podemos colocá-lo em um arquivo separado.",
+                "Os arquivos de script são anexados ao HTML com o atributo src: <script src='/path/to/script.js'></script>",
+                "/path/to/script.js está um caminho absoluto para o script a partir da raiz do site.",
+                "Pode-se também fornecer um caminho relativo a partir da página atual - pr exemplo, src='script.js' significaria um arquivo 'script.js' na pasta atual.",
+                {
+                    "Observações":[
+                        "Como regra, apenas os scripts mais simples são colocados em HTML. Os mais complexos residem em arquivos separados.",
+                        "A vantagem de um arquivo separado é que o navegador fará o download e o armazenará em seu cache.",
+                        "Outras páginas que referenciam o mesmo script o tiram do cache em vez de baixá-lo, portanto, o arquivo é baixado apenas uma vez.",
+                        "Isso reduz o tráfego e torna as páginas mais rápidas."
+                    ]
+                }
+            ],
+            "Resumo":[
+                "Podemos usar uma <script>tag para adicionar código JavaScript a uma página.",
+                "Os atributos type e language não são necessários.",
+                "Um script em um arquivo externo pode ser inserido com <script src='path/to/script.js'></script>."
+            ]
+        },
+        "Estrutura de Código":{
+            "Afirmações":[
+                "Instruções são construções de sintaxe e comandos que executam ações.",
+                "Podemos ter quantas instruções em nosso código quisermos",
+                "As instruções podem ser separadas com um ponto e vírgula.",
+                "Geralmente, as instruções são escritas em linhas separadas para tornar o código mais legível."
+            ],
+            "Ponto e Vírgula":[
+                "Um ponto e vírgula pode ser omitido na maioria dos casos quando existe uma quebra de linha.",
+                "O JavaScript interpreta a quebra de linha como um ponto e vírgula 'implícito', isso é chamado de inserção automática de ponto e vírgula.",
+                "Na maioria dos casos, uma nova linha implica um ponto e vírgula, porém 'na maioria dos casos' não significa 'sempre', em expressões incompletas a inserção automática não ocorre.",
+                "Há situações em que o JavaScript “falha” em assumir um ponto-e-vírgula onde é realmente necessário, os erros que ocorrem nesses casos são bastante difíceis de encontrar e corrigir.",
+                "Exemplo de falha do JS para assumir ponto e virgula pode ser analisado através do script: | alert('There will be an error') [1, 2].forEach(alert) | - o erro na variante sem ponto e vírgula ocorre porque o JavaScript não assume ponto e vírgula antes de colchetes [...].",
+                "No exemplo anterior, como o ponto e vírgula não é inserido automaticamente, o código no primeiro exemplo é tratado como uma única instrução. Veja como o mecanismo o vê: alert('There will be an error')[1, 2].forEach(alert)",
+                "Recomendamos colocar ponto e vírgula entre as instruções, mesmo que sejam separadas por novas linhas.",
+                "Esta regra é amplamente adotada pela comunidade. Vamos observar mais uma vez - é possível deixar ponto e vírgula a maior parte do tempo.",
+                "É mais seguro - especialmente para iniciantes - usá-los."
+            ],
+            "Comentários":[
+                "Com o passar do tempo, os programas se tornam cada vez mais complexos, torna-se necessário adicionar comentários que descrevam o que o código faz e por quê.",
+                "Os comentários podem ser colocados em qualquer lugar do script, eles não afetam sua execução porque o mecanismo simplesmente os ignora.",
+                "Os comentários de uma linha começam com dois caracteres de barra '//', o restante da linha é um comentário, podendo ocupar uma linha completa própria ou seguir uma declaração.",
+                "Os comentários de várias linhas começam com uma barra e um asterisco /*e terminam com um asterisco e uma barra */.",
+                "Comentários aninhados não são suportados, um comentário de várias linhas /*...*/ não pode existir dentro de outro /*...*/.",
+                "Os comentários aumentam a área de cobertura geral do código, mas isso não é um problema.",
+                "Existem muitas ferramentas que minimizam o código antes de publicar em um servidor de produção.",
+                "Estas ferramentas removem comentários, para que não apareçam nos scripts de trabalho.",
+                "Os comentários não têm efeitos negativos sobre a produção."
+            ]
+        }
+    }
+    
+    
 }   
