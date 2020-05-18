@@ -285,6 +285,90 @@
                     "As variáveis ​​devem ser nomeadas de uma maneira que permita entender facilmente o que há dentro delas."
                 ]
             }
+        },
+        "Tipos de Dados":{
+            "Introdução":[
+                "Um valor em JavaScript é sempre de um determinado tipo - por exemplo: uma sequência ou um número.",
+                "Existem oito tipos de dados básicos em JavaScript.",
+                "Podemos colocar qualquer tipo em uma variável - por exemplo: uma variável pode em um momento ser uma sequência e, em seguida, armazenar um número.",
+                "As linguagens de programação que permitem tais coisas, como JavaScript, são chamadas de 'dynamically typed', o que significa que existem tipos de dados, mas as variáveis ​​não estão vinculadas a nenhum deles."
+            ],
+            "Número":[
+                "O tipo de número representa números inteiros e de ponto flutuante.",
+                "Existem muitas operações para números, por exemplo, multiplicação *, divisão /, adição +, subtração -e assim por diante.",                
+                "Além de números regulares, existem os chamados “valores numéricos especiais” que também pertencem a este tipo de dados: Infinity, -Infinity e NaN.",
+                "Infinity representa o infinito matemático ∞. É um valor especial que é maior que qualquer número.",
+                "NaN representa um erro computacional - é o resultado de uma operação matemática incorreta ou indefinida - se houver NaN em algum lugar de uma expressão matemática, ela se propaga para todo o resultado.",
+                "Fazer matemática é 'seguro' em JavaScript - podemos fazer qualquer coisa: dividir por zero, tratar cadeias não numéricas como números, etc - o script nunca irá parar com um erro fatal ('morrer'), na pior das hipóteses, obteremos NaNo resultado."
+            ],
+            "BigInt":[
+                "No JavaScript, o tipo 'número' não pode representar valores inteiros maiores que ( (2 elevado a 53) - 1 ) ou menores que -  ( (2 elevado a 53) - 1 ) para negativos, trata-se de uma limitação técnica causada por sua representação interna.",
+                "Para a maioria dos propósitos, isso é suficiente, mas às vezes precisamos de números realmente grandes, por exemplo, para carimbos de data / hora de criptografia ou precisão de microssegundos.",
+                "O tipo BigInt foi adicionado recentemente ao idioma para representar números inteiros de comprimento arbitrário.",
+                "Um valor BigInt é criado anexando 'n' no final de um número inteiro: const bigInt = 1234567890123456789012345678901234567890n;",
+                "Problemas de compatibilidade: no momento, BigInt há suporte para Firefox / Chrome / Edge, mas não no Safari / IE."
+            ],
+            "String":[
+                "Uma string em JavaScript deve estar entre aspas.",
+                "Tipos de Aspas: Double Quotes => \"Hello\" ; Simple Quotes => 'Hello'; Backticks => `Hello`",
+                "Aspas duplas e simples são 'simples' - praticamente não há diferença entre eles no JavaScript.",
+                "Backticks são citações de 'funcionalidade estendida', eles nos permitem incorporar variáveis ​​e expressões em uma string, envolvendo-as ${…}.",
+                "Utilizando backticks a expressão interna ${…} é avaliada e o resultado se torna parte da string. Podemos colocar qualquer coisa lá: uma variável como name ou uma expressão aritmética como 1 + 2 ou algo mais complexo.",
+                "Em alguns idiomas, existe um tipo especial de 'caractere' para um único caractere. Por exemplo, na linguagem C e em Java, isso é chamado de 'char'.",
+                "Em JavaScript, não existe tipo char, há apenas um tipo: string - uma string pode consistir em apenas um caractere ou muitos deles."
+            ],
+            "Booleano":[
+                "O tipo booleano possui apenas dois valores: truee false.",
+                "Esse tipo é comumente usado para armazenar valores sim / não: true significa 'sim, correto' e false significa 'não, incorreto'.",
+                "Valores booleanos também são resultado de comparações"
+            ],
+            "Nulo":[
+                "O 'null' (valor especial), forma um tipo separado próprio, que contém apenas o valor nulo.",
+                "Em JavaScript, null não é uma 'referência a um objeto inexistente' ou um 'ponteiro nulo', como em alguns outros idiomas.",
+                "Null é apenas um valor especial que representa 'nada', 'vazio' ou 'valor desconhecido'."
+            ],
+            "Indefinido":[
+                "O valor especial undefined também se destaca, faz um tipo próprio, assim como null.",
+                "O significado de undefined é 'valor não atribuído'.",
+                "Se uma variável for declarada, mas não atribuída, seu valor será undefined por padrão.",
+                "Tecnicamente, é possível atribuir explicitamente undefined a uma variável, mas não recomendamos fazer isso.",
+                "Normalmente, é usado null para atribuir um valor 'vazio' ou 'desconhecido' a uma variável, enquanto undefined é reservado como um valor inicial padrão para itens não atribuídos."
+            ],
+            "Objetos e Simbolos":[
+                "O objecttipo é especial, todos os outros tipos são chamados de 'primitivos' porque seus valores podem conter apenas uma única coisa (seja uma string ou um número ou qualquer outra coisa).",
+                "Os objetos são usados ​​para armazenar coleções de dados e entidades mais complexas.",
+                "O tipo symbol é usado para criar identificadores exclusivos para objetos."
+            ],
+            "Operador typeof":[
+                "O typeof operador retorna o tipo do argumento.",
+                "É útil quando queremos processar valores de diferentes tipos de maneira diferente ou apenas queremos fazer uma verificação rápida.",
+                "Ele suporta duas formas de sintaxe: como um operador: typeof x; como uma função: typeof(x), em outras palavras, ele funciona com parênteses ou sem eles. O resultado é o mesmo.",
+                "A sua utilização retorna uma sequência (string) com o nome do tipo.",
+                {
+                    "Observações":[
+                        "O resultado de typeof null é 'object', esse é um erro de comportamento oficialmente reconhecido, proveniente dos primeiros dias do JavaScript e mantido para compatibilidade. Definitivamente, null não é um objeto. É um valor especial com um tipo separado próprio.",
+                        "O resultado de typeof alerté 'function', porque alert é uma função, não há nenhum tipo de “função” especial no JavaScript, as funções pertencem ao tipo de objeto.",
+                        "O typeof trata função de maneira diferente, retornando 'function', isso também vem dos primeiros dias do JavaScript - tecnicamente, esse comportamento não é correto, mas pode ser conveniente na prática."
+                    ]
+                }
+            ],
+            "Resumo":{
+                "Relevantes":[
+                    "Existem 8 tipos de dados básicos em JavaScript",
+                    "O typeof operador nos permite ver qual tipo está armazenado em uma variável - exemplo: typeof xou typeof(x) => retorna uma string com o nome do tipo, como 'string'.",
+                    "Para o retorno de typeof null sendo 'object', esse é um erro no idioma, na verdade não é um objeto."
+                ],
+                "Tipos":{
+                    "number": "para números de qualquer tipo: número inteiro ou ponto flutuante, os números inteiros são limitados por ± 2 53 .",
+                    "bigint": "é para números inteiros de comprimento arbitrário.",
+                    "string": "para cordas. Uma sequência pode ter zero ou mais caracteres, não há um tipo de caractere separado.",
+                    "boolean": "para true/ false.",
+                    "null": "para valores desconhecidos - um tipo independente que possui um único valor null.",
+                    "undefined": "para valores não atribuídos - um tipo independente que possui um único valor undefined.",
+                    "object": "para estruturas de dados mais complexas.",
+                    "symbol": "para identificadores exclusivos."
+                }
+            }
         }
     }
     
