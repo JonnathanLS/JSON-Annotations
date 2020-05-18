@@ -287,6 +287,17 @@
                 "Como as variáveis não primitivas apenas guardam um endereço para o espaço de memória falamos que elas guardam uma referência para onde aquele objeto está guardado e por isso falamos que são um 'tipo de referência' enquanto que os primitivos são 'um tipo de valor'.",
                 "Usando assessores do tipo set podemos alterar a regra de como um atributo pode ou não ser modificado sem precisar alterar isso em diversos pontos do código, assim se qualquer regra de atribuição mudar só precisamos modificar um único lugar.",
                 "Usar assessores do tipo set é uma boa prática para garantirmos que a atribuição de propriedades está sempre segura, chamamos essa ideia de proteger atributos de nossas classes de encapsulamento e devemos sempre manter o máximo de encapsulamento possível."
+            ],
+            "Interfaces e Herança":[
+                "A sintaxe do JavaScript para herdarmos de uma classe ocorre através da palavra extends: 'class Carro extends Veiculo', dessa forma a classe carro herda as propriedades e métodos da classe Veículo",
+                " Com a herança podemos herdar classes que herdam de outras classes. E conforme essa cadeia cresce a complexidade do código tbm cresce. Por isso é considerada uma má prática criarmos árvores de herança muito profundas.",
+                "Em outras linguagens linguagens o tema abstrato e interface contém uma palavra reservada para sua aplicabilidade.",
+                "No JavaScript a aplicabilidade de abstrato e interface,  ocorre através da proteção da Classe e o Método de serem utilizado diretamente, lançando um erro no construtor da Classe que não deve ser inicializada, ou no método que precisa ser sobrescrito.",
+                "Ao desenvolvermos um sistema as classes mais abstratas e genéricas nos ajudam a delimitar os contextos de negócio que estamos trabalhando, mas as classes concretas e especificas nos dão informações mais granulares. Sempre é bom ter a quantidade certa de cada tipo de classe.",
+                "Classes abstratas são pensadas de forma que elas apenas possam ser herdadas por outras, elas nos ajudam a criar abstrações no código e a compartilhar código entre outras classes.",
+                "Métodos abstratos devem ser sobrescritos pelas classes filhas, dessa forma não faz sentido termos um método abstrato fora de uma classe abstrata. Tome esse cuidado quando for criar seu código.",
+                "O JS não é uma linguagem fortemente tipada e por isso não depende apenas dos tipos pré-definidos mas sim se eles possuem ou não as propriedades que queremos utilizar.",
+                "Através do polimorfismo o JS consegue tratar diferentes objetos de maneiras semelhantes e por isso conseguimos autenticar diferentes tipos de objetos em nosso sistema."
             ]
         },
         "Introdução":[
