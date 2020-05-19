@@ -1,10 +1,30 @@
 {
 	"Introdução": [
-		"O Sass é um pré-processador CSS, um CSS com superpoderes, como ele mesmo se denomina. Um desses superpoderes é exatamente o uso de variáveis. Para chamarmos o Sass no CSS utilizamos o cifrão: $cor-padrao: #c24e4b;",
-		"precisamos transformar o arquivo em SCSS, uma das linguagens que o Sass utiliza, a mais parecida com o CSS padrão. Então renomeamos o arquivo com a extensão '.scss'.",
-		"O Sass é um pré-processador CSS, então a primeira coisa que devemos fazer é pedir para que ele compile o arquivo 'estilos.scss', e faremos isso por meio do terminal. O primeiro passo é entrar na pasta do projeto (em que está o arquivo a ser compilado), depois compilamos o arquivo .scss para criar um .css. O comando da compilação é: sass estilos.scss:estilos.css",
-		"O mixin é um trecho de código transformado em variável. A inserção do conteudo do mixin ocorre através do @include",
-		"No HTML, nós indicamos que um elemento é 'filho' de outro quando ele está dentro deste. No Sass, nós temos um recurso interessante para indicar isso, que é o aninhamento (ou nesting, em inglês).",
-		"O uso do '&'' é interessante para não repetirmos código Sass. E o recurso de aninhamento (nesting) como um todo é bacana para evitar ficar repetindo parte dos seletores toda vez que precisamos buscar elementos diferentes dentro de uma mesma hierarquia, por exemplo."
+		"O Sass (Syntactically Awesome StyleSheets) é um pré-processador CSS, um CSS com super-poderes, como ele mesmo se denomina.",
+		"Um desses super-poderes é exatamente o uso de variáveis, para chamarmos o Sass no CSS utilizamos o cifrão: $cor-padrao: #c24e4b, e dentro do CSS, em todos os lugares que essa cor aparece, fazemos o uso da variável com o '$' como prefixo.",
+		"Se tratando de estilização, atualmente o browser entende apenas uma linguagem: o CSS, e para isso precisamos transformar o arquivo em SCSS, uma das linguagens que o Sass utiliza, a mais parecida com o CSS padrão.",
+		"O Sass é um pré-processador CSS, então a primeira coisa que devemos fazer é pedir para que ele compile o arquivo 'seu-arquivo.scss'.",
+		"Pelo terminal, entre na pasta do projeto (em que está o arquivo a ser compilado), e execute o comando da compilação que é: sass entrada.scss:saida.css ... para que compilações ocorram de forma automática, acrescente o parametro: --watch.",
+		"Para utilizarmos comentários específicos apenas do arquivo .scss basta utilizar-mos duas barras ( //) no início do comentário.",
+	],
+	"variáveis":[
+		"Uma variável criada em um contexto específico, só existe ali dentro daquele contexto, como se fosse um universo a parte.",
+		"Para utilização da variável em escopo global, precisamos fazer a criação dessa variável fora de qualquer seletor."
+	],
+	"Mixins":[
+		"O mixin é um trecho de código transformado em variável.",
+		"Assim como as variáveis, o mixin deve ser chamado nos lugares em que precisamos dele.",
+		"A inserção do conteúdo do mixin ocorre através do @include",
+		"Para criar um mixin apenas precisamos fazer o @mixin e dar um nome para ele, e colocar as propriedades desejadas, contendo ainda a possibilidade de deixar a variavel com um padrão caso não seja informada."
+	],
+	"Aninhamento":[
+		"No HTML, nós indicamos que um elemento é 'filho' de outro quando ele está dentro deste.",
+		"No Sass, nós temos um recurso interessante para indicar isso, que é o aninhamento (ou nesting, em inglês).",
+		"O uso do '&' é interessante para não repetirmos código Sass.",
+		"O recurso de aninhamento (nesting) como um todo é bacana para evitar ficar repetindo parte dos seletores toda vez que precisamos buscar elementos diferentes dentro de uma mesma hierarquia.",
+		"Aninhar regras no Sass facilita a manutenção do código quando trabalhamos com seletores como .menu li span.",
+		"Caso qualquer parte desse seletor mude, conseguimos mudar apenas um único lugar, e não em vários como é no CSS atual.",
+		"Devemos tomar cuidado com esse recurso também pois como boa prática de CSS, não devemos ultrapassar três ou quatro itens no seletor, algo como .menu ul li a span não é performático.",		
+		"Aninhar regras deixa nosso código mais flexível, organizado e estruturado."
 	]
 }
