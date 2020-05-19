@@ -369,6 +369,99 @@
                     "symbol": "para identificadores exclusivos."
                 }
             }
+        },
+        "Interação":{
+            "Conceito": "Através do navegador podemos interagir com usuários com alguns funções: alert, prompte confirm.",
+            "Alerta":[
+                "Mostra uma mensagem e aguarda o usuário pressionar 'OK'.",
+                "A mini-janela com a mensagem é chamada de janela modal.",
+                "A palavra 'modal' significa que o visitante não pode interagir com o restante da página, pressionar outros botões, etc., até que tenha lidado com a janela, nesse caso - até que eles pressione 'OK'."
+            ],
+            "Prompt":[
+                "A função prompt aceita dois argumentos: title: o texto para mostrar o visitante; default: um segundo parâmetro opcional, o valor inicial para o campo de entrada.",
+                "Mostra uma janela modal com uma mensagem de texto, um campo de entrada para o visitante e os botões OK / Cancelar.",
+                "O visitante pode digitar algo no campo de entrada rápida e pressionar OK",
+                "O visitante pode cancelar a entrada pressionando Cancelar ou pressionando a tela Esc, então obtemos null como retorno.",
+                {
+                    "Observações":[
+                        "O segundo parâmetro é opcional, mas se não for fornecido, o Internet Explorer inserirá o texto 'undefined' no prompt.",
+                        "Para que as solicitações tenham uma boa aparência no IE, recomendamos sempre fornecer o segundo argumento."
+                    ]
+                }
+            ],
+            "Confirmar":[
+                "A função confirm mostra uma janela modal com um questione dois botões: OK e Cancelar.",
+                "O resultado é true se OK for pressionado ou false se for pressionado Cancelar."
+            ],
+            "Resumo":{
+                "alert": "mostra uma mensagem.",
+                "prompt": "mostra uma mensagem pedindo ao usuário para inserir texto - retorna o texto ou, se você clicar em Esc no botão Cancelar ou null,.",
+                "confirm": "mostra uma mensagem e aguarda o usuário pressionar “OK” ou “Cancelar” - retorna true para OK e false para Cancelar / Esc.",
+                "Considerações":[
+                    "Todos esses métodos são modais: eles interrompem a execução do script e não permitem que o visitante interaja com o restante da página até que a janela seja fechada.",
+                    "Existem duas limitações compartilhadas por todos os métodos descritos.",
+                    "1ª Limitação: a localização exata da janela modal é determinada pelo navegador - normalmente, é no centro.",
+                    "2ª Limitação: a aparência exata da janela também depende do navegador - não podemos modificá-lo.",
+                    "Esse é o preço da simplicidade - existem outras maneiras de mostrar janelas mais agradáveis ​​e uma interação mais rica com o visitante, mas se for 'sinos e assobios' não importam muito, esses métodos funcionam muito bem."
+                ]
+            }
+        },
+        "Conversões":{
+            "Tipos Primitivos":{
+                "Introdução":[
+                    "Na maioria das vezes, operadores e funções convertem automaticamente os valores dados a eles para o tipo certo.",
+                    "Por exemplo: alert converte automaticamente qualquer valor em uma string para mostrá-lo.",
+                    "Operações matemáticas convertem valores em números.",
+                    "Também há casos em que precisamos converter explicitamente um valor para o tipo esperado."
+                ],
+                "String":[
+                    "A conversão de string ocorre quando precisamos do formato texto de um valor.",
+                    "Por exemplo: alert(value) faz isso para mostrar o valor.",
+                    "Também podemos chamar a String(value)função para converter um valor em uma string: let value = true; value = String(value);",
+                    "A conversão de strings é mais óbvia, onde false se torna 'false', null se torna 'null', etc."
+                ],
+                "Numérica":[
+                    "A conversão numérica acontece automaticamente em funções e expressões matemáticas.",
+                    "Por exemplo: quando a divisão é aplicada a não números: alert( '6' / '2' ); // resulta em 3, strings são convertidas para número.",
+                    "Podemos usar a Number(value)função para converter explicitamente a value em um número: let str = '123'; let num = Number(str);",
+                    "A conversão explícita geralmente é necessária quando lemos um valor de uma fonte baseada em string, como um formulário de texto, mas esperamos que um número seja inserido.",
+                    "Se a sequência não for um número válido, o resultado dessa conversão será NaN.",
+                    {
+                        "Regras de Conversão Numérica":[
+                            "Converter undefined se torna NaN",
+                            "Converter null se torna 0",
+                            "Converter true e false se torna 1 e 0",
+                            "Os espaços em branco do início e do fim são removidos - se a sequência restante estiver vazia, o resultado será 0, caso contrário, o número é 'lido' da string - um erro dá NaN.",
+                            {
+                                "Exemplos":[
+                                    "alert( Number('   123   ') ); // 123",
+                                    "alert( Number('123z') );      // NaN (error reading a number at 'z')",
+                                    "alert( Number(true) );        // 1",
+                                    "alert( Number(false) );       // 0"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "Booleana":[
+                    "A conversão booleana é a mais simples.",
+                    "Isso acontece em operações lógicas, mas também pode ser executado explicitamente com uma chamada para Boolean(value).",
+                    "No JavaScript, uma string não vazia é sempre true ou mesmo uma string com 0 ainda será true.",
+                    {
+                        "Regra de Conversão":[
+                            "Valores que são intuitivamente 'esvaziar', como 0, uma cadeia vazia, null, undefined, e NaN, se tornar false.",
+                            "Outros valores se tornam true."
+                        ]
+                    }
+                ],
+                "Resumo":[
+                    "As três conversões de tipo mais usadas são: string, number e boolean.",
+                    "String: ocorre quando produzimos algo - pode ser realizado com String(value) - a conversão para string geralmente é óbvia para valores primitivos.",
+                    "Numeric: ocorre em operações matemáticas - pode ser realizado com Number(value).",
+                    "Boolean: ocorre em operações lógicas - pode ser realizado com Boolean(value).",
+                    "As exceções notáveis ​​em que as pessoas geralmente cometem erros são: undefined é NaN como um número, não 0; e '0' em strings ou apenas contendo espaço como '  ' são verdadeiras como booleanas."
+                ]
+            }
         }
     }
     
