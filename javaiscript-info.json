@@ -462,6 +462,82 @@
                     "As exceções notáveis ​​em que as pessoas geralmente cometem erros são: undefined é NaN como um número, não 0; e '0' em strings ou apenas contendo espaço como '  ' são verdadeiras como booleanas."
                 ]
             }
+        },
+        "Operadores Básicos":{
+            "Terminologias":[
+                "Um operando - é a que operadores são aplicados - por exemplo, na multiplicação de 5 * 2 existem dois operandos: o operando esquerdo é 5 e o operando direito é 2 , ás vezes, as pessoas chamam esses 'argumentos' em vez de 'operandos'.",
+                "Um operador é unário se tiver um único operando - por exemplo, a negação unária -reverte o sinal de um número.",
+                "Um operador é binário se tiver dois operandos."
+            ],
+            "Operações Matemáticas Suportadas":[
+                "Adição +",
+                "Subtração -",
+                "Multiplicação *",
+                "Divisão /",
+                "Restante %",
+                "Exponenciação **.",
+                {
+                    "Observações":[
+                        "O operador restante %, apesar de sua aparência, não está relacionado a percentagem, o resultado de a % bé o restante da divisão inteira de apor b.",
+                        "O operador de exponenciação a ** b multiplica a em b vezes (potência)."
+                    ]
+                }
+            ],
+            "Concatenação de Strings":[
+                "Normalmente, o operador mais + soma números, mas, se o binário +for aplicado a cadeias, ele as mescla (concatena).",
+                "O binário + é o único operador que suporta seqüências de caracteres dessa maneira.",
+                "Outros operadores aritméticos trabalham apenas com números e sempre convertem seus operandos em números."
+            ],
+            "Conversão Numérica Unária":[
+                "O operador + existe em duas formas: a forma binária que usamos acima e a forma unária.",
+                "O + unário ou, em outras palavras, o operador + aplicado a um único valor, não faz nada com os números, mas se o operando não for um número, o unário mais o converterá em um número.",
+                "Praticamente faz a mesma coisa que Number(...), só que é mais curto.",
+                "A necessidade de converter seqüências de caracteres em números surge com muita frequência.",
+                "Por exemplo: se estamos obtendo valores dos campos de formulário HTML, eles geralmente são strings.",
+                "Do ponto de vista de um matemático, a abundância de vantagens pode parecer estranha.",
+                "Do ponto de vista de um programador, não há nada de especial: vantagens unárias são aplicadas primeiro, elas convertem seqüências de caracteres em números e, em seguida, a soma binária as resume."   
+            ],
+            "Operador Precedente":[
+                "Se uma expressão tiver mais de um operador, a ordem de execução será definida por sua precedência ou, em outras palavras, pela ordem de prioridade padrão dos operadores.",
+                "Desde a escola, todos sabemos que a multiplicação na expressão 1 + 2 * 2 deve ser calculada antes da adição, essa é exatamente a mesma coisa da precedência - diz-se que a multiplicação tem uma precedência mais alta que a adição.",
+                "Os parênteses substituem qualquer precedência; portanto, se não estamos satisfeitos com o pedido padrão, podemos usá-los para alterá-lo - por exemplo, escreva (1 + 2) * 2.",
+                "Existem muitos operadores em JavaScript, todo operador tem um número de precedência correspondente.",
+                "Aquele com o número maior de precedência é executado primeiro, se a precedência for a mesma, a ordem de execução será da esquerda para a direita.",
+                "Tabela de Precedência: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence"
+            ],
+            "Operador Atribuição":[
+                "Uma atribuição = também é um operador, ele está listado na tabela de precedência com a prioridade muito baixa de 3.",
+                "É por isso que, quando atribuímos uma variável, como x = 2 * 2 + 1, os cálculos são feitos primeiro e depois o =é avaliado, armazenando o resultado em x.",
+                "O fato do = ser um operador, não uma construção de linguagem 'mágica' tem uma implicação interessante.",
+                "A maioria dos operadores em JavaScript retorna um valor, isso é óbvio para + e -, mas também é verdade para =.",
+                "A chamada 'x = value' grava o valor no x e depois o retorna."
+            ],
+            "Incremento e Decremento": [
+                "O incremento / decremento só pode ser aplicado a variáveis, tentar usá-lo em um valor como 5++ resultará em erro.",
+                "Se o resultado do incremento / decremento não for usado, não haverá diferença em qual forma usar.",
+                "Se quisermos aumentar um valor e usar imediatamente o resultado do operador, precisamos do formato do prefixo.",
+                "Se quisermos incrementar um valor, mas usar o valor anterior, precisamos do formulário postfix.",
+                "Os operadores ++/-- também podem ser usados ​​dentro de expressões, sua precedência é maior que a maioria das outras operações aritméticas.",
+                "Embora tecnicamente aceitável, a notação 'let counter = 1; alert( 2 * counter++ );' geralmente torna o código menos legível, uma linha faz várias coisas - não é bom.",
+                "Ao ler o código, uma rápida varredura ocular “vertical” pode facilmente perder algo assim counter++ e não será óbvio que a variável aumentou - aconselhamos um estilo de 'uma linha - uma ação'"
+            ],
+            "Operadores bit a bit":[
+                "Operadores bit a bit tratam argumentos como números inteiros de 32 bits e trabalham no nível de sua representação binária.",
+                "Esses operadores não são específicos para JavaScript. Eles são suportados na maioria das linguagens de programação.",
+                "Esses operadores são usados ​​muito raramente, quando precisamos mexer com números no nível mais baixo (bit a bit).",
+                "Não precisaremos desses operadores tão cedo, pois o desenvolvimento da Web os utiliza pouco, mas em algumas áreas especiais, como criptografia, eles são úteis.",
+                "Você pode ler o artigo Bitwise Operators no MDN quando houver necessidade => https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators"
+            ],
+            "Operador Vírgula":[
+                "O operador de vírgula, é um dos operadores mais raros e incomuns.",
+                "Às vezes, é usado para escrever um código mais curto, por isso precisamos conhecê-lo para entender o que está acontecendo.",
+                "O operador vírgula nos permite avaliar várias expressões, dividindo-as por vírgula ,.",
+                "Cada um deles é avaliado, mas apenas o resultado do último é retornado: let a = (1 + 2, 3 + 4); alert( a ); // 7 (the result of 3 + 4)",
+                "Observe que o operador de vírgula tem uma precedência muito baixa, menor que =, portanto, parênteses são importantes no exemplo.",
+                "Às vezes, as pessoas o usam em construções mais complexas para colocar várias ações em uma linha: for (a = 1, b = 3, c = a * b; a < 10; a++) { ... }"
+
+            ]
+
         }
     }
     
