@@ -1,21 +1,25 @@
 {
 	"Introdução": [
 		"O Sass (Syntactically Awesome StyleSheets) é um pré-processador CSS, um CSS com super-poderes, como ele mesmo se denomina.",
-		"Um desses super-poderes é exatamente o uso de variáveis, para chamarmos o Sass no CSS utilizamos o cifrão: $cor-padrao: #c24e4b, e dentro do CSS, em todos os lugares que essa cor aparece, fazemos o uso da variável com o '$' como prefixo.",
 		"Se tratando de estilização, atualmente o browser entende apenas uma linguagem: o CSS, e para isso precisamos transformar o arquivo em SCSS, uma das linguagens que o Sass utiliza, a mais parecida com o CSS padrão.",
 		"O Sass é um pré-processador CSS, então a primeira coisa que devemos fazer é pedir para que ele compile o arquivo 'seu-arquivo.scss'.",
 		"Pelo terminal, entre na pasta do projeto (em que está o arquivo a ser compilado), e execute o comando da compilação que é: sass entrada.scss:saida.css ... para que compilações ocorram de forma automática, acrescente o parametro: --watch.",
 		"Para utilizarmos comentários específicos apenas do arquivo .scss basta utilizar-mos duas barras ( //) no início do comentário.",
+		"O SaaS tem varias funções que auxiliam bastante em coisas básicas de cor, font, etc - pesquise por funções na documentação.",
+		
 	],
 	"variáveis":[
+		"Para chamarmos o Sass no CSS utilizamos o cifrão: $cor-padrao: #c24e4b, e dentro do CSS, em todos os lugares que essa cor aparece, fazemos o uso da variável com o '$' como prefixo.",
 		"Uma variável criada em um contexto específico, só existe ali dentro daquele contexto, como se fosse um universo a parte.",
-		"Para utilização da variável em escopo global, precisamos fazer a criação dessa variável fora de qualquer seletor."
+		"Para utilização da variável em escopo global, precisamos fazer a criação dessa variável fora de qualquer seletor.",
+		"Para concatenar variáveis precisamos colocar o símbolo de #, e o nome da variável entre chaves: #{$variavel}"
 	],
 	"Mixins":[
 		"O mixin é um trecho de código transformado em variável.",
 		"Assim como as variáveis, o mixin deve ser chamado nos lugares em que precisamos dele.",
 		"A inserção do conteúdo do mixin ocorre através do @include",
-		"Para criar um mixin apenas precisamos fazer o @mixin e dar um nome para ele, e colocar as propriedades desejadas, contendo ainda a possibilidade de deixar a variavel com um padrão caso não seja informada."
+		"Para criar um mixin apenas precisamos fazer o @mixin e dar um nome para ele, e colocar as propriedades desejadas, contendo ainda a possibilidade de deixar a variavel com um padrão caso não seja informada.",
+		"Quando o mixin é usado em várias regras CSS, o código é repetido em todas elas."
 	],
 	"Aninhamento":[
 		"No HTML, nós indicamos que um elemento é 'filho' de outro quando ele está dentro deste.",
@@ -26,5 +30,34 @@
 		"Caso qualquer parte desse seletor mude, conseguimos mudar apenas um único lugar, e não em vários como é no CSS atual.",
 		"Devemos tomar cuidado com esse recurso também pois como boa prática de CSS, não devemos ultrapassar três ou quatro itens no seletor, algo como .menu ul li a span não é performático.",		
 		"Aninhar regras deixa nosso código mais flexível, organizado e estruturado."
+	],
+	"Importação":[
+		"Para importar um conteudo scss basta utilizar @import",
+		"Por padrão o sass compreende que o arquivo mencionado sem extensão trata-se de um scss.",
+		"Quando importamos um SCSS ele é concatenado (juntado) no mesmo arquivo, como se copiássemos todo o código desse arquivo e colássemos no outro.",
+		"Quando importamos um CSS ele mantém a sintaxe de import padrão do CSS: @import url('seu-arquivo.css');"
+	],
+	"Placeholder":[
+		"Quando não precisamos passar algum valor, em vez de mixin, podemos utilizar o placeholder.",
+		"O placeholder, agrupa o trecho de código definido para todas os seletores que o utilizarem.",
+		"A utilização ocorre através do caractere '%' e sua utilização se dá através da palavra @extend seguida do nome do placeholder - exemplo:  declarando: %seu-placeholder; utilizando: @extend %seu-placeholder.",
+		"O placeholder agrupa código utilizados em varios seletores e evita o código repetido, porém é uma alternativa para o mixin quando lidamos com parâmetros fixos.",
+		"Quando é preciso passar algum valor na chamada da função, o mixin é mais recomendado.",
+		"Podemos chamar qualquer regra CSS no @extend"
+	],
+	"Funções":[
+		"Quando apenas precisamos de um resultado de um cálculo, podemos isolar esse cálculo em uma função.",
+		"As funções são uma ótima maneira de expandir o uso de contas (não apenas a multiplicação) dentro do Sass.",
+		"Para construir uma função basta colocar @function antes do nome, e utilizar @return para a devolução de valores.",
+		"Dica de função: ao passar um valor quebrado em calculo, o resultado também poderá ser quebrado, evite isso e use a função round."
+	],
+	"Conselhos e Boas Práticas":[
+		"O Sass é uma ferramenta poderosa que agiliza muito o nosso trabalho.",
+		"O SaaS é um CSS com super-poderes, mas é importante tomar cuidado.",
+		"O Sass pode facilitar o desenvolvimento no dia a dia, mas não necessariamente fará do seu CSS um CSS melhor, é preciso tomar cuidado.",
+		"Apesar de facilitar a manutenção, o Sass não deixa seu CSS mais rápido ou melhor - boas práticas no CSS, boas práticas no Sass, e isso vale para qualquer outro pré-processador.",
+		"Uma boa prática, que usamos durante todo esse curso, é sempre conferir o arquivo .css gerado a cada alteração feita no .scss, seja ela uma nova variável, um mixin, ou um placeholder. É importante ver se nada foi esquecido, ou se há repetição desnecessária de código.",
+		"Outro ponto importante é ter um uso econômico dos mixins, sempre verificando se um placeholder não é o mais adequado por uma repetição exata de código. Se há um valor que precisa variar, a escolha do mixin é acertada.",
+		"É importante que você crie as suas próprias pastas de acordo com as necessidades do seu projeto, da sua equipe ou da sua empresa."
 	]
 }
