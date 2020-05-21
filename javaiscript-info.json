@@ -538,6 +538,97 @@
 
             ]
 
+        },
+        "Operadores Condicionais":{
+            "Introdução": "Às vezes, precisamos executar ações diferentes com base em condições diferentes, para fazer isso, podemos usar a declaração if e o operador condicional ?, também chamado de operador 'ponto de interrogação'.",
+            "A declaração 'if'":[
+                "A instrução if(...) avalia uma condição entre parênteses e, se o resultado for true, executa um bloco de código.",
+                "A if (…)instrução avalia a expressão entre parênteses e converte o resultado em um booleano.",
+                "Recomendamos agrupar seu bloco de código com chaves {}sempre que você usar uma ifinstrução, mesmo se houver apenas uma instrução a ser executada, isso melhora a legibilidade."
+            ],
+            "A cláusula else'": "A declaração if  pode conter um bloco opcional 'else' - é executado quando a condição é falsa.",
+            "Condições: 'if else'": "Às vezes, gostaríamos de testar várias variantes de uma condição. A else ifcláusula nos permite fazer isso.",
+            "Operador condicional '?'":[
+                "Às vezes, precisamos atribuir uma variável, dependendo de uma condição.",
+                "O chamado operador 'condicional' ou 'ponto de interrogação' permite fazer isso de maneira mais curta e simples.",
+                "O operador é representado por um ponto de interrogação ?.",
+                "Às vezes, é chamado de 'ternário', porque o operador possui três operandos.",
+                "É o único operador em JavaScript que possui muitos.",
+                "A sintaxe é: let result = condition ? value1 : value2 ... o condition é avaliado: se é verdade, então value1é retornado, caso contrário - value2.",
+                "Em ( age > 18) Tecnicamente, podemos omitir os parênteses age > 18. O operador de ponto de interrogação tem uma baixa precedência, portanto, é executado após a comparação >.",
+                "Parênteses tornam o código mais legível, por isso recomendamos usá-los.",
+                "Uma sequência de operadores de ponto de interrogação ?pode retornar um valor que depende de mais de uma condição.",
+                "Às vezes, o ponto de interrogação ? é usado como um substituto para if: ( 1 == 1) ? alert('OK!') : alert('Wrong.') ... mas não é recomendável usar o operador de ponto de interrogação dessa maneira.",
+                "O objetivo do operador de ponto de interrogação ?é retornar um valor ou outro, dependendo de sua condição, use-o exatamente para isso - use if quando você precisar executar diferentes ramificações de código."
+            ]
+        },
+        "Operadores Lógicos":{
+            "Introdução":[
+                "Existem três operadores lógicos no JavaScript: ||(OR), &&(AND), !(NOT).",
+                "Embora sejam chamados de 'lógicos', eles podem ser aplicados a valores de qualquer tipo, não apenas booleanos, e o resultado deles também pode ser de qualquer tipo."
+            ],
+            "Operador || (OR)":[
+                "O operador 'OR' é representado com dois símbolos de linha vertical: result = a || b;",
+                "Na programação clássica, o OR lógico destina-se a manipular apenas valores booleanos.",
+                "Se algum de seus argumentos for true, ele retornará true, caso contrário, ele retornará false.",
+                "Em JavaScript, o operador é um pouco mais complicado e mais poderoso.",
+                "Uma cadeia de OR '||' retorna o primeiro valor de verdade ou o último se nenhum valor de verdade for encontrado.",
+                {
+                    "Fluxo de Operação":{
+                        "1º": "Avalia operandos da esquerda para a direita.",
+                        "2º": "Para cada operando, converte-o em booleano. Se o resultado for true, para e retorna o valor original desse operando.",
+                        "3º": "Se todos os operandos foram avaliados (ou seja, todos foram false), retorna o último operando."
+                    },
+                    "Avaliação de Curto-Circuito.":[
+                        "Outra característica do ||operador OR é a chamada avaliação de 'curto-circuito'.",
+                        "Isso significa que || processa seus argumentos até que o primeiro valor de verdade seja alcançado e, em seguida, o valor é retornado imediatamente, sem sequer tocar no outro argumento.",
+                        "Essa importância desse recurso se torna óbvia se um operando não for apenas um valor, mas uma expressão com um efeito colateral, como uma atribuição de variável ou uma chamada de função.",
+                        "Às vezes, as pessoas usam esse recurso para executar comandos somente se a condição na parte esquerda for falsa ou se a primeira operação for o suficiente;"
+                    ]
+                }
+            ],
+            "Operador && (AND)":[
+                "O operador AND é representado com dois e comercial &&: result = a && b;",
+                "Na programação clássica, AND retorna true se todos os operandos são verdadeiros e de false caso o contrário.",
+                "Assim como com OR, qualquer valor é permitido como um operando de AND",
+                "AND retorna o primeiro valor falso ou o último valor, se nenhum foi encontrado.",
+                {
+                    "Fluxo de Operação":{
+                        "1º": "Avalia operandos da esquerda para a direita.",
+                        "2º": "Para cada operando, converte-o em um booleano, se o resultado for false, para e retorna o valor original desse operando.",
+                        "3º": "Se todos os operandos foram avaliados (ou seja, todos foram verdadeiros), retorna o último operando."
+                    },
+                    "Observações":[
+                        "A precedência do &&operador AND é maior que OR ||.",
+                        "Às vezes, as pessoas usam o &&operador AND como um 'mais curto para escrever if': (1 > 0) && alert( 'Greater than zero!' );",
+                        "Embora a variante com && pareça mais curta, ifé mais óbvia e tende a ser um pouco mais legível.",
+                        "Recomendamos o uso de todas as construções para sua finalidade: use if se quisermos se e use && se quisermos AND."
+                    ]
+                }
+            ],
+            "Operador ! (NOT)":[
+                "O operador booleano NOT é representado com um sinal de exclamação !.",
+                "O operador aceita um único argumento e faz o seguinte: converte o operando de tipo booleano: true/false, retornando o valor inverso.",
+                "!!Às vezes, um NOT duplo é usado para converter um valor em tipo booleano: alert( !!'non-empty string' );",
+                "A precedência de NOT !é a mais alta de todos os operadores lógicos, portanto, sempre é executada primeiro, antes && ou ||."
+            ]
+        },
+        "Operador Coalescente Nulo '??'":{
+            "Introdução":[
+                "Esta é uma adição recente ao idioma. Navegadores antigos podem precisar de polyfills.",
+                "O operador coalescente nulo ?? fornece uma sintaxe curta para selecionar uma primeira variável 'definida' da lista.",
+                "O resultado das variaveis 'a' ?? 'b' é -> 'a' se não é null ou undefined ... b, se for qualquer outro tipo.",
+                "Resumindo: x = a ?? bé um pequeno equivalente a -> x = (a !== null && a !== undefined) ? a : b;",
+                "A precedência do ?? operador é bastante baixa: 7na tabela MDN -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table.",
+                "Se precisarmos usar ?? uma expressão complexa, considere adicionar parênteses.",
+                "Devido a razões de segurança, é proibido o uso ??em conjunto com &&e ||operadores. Caso necessário, use parênteses explícitos para corrigi-lo."
+            ],
+            "Resumo":[
+                "O operador coalescente nulo ?? fornece uma maneira curta de escolher um valor 'definido' na lista.",
+                "É usado para atribuir valores padrão a variáveis.",
+                "O operador ?? tem uma precedência muito baixa, um pouco maior que ? e =.",
+                "É proibido usá-lo com ||ou &&sem parênteses explícitos."
+            ]
         }
     }
     
