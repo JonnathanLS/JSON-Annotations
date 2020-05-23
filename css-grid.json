@@ -1,0 +1,19 @@
+{
+    "Conceito": "Por meio do CSS Grid Layout conseguimos estabelecer o posicionamento de cada sessão de um site.",
+    "Template":[
+        "O CSS Grid Layout é usado para estilizar sites de maneira simples a partir de templates pré-definidos.",
+        "Estes templates precisam ter informações sobre como será a divisão das áreas." ,
+        "Devemos definir as áreas na ordem que devem estar posicionadas na página, a definição foi feita na ordem correta.s"
+    ],
+    "Colunas": "Utilizando o CSS Grid Layout, definimos colunas utilizando a propriedade: 'grid-template-columns: value-1 value-2 ... value-n;'.",
+    "Linhas": "Utilizando o CSS Grid Layout, definimos colunas utilizando a propriedade: 'grid-template-rows: value-1 value-2 ... value-n;'.",
+    "Posicionamento": [
+        "Através do CSS Grid Layout é possível dizer para os elementos onde eles devem começar e terminar, essa definição pode ser feita da utilizando o: grid-column-start; grid-column-end; grid-row-start; grid-row-end.",
+        "Utilizando a propriedade simplificada, temos: grid-column: start / end; grid-row: start / end .... utilizando a barra para indicar o inicio e o fim."
+    ],
+    "Observações":[
+        "Quando precisamos deixar um site responsivo, muitas vezes é necessário aplicar estilos diferentes para tamanhos de telas diferente, para isso, usamos medias queries. ",
+        "Você pode praticar e estudar Css grid layout de uma forma bem legal no site do Css Grid Garden (https://cssgridgarden.com/), através de desafios e fases."
+    ]
+
+}
