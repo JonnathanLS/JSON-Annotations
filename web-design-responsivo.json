@@ -1,0 +1,141 @@
+{
+    "Introdução":[
+        "Quando nós trabalhamos com design responsivo, pensamos em atacar os dispositivos móveis.",
+        "Não existe mobile, tentar fazer separação entre o que é e o que não é mobile é problemática, existe, claro, os extremos - se mostrar um smartphone pequenininho, você falará que ele é um mobile; se mostrar um computador desktop grandão, ele, obviamente, não será mobile.",
+        "A questão é que, no meio, entre esses dois dispositivos, existem várias possibilidades, e elas são díficeis de definirmos.",
+        "Às vezes você tem um tablet tão grande quanto um notebook, mas às vezes você tem um notebook híbrido que vira tablet.",
+        "Às vezes você tem touch screen, às vezes não, como pode ser que tenha também 3G, como também não.",
+        "A grande questão é que não interessa, não importa. Não existe mobile, logo não nos interessa essa divisão.",
+        "Existe vários dispositivos diferentes, com características diferentes e o ponto principal é que o site suporte todos eles.",
+        "Devemos parar de pensar em pixels e começar a pensar nas proporções do design, essa é a grande mudança do design responsivo quando falamos de layout fluido.",
+        "Parar de pegar a medida em pixel exata - que você pega, por exemplo, no Photoshop e coloca no CSS -, e começar a enxergar no seu design, naquela sua criação, as proporções naturais entre os conteúdos, se há duas colunas, obviamente é a proporção de 1 pra 1, 50% pra cada lado. E você transforma em código depois.",
+        "A grande mudança do pensamento quando se está começando com design responsivo é começar a olhar para o seu design e a pensar nas proporções dele.",
+        "Enxergar em seu projeto as proporções entre os desenhos das coisas: entre as colunas e os outros elementos; e não mais em pixels fixos."
+    ],
+    "Design Fluido": [
+        "Design fluído é o coração de um bom design responsivo, com o uso de medidas flexíveis, como as porcentagens, a página consegue adaptar seu layout a diversas resoluções diferentes.",
+        "Quando se usa porcentagem nos font-size, está se usando uma multiplicação com relação ao font-size do elemento pai, ou seja, se colocarmos 125% no elemento 'A-1', estamos dizendo que ele é 125% maior do que a fonte do 'A-0'.",
+        "A porcentagem na fonte facilita a mudança em um lugar somente, a qual será replicada em cascata, aumentando-se proporcionalmente todas as fontes da página, alterando-se apenas a fonte do body.",
+        "Trabalhar com a medida 'em', quer dizer que uma margem de 1em é proporcional ao texto, ao tamanho da fonte, que estiver sendo utilizada no elemento em determinado momento.",
+        "A medidade 'em' é uma unidade de medida normal do CSS, podendo ser usada em qualquer propriedade. Seu cálculo é com relação ao tamanho do texto, mas seu uso é universal."
+    ],
+    "Media Queries":[
+        "A aplicação do design responsivo e como implementar um design fluído eficiente. Porém, o design fluído resolve somente metade do problema de um site responsivo.",
+        "As media queries vão auxiliar a criar estilos específicos para condições diferentes da página.",
+        "Quando se trabalha com medidas flexíveis, como as porcentagens, os em etc., teremos um site que se adapta muito bem para variadas resoluções, à medida que vai se redimensionando, mas como existem muitos tipos de resolução, por exemplo, desde um desktop até um celular pequeno, talvez as adaptações não fiquem tão boas nos extremos, com acontece no caso do exercício para criação de um site com três colunas.",
+        "O importante é que, ao mesmo tempo em que o design tem apenas uma coluna no mobile, ele deve ter três colunas na versão desktop, ou seja, queremos dois layouts diferentes dependendo do tipo de dispositivo que se vai trabalhar.",
+        "CSS3 Media Queries: trata-se de um recurso do CSS que permite implementar a ideia de layout condicional. Um grande pilar do design responsivo. Pois não é possível, na grande maioria dos casos, fazer um design responsivo somente com o design fluído, é preciso também das media queries.",
+        "A aplicação do design responsivo e como implementar um design fluído eficiente. Porém, o design fluído resolve somente metade do problema de um site responsivo.",
+        "Quanto à sintaxe das media queries, vejamos que primeiramente deve ser colocado um bloco @media, o qual recebe como parâmetro a condição que será testada.",
+        "Apesar de existirem várias media queries, nem todas são úteis para nosso propósito, especificamente, o min-width ainda é mais útil, na prática, que o max-width. Embora a utilização de ambos possa ser implementada sem problemas. Voltaremos a esse tópico mais adiante.",
+        "Não existem dispositivos-padrão. Os usuários se utilizam de milhares de dispositivos diferentes e isso muda o tempo todo, assim, a única maneira de se garantir o bom funcionamento do site em todas as resoluções é testando em todas elas e ajustar quando for necessário.",
+        "O ideal é aumentar o tamanho da página e percebendo as suas necessidades, de modo que encontro o breakpoint ideal para cada resolução, esse é o procedimento da criação de media queries para breakpoints de conteúdo.",
+        "Na prática, a media query de min-width é muito mais utilizada que um max-width, pois o min-width representa a estratégia da media queries mobile first.",
+        "Você pode consultar a especificação oficial para mais detalhes de sintaxe: http://www.w3.org/TR/css3-mediaqueries/"
+    ],
+    "Workflow & Viewport":{
+        "Contexto Histórico":[
+            "Há muito tempo, quando os iPhones surgiram, a maioria dos sites ainda não eram responsivos, e sim desktop.",
+            "O iPhone talvez foi o primeiro celular a implementar um navegador completo, capaz de abrir não apenas sites em versão mobile, como desktop também.",
+            "Para que eles fossem compatíveis com todos estes dispositivos, não era desejado que todos os sites feitos para desktop abrissem 'quebrados', então, por padrão, em seu surgimento, ele adotou a estratégia de 'fingir' que a página fosse aberta em uma versão desktop.",
+            "Isto quer dizer que o dispositivo encara a resolução do iPhone como se fosse de 980px.",
+            "Outros fabricantes acabaram copiando esta ideia utilizando valores ligeiramente distintos, mas a ideia é a mesma: por padrão, se o site não informa nada, assume-se que ele está na versão desktop, por questões de compatibilidade, abrindo-se a tela pequena como se fosse grande.",
+            "A opção <meta name='viewport' content='width=device-width'> está correta por adaptar de acordo com o tamanho da tela de cada dispositivo. E é considerado má prática desabilitar o zoom do usuário.",
+            "Mas existe um bug conhecido no iOS que faz com que o viewport não se adapte ao rotacionar o dispositivo. Uma gambiarra que evita o bug é colocar o viewport como <meta name='viewport' content='width=device-width, initial-scale=1'>."
+        ],
+        "Testes em Dispositivos":[
+            "Para começarmos a testar nossa página em variados dispositivos, é válido discutir sobre estratégias de testes, pensando-se em dispositivos móveis, propondo-se três itens no momento do desenvolvimento: browser do desktop, em conjunto com alguns emuladores de dispositivos, e dispositivos reais.",
+            "Os navegadores Desktop ajudam muito durante a codificação por permitir testes rápidos, fáceis e com ferramentas boas, mas não eliminam a necessidade de teste num dispositivo real e em emuladores móveis. Os navegadores são diferentes e a experiência do usuário é diferente.",
+            "Utilizando o redimensionamento e a ferramenta de inspecionar a página, conseguimos realizar alterações diretamente no desktop, algo muito bom, prático e mais fácil de se fazer do que com um celular no bolso, por exemplo.",
+            "A vantagem do simulador de iOS é que ele é extremamente fiel ao dispositivo, portanto conseguimos simular todos os bugs de diferentes dispositivos através dele, sem necessariamente termos que adquirir o aparelho especificamente para este tipo de teste.",
+            "Em geral, utilizamos o desktop browser pois ele te traz mais produtividade e ferramentas para facilitar o dia a dia do desenvolvimento. Faz-se as alterações no código, que podem ser vistas simultaneamente no desktop, redimensionando-se a tela, como vimos nos primeiros vídeos, mas lembre-se que em algum momento será preciso fazer testes em um dispositivo de verdade.",
+            "Existem emuladores, que costumam ser baratos, bastando tê-los instalados em sua máquina, desktop. Com emuladores, pode-se lidar com diferenças de interfaces, bugs, compatibilidades, versões. Há grande variedade de emuladores, muito mais do que a quantidade de dispositivos diferentes a serem comprados.",
+            "O importante é encontrar dispositivos e navegadores que sejam significativos e adequados aos seus usuários finais. Isto pode ser definido analisando-se as estatísticas de acesso. Não adianta ter vários dispositivos caros ou 'da moda' à mão sendo que a maior parte de seus usuários utiliza outro tipo."
+        ],
+        "Emuladores no Desenvolvimento Responsivo":[
+            "Não é possível emular todas as plataformas e navegadores necessários. Em vários casos, precisamos de dispositivos reais.",
+            "Os emuladores têm seu papel no processo de desenvolvimento, não é possível comprar dispositivos pra tudo, então aprenda a usá-los a seu favor, mesmo com as limitações.",
+            "Simuladores de mobile que vêm nos navegadores Desktop ajudam a testar o tamanho da tela e algumas outras poucas características (simular touch e user agent, por exemplo), mas não são equivalentes a Emuladores completos nem a Dispositivos reais.",
+            "É possível emular o Android em Mac/Windows/Linux, conseguimos instalar vários navegadores no emulador e fazer um teste razoável, mas o navegador padrão de vários fabricantes é diferente do emulador, e precisamos de dispositivos Android para isso.",
+            "O FirefoxOS, apesar de recente, possui uma boa plataforma de emulação real, funciona em todos os sistemas e basta instalar uma extensão no Firefox Desktop.",
+            "O Windows Phone tem um emulador que pode ser instalado no Windows com Visual Studio e permite testar bem o navegador IE móvel.",
+            "Para emular iOS, é necessário um Mac, a emulação é fiel e usa a mesma versão de um dispositivo real.",
+            "O foco dos emuladores é permitir encontrar bugs de compatibilidade ao testar no mesmo software que roda no dispositivo real."
+        ],
+        "Imagens Responsivas":[
+            "As imagens nada mais são do que pixeis, e já falamos como o responsivo trabalha com medidas flexiveis, porcentagens e com adaptações, os quais podem trazer alguns problemas.",
+            "No CSS, na realidade, os 100 pixeis escritos no código estão em DIP e não em pixeis físicos, desta maneira os pixeis físicos variam de tela para tela. Para uma tela de alta resolução eles se transformam em 200 físicos.",
+            "Quem faz essa mudança nos valores dos pixeis é o próprio navegador do sistema operacional de um aparelho de alta resolução, o que é uma boa prática pois não precisamos nos preocupar em fazer contas ou escrever dois CSS diferentes.",
+            "O 'dppx' significa dots per pixel, ou seja, pontos por pixel, tais pontos são os pixeis físicos, essas especificações são importantes para não acontecer casos de imagem pixelada (perde resolução).",
+            "O 'dppx' em outras palavras, é quantos pixels físicos ocupa um pixel lógico (o que você usa no CSS) ...em uma tela retina, 1px no CSS é equivalente a 2x2 pixels físicos. O device pixel ratio é então 2.",
+            "Existem alguns frameworks que permitem implementar uma lógica parecida com a das media queries para imagens responsivas, que nada mais fazem do que substituir o src. Porém, para a performance, eles são muito ruins: dependem de javascript e de downloads duplicados ... então evite utilizá-los.",
+            "Tudo isso que vimos até agora está ligado à nossa necessidade de melhorarmos a qualidade visual de nossas páginas.",
+            {
+                "Qualidade visual": "como já vimos, queremos boas imagens para todos os dispositivos.",
+                "Performance": "queremos que as imagens de maior resolução só sejam baixadas se estivermos em um dispositivo com capacidade de mostrar tal imagem. Não queremos desperdiçar downloads.",
+                "Direção de arte": "muitas vezes a melhor solução não é apenas aumentar ou diminuir o tamanho e a resolução das imagens. É interessante pensarmos em imagens diferentes para cada dispositivo para melhorar a experiência do usuário.",
+                "Otimizando um Imagem":[
+                    "Embora os códigos fiquem cada vez mais complexos, no dia-a-dia o maior trabalho está em criar diversas versões de uma mesma imagem. Em um cenário ideal, usaríamos apenas uma que fosse boa para todas as resoluções e dispositivos.",
+                    "A primeira razão para pensarmos isso no âmbito de imagens responsivas é em relação à performance.",
+                    "Não queremos, como já falamos, carregar uma imagem grande em um dispositivo de tela pequena.",
+                    "Achar uma solução em que utilizamos apenas uma imagem sem esquecer a performance, não precisaremos escrever uma série de linhas de código para trocar imagens a todo tempo: Compressive Images",
+                    "Compressive Images é otimizar bastante uma imagem de tamanho grande, de forma a ficar com tamanho razoável para diversos dispositivos. Diminuímos a qualidade da imagem, aumentamos a compressão, usamos formatos mais leves etc, mas se apegue a isso, muitas vezes uma imagem bastante otimizada é suficiente para várias resoluções e dispositivos."
+                ],
+                "Imagens Vetoriais":[
+                    "Uma das vantagens é que um desenho vetorial é composto por coordenadas matemáticas e, independentemente da modificação que fizermos, ele nunca perde a qualidade. Sua única desvantagem é que esse conceito não serve para fotografias, apenas para logotipos, gráficos, ícones, etc.",
+                    "Antigamente, quando queríamos usar um texto um pouco diferente, como fazer um banner, tínhamos que montar a imagem através de um editor externo e inserí-la no HTML já com o texto. O problema de imagens com texto é que podemos perder a qualidade e ter que fazermos todos aqueles processos de imagem responsiva que vimos na aula passada.",
+                    "Se o texto do banner estiver 'como texto' no código, não teremos problema, hoje em dia na Web podemos usar fontes customizadas que já criam esses elementos automaticamente, pois texto é sempre vetorial.",
+                    "É tão bom trabalhar com texto que usamos fontes como ícones, por suas propriedades vetoriais, muitas vezes é preferível utilizar uma fonte que possua desenhos (em vez de letras), a utilizar uma imagem.",
+                    "Usando imagens e recursos vetoriais, todo tamanho de tela, toda resolução fica com qualidade perfeita. O usuário pode fazer zoom e a imagem nunca perde qualidade.",
+                    "A renderização inconsistente (como vimos no vídeo da aula) é uma razão grande para não usar quando se tem necessidade de precisão, fora isso, a limitação por ícones simples de um path só é um grande empecilho em designs mais complexos.",
+                    "O SVG é a melhor solução para gráficos vetoriais na Web, resolvendo quase 100% dos problemas com cenários de desenhos vetoriais. Ele permite fazermos desenhos muito mais complexos.",
+                    "Ele é o formato vetorial padrão da Web e pode ser exportado de diversas ferramentas de desenho, como o Illustrator.",                    
+                    "É um formato de imagem como qualquer outro, então podemos usá-lo com a tag 'img': <img src='logo.svg'>.",
+                    "O SVG é um formato muito familiar para os programadores em HTML porque ele é baseado em tags, o que nos permite escrevê-las misturadas com as tags do HTML.",
+                    "SVG é o formato mais adequado hoje e para o futuro, se pensando em uso de imagens vetoriais, suporta todo tipo de efeito, formas e até animações.",
+                    "O maior empecilho do svg é suporte em navegadores antigos, algo que tende a desaparecer. É bem mais difícil que um icon font para estilizar com cores diferentes. Não posso usar nem background se quero mudar a cor. Preciso embutir o no HTML e usar técnicas mais complicadas.",
+                    {
+                        "Desvantagens Icon Fonts":[
+                            "Complexidade do ícone: a cor é sempre uma só para o ícone inteiro, não conseguimos criar desenhos coloridos: um caractere não pode ter mais de uma cor.",
+                            "Renderização: a forma como cada navegador ou sistema operacional renderiza as fontes é diferente.",
+                            "O posicionamento e a grossura das linhas dos caracteres variam ligeiramente, tais diferenças podem ou não ser graves, causando desalinhamentos."
+                        ],
+                        "Desvatagens SVG":[
+                            "Dificuldade de estilizar o mesmo ícone com cores diferentes usando CSS.",
+                            "Suporte ruim em navegadores antigos, sobretudo IE8 e anteriores, e Android 2.x."
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Dicas de UX para Mobile":{
+            "Content Parity":[
+                "É considerada uma boa prática que o usuário, na versão mobile de uma página, consiga fazer tudo aquilo que ele faz no desktop. Ou seja, não é bom cortar ações, funcionalidades e conteúdo só porque a tela é menor. A necessidade não é que tudo tenha que ser igual, mas parecido e acessível para todas as plataformas.",
+                "No mobile, por exemplo, poderíamos quebrar um texto, que aparece em uma página no desktop, em duas páginas. Podemos formatar de maneiras diferentes um conteúdo."
+            ],
+            "Não Existe 'Contexto Mobile'!":[
+                "Não é porque um usuário de mobile tem o perfil de acessar vários conteúdos com mais rapidez que devemos mostrar menos a ele. Não confundemos tipo de aparelho com contexto de uso. Não é possível inferirmos o modo com que o usuário utiliza uma plataforma pelo seu aparelho.",
+                "Ofereça todo o conteúdo e todos os cenários para que o usuário possa optar pelo aparelho que ele quiser."
+            ],
+            "Priorização de Conteúdo": "O mobile pode despertar a ideia de que o conteúdo deve ser priorizado. Mas a questáo é que se o site consegue oferecer tudo com poucas opções, ele deve conseguir fazê-lo em todas as plataformas. No fim, o conteúdo deve ser: Focado; Priorizado; O mesmo.",
+            "Mobile-First": "Como já vimos, uma técnica de melhorar a experiência do usuário mobile é a de Mobile-first, com a qual priorizamos a criação de sites próprios para smartphones e tablets e só depois pensamos em sua versão para desktop.",
+            "Touch-First":[
+                "Paralelo ao mobile-first, um conceito que vem ganhando espaço é o de Touch-first, com o qual priorizamos o código para a interatividade de touchscreen. Hoje em dia não apenas os smartphones e os tablets possuem tal recurso. O touchscreen vem ganhando espaço entre os desktops.",
+                "Como o touchscreen traz algumas dificuldades. Pensemos, desde o início da escrita do código, na possibilidade de implementá-lo com as ferramentas necessárias para o funcionamento do recurso.",
+                "Uma questão importante é a otimização da área de toque: devemos estar atentos para o tamanho e a disposição dos botões, eles devem ser grandes e espaçados o suficiente para que o dedo consiga tocar.",
+                "Temos o mesmo tipo de problema com os links: um tamanho recomendado, pela Apple, é 6,8mm. Pela Mozilla, 5,9 a 9mm, e assim por diante. Perceba que é muito mais plausível apresentar esses números em milímetros, uma vez que os links têm interação com o mundo externo, não com um ponteiro de mouse."
+            ],
+            "Sem Hover": "No mobile não existe o hover, efeito este que acontece quando passamos o ponteiro do mouse, sem clicar, por cima de um elemento. Então vamos evitá-lo no código que prioriza o Touch.",
+            "Pense no Usuário":[
+                "Não tente detectar em qual navegador o usuário está.",
+                "Pense em todas as possibilidades de uso, o usuário pode e deve ter a vontade de navegar como ele quiser.",
+                "Saiba o que o usuário quer visualizar primeiro em sua home page. Se ele quiser instalar algum aplicativo, deixe-o navegar, mas não impeça o acesso ao site.",
+                "Não obrigue seu usuário a fazer aquilo que muito provavelmente não quer, ele deve ser livre para navegar.",
+                "Preste atenção naquilo que é mais importante ser mostrado na página. Uma página que à primeira vista só mostra o menu de opções confunde o usuário.",
+                "Mantenha o máximo de features em sua página, não há razão para diminuir a quantidade de ferramentas para o usuário se elas não influenciam no resto do site."
+
+            ],
+            "O Futuro é Mobile": "Devemos pensar em mobile desde o início. E o design responsivo é a única forma de estarmos atualizados em relação a diferentes e novos dispositivos. Ele permite nos adaptarmos aos novos tempos."
+        }
+    }
+}
