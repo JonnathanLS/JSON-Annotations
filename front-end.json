@@ -360,8 +360,7 @@
                 "E por último, a legibilidade do código aumenta muito, pois dando nomes semânticos a cada uma das funções menores conseguimos deixar bem claro o que aquela parte do código deve fazer e facilita o entendimento do todo como um geral."
             ]
 
-        }
-        ,
+        },
         "Agulha no Palheiro":{
             "Muitas funções em um único arquivo JavaScript":[
                 "A vantagem de declararmos todas as funções em um único arquivo é favorecer sua importação em nossas páginas, pois se fossem vários arquivos precisaríamos importar um a um.",
@@ -372,6 +371,46 @@
                 "Se separamos outras funcionalidades por arquivo, quando alterarmos esses arquivos, se cometermos algum erro, apenas uma ou mais funções do arquivo serão comprometidas e o restante dos outros arquivos poderão ser carregados sem problema (a não ser que um arquivo dependa do outro).",
                 "Assim como na vida real geralmente guardamos peças de roupas por categorizações que julgamos satisfazerem nossa organização, separar arquivos por grupos comuns também nos ajuda a encontrar e dar manutenção em nosso código."
             ]
+        },
+        "Browser e Padrões de Projeto":{
+            "MVC":[
+                "É interessante separarmos os dados da apresentação visual, desta forma conseguiríamos adicionar ao primeiro as regras de negócio, com os dados separados, poderemos também modificar a utilização dos dados (visualização).",
+                "Um dos modelos utilizados na web que melhor se adapta aos projetos é o modelo MVC (Model-View-Controller), declarando classes que representam nossos modelos (dados) e classes que representam nossas views (tela). As ações do usuário serão interceptadas por uma Controller, que irá alterar os dados, o Model, enquanto a View será atualizada para exibir o estado mais atual, desta forma, as regras de negócio não estarão espalhadas pela View, elas estarão no modelo.",
+                "O padrão MVC permite que alterações de layout na view não acarretem alterações no modelo.",
+                "O modelo é uma abstração do mundo real - por exemplo, um analista de mercado que quer entender como o mercado funciona, criará um modelo em que ele possa dar entradas e executar determinado procedimentos para tentar prever como é o seu funcionamento.",
+                "O controller é aquele que recebe as ações do usuário e que sabe interagir com o modelo. Como o modelo é independente da view, esta precisa ser renderizada para que reflita as alterações no modelo, em suma, o controller é a ponte de ligação entre a view e o modelo.",
+                "A view apresenta um modelo em uma tabela, em um formulário ou em parágrafos, e o padrão MVC permite que qualquer alteração na view não interfira com o modelo."
+            ],
+            "Orientação a Objetos":[
+                "JavaScript é uma linguagem multiparadigma, podemos programar proceduralmente, funcionalmente e orientado a objetos.",
+                "Para criarmos uma classe, usamos a palavra reservada class seguida do nome da classe. Por convenção, nomes de classe começam em letra maiúscula. Curiosamente essa convenção se chama pascal case.",
+                "Para definirmos atributos de instância de uma classe, precisamos adicionar em sua definição um constructor. É através do construtor que adicionamos na variável implícita this as propriedades que desejamos que toda instância da classe tenha.",
+                "Apesar do termo atributo ser muito utilizado no mundo da orientação a objetos, no mundo JavaScript o termo propriedade é mais usado.",
+                "O operador new é o responsável pela inicialização do this de cada objeto criado, cada objeto terá seu this com suas propriedades.",
+                "O operador new é bastante importante por ser o responsável em criar um novo this para cada instância da classe.",
+                "O this é uma variável implícita que sempre apontará para a instância que está executando a operação naquele momento.",
+                "A linguagem JavaScript - até a atual data - não nos permite usar modificadores de acesso, não podemos dizer que uma propriedade seja apenas leitura (ou gravação), o que podemos é utilizar a convenção de que nos atributos das propriedades de uma classe que não pode ser modificada, usaremos um underline (_).",
+                "O '_' em uma propriedade é uma convenção que informará ao programador que as propriedades que contenham _ só poderão ser acessadas pelos próprios métodos da classe. Isto significa, que mesmo podendo imprimir a propriedade _quantidade com outro valor, não deveríamos mais poder acessá-la.",
+                "CURIOSIDADE: a linguagem TypeScript da Microsoft permite definir atributos privados com o modificador private. TypeScript nada mais é do que um superset do ES2015+ com a adição de novos recursos, inclusive aquele que define atributos privados.",
+                "Se usamos a convenção de utilizar o prefixo, como faremos para imprimir a classe? Se não podemos acessá-la, como podemos fazer isso? Para isto, criou-se métodos chamados acessadores: get e set.",
+                "Os métodos da classe poderão acessar os atributos que levam _. No entanto, de acordo com a nossa convenção, alguém fora da classe não poderá fazer o mesmo.",
+                "Object.freeze é uma maneira de impedir que as propriedades de um objeto sejam alteradas, congelando a sua instancia, assim todas as propriedades deste objeto não sofrem alterações.",
+                "Object.freeze é shallow (raso), ou seja, ele ficará na superfície, quando congelamos um valor, não podemos alterá-lo ... porém, se chamarmos algum método que altere propriedades de um objeto que também é propriedade de um objeto congelado, conseguimos altera-lá, pois não é feito o que chamamos de deep freeze (quando trabalhamos com um objeto e dentro dele temos outras propriedades, estas não ficarão congeladas).",
+                "Declarações com var possuem escopo de função ou global, variáveis declaradas com let tem escopo de bloco e o JavaScript lançará um erro se a mesma for declarada mais de uma vez.",
+                "Podemos ainda deixar o nosso código menos 'verboso', usando uma forma diferente de declarar função - utilizada a partir da versão ES2015: falamos das arrow functions. O termo arrow traduzido para o português significa flecha. Com estas funções, podemos eliminar a palavra function do código."
+            ],
+            "Resumo":[
+                "Criar uma classe, utilizando novos recursos JavaScript que favorecem a implementação do paradigma orientado a objeto.",
+                "Uma classe possui um constructor com os quais definimos atributos - que chamamos de propriedades - e que podemos materializar uma abstração do mundo real usando um modelo, por meio de uma classe.",
+                "Podemos passar parâmetros no construtor de uma classe e dessa forma, garantindo que no momento em que a instância de uma classe é criada, já tenha todos os dados necessários.",
+                "Por convenção, adotamos que os atributos privados devem usar o prefixo _ (underline), indicando para o desenvolvedor que ele só pode acessá-lo.",                        
+                "Um método que conseguimos acessar como uma propriedade, bastando ser antecedido pela palavra especial get, gera um 'getter', ou seja, quem acessa a sua classe acredita que se trata de uma propriedade, mas na verdade, trata-se por 'debaixo dos panos' de um método.",                        
+                "O 'get, não é suficiente para garantir a integridade das propriedades de um objeto (que não pode ser alterada), por isso, usamos o Object.freeze() para congelar um objeto depois de criado.",
+                "Como Object.freeze() é shallow (raso), ele será aplicado nas propriedades do objeto, mas as propriedades que são objetos não serão todas congeladas, a ação ficará apenas na superfície.",
+                "Para resolver a questão do Object.freeze() ainda ser possivel alterar a propriedade do tipo objeto, podemos usar a programação defensiva, que é quando alguém tentar acessar a propriedade, retornaremos uma nova instância, e é interessate realizar isto no construtor também, pois com isso, evitamos que alguém consiga de fora da classe alterar algum item do estado interno.",
+                "O modelo é uma das coisas mais importantes quando desenvolvemos o sistema."
+            ]
+            
         }
     },
     "Ajax":[
