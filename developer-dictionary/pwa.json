@@ -1,0 +1,15 @@
+{
+    "Melhor Conceito": "O Progressive Web Apps (PWA) é uma maneira moderna de criar aplicativos, incluindo os móveis, usando tecnologias puramente da Web.",
+    "Meu Entendimento": "Aplicações Web que se assemelha a aplicações mobile nativas, permitindo uso limitado de funcionalidades do dispositívo que disponibiliza a aplicação.",
+    "Links Úteis":{
+        "Artigos": {
+            "PWA: O que é? Vale a pena? Quando utilizar?": "https://blog.rocketseat.com.br/pwa-o-que-e-quando-utilizar/",
+            "O que a Web pode fazer hoje?": "https://whatwebcando.today/",
+            "Aplicativos Web progressivos - Padrão ou Buzzword?": "https://whatwebcando.today/articles/progressive-web-apps-standard-or-buzzword/"
+        },
+        "Vídeos": {
+            "PWA - Dicionário do Programador": "https://www.youtube.com/watch?v=jPMFqS9SKWY",
+            "O que é uma Progressive Web App (PWA)": "https://www.youtube.com/watch?v=UeMkXvmk68Q"
+        }
+    }
+}
