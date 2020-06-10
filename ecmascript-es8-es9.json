@@ -1,0 +1,15 @@
+{
+    "Atualizações nas Strings e Arrays":{
+        "String Padding":[
+            "Os stringpads facilitam o desenvolvimento na hora da concatenação de string.",
+            "Quando falamos de StringPad, possuímos duas operações: padEnd e PadStart. Ambos receberão dois parâmetros sendo o primeiro o número de caracteres gerado nessa nova string e o segundo a string que você quer concatenar."
+        ]
+    },
+    "Exponenciação":[
+        "No javascript, possuímos o objeto Math() para construção de operações matemáticas.",
+        "Nele podemos fazer cálculo da raiz quadrada, o log, o pi e muitas outras funcionalidades.",
+        "Para a obter a exponencial de algum número, por exemplo, bastava executar Math.pow(primeiro_número, exponencial);",
+        "Mas agora, especificamente essa operação sofreu uma alteração.",
+        "Não precisamos mais utilizar o Math.pow() para calcular exponenciais, basta colocar entre dois números o ‘**’ que o cálculo da exponencial já é realizado."
+    ]
+}
