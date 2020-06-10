@@ -252,6 +252,13 @@
         ]
     },
     "JavaScript": {
+        "JS de padrões a uma linguagem Funcional":{
+            "Problemas ao levantar o servidor":[
+                "Em um sistema operacional Linux, não é raro o binário do node se chamar node.js. Nesse sentido, deve ser utilizado o comando nodejs server.",
+                "A plataforma Node.js não foi instalada, desta maneira, o binário node não estará disponível através do terminal/prompt de comando.",
+                "A pasta acessada através do terminal/prompt de comando não é a pasta project, logo, a execução do comando node server não encontrará o arquivo server.js. Para resolver, basta entrar na pasta correta e repetir o último comando."
+            ]
+        },
         "JS Alura Novo Curso":{
             "Primeiros Passos":{
                 "Introdução":[
@@ -377,9 +384,9 @@
                 "É interessante separarmos os dados da apresentação visual, desta forma conseguiríamos adicionar ao primeiro as regras de negócio, com os dados separados, poderemos também modificar a utilização dos dados (visualização).",
                 "Um dos modelos utilizados na web que melhor se adapta aos projetos é o modelo MVC (Model-View-Controller), declarando classes que representam nossos modelos (dados) e classes que representam nossas views (tela). As ações do usuário serão interceptadas por uma Controller, que irá alterar os dados, o Model, enquanto a View será atualizada para exibir o estado mais atual, desta forma, as regras de negócio não estarão espalhadas pela View, elas estarão no modelo.",
                 "O padrão MVC permite que alterações de layout na view não acarretem alterações no modelo.",
-                "O modelo é uma abstração do mundo real - por exemplo, um analista de mercado que quer entender como o mercado funciona, criará um modelo em que ele possa dar entradas e executar determinado procedimentos para tentar prever como é o seu funcionamento.",
-                "O controller é aquele que recebe as ações do usuário e que sabe interagir com o modelo. Como o modelo é independente da view, esta precisa ser renderizada para que reflita as alterações no modelo, em suma, o controller é a ponte de ligação entre a view e o modelo.",
-                "A view apresenta um modelo em uma tabela, em um formulário ou em parágrafos, e o padrão MVC permite que qualquer alteração na view não interfira com o modelo."
+                "M é o modelo, uma abstração do mundo real, os dados da aplicação e suas regras de negócio - por exemplo: um analista de mercado que quer entender como o mercado funciona, criará um modelo em que ele possa dar entradas e executar determinado procedimentos para tentar prever como é o seu funcionamento.",
+                "O C é o controller, aquele que disponibiliza um modelo para a view, é quem recebe as ações do usuário e que sabe interagir com o modelo, como o modelo é independente da view, esta precisa ser renderizada para que reflita as alterações no modelo, em suma, o controller é a ponte de ligação entre a view e o modelo.",
+                "A View é a representação do modelo em alguma tecnologia, por exemplo, HTML,  apresenta um modelo em uma tabela, em um formulário ou em parágrafos, e o padrão MVC permite que qualquer alteração na view não interfira com o modelo."
             ],
             "Orientação a Objetos":[
                 "JavaScript é uma linguagem multiparadigma, podemos programar proceduralmente, funcionalmente e orientado a objetos.",
@@ -397,9 +404,10 @@
                 "Object.freeze é uma maneira de impedir que as propriedades de um objeto sejam alteradas, congelando a sua instancia, assim todas as propriedades deste objeto não sofrem alterações.",
                 "Object.freeze é shallow (raso), ou seja, ele ficará na superfície, quando congelamos um valor, não podemos alterá-lo ... porém, se chamarmos algum método que altere propriedades de um objeto que também é propriedade de um objeto congelado, conseguimos altera-lá, pois não é feito o que chamamos de deep freeze (quando trabalhamos com um objeto e dentro dele temos outras propriedades, estas não ficarão congeladas).",
                 "Declarações com var possuem escopo de função ou global, variáveis declaradas com let tem escopo de bloco e o JavaScript lançará um erro se a mesma for declarada mais de uma vez.",
-                "Podemos ainda deixar o nosso código menos 'verboso', usando uma forma diferente de declarar função - utilizada a partir da versão ES2015: falamos das arrow functions. O termo arrow traduzido para o português significa flecha. Com estas funções, podemos eliminar a palavra function do código."
+                "Podemos ainda deixar o nosso código menos 'verboso', usando uma forma diferente de declarar função - utilizada a partir da versão ES2015: falamos das arrow functions. O termo arrow traduzido para o português significa flecha. Com estas funções, podemos eliminar a palavra function do código.",
+                
             ],
-            "Resumo":[
+            "Anotações Gerais":[
                 "Criar uma classe, utilizando novos recursos JavaScript que favorecem a implementação do paradigma orientado a objeto.",
                 "Uma classe possui um constructor com os quais definimos atributos - que chamamos de propriedades - e que podemos materializar uma abstração do mundo real usando um modelo, por meio de uma classe.",
                 "Podemos passar parâmetros no construtor de uma classe e dessa forma, garantindo que no momento em que a instância de uma classe é criada, já tenha todos os dados necessários.",
@@ -408,7 +416,13 @@
                 "O 'get, não é suficiente para garantir a integridade das propriedades de um objeto (que não pode ser alterada), por isso, usamos o Object.freeze() para congelar um objeto depois de criado.",
                 "Como Object.freeze() é shallow (raso), ele será aplicado nas propriedades do objeto, mas as propriedades que são objetos não serão todas congeladas, a ação ficará apenas na superfície.",
                 "Para resolver a questão do Object.freeze() ainda ser possivel alterar a propriedade do tipo objeto, podemos usar a programação defensiva, que é quando alguém tentar acessar a propriedade, retornaremos uma nova instância, e é interessate realizar isto no construtor também, pois com isso, evitamos que alguém consiga de fora da classe alterar algum item do estado interno.",
-                "O modelo é uma das coisas mais importantes quando desenvolvemos o sistema."
+                "O modelo é uma das coisas mais importantes quando desenvolvemos o sistema.",
+                "O ES2015 trouxe o template string, onde com o uso de ${} dentro da string, ele fará o mecanismo de interpolação, de forma que a expressão irá interpolar o conteúdo das variáveis nome e idade na string.",
+                "A função reduce recebe dois parâmetros: uma função e um valor inicial ... na função interna ao reduce, o primeiro parâmetro é o valor da última iteração ( o que será retornado), e o segundo parâmetro é o valor da iteração atual (o valor corrente para trabalharmos durante a iteração).",
+                "Em relação ao reduce: o segundo paramêtro (valor inicial) vale a pena ser informado, já que no caso de quando o array for vazio, evitamos lançamento de erro como: Reduce of empty array with no initial value",
+                "Por padrão, quando uma classe herda outra, ela também herda seu construtor, ou seja, é passível de omissão o construtor da classe que busca a herança.",
+                "Quando temos um construtor na classe filha que recebe uma quantidade de parâmetros diferentes do construtor da classe pai, para que o this seja inicializado com um valor, precisamos chamar o construtor da classe pai, passando os parâmetros que ela precisa.",
+                "No mundo OO, essas classes que foram criadas para não ter instancias delas, são chamadas de classes abstratas."
             ]
             
         }
