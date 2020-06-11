@@ -425,6 +425,54 @@
                 "No mundo OO, essas classes que foram criadas para não ter instancias delas, são chamadas de classes abstratas."
             ]
             
+        },
+        "JS Aprofundando em MVC, Proxy e Factory":{
+            "Escopo Léxico vs Dinâmico": [
+                "O this de uma função é dinâmico, isto é, seu valor é determinado no momento em que a função é chamada. Como o this é dinâmico, é possível usar artifícios da linguagem, como a API Reflect, para alterá-lo se assim desejarmos.",
+                "O this de uma arrow function é léxico, isto é, seu valor é determinado no local onde a arrow function for definida, ela não cria um novo this. O this de uma arrow function não pode ser alterado, mesmo se usarmos recursos da linguagem, como a API Reflect."
+            ],
+            "Reflect.apply": [
+                "O primeiro parâmetro é o método ou função que desejamos invocar.",
+                "O segundo parâmetro é o contexto que o método ou função adotará, ou seja, o valor que será assumido pelo this.",
+                "Por fim, o último parâmetro é um array que contém todos os parâmetros que o método passado como primeiro parâmetro receberá, como ele não recebe parâmetro nenhum, passamos um array vazio."
+            ],
+            "Padrão Proxy":[
+                "Existe um famoso padrão de projeto chamado Proxy, que de forma resumida, é 'um cara mentiroso'.",
+                "Não é bom inserirmos armadilhas/modificações na classe, porque estaremos perdendo a reutilização do modelo e teremos que repetir em todos os modelos do sistema.",
+                "O Proxy é idêntico ao objeto que queremos trabalhar, e teremos bastante dificuldade de diferenciá-los.",
+                "Nós acessamos o Proxy como se ele fosse o objeto real, este último ficará escondido dentro do outro.",
+                "Nós substituímos o objeto real, que só poderá ser acessado por meio do Proxy - que pode ou não ser executado em um código arbitrário se assim definirmos.",
+                "O Proxy delegará a chamada do método para o objeto encapsulado por ele, e a vantagem está que podemos colocar as armadilhas/modificações entre a chamada do Proxy e o objeto real.",
+                "Armadilhas/Modificações serão disparadas mesmo se tentarmos modificar uma propriedade congelada de um objeto, ainda que ele não seja modificado.",
+                {
+                    "Interceptação de Método":[
+                        "Toda proxy criada, por padrão, não esta preparada para interceptar métodos (getters e setters são exceções a este problema).",
+                        "Essa limitação ocorre porque sempre que um método de um objeto (que não deixa de ser uma propriedade que armazena uma função) é chamado, primeiro é realizado uma operação de leitura (get, do nosso handler da proxy) e depois os parâmetros são passados através de Reflect.apply.",
+                        "O problema é que, como o método é interceptado pelo get do handler passado para a proxy, não temos acesso aos seus parâmetros."
+                    ],
+                    "Paramêtros Relevantes":{
+                        "target": "é o objeto real que é encapsulado pela proxy. É este objeto que não queremos 'sujar' com armadilhas ou qualquer código que não diga respeito ao modelo.",
+                        "prop": "é a propriedade em si, que está sendo lida naquele momento.",
+                        "receiver": "é a referência ao próprio proxy. É na configuração do handler do Proxy que colocamos armadilhas.",
+                        "arguments": "é uma variável implícita que pode ser acessada em métodos ou funções. Ele se comporta como um array onde cada posição equivale ao parâmetro que foi passado para o método ou função ... e ela existe desde o ES5!"
+                    },
+                    "Resumo":[
+                        "O padrão de projeto Proxy nada mais é do que um objeto 'falso', 'mentiroso', que envolve e encapsula o objeto real que queremos interagir.",
+                        "É como se fosse uma interface, entre o objeto real e o resto do código, na qual conseguimos assim controlar o acesso aos seus atributos e métodos.",
+                        "Nele também podemos pendurar códigos que não cabem de estar alocados nos nossos modelos, mas que necessitam ser executados no caso de uma alteração ou atualização do mesmo."
+                    ]
+                }
+            ],
+            "Padrão Factory":[
+                "O padrão de projeto chamado Factory consiste em uma classe ser especializada em criar determinado tipo de objeto.",
+                "O padrão de projeto Factory é um dos padrões mais utilizados no desenvolvimento. Ele é mais um da categoria dos patterns responsáveis por criar objetos, como o Builder e o Prototype.",
+                "O padrão de projeto Factory ocorre quando temos uma classe que nos ajuda a criar um objeto complexo, ou seja, ela esconde de nós os detalhes de criação desse objeto. É por isso que uma classe Factory possui apenas um método.",
+                "É ideal quando queremos criar objetos similares, com apenas seus detalhes diferentes, que podemos passar nos argumentos da Factory.",
+                "É bom para abstrair a criação de um objeto complexo, já que o programador que utilizar a Factory não precisa necessariamente saber como é feita esta operação.",
+                "As fábricas não só fazem parte do nosso código, como também da API do JavaScript. Já existem várias classes que aproveitam esse padrão.",
+                "Exemplo: a classe String possui um método (ou factory method) para transformar vários CharCode em uma string: let abc = String.fromCharCode(65, 66, 67); // 'ABC'",
+                "Outro exemplo é a classe Array, que pode receber uma string ou um iterável, como lista ou mapas, para criar um array: let d = Array.from('abc'); // ['a', 'b', 'c']"
+            ]
         }
     },
     "Ajax":[
