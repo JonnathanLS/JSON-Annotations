@@ -483,7 +483,9 @@
                 "Usamos os métodos then e catch para capturar o resolve e o reject oriundo da promisse e dentro deles é necessário passar uma function ou Arrow function com o comando desejado.",
                 "É por meio do método then, da instância de Promise que temos acesso ao resultado da ação.",
                 "O método then recebe uma função e nela temos acesso sempre como primeiro parâmetro ao resultado da ação.",
-                "Internamente em nossa Promise, é o valor passado para resolve que estará disponível para a função then."
+                "Internamente na Promise, é o valor passado para resolve que estará disponível para a função then.",
+                "Promise.all resolve as promises em paralelo, ou seja, uma promise não aguarda a outra terminar para ser executada.",
+                "Promise.all é interessante quando uma promise não depende do resultado da promise anterior., mas nos casos onde há dependência, o encadeamento de promises é o caminho mais indicado."
             ],
             "Curiosidades":[
                 "Uma requisição usando o XMLHttpRequest passa por estados, por isso o nome da propriedade em português é pronto para mudança de estado. Podemos passar uma função que verifica os estados e executará uma ação.",
@@ -520,7 +522,10 @@
                 "Assim que acessarmos um elemento do ponteiro, precisamos chamar cursor.continue() para que o ponteiro avance para o próximo elemento, e quando não houver mais elementos, o retorno de cursor. continue() será null.",
                 "Cada browser define um limite de tamanho para os dados armazenados no IndexedDB sem que seja necessário autorização do usuário.",
                 "Se o limite de tamanho dos dados de um IndexedDB for excedido, uma caixa de diálogo pedirá a confirmação do usuário, e caso ele negue, o evento onerror será executado.",
-                "O cálculo do limite de tamanho de dados de um IndexedDB disponível muitas vezes é calculado dinamicamente e varia de browser para browser."
+                "O cálculo do limite de tamanho de dados de um IndexedDB disponível muitas vezes é calculado dinamicamente e varia de browser para browser.",
+                "Transações do IndexedDB são auto commited, é por meio de uma transação que temos acesso a uma store e dela podemos realizar operações como a inclusão de um objeto",
+                "Quando uma operação é realizada com sucesso, ou seja, quando o evento onsuccess é chamado a transação é fechada, as transações do IndexedDB são auto commited, é por isso que cada método solicita uma transação toda vez que é chamado.",
+                "Podemos cancelar uma transação através do método abort, pois nem sempre queremos efetivá-la, ou seja, queremos abortá-la, fazendo uma alusão aos bancos de dados relacionais, queremos ser capazes de realizar um rollback."
             ],
             "Module Pattern": [
                 "Com Padrão de Módulo transformamos todo o script em um módulo - o código está todo confinado.",
@@ -533,7 +538,49 @@
                 "Consiste forçarmos a modificação de uma API, onde substituimos o que queremos modificar por um novo código que ignora o anterior e impede a execução do mesmo, de modo que podemos manipular e encapsular a maneira como o código original poderá ser executado." ,
                 "O monkey patch deve ser usado com parcimônia, até mesmo como último recurso, quando propõe uma modificação direta na definição da classe. Isto porque modificações usadas globalmente podem ocasionar bugs em diversas partes do nosso código, tendo assim, um resultado imprevisível."
             ],
-            "Curiosidade": "O modificador const evita que novos valores sejam atribuidos a variável, mas  não garante a imutabilidade, apenas a atribuição de um novo valor, pois ainda conseguimos acessar métodos ou modificar propriedaeds."
+            "Padrão DAO":[
+                "O DAO faz parte da camada de persistência, funciona como uma fachada para a API do IndexedDB. Repare que para usar o DAO não é preciso saber os detalhes do store ou cursor.",
+                "A vantagem está ligada com a capacidade de isolar todo o código que acessa seu repositório de dados em um único lugar. Assim, toda vez que o desenvolvedor precisar realizar operações de persistência ele verá que existe um único local para isso, seus DAO's."
+            ],
+            "Curiosidades": {
+                "Modificador const": "O modificador const evita que novos valores sejam atribuidos a variável, mas  não garante a imutabilidade, apenas a atribuição de um novo valor, pois ainda conseguimos acessar métodos ou modificar propriedaeds.",
+                "Comparações":[
+                    "Existem tipos primitivos em JavaScript chamado de literais que podem ser acessados como objetos quanto invocamos algum método. O encapsulamento de um primitivo por um objeto automaticamente pelo interpretador é chamado de autoboxing. Por mais que tenhamos um objeto representando um número, a comparação será pelo valor literal (primitivo) e não pela referência. Números são encapsulados pela função construtora Number",
+                    "Uma maneira de comparamos um objeto com outro é converter ambos os objetos envolvidos na comparação para String, com o auxílio de JSON.stringify, que está preparado para converter um objeto JavaScript para uma string. Essa solução é interessante quando o objeto possui muitas propriedades."
+                ],
+                "Array.some()": [
+                    "Todo array possui a função some(), com ela identificamos se o item buscado faz parte da lista, varrendo cada um deles de forma semelhante a um forEach().",
+                    "A função some() vai varrer cada item da lista verificando se os elementos são iguais ao critério estabelecido, e enquanto o item for diferente, ele seguirá para o próximo, mas quando o elemento for equivalente ao critério, retornará true e não seguirá iterando no array até o fim, porém basta encontrar um item que seja correspondente ao critério para que o retorno de some() seja 'verdadeiro'."
+                ]
+            },
+            "Transcompiladores":[
+                "Para solucionar os problemas de compatibilidade e ainda permitir que o desenvolvedor utilize o que há de mais moderno da linguagem JavaScript foram criados compiladores de código fonte para código fonte comumente chamados de transcompiladores (transpilers).",
+                "Com eles, é possível, por exemplo, converter um código fonte de Ruby para JavaScript e vice-versa. No entanto, no universo JavaScript a ideia é compilarmos um código-fonte escrito em ES2015 para ES5, garantindo assim a compatibilidade do nosso código em diferentes tipos de browsers.",
+                "O resultado da transcompilação pode variar de transpiler para transpiler, mas o resultado final deve ser idêntico à funcionalidade original do código em ES2015. Inclusive não é raro o resultado da transcompilação para ES5 resulte em um código muito mais verboso.",
+                "O processo de transcompilação normalmente não é feito manualmente, mas por meio de ferramentas que tornam transparentes esse processo para o desenvolvedor, evitando assim erros oriundos do esquecimento da compilação deste ou daquele arquivo que foi atualizado.",
+                "Sourcemaps são arquivos usados em ambiente de desenvolvimento que visam fazer um 'de para' do arquivo transcompilado com o arquivo original, para que erros sejam apontados no arquivo original.",
+                "Sourcemaps são baixados apenas quando você abre a ferramenta de desenvolvimento do seu browse, ou seja, seu console ou dev tools. Claro, os arquivo só serão baixados se existirem. Veja que dessa maneira não há prejuízo do carregamento inicial do site."
+            ],
+            "Fetch API":[
+                "A Fetch API usa o padrão de projeto promise, e podemos encadear chamadas do .then, inclusive tratar erros com .catch.",
+                "Existem polyfis disponíveis na internet que garantem a presença da Fetch API em navegadores que não a suportam, mas é importante que o navegador suporte no mínimo a API de promise.",
+                "Programadores front-end têm ficado cada vez mais interessados nessa API, ao ponto de utilizá-la em seus projetos, tudo com auxílio de um polyfill.",
+                "Por mais que seja utilizada por muitos desenvolvedores, a Fetch API ainda está sujeita a mudanças, pois é experimental ainda (pelo menos até agosto/2016).",
+                "O fato de ser experimental não afastou os desenvolvedores e muitos deles usam um polyfill para suportar esse recurso em navegadores que não o suportam. Mas é importante estar atento que o browser precisa suportar promises.",
+                "A Fetch API não é uma substituição direta do XMLHttpRequest, isto porque a `Fetch API não permite abortar requisições em andamento, como pode ser visto nessa discussão: https://github.com/whatwg/fetch/issues/27, sendo assim, se você não precisar cancelar requisições pendentes, a Fetch API é uma excelente escolha."
+            ],
+            "Módulos":[
+                "A plataforma Node.js resolveu este problema adotando padrão CommonJS para criação de módulos, ainda há bibliotecas como RequireJS que usam o padrão AMD (Assincronous Module Definition), contudo, o ES2015 especificou seu próprio sistema de módulos que resolve tanto o problema do escopo global quanto o de carregamento de scripts.",
+                "Quando trabalhamos com módulos, nossos scripts já isolam por padrão todo seu código, sendo necessário indicarmos através da instrução export o que pode ser importado do módulo.",
+                "A especificação não dita como os módulos devem ser carregados, sendo necessário o auxílio de um loader que nada mais é do que um script especializado nesta função, o mais famoso é o Systemsjs, capaz de lidar não apenas com os módulos do ES6, mas também com os do Node.js que seguem o padrão CommonJS.",
+                "É necessário compilar nosso código para que seja compatível com o loader que escolhermos, isso acarreta em mais uma transformação a ser realizada pelo transpiler escolhido."
+            ],
+            "Recomendações Finais":[
+                "O autor Thomas Kuhn, cita em seu livro 'A estrutura das revoluções científicas' que o conceito de paradigma permeia todo o seu trabalho. Na obra, Kuhn afirma que quando um paradigma muda, não importa se você tinha sucesso no passado, ele não garantirá o seu futuro.",
+                "Com o avanço da linguagem JavaScript - tanto no browser quanto no back-end, com a plataforma Node.js - uma linguagem que já era a mais popular do mundo, tornou-se ainda mais importante invadindo os calabouços mais obscuros do lado back-end, procurando a universalidade de sua presença. Inclusive é possível criar aplicações mobile utilizando essa linguagem com auxílio de ferramentas como Apache Cordova/Phonegap ou Ionic",
+                "Se antes JavaScript era uma linguagem motivo de piada entre os desenvolvedores mais acalorados, hoje é a linguagem que domina a web, a língua franca da web. E com essa mudança de paradigma, muitas oportunidades virão para aqueles preparados.",
+                "Não basta sermos ninjas, precisamos nos tornar cangaceiros em JavaScript!"
+            ]
         }
     },
     "Ajax":[
