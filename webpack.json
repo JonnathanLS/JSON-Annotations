@@ -1,0 +1,33 @@
+{
+    "Conceito": "O Webpack trata-se de module bundler que 'empacota' módulos para carregá-los na aplicação. Ele é voltado para a criação de single pages application (SPA), comumente utilizado pelo Angular CLI, Vue CLI e Create React App.",
+    "Introdução":[
+        "Para utilizarmos Webpack em ambiente de desenvolvimento é necessário ter a plataforma Node.js instalada. O Node.js é um ambiente JavaScript multiplataforma disponível para Linux, Mac e Windows.",
+        "O babel-core nada mais é do que o núcleo do babel desprovido de sua linha de comando e que pode ser utilizado por outras ferramentas do mercado como Webpack.",
+        "Webpack dispensa a utilização de um module loader, justamente por criar em bundles em tempo de desenvolvimento, que nada mais são do que scripts que agregam outros módulos da aplicação.",
+        "É preciso utilizar um loader para poder lidar com arquivos que não conseguem ser processados diretamente pelo webpack."
+    ],
+    "Relação estritra com SPA":[
+        "Apesar de o Webpack ser altamente customizável, sua aplicação é voltada para Single Page Applications, essa aplicação se comporta como se fosse uma aplicação nativa, pelo não carregamento durante o uso.",
+        "As SPAs não recarregam apágina durante seu uso e tendem a carregar todos os scripts e arquivos CSS que dependem logo no primeiro carregamento, onde toda mudança de troca de página é feita por um sistema de rotas que manipula a única página carregada trocando seu conteúdo.",
+        "Por mais fabulosa que a abordagem SPA possa ser para o usuário, se o escopo da aplicação for grande, o primeiro carregamento será sofrível, primeiro pelo tempo de download de arquivos JS e CSS gigantes (concatenados e minificados) além do tempo para que o interpretador JavaScript realize o parser desses arquivos.",
+        "Esse problema já não acontece com aplicações web tradicionais, pois cada página carrega os scripts e arquivos CSS de que precisam, e o Webpack soluciona esse problema das Single Page Applications.",
+        "Webpack permite dividir um bundle da aplicação em outros bundles menores que são carregados apenas quando forem utilizados pela aplicação, diminuindo assim o tempo de carregamento dessas aplicações e por conseguinte melhorando a experiência do usuário."
+    ],
+    "Arquivo de Configuração":[
+        "É comum utilizar um npm script para executar o webpack bastando adicioná-lo no arquivo package.json, sem esse script seríamos obrigados a executar o caminho completo do webpack, algo bem improdutivo e sujeito a erros.",
+        "O arquivo de configuração do webpack nada mais é do que um módulo do Node.js, lembre-se que é a plataforma Node.js que executa o Webpack para nós, aliás, o sistema de módulos da plataforma utilizado pela plataforma é o CommonJS. Diferente do ESM módulos, o CommonJS utiliza a sintaxe require e module.exports."
+    ],
+    "Preparando o Build de Produção":[
+        "O build de produção, consiste em minificar o bundle.js final.",
+        "Ao inserimos o parâmetro de -p no script, internamente será usado o uglify, a qual não precisaremos baixar por ser uma dependência do Webpack.",
+        "O Uglify é um módulo famoso, bastante utilizado para minificar arquivos JavaScript, porém para build de produção o Uglify não suporta a sintaxe do ES2015, assim como as versões seguintes.",
+        "Com o Uglify, não conseguiremos minificar os arquivos escritos com o ES mais modernos e para contornar isso, podemos pedir para o webpack usar outro módulo na realização desse processo de minificação e suporte a sintaxe do ES2015 (além de versões posteriores), os módulos, por exemplo: o Babili",
+        "Para garantirmos que a mudança da variável de ambiente funcionará em qualquer plataforma, podemos pedir ao webpack a ajuda de um módulo do NodeJS, por exemplo: o cross-env, a qual nos permite setar as variáveis de ambiente cross platform. "
+    ],
+    "Ambiente de Desenvolvimento":[
+        "Quando trabalharmos em ambiente de desenvolvimento, podemos usar um servidor que se integre com o Webpack, desta forma, não precisamos criar um servidor próprio para tornar acessível o projeto, e o webpack-dev-server faz muito bem esse papel."
+    ],
+    "Propriedades":[
+        "A propriedade publicPath, localizada no objeto de configuração da propriedade output, é importante para alterar o caminho gerado pelo webpack dev server. Com essa modificação, o bundle será acessível através de dist/bundle.js."
+    ]
+}
