@@ -1381,6 +1381,132 @@
          }
       }
     },
+    "Trabalhador de Serviço e PWA":{
+      "Introdução ao Trabalhador de Serviço": [
+        "Os trabalhadores de serviço aumentam o modelo tradicional de implantação na web e capacitam os aplicativos a oferecer uma experiência do usuário com a confiabilidade e o desempenho iguais aos códigos instalados originalmente.",
+        "Adicionar um trabalhador de serviço a um aplicativo Angular é uma das etapas para transformar um aplicativo em um Aplicativo Web Progressivo (também conhecido como PWA).",
+        "Um trabalhador de serviço é um script que é executado no navegador da web e gerencia o cache de um aplicativo.",
+        "Os trabalhadores do serviço funcionam como um proxy de rede, eles interceptam todas as solicitações HTTP de saída feitas pelo aplicativo e podem escolher como responder a elas.",
+        "Eles podem consultar um cache local e fornecer uma resposta em cache, se houver um disponível.",
+        "O proxy não se limita a solicitações feitas por APIs programáticas, como fetch; também inclui recursos referenciados em HTML e até a solicitação inicial para index.html.",
+        "O armazenamento em cache baseado no trabalhador de serviço é completamente programável e não depende de cabeçalhos de armazenamento em cache especificados pelo servidor.",
+        "O trabalhador do serviço é preservado depois que o usuário fecha a guia, diferente dos outros scripts que compõem um aplicativo, como o pacote de aplicativos Angular.",
+        "Na próxima vez que o navegador carregar o aplicativo, o responsável pelo serviço carregará primeiro e poderá interceptar todas as solicitações de recursos para carregar o aplicativo.",
+        "Se o responsável pelo serviço for projetado para isso, ele poderá satisfazer completamente o carregamento do aplicativo, sem a necessidade da rede .",
+        "Mesmo em uma rede rápida e confiável, os atrasos de ida e volta podem introduzir uma latência significativa ao carregar o aplicativo.",
+        "Usar um técnico de serviço para reduzir a dependência da rede pode melhorar significativamente a experiência do usuário."
+      ],
+      "Trabalhadores de Serviço em Angular":[
+        "Os aplicativos angulares, como aplicativos de página única, estão em uma posição privilegiada para se beneficiar das vantagens dos profissionais de serviço.",
+        "A partir da versão 5.0.0, o Angular é enviado com uma implementação de trabalhador de serviço. Os desenvolvedores angulares podem tirar proveito desse prestador de serviços e se beneficiar da maior confiabilidade e desempenho que ele fornece, sem precisar codificar contra APIs de baixo nível",
+        "O profissional de serviço da Angular foi projetado para otimizar a experiência do usuário final do uso de um aplicativo em uma conexão de rede lenta ou não confiável, além de minimizar os riscos de veicular conteúdo desatualizado.",
+        "O comportamento do trabalhador do serviço Angular segue alguns objetivos de projeto.",
+        {
+          "Objetivos": [
+            "Armazenar em cache um aplicativo é como instalar um aplicativo nativo. O aplicativo é armazenado em cache como uma unidade e todos os arquivos são atualizados juntos.",
+            "Um aplicativo em execução continua sendo executado com a mesma versão de todos os arquivos. De repente, ele não começa a receber arquivos em cache de uma versão mais recente, provavelmente incompatível.",
+            "Quando os usuários atualizam o aplicativo, eles veem a última versão totalmente em cache. Novas guias carregam o código em cache mais recente.",
+            "As atualizações acontecem em segundo plano, relativamente rapidamente após a publicação das alterações. A versão anterior do aplicativo é veiculada até que uma atualização esteja instalada e pronta.",
+            "O responsável pelo serviço conserva a largura de banda quando possível. Os recursos são baixados apenas se forem alterados."
+          ]
+        },
+        "Para dar suporte a esses comportamentos, o responsável pelo serviço Angular carrega um arquivo de manifesto do servidor.",
+        "O manifesto descreve os recursos para armazenar em cache e inclui hashes do conteúdo de todos os arquivos.",
+        "Quando uma atualização para o aplicativo é implantada, o conteúdo do manifesto é alterado, informando o responsável pelo serviço que uma nova versão do aplicativo deve ser baixada e armazenada em cache.",
+        "O manifesto é gerado a partir de um arquivo de configuração gerado pela CLI chamado ngsw-config.json."
+      ],
+      "Pré-Requisitos":[
+        "Para usar todos os recursos do trabalhador de serviço Angular, use as versões mais recentes do Angular e da CLI Angular.",
+        "Para que os trabalhadores do serviço sejam registrados, o aplicativo deve ser acessado por HTTPS, não por HTTP.",
+        {
+          "Observações":[
+            "Os navegadores ignoram os funcionários de serviço em páginas que são veiculadas em uma conexão não segura.",
+            "O motivo é que os trabalhadores do serviço são bastante poderosos, portanto, é necessário um cuidado extra para garantir que o script do trabalhador do serviço não seja violado.",
+            "Para facilitar o desenvolvimento local, os navegadores não exigem uma conexão segura ao acessar um aplicativo localhost."
+          ]
+        }
+      ],
+      "Suporte do Navegador":[
+        "Para se beneficiar do trabalhador do serviço Angular, seu aplicativo deve ser executado em um navegador da Web que ofereça suporte a trabalhadores do serviço em geral.",
+        "Atualmente, os profissionais de serviço são suportados nas versões mais recentes do Chrome, Firefox, Edge, Safari, Opera, UC Browser (versão Android) e Samsung Internet, com exceção dos navegadores como o IE e o Opera Mini que não oferecem suporte a trabalhadores de serviço.",
+        "Se o usuário estiver acessando seu aplicativo por meio de um navegador que não oferece suporte a trabalhadores de serviço, ele não será registrado e o comportamento relacionado, como gerenciamento de cache offline e notificações por push, não ocorrerá.",
+        "É altamente recomendável garantir que seu aplicativo funcione mesmo sem o suporte do operador de serviço no navegador, embora um navegador não suportado ignore o cache do trabalhador de serviço, ele ainda reportará erros se o aplicativo tentar interagir com o trabalhador de serviço."
+      ],
+      "Shell do Aplicativo":[
+        "O shell do aplicativo é uma maneira de renderizar uma parte do seu aplicativo por meio de uma rota no momento da criação.",
+        "Ele pode melhorar a experiência do usuário iniciando rapidamente uma página renderizada estática (um esqueleto comum a todas as páginas) enquanto o navegador baixa a versão completa do cliente e muda automaticamente para ela após o carregamento do código.",
+        "Isso fornece aos usuários uma primeira pintura significativa do seu aplicativo que aparece rapidamente, porque o navegador pode simplesmente renderizar o HTML e o CSS sem a necessidade de inicializar nenhum JavaScript."
+      ],
+      "Comunicação com o Trabalhador de Serviço":{
+        "ServiceWorkerModule": "A importação ServiceWorkerModule para o seu site AppModulenão apenas registra o trabalhador do serviço, mas também fornece alguns serviços que você pode usar para interagir com o trabalhador do serviço e controlar o cache do seu aplicativo.",
+        "Serviço SwUpdate": "O SwUpdateserviço fornece acesso a eventos que indicam quando o responsável pelo serviço descobriu uma atualização disponível para o seu aplicativo ou quando ativou essa atualização - o que significa que agora ele está veiculando conteúdo dessa atualização para o seu aplicativo.",
+        "Operações do SwUpdate": [
+          "Ser notificado de atualizações disponíveis . Estas são novas versões do aplicativo a serem carregadas se a página for atualizada.",
+          "Ser notificado sobre a ativação da atualização . É quando o trabalhador do serviço começa a veicular uma nova versão do aplicativo imediatamente.",
+          "Solicitar ao trabalhador do serviço que verifique se há novas atualizações no servidor.",
+          "Solicitar ao trabalhador do serviço para ativar a versão mais recente do aplicativo para a guia atual."
+        ],
+        "Atualizações Disponíveis e Ativadas": "Os dois eventos de atualização 'available' e 'activated' são propriedades 'Observable' de SwUpdate e você pode usar esses eventos para notificar o usuário sobre uma atualização pendente ou atualizar suas páginas quando o código em execução estiver desatualizado.",
+        "Verificando Atualizações": [
+          "É possível solicitar ao responsável pelo serviço que verifique se alguma atualização foi implantada no servidor.",
+          "Você pode optar por fazer isso se tiver um site que mude frequentemente ou desejar que as atualizações ocorram dentro de um cronograma.",
+          "O método 'checkForUpdate()' retorna uma Promise que indica que a verificação da atualização foi concluída com êxito, embora não indique se uma atualização foi descoberta como resultado da verificação."
+        ],
+        "Forçando a Ativação da Atualização": "Se a guia atual precisar ser atualizada para a versão mais recente do aplicativo imediatamente, é possível solicitar isso com o ,étodo activateUpdate(), isso pode interromper o carregamento lento nos aplicativos em execução no momento, especialmente se os pedaços carregados com o uso lento usarem nomes de arquivos com hashes, que alteram todas as versões."
+      },
+      "Ambiente de Produção":{
+        "Introdução":[
+          "Conceitualmente, você pode imaginar o trabalhador do serviço Angular como um cache de encaminhamento ou uma borda da CDN instalada no navegador da web do usuário final.",
+          "A tarefa do trabalhador de serviço é atender a solicitações feitas pelo aplicativo Angular para obter recursos ou dados de um cache local, sem a necessidade de aguardar a rede.",
+          "Como qualquer cache, ele possui regras sobre como o conteúdo expira e atualiza."
+        ],
+        "Versões de Aplicativos":[
+          "No contexto de um trabalhador de serviço Angular, uma 'versão' é uma coleção de recursos que representam uma compilação específica do aplicativo Angular.",
+          "Sempre que uma nova compilação do aplicativo é implantada, o responsável pelo serviço trata essa compilação como uma nova versão do aplicativo, isso ocorre mesmo que apenas um único arquivo seja atualizado.",
+          "A qualquer momento, o responsável pelo serviço pode ter várias versões do aplicativo em seu cache e pode fornecê-las simultaneamente.",
+          "Para preservar a integridade do aplicativo, o trabalhador do serviço Angular agrupa todos os arquivos em uma versão, os arquivos agrupados em uma versão geralmente incluem arquivos HTML, JS e CSS.",
+          "O agrupamento desses arquivos é essencial para a integridade, pois os arquivos HTML, JS e CSS frequentemente se referem um ao outro e dependem de conteúdo específico.",
+          "Essa integridade do arquivo é especialmente importante ao carregar módulos preguiçosamente.",
+          "Um pacote JS pode fazer referência a muitos trechos preguiçosos, e os nomes de arquivos dos trechos preguiçosos são exclusivos para a compilação específica do aplicativo, de modo que, se um aplicativo em execução na versão 'X' tentar carregar um pedaço lento, mas o servidor já tiver atualizado para a versão X + 1, a operação de carregamento lento falhará.",
+          "O identificador de versão do aplicativo é determinado pelo conteúdo de todos os recursos e muda se algum deles mudar, na prática, a versão é determinada pelo conteúdo do arquivo ngsw.json, que inclui hashes para todo o conteúdo conhecido.",
+          "Se algum dos arquivos em cache for alterado, o hash do arquivo será alterado ngsw.json, fazendo com que o responsável pelo serviço Angular trate o conjunto ativo de arquivos como uma nova versão.",
+          "Com o comportamento de versão do trabalhador do serviço Angular, um servidor de aplicativos pode garantir que o aplicativo Angular sempre tenha um conjunto consistente de arquivos."
+        ],
+        "Verificações de Atualizações": "Sempre que o usuário abre ou atualiza o aplicativo, o responsável pelo serviço Angular verifica se há atualizações no aplicativo procurando atualizações no ngsw.jsonmanifesto. Se uma atualização for encontrada, ela será baixada e armazenada em cache automaticamente e será veiculada na próxima vez que o aplicativo for carregado.",
+        "Integridade de Recursos":[
+          "Um dos possíveis efeitos colaterais do armazenamento em cache longo é o armazenamento descuidado em cache de um recurso inválido.",
+          "Em um cache HTTP normal, uma atualização forçada ou a expiração do cache limitam os efeitos negativos do armazenamento em cache de um arquivo inválido., um funcionário do serviço ignora essas restrições e efetivamente armazena em cache por muito tempo o aplicativo inteiro, conseqüentemente, é essencial que o responsável pelo serviço obtenha o conteúdo correto.",
+          "Para garantir a integridade dos recursos, o responsável pelo serviço Angular valida os hashes de todos os recursos para os quais possui um hash, normalmente, para um aplicativo criado com a CLI Angular, ou seja, tudo no diretório 'dist' coberto pela configuração do usuário no 'src/ngsw-config.json'.",
+          "Se um arquivo específico falhar na validação, o responsável pelo serviço Angular tenta buscar novamente o conteúdo usando um parâmetro de URL 'impedimento de cache' para eliminar os efeitos do navegador ou do cache intermediário, se esse conteúdo também falhar na validação, o responsável pelo serviço considera a versão inteira do aplicativo inválida e para de veicular o aplicativo.",
+          "Se necessário, o responsável pelo serviço entra em um modo seguro em que as solicitações retornam à rede, optando por não usar seu cache se o risco de veicular conteúdo inválido, quebrado ou desatualizado for alto."
+        ],
+        "Conteúdo Unhashed": [
+          "Os únicos recursos que possuem hashes no manifesto 'ngsw.json' são os que estavam presentes no diretório 'dist' no momento em que o manifesto foi criado.",
+          "Outros recursos, especialmente aqueles carregados de CDNs, têm conteúdo desconhecido no momento da criação ou são atualizados com mais frequência do que o aplicativo é implantado.",
+          "Se o trabalhador do serviço Angular não tiver um hash para validar um determinado recurso, ele ainda armazenará em cache seu conteúdo, mas honrará os cabeçalhos de cache HTTP usando uma política de 'obsoleto ao revalidar'.",
+          "Quando os cabeçalhos de cache HTTP de um recurso em cache indicam que o recurso expirou, o trabalhador do serviço Angular continua a servir o conteúdo e tenta atualizar o recurso em segundo plano, dessa forma, recursos quebrados com unhashed não permanecem no cache além da vida útil configurada."
+        ],
+        "Abas de Aplicativos":[
+          "Pode ser problemático para um aplicativo se a versão dos recursos que está recebendo mudar de repente ou sem aviso prévio.",
+          "O responsável pelo serviço Angular fornece uma garantia: um aplicativo em execução continuará executando a mesma versão do aplicativo.",
+          "Se outra instância do aplicativo for aberta em uma nova guia do navegador da Web, a versão mais atual do aplicativo será veiculada.",
+          "Como resultado, essa nova guia pode estar executando uma versão diferente do aplicativo que a guia original.",
+          "É importante observar que essa garantia é mais forte do que a fornecida pelo modelo normal de implantação na web.",
+          "Sem um técnico de serviço, não há garantia de que o código carregado lentamente posteriormente em um aplicativo em execução seja da mesma versão que o código inicial do aplicativo."
+        ],
+        "Atualizações do Trabalhador de Serviço":[
+          "O trabalhador do serviço Angular é um pequeno script executado em navegadores da web. Periodicamente, o responsável pelo serviço será atualizado com correções de bugs e aprimoramentos de recursos.",
+          "O trabalhador do serviço Angular é baixado quando o aplicativo é aberto pela primeira vez e quando o aplicativo é acessado após um período de inatividade. Se o trabalhador do serviço tiver sido alterado, ele será atualizado em segundo plano.",
+          "A maioria das atualizações para o trabalhador do serviço Angular é transparente para o aplicativo - os caches antigos ainda são válidos e o conteúdo ainda é exibido normalmente, no entanto, ocasionalmente, um recurso ou correção de bug no trabalhador do serviço Angular requer a invalidação de caches antigos. Nesse caso, o aplicativo será atualizado de forma transparente a partir da rede."
+        ],
+        "Ignorando o Trabalhador de Serviço":[
+          "Em alguns casos, você pode querer ignorar completamente o responsável pelo serviço e deixar que o navegador lide com a solicitação.",
+          "Para ignorar o trabalhador do serviço, você pode definir ngsw-bypasscomo um cabeçalho de solicitação ou como um parâmetro de consulta, o valor do cabeçalho ou parâmetro de consulta é ignorado e pode estar vazio ou omitido."
+        ],
+        "Depurando o Trab. do Serviço Angular": "Ocasionalmente, pode ser necessário examinar o trabalhador do serviço Angular em um estado de execução para investigar problemas ou garantir que ele esteja operando conforme projetado. Os navegadores fornecem ferramentas internas para os trabalhadores do serviço de depuração e o próprio trabalhador do serviço Angular inclui recursos úteis de depuração.",
+        "Configuração do Trabalhador de serviço": "O ngsw-config.jsonarquivo de configuração especifica quais arquivos e URLs de dados o trabalhador do serviço Angular deve armazenar em cache e como deve atualizar os arquivos e dados em cache. A CLI Angular processa o arquivo de configuração durante 'ng build --prod' ... mais informações em: https://angular.io/guide/service-worker-config;"
+      }
+    },
     "Internacionalização (i18n)":{
        "Conceito": "A internacionalização de aplicativos é uma área de desenvolvimento multifacetada, focada em tornar os aplicativos disponíveis e fáceis de usar para um público mundial.",
        "Internacionalização": "É o processo de projetar e preparar seu aplicativo para ser usado em diferentes idiomas.",
