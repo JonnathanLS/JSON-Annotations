@@ -1,0 +1,16 @@
+{
+    "Melhor Conceito": "Closure é a forma de fazer com que as variáveis dentro de uma função sejam privadas e persistentes.",
+    "Meu Entendimento": "É o fechamento do estado de uma função de acordo com seu contexto léxico.",
+    "Complementos":[
+        "O escopo léxico é baseado nas variáveis e blocos de escopo definidos, por você, em tempo de escrita do código. Logo, ele é definido em tempo de compilação ...",
+        "Para melhor compreensão, lembre-se de módulos ... são estruturas de código que fazem bom uso das closures."
+    ],
+    "Links Úteis":{
+        "Artigos": {
+            "Javascript: Mas afinal, o que são closures?": "https://medium.com/@stephanowallace/javascript-mas-afinal-o-que-s%C3%A3o-closures-4d67863ca9fc"
+        },
+        "Vídeos": {
+            "Closure (Programação Funcional)": "https://www.youtube.com/watch?v=8WzqEPzaOfE"
+        }
+    }
+}
