@@ -1,11 +1,30 @@
 {
-    "Melhor Conceito": "O Progressive Web Apps (PWA) é uma maneira moderna de criar aplicativos, incluindo os móveis, usando tecnologias puramente da Web.",
-    "Meu Entendimento": "Aplicações Web que se assemelha a aplicações mobile nativas, permitindo uso limitado de funcionalidades do dispositívo que disponibiliza a aplicação.",
+    "Melhor Conceito": "Resumidamente, o PWA é um site na internet que se comporta como um aplicativo, uma maneira moderna de criar aplicativos, incluindo os móveis, usando tecnologias puramente da Web.",
+    "Meu Entendimento": "Aplicações Web que se assemelham a aplicações mobile nativas, permitindo uso limitado de funcionalidades do dispositívo que disponibiliza a aplicação.",
+    "Complementos":{ 
+        "Google": "Os Progressive Web Apps fornecem uma experiência instalável, semelhante a um aplicativo, em computadores e dispositivos móveis que são criados e entregues diretamente pela Web e que funcionam em qualquer navegador.",
+        "Proposta": "Entregar a interface de um aplicativo com a praticidade de um site.",
+        "Requisitos":{
+            "Progressivo": "A plataforma deve atender qualquer usuário — não importa o navegador ou sistema operacional utilizado;",
+            "Responsivo": "o PWA deve se adequar a diferentes formatos de exibição, ou seja, desktop, tablet, mobile ou qualquer outro dispositivo que, eventualmente, possa surgir;",
+            "Trabalhar Offline": "Se manter funcional, mesmo operando em redes ociosas ou offline;",
+            "App-like": "Adotar layout, recursos e navegação semelhantes aos aplicativos (arquitetura de shell de aplicativo);",
+            "Atualizado": "Deve manter-se atualizado, oferecendo atualizações contínuas, porém, discretas aos usuários (service worker);",
+            "Seguro": "O PWA deve ser disponibilizado via HTTPS, para evitar invasões e adulterações durante a troca de dados;",
+            "Encontrável": "Pode ser encontrado como um “aplicativo” em mecanismos de busca e locais em que, normalmente, se encontram apps nativos (como a tela inicial de um dispositivo);",
+            "Engajável": "Permite o reengajamento do usuário por meio de mensagens, emails ou notificações push;",
+            "Instalável": "Confere aos usuários a opção de instalar o aplicativo em suas telas iniciais, sem a necessidade de acessar uma loja de apps;",
+            "Linkável": "Não requer instalação complexa e é facilmente compartilhável por meio da URL.",
+        }
+    },
     "Links Úteis":{
         "Artigos": {
             "PWA: O que é? Vale a pena? Quando utilizar?": "https://blog.rocketseat.com.br/pwa-o-que-e-quando-utilizar/",
             "O que a Web pode fazer hoje?": "https://whatwebcando.today/",
-            "Aplicativos Web progressivos - Padrão ou Buzzword?": "https://whatwebcando.today/articles/progressive-web-apps-standard-or-buzzword/"
+            "Aplicativos Web progressivos - Padrão ou Buzzword?": "https://whatwebcando.today/articles/progressive-web-apps-standard-or-buzzword/",
+            "PWA: por que Microsoft e Google estão apostando em Progressive Web App": "https://computerworld.com.br/2018/10/22/pwa-por-que-microsoft-e-google-estao-apostando-em-progressive-web-app/",
+            "Can I Use?": "https://caniuse.com/#feat=serviceworkers",
+            "Entenda o que são Progressive Web Apps (PWAs)": "https://rockcontent.com/blog/progressive-web-apps/"
         },
         "Vídeos": {
             "PWA - Dicionário do Programador": "https://www.youtube.com/watch?v=jPMFqS9SKWY",
