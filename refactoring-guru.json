@@ -1,0 +1,10 @@
+{
+    "O que é?": "O Refactoring.Guru torna mais fácil para você descobrir tudo que você precisa saber sobre refatoração, padrões de projeto, princípios SOLID, e outros tópicos de programação inteligente.",
+    "Intuito do Site": "Mostrar o panorama geral de padrões de projeto e refatoração, como todos esses assuntos se cruzam, trabalham juntos, e ainda são relevantes, de modo que a conexão entre refatoração, padrões e princípios de programação gerais ainda continuam um mistério para maioria dos programadores, esse é o problema no qual o site procura resolver.",
+    "Padrões de Projeto":{
+        "Definição": "Padrões de Projeto são soluções típicas para problemas de ocorrência comum em design de software, eles são como plantas de obra que podem ser utilizados e customizados para resolver um problema de design em particular em seu código."
+    },
+    "Refatoração": {
+        "Definição": "Refatoração é um processo sistemático de melhoria de código sem criar novas funcionalidades. A refatoração transforma caos e desordem em código limpo e de design simples."
+    }
+}
